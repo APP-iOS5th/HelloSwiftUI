@@ -9,55 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var selectedColor = Color.gray
+    
     var body: some View {
-        VStack {
-            Text("Cut Image")
-            HStack {
-                Image("gecko")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120)
-                Image("gecko")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120)
-                    .clipShape(Circle())
-                Image("gecko")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120)
-                    .clipShape(Circle())
-                    .shadow(color: .blue, radius: 10, x: 5, y:5)
-            }
-            .padding(.bottom, 30)
-            Text("Border/Shadow Cutted Image")
-            HStack {
-                Image("gecko")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120)
-                    .opacity(0.2)
-                Image("gecko")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120)
-                    .clipShape(Circle())
-                    .shadow(color: .blue, radius: 10, x: 5, y:5)
-                    .overlay {
-                        Rectangle().stroke(.yellow, lineWidth: 5)
-                    }
-                Image("gecko")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120)
-                    .clipShape(Circle())
-                    .shadow(color: .blue, radius: 10, x: 5, y:5)
-                    .overlay {
-                        Circle().stroke(.blue, lineWidth: 5)
-                            .opacity(0.3)
-                    }
-                    
-            }
+        VStack (spacing: 28) {
+            Rectangle().fill(selectedColor)
+            Picker("Favorite Color", selection: $selectedColor, content: {
+                Text("Red")
+                    .tag(Color.red)
+                Text("Blue")
+                    .tag(Color.blue)
+                Text("Green")
+                    .tag(Color.green)
+            })
+            .pickerStyle(SegmentedPickerStyle())
         }
     }
 }
