@@ -12,13 +12,19 @@ extension Color {
 }
 
 struct ContentView: View {
+    @State var colorMe = false
     var body: some View {
         VStack {
+            Rectangle()
+                .fill(colorMe ? Color.green : Color.gray)
+                .frame(width: 250 , height: 100
+                )
             Button("여기를 클릭하세요"){
-                print("클릭시 실행코드")
+                colorMe.toggle()
             }
             Button {
-                print("클릭시 실행코드")
+                colorMe.toggle()
+
             }label: {
                 Text("Click Here")
                     .font(.largeTitle)
@@ -28,7 +34,7 @@ struct ContentView: View {
             }
             
             Button {
-                
+                colorMe.toggle()
             } label: {
                 Image("sample_dog_square")
                     .resizable()
