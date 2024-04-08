@@ -2,7 +2,7 @@
 //  HelloSwiftUIApp.swift
 //  HelloSwiftUI
 //
-//  Created by Jungman Bae on 4/8/24.
+//  Created by JIHYE SEOK on 4/8/24.
 //
 
 import SwiftUI
