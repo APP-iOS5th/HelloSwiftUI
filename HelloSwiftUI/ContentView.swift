@@ -14,48 +14,37 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Slider(value: $sliderValue, in: 0...1)
-//                .accentColor(.green)
-                .tint(.yellow)
-            
-            Stepper("값 \(value)", value: $value, in: 0...10)
-            
-            Toggle("Toggle message on/off", isOn: $isOn
-            // 바로 텍스트 입력도 가능함(구조체의 convenience init 때문)
-//                   , label: {Text("Toggle Example")}
-            )
-            
-            Text("위")
-//                .accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-//                .padding()
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-//                .foregroundStyle(<#T##style: ShapeStyle##ShapeStyle#>)
-            
-            HStack {
-                Text("왼쪽")
-                Text("오른쪽")
-            }
-            .background(Color.purple)
-            
-            ZStack {
-                Text("배경")
-                Text("전경")
-            }
-            
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                print("button1 click")
-            }
-            
-            Button(action: {
-                print("button2 click")
-            }, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-            })
+            Text("Default padding of 16 points")
+                .padding()
+                .background(Color.yellow)
+            Text("Default padding of 45 points")
+                .padding(45)
+                .background(Color.yellow)
+            Text("Default padding of 3 points")
+                .padding(3)
+                .background(Color.yellow)
+            Text("Top padding only")
+                .padding(.top)
+                .background(Color.yellow)
+            Text("Trailing padding only")
+                .padding(.trailing)
+                .background(Color.yellow)
+            Text("Bottom padding only")
+                .padding(.bottom)
+                .background(Color.yellow)
+            Text("Leading padding only")
+                .padding(.leading, 45)
+                .background(Color.yellow)
+            Text("Top, Leading padding")
+                .padding([.top, .leading], 45)
+                .background(Color.yellow)
+            Text("Top, Leading and Bottom")
+                .padding([.top, .leading, .bottom], 45)
+                .background(Color.yellow)
         }
-        .background(Color.orange)
     }
 }
+
 
 #Preview {
     ContentView()
