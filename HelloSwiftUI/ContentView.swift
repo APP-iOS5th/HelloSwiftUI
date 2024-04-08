@@ -14,28 +14,38 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            // ZStack offset, position
-            //            ZStack {
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(.yellow)
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(.yellow)
-            //                    .offset(x: 74, y:250)
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(.yellow)
-            //                    .position(x: 125, y: 55)
-            //        }
-            Text("First")
-                .font(.system(size: 40))
-                .background(.teal)
-            Text("Second View")
-                .font(.system(size: 40))
-                .background(.teal)
-            // VStack offset 설정
-        }.offset(x: 25, y: 125)
+            let myString = "Displays a string variable"
+            //            Text("Hello World, \(myString)")
+            Text("This is my age \(myString). \nSince I am retired, I am now eligible for a pension and Social Security \nso I can spend the rest of my life relaxing and enjoying life without having to work for an income anymore.")
+                .multilineTextAlignment(.trailing) // 문단 정렬
+                .truncationMode(.tail) // 생략 위치
+                .lineLimit(3) // 표시 라인
+            
+            Spacer()
+            
+            Text("Bold Text")
+                .font(.title)
+                .bold()
+            
+            Text("Italic")
+                .font(.title2)
+                .italic()
+            
+            Text("Underlined")
+                .font(.headline)
+                .underline()
+            
+            Text("Strikethrough")
+                .font(.subheadline)
+                .strikethrough()
+            
+            Text("Custom Font Text")
+                .font(.custom("AmericanTypewriter", size: 24))
+            
+            Text("Line Spacing Line Spacing Line Spacing Line Spacing")
+                .font(.body)
+                .lineSpacing(30) // 줄간격
+        }
     }
 }
 
