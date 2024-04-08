@@ -34,7 +34,7 @@ struct Text_View: View {
                 .strikethrough()
             Text("Custom Font Text")
                 .font(.custom("AmericanTypewriter", size: 24))
-            Text("Line Spacing")
+            Text("Line Spacing\nhello") //줄간격
                 .font(.body)
                 .lineSpacing(10.0)
             
