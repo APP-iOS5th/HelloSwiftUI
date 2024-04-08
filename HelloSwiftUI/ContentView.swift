@@ -8,18 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedColor = Color.gray
+    @State var message = ""
     
     var body: some View {
         VStack {
-            Rectangle().fill(selectedColor)
-            Picker("Color", selection: $selectedColor) {
-                Text("Red").tag(Color.red)
-                Text("Green").tag(Color.green)
-                Text("Blue").tag(Color.blue)
-                Text("Purple").tag(Color.purple)
+            Text(message)
+            if #available(iOS 17.0, *) {
+                Picker("Color", selection: $message) {
+                    Text("Happy").tag("happy")
+                    Text("Sad").tag("sad")
+                    Text("Bored").tag("bored")
+                }
+                .pickerStyle(.segmented)
+                .onChange(of: message) { _, newValue in
+                    switch newValue {
+                        case "happy": message = "HAPPY"
+                        case "sad": message = "SAAAAD"
+                        case "bored": message = "BORRRRREDDDDD"
+                        default: break
+                    }
+                }
+            } else {
+                Picker("Color", selection: $message) {
+                    Text("Happy").tag("happy")
+                    Text("Sad").tag("sad")
+                    Text("Bored").tag("bored")
+                }
+                .pickerStyle(.segmented)
+                .onChange(of: message) { newValue in
+                    switch newValue {
+                        case "happy": message = "HAPPY"
+                        case "sad": message = "SAAAAD"
+                        case "bored": message = "BORRRRREDDDDD"
+                        default: break
+                    }
+                }
             }
-            .pickerStyle(.segmented)
+            
         }
     }
 }
