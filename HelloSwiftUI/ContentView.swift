@@ -10,7 +10,17 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-
+            Image("dog_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .opacity(0.5)
+            
+            Image("cat_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .opacity(0.25)
         }
     }
 }
