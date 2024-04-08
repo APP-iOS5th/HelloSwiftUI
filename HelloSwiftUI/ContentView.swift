@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
 
+    @State private var selectedColor = Color.gray
 
     var body: some View {
-        VStack  {
+        VStack (spacing:28) {
+            Rectangle().fill(selectedColor)
+            Picker("Favorite Color", selection: $selectedColor, content: {
+                Text("Red").tag(Color.red)
+                Text("Blue").tag(Color.blue)
+                Text("Green").tag(Color.green)
+            })
+            .pickerStyle(SegmentedPickerStyle())
         }
     }
 }
