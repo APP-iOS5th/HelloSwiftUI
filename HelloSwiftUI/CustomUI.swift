@@ -27,3 +27,16 @@ struct MultipleSpacer: View {
         }
     }
 }
+
+struct ResizableCustomImage: View {
+    var imageName: String
+    var imageColor: Color
+    var contentModel: ContentMode
+    
+    var body: some View {
+        Image(systemName: imageName)
+            .resizable()
+            .foregroundStyle(imageColor)
+            .aspectRatio(contentMode: contentModel)
+    }
+}

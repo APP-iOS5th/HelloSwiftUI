@@ -46,7 +46,10 @@ struct UIComponent2Example: View {
             Image(systemName: "tortoise.fill")
                 .font(.largeTitle)
             Image(systemName: "tortoise.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .font(.custom("", size: 50))
+                .foregroundStyle(.blue)
             
             MultipleSpacer(multiple: 1)
             
@@ -54,6 +57,8 @@ struct UIComponent2Example: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 150, height: 150)
+            
+            ResizableCustomImage(imageName: "flag", imageColor: .cyan, contentModel: .fit)
         }
     }
 }
