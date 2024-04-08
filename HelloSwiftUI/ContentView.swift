@@ -1,28 +1,33 @@
 import SwiftUI
 
-extension Color {
-    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
-}
 
 struct ContentView: View {
-    @State private var  selectedColor = Color.gray
+    @State private var message = ""
     var body: some View {
-        VStack (spacing: 30){
-            Rectangle().fill(selectedColor)
-            Picker("Favortie Color", selection: $selectedColor,content: {
-                Text("Red").tag(Color.red)
-                Text("Blue").tag(Color.blue)
-                Text("Green").tag(Color.green)
+        VStack {
+            Text(message)
+            Picker("Favorite Color", selection: $message, content: {
+                Text("Happy").tag("happy")
+                Text("Sad").tag("sad")
+                Text("Bored").tag("bored")
             })
             .pickerStyle(SegmentedPickerStyle())
+            .onChange(of: message) {newValue in
+                switch newValue {
+                case "happy": message = "Be happy and joyus"
+                case "sad": message = "Life can be a struggle at times"
+                case "bored": message = "Look for your purpose"
+                default:
+                    break
+                }
+            }
         }
     }
 }
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
-}
-
+    
