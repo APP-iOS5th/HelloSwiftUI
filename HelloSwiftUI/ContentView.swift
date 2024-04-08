@@ -11,7 +11,12 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Label("Clock", systemImage: "clock.circle")
+                .font(.title)
+                .padding(.bottom)
             
+            Label("Calendar", systemImage: "calendar")
+                .padding(.bottom)
         }
     }
 }
