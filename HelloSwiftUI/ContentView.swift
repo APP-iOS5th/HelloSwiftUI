@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var colorMe = false
     var body: some View {
         VStack{
+            Rectangle()
+                .fill(colorMe ? Color.green : Color.gray)
+                .frame(width: 250, height: 100)
+            
             Button("Click Button"){
-                print("button1 click")
+                colorMe.toggle()
             }
             Button {
-                print("button2 click")
+                colorMe.toggle()
             } label: {
                 Text("Click here")
                     .font(.largeTitle)
@@ -23,7 +28,7 @@ struct ContentView: View {
                     .border(Color.red, width: 6)
             }
             Button {
-                print("button3 click")
+                colorMe.toggle()
             } label: {
                 Image("sample_dog_square")
                     .resizable()
