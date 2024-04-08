@@ -10,34 +10,49 @@ import SwiftUI
 struct ContentView: View {
     var body: some View{
         VStack {
-            let myString = "Displays a string variable"
-            //            Text("Hello World, \(myString)")
-            Text("This is my age \(myString). Since I am retired, I am now eligible for a pension and Social Security so I can spend the rest of my life relaxing and enjoying life without having to work for an income anymore.")
-                .multilineTextAlignment(.trailing)
-                .truncationMode(.tail)
-                .lineLimit(3)
-            
-            
+            // sf symbol pic usage
+//            Label("what time is it?",
+//                  systemImage: "clock.circle").font(.title)
+//            Label{
+//                Text("No modifiers")
+//            } icon: {
+//                Image("clock-solid")
+//                    .resizable()
+//                    .frame(width:20.0, height: 20.0)
+//            }
+            //도형
+//            //capsule(알약모양 = 타원형)
+//            Capsule().fill(Color.yellow)
+//            Circle().fill(Color.brown)
+//            Ellipse().fill(Color.pink)
+//            Rectangle().fill(Color.red)
+//            RoundedRectangle(cornerRadius: 50).fill(Color.green)
+//            Capsule().fill(Color.yellow)
+//            
+//            Spacer()
+//            Ellipse().fill(
+//                RadialGradient(
+//                    gradient: Gradient(colors:[.blue,.yellow]), center: .top, startRadius: 10, endRadius: 65))
+//            Spacer()
+//
+//            Ellipse().fill(
+//                RadialGradient(
+//                    gradient: Gradient(colors:[.blue,.yellow]), center: .center, startRadius: 10, endRadius: 65))
+//            Spacer()
+
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors:[.blue,.yellow]), center: .top))
             Spacer()
-            Text("Bold Text")
-                .font(.title)
-                .bold()
-            Text("Italic")
-                .font(.title2)
-                .italic()
-            Text("Underlined")
-                .font(.headline)
-                .underline()
-            Text("Strikethrough")
-                .font(.subheadline)
-                .strikethrough()
-            Text("Custom Font Text")
-                .font(.custom("AmericanTyperwriter", size: 24))
-                .bold()
-            Text("Line Spacing")
-                .font(.body)
-                .lineSpacing(10)
-            
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill").font(.largeTitle)
+            Image(systemName: "tortoise.fill").font(.custom("",size: 50))
+            Spacer()
+            Image("clock-solid")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width:150,height: 50)
+            //fit과 fill의 차이 알기
         }
     }
 }
