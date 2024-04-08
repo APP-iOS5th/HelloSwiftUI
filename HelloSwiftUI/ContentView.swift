@@ -9,7 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack { //spacing: 간격
+        VStack {
+            ZStack {
+                Text("Top")
+                    .font(.system(size: 40))
+                    .background(Color.blue)
+                Text("Top")
+                    .font(.system(size: 40))
+                    .background(Color.blue)
+                    .position(x:255 ,y:127)
+                Text("Top")
+                    .font(.system(size: 40))
+                    .background(Color.blue)
+                    .offset(x: 74, y: 124)
+                
+            }
             
         }
     }
