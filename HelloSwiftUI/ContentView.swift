@@ -8,42 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
-    
     var body: some View {
-        VStack {
-            Slider(value: $sliderValue, in: 0...1)
-                .accentColor(.teal)
-        
-            Stepper("값\(value)", value: $value, in: 0...10)
-            Toggle("Toggle", isOn: $isOn)
-            Text("위")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-            HStack {
-                Text("왼쪽")
-                Text("오른쪽")
+        VStack (alignment: .trailing, spacing: 24){
+
+            Text("Default padding of 16 points")
+                .padding()
+                .background(Color.orange)
+            Text("Default padding of 45 points")
+                .padding(45)
+                .background(Color.orange)
+            Text("Default padding of 3 points")
+                .padding(3)
+                .background(Color.orange)
+            HStack(alignment: .top) {
+                Text("Top padding only")
+                    .padding(.top)
+                    .background(Color.orange)
+                Text("Trailing padding only")
+                    .padding(.trailing)
+                    .background(Color.orange)
+                Text("Trailing padding only")
+                    .padding(.bottom)
+                    .background(Color.orange)
             }
-            .background(Color.gray)
-            ZStack {
-                Text("         배경")
-                Text("전경           ")
-            }
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                print("button1 click")
-            }
-            Button(action: {
-                print("button2 click")
-            }, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-            })
+            Text("Leading padding only")
+                .padding(.leading)
+                .background(Color.orange)
+            Text("Top, Leading padding")
+                .padding([.leading, .top])
+                .background(Color.orange)
+            Text("Top, Leading and Bottom padding")
+                .padding([.leading, .top, .bottom])
+                .background(Color.orange)
+            
+            
         }
-        .padding()
     }
 }
-
 #Preview {
     ContentView()
 }
