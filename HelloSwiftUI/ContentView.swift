@@ -17,6 +17,7 @@ struct ContentView: View {
                 .lineLimit(3)
             
             Spacer()
+            
             Text("Bold Text")
                 .font(.title)
                 .bold()
