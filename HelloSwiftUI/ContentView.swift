@@ -14,37 +14,42 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Slider(value: $sliderValue, in: 0...1)
-//                .tint(.red)
-                .accentColor(.green)
+            Text("Default padding of 16 points")
+                .padding()
+                .background(.yellow)
+          
+            Text("Default padding of 45 points")
+                .padding(45)
+                .background(.yellow)
             
-            Stepper("값 \(value)", value: $value, in : 0...10)
-            Toggle("Toggle Example on/off", isOn: $isOn)
-            Text("위")
-                .background(isOn ? .yellow : .red)
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .foregroundStyle(.red)
-            HStack {
-                Text("왼쪽")
-                Text("오른쪽")
-            }
-            ZStack{
-                Text("배경")
-                Text("전경")
-            }
-            Button(action: {
-                print("button click")
-            }, label: {
-                Text("Button")
-            })
-            Button(action: {
-                print("button2 click")
-                isOn.toggle()
-            }, label: {
-                Text("Button")
-                
-            })
+            Text("Default padding of 3 points")
+                .padding(3)
+                .background(.yellow)
+            
+            Text("Top padding only")
+                .padding(.top)
+                .background(.yellow)
+            
+            Text("Trailing padding only")
+                .padding(.trailing)
+                .background(.yellow)
+            
+            Text("Bottom padding only")
+                .padding(.bottom)
+                .background(.yellow)
+            
+            Text("Leading padding only")
+                .padding(.leading, 45)
+                .background(.yellow)
+            
+            Text("Top, Leading padding ")
+                .padding([.top, .leading], 45)
+                .background(.yellow)
+            
+            Text("Top, Leading and Botto")
+                .padding([.top, .leading, .bottom], 45)
+                .background(.yellow)
+            
         }
        
     }
