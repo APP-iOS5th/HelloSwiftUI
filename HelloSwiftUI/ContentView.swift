@@ -13,44 +13,29 @@ struct ContentView: View {
     @State private var sliderValue = 0.5
     
     var body: some View {
-        // vstack alignment - leading, trailing, center
-        VStack (alignment: .leading, spacing: 24) {
-            Text("Default padding of 16 points")
-                .padding()
-                .background(.yellow)
-            Text("Default padding of 45 points")
-                .padding(45)
-                .background(.yellow)
-            Text("Default padding of 3 points")
-                .padding(3)
-                .background(.yellow)
-            Spacer()
-            // hstack alignment - top, bottom,  center
-            HStack (alignment: .bottom, spacing: 24) {
-                Text("Top padding only")
-                    .padding(.top)
-                    .background(Color.teal)
-                Text("Trailing padding only")
-                    .padding(.trailing)
-                    .background(Color.teal)
-                Text("Botton padding only")
-                    .padding(.bottom)
-                    .background(Color.teal)
-            }
-            Spacer()
-            Text("Leading padding of 45 points only")
-                .padding(.leading, 45)
-                .background(Color.yellow)
-            
-            Text("Top, Leading paddings")
-                .padding([.top, .leading], 45)
-                .background(Color.yellow)
-            Text("Top, Leading and Bottom")
-                .padding([.top,.leading, .bottom], 45)
-                .background(Color.yellow)
-            
-            
-        }
+        VStack {
+            // ZStack offset, position
+            //            ZStack {
+            //                Text("Top")
+            //                    .font(.system(size: 40))
+            //                    .background(.yellow)
+            //                Text("Top")
+            //                    .font(.system(size: 40))
+            //                    .background(.yellow)
+            //                    .offset(x: 74, y:250)
+            //                Text("Top")
+            //                    .font(.system(size: 40))
+            //                    .background(.yellow)
+            //                    .position(x: 125, y: 55)
+            //        }
+            Text("First")
+                .font(.system(size: 40))
+                .background(.teal)
+            Text("Second View")
+                .font(.system(size: 40))
+                .background(.teal)
+            // VStack offset 설정
+        }.offset(x: 25, y: 125)
     }
 }
 
