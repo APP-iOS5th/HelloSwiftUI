@@ -11,14 +11,36 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            Label("Text", systemImage: "clock.circle").font(.title)
-            Label{
-                Text("No Modifiers")
-            } icon: {
-                Image(systemName: "clock.circle")
-                    .resizable()
-                    .frame(width: 20.0, height: 20.0)
-            }
+//            Capsule().fill(.yellow)
+//            Circle().fill(.blue)
+//            Ellipse().fill(.brown)
+//            Rectangle().fill(.red)
+//            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(.green)
+            
+//            Spacer()
+//            
+//            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]),
+//                                          center: .top,
+//                                          startRadius: 10,
+//                                          endRadius: 65))
+//            
+//            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]),
+//                                          center: .center,
+//                                          startRadius: 10,
+//                                          endRadius: 65))
+//            
+//            Ellipse().fill(AngularGradient.init(gradient: Gradient(colors: [Color.red, Color.blue]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+            
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill").font(.largeTitle)
+            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+            
+            Spacer()
+            
+            Image(systemName: "clock")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 50)
         }
     }
 }
