@@ -11,47 +11,44 @@ struct ContentView: View { @State private var isOn = true
     @State private var value = 0
     @State private var sliderValue = 0.5
     var body: some View {
-        VStack (alignment: .trailing, spacing: 24) {
+        VStack  {
+            //            ZStack {
+            //
+            //                Text("Top")
+            //                    .font(.system(size: 40))
+            //                    .background(Color.yellow)
+            //
+            //
+            //                Text("Top")
+            //                    .font(.system(size: 40))
+            //                    .background(Color.yellow)
+            //                    .position(x: 0, y:0)
+            //
+            //
+            //                Text("Top")
+            //                    .font(.system(size: 40))
+            //                    .background(Color.yellow)
+            //                    .position(x: 255, y:255)
+            //
+            //
+            //                Text("Top")
+            //                    .font(.system(size: 40))
+            //                    .background(Color.yellow)
+            //
+            //                    .offset(x:76, y:125)
+            //            }
             
-            Text("  Default padding of 16 points")
-                .padding()
+            Text("Top")
+                .font(.system(size: 40))
                 .background(Color.yellow)
-            Text("  Default padding of 45 points")
-                .padding(45)
+            Text("Top")
+                .font(.system(size: 40))
                 .background(Color.yellow)
-            Text("  Default padding of 3 points")
-                .padding(3)
-                .background(Color.yellow)
-            
-            Spacer()
-            
 
-            HStack (alignment: .bottom, spacing: 24) {
-                Text("Top padding only")
-                    .padding(.top)
-                    .background(Color.yellow)
-                Text("Top padding only")
-                    .padding(.trailing)
-                    .background(Color.yellow)
-                Text("Bottom padding only")
-                    .padding(.bottom)
-                    .background(Color.yellow)
-                Text("Top padding only")
-                    .padding([.top, .leading], 45)
-                .background(Color.yellow) }
             
-            
-            Spacer()
-            
-            Text("Top, Leading padding")
-                .padding([.top, .leading], 45)
-                .background(Color.yellow)
-            Text("Top, Leading and bottom padding")
-                .padding([.top, .leading, .bottom], 45)
-                .background(Color.yellow)
-        }
+        }.offset(x:25, y:255) //offset을 vstack{} 전체에 적용 가능. offset은 처음 있던 위치를 0,0으로 보고 추가로 이동시키는 것.
     }
-    }
+}
 #Preview {
     ContentView()
 }
