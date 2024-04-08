@@ -41,9 +41,10 @@ struct ContentView: View {
             Text("Custom Font Text")
                 .font(.custom("AmericanTypewriter", size: 24))
 
-            Text("Line Spacing")
+            Text("Line Spacing\n Line Spacing")
                 .font(.body)
-                .lineSpacing(10)
+                .lineSpacing(20)
+                .background(.red)
         }
 
     
