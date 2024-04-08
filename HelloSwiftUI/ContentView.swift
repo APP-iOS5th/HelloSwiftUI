@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+extension Color{
+    static let myColor = Color( red:1.0, green: 0.0, blue: 0.5)
+}
 
 struct ContentView: View {
     var body: some View {
@@ -35,19 +38,31 @@ struct ContentView: View {
 //                .shadow(color: .green, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x:90, y:90)
 //            
             
-            Image("sample_dog_square")
+//            Image("sample_dog_square")
+//                .resizable()
+//                .frame(width:250, height:250)
+//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+//            
+//            Image("sample_dog_square")
+//                .resizable()
+//                .frame(width:250, height:250)
+//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+//                .shadow(color: .green, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x:90, y:90)
+            Image(systemName: "heart.fill")
+                            .font(.system(size: 150))
+                            .foregroundStyle(Color.colorUser) // asset에 만든 색상으로 아이콘 색상 변경.
+            Image(systemName: "heart.fill")
                 .resizable()
-                .frame(width:250, height:250)
-                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                .aspectRatio(contentMode: .fit)
+                            .foregroundStyle(Color.colorUser)
             
-            Image("sample_dog_square")
+         
+            Image(systemName: "heart.fill")
                 .resizable()
-                .frame(width:250, height:250)
-                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                .shadow(color: .green, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x:90, y:90)
-            
+                .aspectRatio(contentMode: .fit)
+                            .foregroundStyle(Color.myColor)
         }
     }
 }
