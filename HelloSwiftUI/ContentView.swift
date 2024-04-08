@@ -15,6 +15,7 @@ struct ContentView: View {
                 Text("No modifiers")
             } icon: {
                 Image("clock-solid")
+                    .resizable() //이걸 넣어야 이미지 크기 조절이 됨. 
                     .frame(width: 20.0, height: 20.0)
             }//Assets에 이미지를 추가하고 불러오는 방법. 난 추가 안해놓음..
         }
