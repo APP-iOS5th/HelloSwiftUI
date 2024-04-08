@@ -15,7 +15,14 @@ struct ContentView: View {
     var body: some View {
         VStack() {
             Label("Text", systemImage: "clock.circle").font(.title)
-        }       
+            Label {
+                Text("No modifiers")
+            } icon: {
+                Image("clock-solid")
+                    .resizable()
+                    .frame(width: 20.0, height: 20.0)
+            }
+        }
     }
 }
 
@@ -25,9 +32,9 @@ struct ContentView: View {
 
 /*
  swift 3.0 이전 프리뷰
-struct ContentView_Preview: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-*/
+ struct ContentView_Preview: PreviewProvider {
+ static var previews: some View {
+ ContentView()
+ }
+ }
+ */
