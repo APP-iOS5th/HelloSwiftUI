@@ -10,29 +10,39 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack() {
+            let myString = "Displays a string variable"
+            Text("Hello World, \(myString)")
+            Text("This is my age \(myString). Since I am retired, I am now eligible for a pension and Social Security so I can spend the rest of my life relaxing and enjoying life without having to work for an income anymore.")
+                .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
+                .lineLimit(3)
             
-//            ZStack{
-//                Text("Top")
-//                    .font(.system(size: 45))
-//                    .background(Color.yellow)
-//                Text("Top")
-//                    .font(.system(size: 45))
-//                    .background(Color.yellow)
-//                    .position(x: 200, y: 100)
-//                Text("Top")
-//                    .font(.system(size: 45))
-//                    .background(Color.yellow)
-//                    .offset(x: 74, y: 125)
-//            }
+            Spacer()
             
-            Text("First")
-                .font(.system(size: 40))
-                .background(Color.yellow)
-            Text("Second")
-                .font(.system(size: 40))
-                .background(Color.yellow)
+            Text("Bold Text")
+                .font(.title)
+                .bold()
             
-        }.offset(x:25, y:125)
+            Text("Italic Text")
+                .font(.title2)
+                .italic()
+            
+            Text("Underlined Text")
+                .font(.headline)
+                .underline()
+            
+            Text("Strikethrough Text")
+                .font(.subheadline)
+                .strikethrough()
+            
+            Text("Custom Font Text")
+                .font(.custom("AmericanTypewriter", size: 24))
+                
+            Text("Line Spacing\n Second line")
+                .font(.body)
+                .lineSpacing(10)
+            
+        }
     }
 }
 
