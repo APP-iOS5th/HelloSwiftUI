@@ -22,17 +22,21 @@ struct Padding: View {
                 .padding(3)
                 .background(.yellow)
             
-            Text("Top Padding only")
-                .padding(.top)
-                .background(.yellow)
+            HStack(alignment:.bottom,spacing: 24){
+                Text("Top Padding only")
+                    .padding(.top)
+                    .background(.yellow)
+                
+                Text("Traling Padding only")
+                    .padding(.trailing)
+                    .background(.yellow)
+                
+                Text("Bottom Padding only")
+                    .padding(.bottom)
+                    .background(.yellow)
+            }
             
-            Text("Traling Padding only")
-                .padding(.trailing)
-                .background(.yellow)
-            
-            Text("Bottom Padding only")
-                .padding(.bottom)
-                .background(.yellow)
+           
             
             Text("Leading Padding only")
                 .padding(.leading,45)
