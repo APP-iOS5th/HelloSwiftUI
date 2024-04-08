@@ -7,10 +7,11 @@
 
 import SwiftUI
 
+//아이콘 추가하기
 struct ContentView: View {
     var body: some View {
         VStack {
-            
+            Label("Text", systemImage: "clock.circle").font(.title)
         }
     }
 }
