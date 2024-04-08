@@ -23,7 +23,7 @@ struct ContentView: View {
             Text("위")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-                .background(Color.yellow)
+                .background(Color.purple)
                 .padding()
             HStack {
                 Text("왼쪽")
