@@ -11,6 +11,11 @@ struct SymbolExample: View {
     var body: some View {
         Label("Text", systemImage: "flag.fill")
             .font(.title)
+        Label {
+            Text("No modifiers")
+        } icon: {
+            Image(systemName: "flag.fill")
+        }
     }
 }
 
