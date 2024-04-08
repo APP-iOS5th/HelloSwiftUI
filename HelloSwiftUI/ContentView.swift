@@ -7,46 +7,36 @@
 
 import SwiftUI
 
-struct ContentView: View { @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
+struct ContentView: View {
     var body: some View {
         VStack  {
-            //            ZStack {
-            //
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(Color.yellow)
-            //
-            //
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(Color.yellow)
-            //                    .position(x: 0, y:0)
-            //
-            //
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(Color.yellow)
-            //                    .position(x: 255, y:255)
-            //
-            //
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(Color.yellow)
-            //
-            //                    .offset(x:76, y:125)
-            //            }
+            let myString = "Display a string variable"
+//            Text("Hello, World, \(myString)")
+            Text("a11111sdasdasdasdasdadadasdasdasdasdadasdadasdasdasdasdasdasfldkgnseklrhgnsefkjgsnergk.,fnv.kdgnae.rlgbjdfk.,bad.kserngailgmal/kgmadflgkmadfgk.amerlgkanergalngjakergnakergnadfg22222weweweweewefwefwefwefefwefwefwfwefwefwegfedgfdgsergersgdfgergdfgsergdfsdf22")
+                .truncationMode(.tail)//마지막 줄에 중략(...)을 어디에 넣을 것이냐. 앞 뒤 중간
+                .lineLimit(3)
             
-            Text("Top")
-                .font(.system(size: 40))
-                .background(Color.yellow)
-            Text("Top")
-                .font(.system(size: 40))
-                .background(Color.yellow)
-
             
-        }.offset(x:25, y:255) //offset을 vstack{} 전체에 적용 가능. offset은 처음 있던 위치를 0,0으로 보고 추가로 이동시키는 것.
+            Spacer()
+            Text("Bold Text")
+                .font(.title)
+                .bold()
+            
+            Text("Italic")
+                .font(.title2)
+                .italic()
+            Text("Underlined")
+                .font(.headline)
+                .underline()
+Text("Strikethrough")
+                .font(.subheadline)
+                .strikethrough()
+            Text("Custom Font Text")
+                .font(.custom("AmericanTypeWriter", size: 24))
+            Text ("Line Spacing")
+                .font(.body)
+                .lineSpacing(10)
+        }
     }
 }
 #Preview {
