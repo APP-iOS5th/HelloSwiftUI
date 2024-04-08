@@ -19,7 +19,7 @@ struct ContentView: View {
             Button {
                 print("클릭시 실행코드 2")
             } label: {
-                 Text("Clicj here")
+                 Text("Click here")
                     .font(.largeTitle)
                     .foregroundColor(.green)
                     .padding()
