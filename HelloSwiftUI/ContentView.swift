@@ -10,7 +10,18 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            
+            // 시스템(SF Symbols) 이미지를 불러옴
             Label("Text", systemImage: "clock.circle").font(.title)
+            
+            // 다운로드 한 assets에서 불러옴
+            Label {
+                Text("No modifiers")
+            } icon: {
+                Image("clock-solid")
+                    .resizable()
+                    .frame(width: 20.0, height: 20.0)
+            }
         }
     }
 }
