@@ -14,27 +14,29 @@ extension Color {
 struct ContentView: View {
     var body: some View {
         VStack{
-            // Asset Color scheme 사용
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundColor(Color("custom_pink"))
+            Button("여기를 클릭하세요") {
+                print("클릭시 실행코드 1")
+            }
             
-            // 지역상수 사용
-            let customColor = Color(red: 1, green: 1, blue: 0.1)
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundColor(Color(customColor))
+            Button {
+                print("클릭시 실행코드 2")
+            } label: {
+                Text("Click here")
+                    .font(.largeTitle)
+                    .foregroundColor(.black)
+                    .padding()
+                    .border(Color.red, width: 6)
+            }
             
-            // 전역상수 사용
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundColor(Color.myCustomColor)
-            
-            
-                            
+            Button {
+                print("클릭시 실행코드 3")
+            }       label: {
+                Image("potato1")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    .overlay(Circle().stroke(Color.yellow, lineWidth: 4))
+            }
         }
     }
 }
