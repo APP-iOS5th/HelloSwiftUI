@@ -8,39 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
     var body: some View {
-        VStack {
-            Slider(value: $sliderValue, in: 0...1)
-                .tint(/*@START_MENU_TOKEN@*/.green/*@END_MENU_TOKEN@*/)
-            Stepper("값 \(value)", value: $value, in: 0...10)
-            Toggle("Toggle message on/off", isOn: $isOn)
-            Text("위")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-            HStack {
-                Text("왼쪽")
-                Text("오른쪽")
-            }
-            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
-            ZStack {
-                Text("  배경")
-                Text("전경  ")
-            }
-            Button("Button") {
-                print("button1 click")
-            }
-            Button(action: {
-                print("button2 click")
-            },  label: {
-                Text("Botton")
-            }
-            )
+        VStack{
+            let myString = "HEO WON YEOL"
+            Text("My naem is \(myString). Since I am retired, I am now eligible for a person. Since I am retired, I am now eligible for a person.")
+                .multilineTextAlignment(.trailing)
+                //여러줄 정렬
+                .truncationMode(.middle)
+                //어느 부분을 생략할 것인가
+                .lineLimit(3)
+                //몇줄 까지 보여주고 싶나
+            Spacer()
+            
+            Text("Bold Text")
+                .font(.title)
+                .bold()
+            Text("Italic")
+                .font(.title2)
+                .italic()
+            Text("Underlined")
+                .font(.headline)
+                .underline()
+            Text("Strikethrough")
+                .font(.subheadline)
+                .strikethrough()
+            Text("Custom Font Text")
+                .font(.custom("AmericanTypewriter", size: 24))
+            Text("Line Spacing\nLine Spacing")
+                .font(.body)
+                .lineSpacing(100)
+                // 줄간격
         }
-        .padding()
-        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.orange/*@END_MENU_TOKEN@*/)
     }
 }
 
