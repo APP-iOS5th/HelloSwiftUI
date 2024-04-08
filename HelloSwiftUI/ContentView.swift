@@ -16,7 +16,7 @@ struct ContentView: View {
             //                .resizable()
             //                .frame(width: 250, height: 250)
             //                .aspectRatio(contentMode: .fill)
-            //            
+            //
             //            Image("sample_cat_square")
             //                .resizable()
             //                .frame(width: 250, height: 250)
@@ -29,7 +29,7 @@ struct ContentView: View {
             //                .frame(width: 250, height: 250)
             //                .aspectRatio(contentMode: .fill)
             //                .shadow(color: .red, radius: 46, x: 0, y: 0)
-            //            
+            //
             //            Image("sample_cat_square")
             //                .resizable()
             //                .frame(width: 250, height: 250)
@@ -39,20 +39,33 @@ struct ContentView: View {
             //        }
             
             /// 이미지 테두리 오버레이
+            //            Image("sample_dog_square")
+            //                .resizable()
+            //                .frame(width: 250, height: 250)
+            //                .aspectRatio(contentMode: .fill)
+            //                .shadow(color: .red, radius: 46, x: 0, y: 0)
+            //                .overlay(Rectangle().stroke(Color.blue, lineWidth: 10))
+            //
+            //            Image("sample_cat_square")
+            //                .resizable()
+            //                .frame(width: 250, height: 250)
+            //                .aspectRatio(contentMode: .fill)
+            //                .clipShape(Circle())
+            //                .shadow(color: .green, radius: 46, x: 90, y: 50)
+            //                .overlay(Circle().stroke(Color.purple, lineWidth: 20))
+            
+            /// 이미지 투명도 조절
             Image("sample_dog_square")
                 .resizable()
                 .frame(width: 250, height: 250)
                 .aspectRatio(contentMode: .fill)
-                .shadow(color: .red, radius: 46, x: 0, y: 0)
-                .overlay(Rectangle().stroke(Color.blue, lineWidth: 10))
+                .opacity(0.5)
             
             Image("sample_cat_square")
                 .resizable()
                 .frame(width: 250, height: 250)
                 .aspectRatio(contentMode: .fill)
-                .clipShape(Circle())
-                .shadow(color: .green, radius: 46, x: 90, y: 50)
-                .overlay(Circle().stroke(Color.purple, lineWidth: 20))
+                .opacity(0.25)
         }
     }
 }
