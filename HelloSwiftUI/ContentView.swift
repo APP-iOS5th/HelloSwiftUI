@@ -18,7 +18,7 @@ struct ContentView: View {
                 Text("Blue").tag(Color.blue)
                 Text("Green").tag(Color.green)
             })
-            .pickerStyle(SegmentedPickerStyle())
+            .pickerStyle(SegmentedPickerStyle()) //이 struct picker에 스타일을 적용한 것. segment 스타일을 쓴 것.
         }
     }
 }
