@@ -13,6 +13,7 @@
 		37CEFBD42BC3711200DB9F65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CEFBD32BC3711200DB9F65 /* Preview Assets.xcassets */; };
 		4A0706002BC3ACFA003A8AC1 /* ZStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0705FF2BC3ACFA003A8AC1 /* ZStackView.swift */; };
 		4A0706022BC3B2D6003A8AC1 /* Text_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0706012BC3B2D6003A8AC1 /* Text_View.swift */; };
+		4A0706042BC3BC67003A8AC1 /* SFsymbolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0706032BC3BC66003A8AC1 /* SFsymbolTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		37CEFBD32BC3711200DB9F65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A0705FF2BC3ACFA003A8AC1 /* ZStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStackView.swift; sourceTree = "<group>"; };
 		4A0706012BC3B2D6003A8AC1 /* Text_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_View.swift; sourceTree = "<group>"; };
+		4A0706032BC3BC66003A8AC1 /* SFsymbolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFsymbolTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				37CEFBCC2BC3711000DB9F65 /* HelloSwiftUIApp.swift */,
+				4A0706032BC3BC66003A8AC1 /* SFsymbolTest.swift */,
 				37CEFBCE2BC3711000DB9F65 /* ContentView.swift */,
 				4A0705FF2BC3ACFA003A8AC1 /* ZStackView.swift */,
 				4A0706012BC3B2D6003A8AC1 /* Text_View.swift */,
@@ -145,6 +148,7 @@
 			files = (
 				4A0706002BC3ACFA003A8AC1 /* ZStackView.swift in Sources */,
 				4A0706022BC3B2D6003A8AC1 /* Text_View.swift in Sources */,
+				4A0706042BC3BC67003A8AC1 /* SFsymbolTest.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
 			);
