@@ -10,29 +10,23 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-         Image("뿅망치섬")
-//                .resizable()
-                .frame(width: 300, height: 300)
-                .aspectRatio(contentMode: .fill)
-                .clipped()
-                .opacity(0.5)
-            Image("고양이")
+            Image(systemName: "heart.fill")
                    .resizable()
-                   .frame(width: 300, height: 300)
-                   .aspectRatio(contentMode: .fill)
-                   .opacity(0.8)
-            Image("뿅망치섬")
-//                   .resizable()
-                   .frame(width: 300, height: 300)
-                   .aspectRatio(contentMode: .fill)
-                   .clipped()
-                   .shadow(color: .customColor1, radius: 50, x:0, y:0)
-                   .overlay(Rectangle().stroke(Color.customColor2, lineWidth: 6))
-            Image("고양이")
+                   .aspectRatio(contentMode: .fit)
+                   .foregroundColor(Color.customColor1)
+        
+            // 지역상수 사용
+            let customColor2 = Color(red: 1, green: 0, blue: 0)
+            Image(systemName: "heart.fill")
                    .resizable()
-                   .frame(width: 300, height: 300)
-                   .aspectRatio(contentMode: .fill)
-                   .opacity(0.8)
+                   .aspectRatio(contentMode: .fit)
+                   .foregroundColor(customColor2)
+            
+            // 전역상수 사용
+            Image(systemName: "heart.fill")
+                   .resizable()
+                   .aspectRatio(contentMode: .fit)
+                   .foregroundColor(Color.customColor2)
         }
     }
 }
