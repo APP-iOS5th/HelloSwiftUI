@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
+
 struct ContentView: View {
     var body: some View {
         VStack{
@@ -26,6 +30,21 @@ struct ContentView: View {
                 .shadow(color: .green, radius: 46, x:90, y: 50)
                 .overlay(Circle().stroke(Color.purple, lineWidth: 20))
                 .opacity(0.25)
+            
+            Image(systemName: "heart.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color("custom_brown"))
+            
+            let customColor = Color(red: 1, green: 0, blue: 0)
+            Image(systemName: "heart.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(customColor)
+            Image(systemName: "heart.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color.myCustomColor)
         }
     }
 }
