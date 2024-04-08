@@ -41,10 +41,10 @@
 //            Text("Top, Leading and Bottom")
 //                .padding([.top,.leading,.bottom], 45)
 //                .background(Color.yellow)
-//            
+//
 //        }
 //    }
-//    
+//
 //}
 //
 //
@@ -104,32 +104,54 @@
 //                .multilineTextAlignment(.trailing)
 //                .truncationMode(.tail)
 //                .lineLimit(3)
-//            
+//
 //            Spacer()
-//            
+//
 //            Text("Bold Text")
 //                .font(.title)
 //                .bold()
-//            
+//
 //            Text("Italic")
 //                .font(.title2)
 //                .italic()
-//            
+//
 //            Text("Underlined")
 //                .font(.headline)
 //                .underline()
-//            
+//
 //            Text("Strikethrough")
 //                .font(.subheadline)
 //                .strikethrough()
-//            
+//
 //            Text("Custom Font Text")
 //                .font(.custom("AmericanTypewriter", size:24))
-//            
+//
 //            Text("Line Spacing\n Second Line")
 //                .font(.body)
 //                .lineSpacing(10)
-//            
+//
+//        }
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
+//import SwiftUI
+//
+//struct ContentView: View{
+//    var body: some View {
+//        VStack {
+//            Label("Text", systemImage: "clock.fill").font(.title)
+//            Label {
+//                Text("No modifiers")
+//            } icon: {
+//                Image("clock-solid")
+//                    .resizable()
+//                    .frame(width: 20.0, height: 20.0)
+//            }
+//
 //        }
 //    }
 //}
@@ -140,10 +162,47 @@
 
 import SwiftUI
 
-struct ContentView: View{
+struct ContentView: View {
     var body: some View {
         VStack {
-            Label("Text", systemImage: "clock.fill").font(.title)
+            Capsule().fill(Color.yellow)
+            Circle().fill(Color.blue)
+            Ellipse().fill(Color.brown)
+            Rectangle().fill(Color.red)
+            RoundedRectangle(cornerRadius: 25).fill(Color.green)
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill").font(.largeTitle)
+            
+            Spacer()
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors:[.blue,.yellow]),
+                    center: .top,
+                    startRadius: 10,
+                    endRadius: 65
+                ))
+            Spacer()
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors:[.blue,.yellow]),
+                    center: .center,
+                    startRadius: 10,
+                    endRadius: 65
+                ))
+            Spacer()
+            Ellipse().fill(
+                AngularGradient(
+                    gradient: Gradient(colors: [.blue,.yellow]),
+                    center: .center
+                ))
+            Spacer()
+            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+            Spacer()
+            Image("clock-solid")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 50)
+            
         }
     }
 }
