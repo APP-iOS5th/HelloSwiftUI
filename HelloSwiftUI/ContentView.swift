@@ -160,48 +160,111 @@
 //    ContentView()
 //}
 
+//import SwiftUI
+//
+//struct ContentView: View {
+//    var body: some View {
+//        VStack {
+//            Capsule().fill(Color.yellow)
+//            Circle().fill(Color.blue)
+//            Ellipse().fill(Color.brown)
+//            Rectangle().fill(Color.red)
+//            RoundedRectangle(cornerRadius: 25).fill(Color.green)
+//            Image(systemName: "tortoise.fill")
+//            Image(systemName: "tortoise.fill").font(.largeTitle)
+//            
+//            Spacer()
+//            Ellipse().fill(
+//                RadialGradient(
+//                    gradient: Gradient(colors:[.blue,.yellow]),
+//                    center: .top,
+//                    startRadius: 10,
+//                    endRadius: 65
+//                ))
+//            Spacer()
+//            Ellipse().fill(
+//                RadialGradient(
+//                    gradient: Gradient(colors:[.blue,.yellow]),
+//                    center: .center,
+//                    startRadius: 10,
+//                    endRadius: 65
+//                ))
+//            Spacer()
+//            Ellipse().fill(
+//                AngularGradient(
+//                    gradient: Gradient(colors: [.blue,.yellow]),
+//                    center: .center
+//                ))
+//            Spacer()
+//            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+//            Spacer()
+//            Image("clock-solid")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 50, height: 50)
+//            
+//        }
+//    }
+//}
+
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
         VStack {
-            Capsule().fill(Color.yellow)
-            Circle().fill(Color.blue)
-            Ellipse().fill(Color.brown)
-            Rectangle().fill(Color.red)
-            RoundedRectangle(cornerRadius: 25).fill(Color.green)
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
+//        이미지 크기 조정, 크롭 (자르기)
+//            Image("sample_dog_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//            
+//            Image("sample_cat_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .clipShape(Circle())
             
-            Spacer()
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors:[.blue,.yellow]),
-                    center: .top,
-                    startRadius: 10,
-                    endRadius: 65
-                ))
-            Spacer()
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors:[.blue,.yellow]),
-                    center: .center,
-                    startRadius: 10,
-                    endRadius: 65
-                ))
-            Spacer()
-            Ellipse().fill(
-                AngularGradient(
-                    gradient: Gradient(colors: [.blue,.yellow]),
-                    center: .center
-                ))
-            Spacer()
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
-            Spacer()
-            Image("clock-solid")
+//           이미지 그림자 효과
+//            Image("sample_dog_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//                .shadow(color: .red, radius: 46, x: 0, y: 0)
+//            
+//            Image("sample_cat_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .clipShape(Circle())
+//                .shadow(color: .green, radius: 46, x: 90, y: 50)
+            
+            
+//           이미지 테두리 오버레이
+//            Image("sample_dog_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//                .shadow(color: .red, radius: 46, x: 0, y: 0)
+//                .overlay(Rectangle().stroke(Color.blue, lineWidth: 10))
+//
+//            Image("sample_cat_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .clipShape(Circle())
+//                .shadow(color: .green, radius: 46, x: 90, y: 50)
+//                .overlay(Circle().stroke(Color.purple, lineWidth: 20))
+            
+            
+//           이미지 투명도 조절
+            Image("sample_dog_square")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .opacity(0.6)
+            
+            Image("sample_cat_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .clipShape(Circle())
+                .opacity(0.3)
             
         }
     }
