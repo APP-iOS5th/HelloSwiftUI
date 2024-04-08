@@ -13,7 +13,10 @@ struct ContentView: View {
         VStack {
             Text("튜나 바..")
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .font(.system(size: 100))
+                .font(.system(size: 70))
+            Text("보 아닌 짱❤️")
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .font(.system(size: 70))
         }
     }
 }
