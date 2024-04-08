@@ -8,50 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
-    var body: some View {
-        VStack {
-            Slider(value: $sliderValue, in: 0...1)
-                .accentColor(.purple)
+    var body: some View{
+        VStack (alignment: .trailing, spacing: 24){
             
-            Stepper("값 \(value)",value : $value , in: 0...10)
-            Toggle("Toggle message on/off",
-                   isOn: $isOn)
-
-            //상태저장 변수를 추가해서 누르면 상태변경 하게 설정(위에 state)
-//            Toggle(isOn: .constant(true), label:{
-//                Text("Toggle Example")
-//            Toggle(isOn: $isOn, label:{
-//                Text("Toggle Example")
-//            })
-            //label을 별도로 줄수도 있고 vstack에 넣을수도있음
-            Text("위")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-            HStack{
-                Text("왼쪽")
-                Text("오른쪽")
+            Text("Default padding of 16 points")
+                .padding() //기본적으로 패딩은 16Point
+                .background(Color.yellow)
+            Text("padding of 45")
+                .padding(45)
+                .background(Color.yellow)
+            Text("padding of 3")
+                .padding(3)
+                .background(Color.yellow)
+            //hstack으로 묶어주기
+            HStack (alignment:.top) {
+                Text("Top padding only")
+                    .padding(.top)
+                    .background(Color.yellow)
+                Text("trailing padding only")
+                    .padding(.trailing)
+                    .background(Color.yellow)
+                Text("Bottom padding only")
+                    .padding(.bottom)
+                    .background(Color.yellow)
             }
-            .background(Color.purple)
-            ZStack{
-                Text("배경")
-                Text("전경")
-            }
-            Button("Button"){
-                print("button1 click")
-            }
-            Button(action:{
-                print("button click")
-            },label: {
-                Text("Button")
-            })
+            Text("Leading padding only")
+                .padding(.leading,45)
+                .background(Color.yellow)
+            Text("Top, Leading padding")
+                .padding([.top,.leading],45)
+                .background(Color.yellow)
+            Text("Top, Leading and bottompadding")
+                .padding([.top,.leading,.bottom],45)
+                .background(Color.yellow)
+            
+            
+            
         }
-        .padding()
     }
 }
-
 #Preview {
     ContentView()
 }
