@@ -8,34 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var colorMe = false
+    @State private var selectedColor = Color.gray
     var body: some View {
-        VStack{
-            Rectangle()
-                .fill(colorMe ? Color.green : Color.gray)
-                .frame(width: 250, height: 100)
-            
-            Button("Click Button"){
-                colorMe.toggle()
-            }
-            Button {
-                colorMe.toggle()
-            } label: {
-                Text("Click here")
-                    .font(.largeTitle)
-                    .foregroundColor(.green)
-                    .padding()
-                    .border(Color.red, width: 6)
-            }
-            Button {
-                colorMe.toggle()
-            } label: {
-                Image("sample_dog_square")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.yellow, lineWidth: 4))
-            }
+        VStack (spacing: 28) {
+            Rectangle().fill(selectedColor)
+            Picker("Favorite Color",selection: $selectedColor, content: {
+                Text("Red").tag(Color.red)
+                Text("Green").tag(Color.green)
+                Text("Blue").tag(Color.blue)
+            })
+            .pickerStyle(SegmentedPickerStyle())
         }
     }
 }
