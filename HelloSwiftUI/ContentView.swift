@@ -8,25 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var colorMe = false
+    @State var selectedColor = Color.gray
     
     var body: some View {
         VStack {
-            Rectangle()
-                .fill(colorMe ? .green : .gray)
-                .frame(width: 250, height: 100)
-            Button("Click here") {
-                colorMe.toggle()
+            Rectangle().fill(selectedColor)
+            Picker("Color", selection: $selectedColor) {
+                Text("Red").tag(Color.red)
+                Text("Green").tag(Color.green)
+                Text("Blue").tag(Color.blue)
+                Text("Purple").tag(Color.purple)
             }
-            Button {
-                colorMe.toggle()
-            } label: {
-                Text("Click here")
-                    .font(.largeTitle)
-                    .foregroundStyle(Color.green)
-                    .padding()
-                    .border(.red, width: 6)
-            }
+            .pickerStyle(.segmented)
         }
     }
 }
