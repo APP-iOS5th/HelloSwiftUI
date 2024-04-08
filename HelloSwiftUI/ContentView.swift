@@ -10,18 +10,55 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            Capsule().fill(Color.yellow)
+            Circle().fill(Color.blue)
+            Ellipse().fill(Color.brown)
+            Rectangle().fill(Color.red)
+            RoundedRectangle(cornerRadius: 25).fill(Color.green)
             
-            // 시스템(SF Symbols) 이미지를 불러옴
-            Label("Text", systemImage: "clock.circle").font(.title)
+            Spacer()
             
-            // 다운로드 한 assets에서 불러옴
-            Label {
-                Text("No modifiers")
-            } icon: {
-                Image("clock-solid")
-                    .resizable()
-                    .frame(width: 20.0, height: 20.0)
-            }
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors: [.blue, .yellow]),
+                    center: .top,
+                    startRadius: 10,
+                    endRadius: 65
+                    )
+                )
+            
+            Spacer()
+            
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors: [.blue, .yellow]),
+                    center: .center,
+                    startRadius: 10,
+                    endRadius: 65
+                    )
+                )
+            
+            Spacer()
+            
+            Ellipse().fill(
+                AngularGradient(
+                    gradient: Gradient(colors: [.blue, .yellow]),
+                    center: .center
+                    )
+                )
+            
+            Spacer()
+            
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill")
+            
+            Spacer()
+            
+            Image("clock-solid")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 50)
         }
     }
 }
