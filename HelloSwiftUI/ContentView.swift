@@ -14,34 +14,37 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Slider(value: $sliderValue, in: 0...1)
-                .tint(.brown)
-                
+            Text("Default padding of 16 points")
+                .padding()
+                .background(.yellow)
+            Text("Default padding of 45 points")
+                .padding(45)
+                .background(.yellow)
+            Text("Default padding of 3 points")
+                .padding(3)
+                .background(.yellow)
             
-            Stepper("값 \(value)", value: $value, in: 0...10)
+            Text("Top padding only")
+                .padding(.top)
+                .background(Color.teal)
+            Text("Trailing padding only")
+                .padding(.trailing)
+                .background(Color.teal)
+            Text("Botton padding only")
+                .padding(.bottom)
+                .background(Color.teal)
+            Text("Leading padding of 45 points only")
+                .padding(.leading, 45)
+                .background(Color.teal)
             
-            Toggle("Toggle message on/off", isOn: $isOn)
-            Text("위")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
+            Text("Top, Leading paddings")
+                .padding([.top, .leading], 45)
+                .background(Color.yellow)
+            Text("Top, Leading and Bottom")
+                .padding([.top,.leading, .bottom], 45)
+                .background(Color.yellow)
             
-            HStack {
-                Text("왼쪽")
-                Text("오른쪽")
-            }
-            .background(Color.purple)
-            ZStack {
-                Text("배경")
-                Text("전경")
-            }
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                print("button1 click")
-            }
-            Button(action: {
-                print("button2 click")
-            }, label: {
-                Text("Button")
-            })
+            
         }
     }
 }
@@ -53,8 +56,8 @@ struct ContentView: View {
 /*
  Swift 3.0 이전 프리뷰
  struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+ static var previews: some View {
+ ContentView()
+ }
  }
  */
