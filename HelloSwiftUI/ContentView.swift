@@ -15,8 +15,13 @@ struct ContentView: View {
                 .font(.title)
                 .padding(.bottom)
             
-            Label("Calendar", systemImage: "calendar")
-                .padding(.bottom)
+            Label {
+                Text("No modifiers")
+            } icon: {
+                Image("apple")
+                    .resizable() // 크기조절이.. 가능하게끔?
+                    .frame(width: 25.0, height: 25.0)
+            }
         }
     }
 }
