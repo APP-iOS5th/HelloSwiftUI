@@ -10,30 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            /*
-            Capsule().fill(Color.yellow)
-            Circle().fill(Color.blue)
-            Ellipse().fill(Color.brown)
-            Rectangle().fill(Color.red)
-            RoundedRectangle(cornerRadius: 20).fill(Color.green)
-             */
-            /*
-            Spacer()
-            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center:.top, startRadius: 10, endRadius: 65))
-            Spacer()
-            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center:.center, startRadius: 10, endRadius: 65))
-            Spacer()
-            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center:.center, startRadius: 10, endRadius: 120))
-             */
-            
-            Image(systemName:  "tortoise.fill")
-            Image(systemName:  "tortoise.fill").font(.custom("", size: 50))
-            Spacer()
-            Image("clock-solid")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 50)
-            
+    
         }
     }
 }
