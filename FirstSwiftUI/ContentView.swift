@@ -15,35 +15,16 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Default padding of 16 points")
-                .padding()
-                .background(.yellow)
-            Text("Default padding of 45 points")
-                .padding(45)
-                .background(.yellow)
-            Text("Default padding of 3 points")
-                .padding(3)
-                .background(.yellow)
-            HStack(alignment: .top) {
-                Text("Top padding only")
-                    .padding(.top)
+            ZStack {
+                Text("Top")
+                    .font(.system(size: 40))
                     .background(.yellow)
-                Text("Trailing padding only")
-                    .padding(.trailing)
-                    .background(.yellow)
-                Text("Leading padding only")
-                    .padding(.leading)
-                    .background(.yellow)
+                Text("Top")
+                    .font(.system(size: 40))
+                    .background(.red)
+                    .offset(x: 20, y: 20)
             }
-            Text("Bottom padding only")
-                .padding(.bottom)
-                .background(.yellow)
-            Text("Bottom padding only")
-                .padding([.top, .leading], 45)
-                .background(.yellow)
-            Text("Bottom padding only")
-                .padding([.top, .leading, .bottom], 45)
-                .background(.yellow)
+            .position(x: 200, y: 200)
         }
     }
 }
