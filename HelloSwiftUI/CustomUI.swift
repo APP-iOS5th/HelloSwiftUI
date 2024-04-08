@@ -17,3 +17,17 @@ struct CustomText: View {
             .foregroundStyle(textColor)
     }
 }
+
+struct MultipleSpacer: View {
+    var multiple: Int
+    
+    var body: some View {
+        if multiple > 0 {        
+            let multipleArray: Range<Int> = Range(1...multiple)
+            
+            ForEach(multipleArray) { _ in
+                Spacer()
+            }
+        }
+    }
+}

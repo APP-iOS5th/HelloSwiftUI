@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SwiftUI2: View {
+struct PaddingExample: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .trailing, spacing: 30) {
@@ -22,7 +22,9 @@ struct SwiftUI2: View {
                     .padding(3)
                     .background(.yellow)
                 
-                HStack(alignment: .top) {                
+                MultipleSpacer(multiple: 1)
+                
+                HStack(alignment: .top) {
                     Text("Top padding only")
                         .padding(.top)
                         .background(.yellow)
@@ -40,6 +42,8 @@ struct SwiftUI2: View {
                         .background(.yellow)
                 }
                 
+                MultipleSpacer(multiple: 1)
+                
                 Text("Top and Leading padding of 45 points")
                     .padding([.top, .leading], 45)
                     .background(.yellow)
@@ -52,5 +56,5 @@ struct SwiftUI2: View {
 }
 
 #Preview {
-    SwiftUI2()
+    PaddingExample()
 }

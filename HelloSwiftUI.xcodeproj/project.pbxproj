@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		CDD8850D2BC3711800C7390F /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */; };
-		CDD8850F2BC3711800C7390F /* SwiftUI1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850E2BC3711800C7390F /* SwiftUI1.swift */; };
+		CDD8850F2BC3711800C7390F /* UIComponentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850E2BC3711800C7390F /* UIComponentExample.swift */; };
 		CDD885112BC3711900C7390F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD885102BC3711900C7390F /* Assets.xcassets */; };
 		CDD885142BC3711900C7390F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD885132BC3711900C7390F /* Preview Assets.xcassets */; };
 		CDD8851B2BC3863E00C7390F /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8851A2BC3863E00C7390F /* CustomUI.swift */; };
-		CDD8851D2BC3A48800C7390F /* SwiftUI2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8851C2BC3A48800C7390F /* SwiftUI2.swift */; };
+		CDD8851D2BC3A48800C7390F /* PaddingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8851C2BC3A48800C7390F /* PaddingExample.swift */; };
+		CDD8851F2BC3AD2400C7390F /* ZStackExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8851E2BC3AD2400C7390F /* ZStackExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CDD885092BC3711800C7390F /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
-		CDD8850E2BC3711800C7390F /* SwiftUI1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI1.swift; sourceTree = "<group>"; };
+		CDD8850E2BC3711800C7390F /* UIComponentExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponentExample.swift; sourceTree = "<group>"; };
 		CDD885102BC3711900C7390F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDD885132BC3711900C7390F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CDD8851A2BC3863E00C7390F /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
-		CDD8851C2BC3A48800C7390F /* SwiftUI2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI2.swift; sourceTree = "<group>"; };
+		CDD8851C2BC3A48800C7390F /* PaddingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingExample.swift; sourceTree = "<group>"; };
+		CDD8851E2BC3AD2400C7390F /* ZStackExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStackExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			children = (
 				CDD8851A2BC3863E00C7390F /* CustomUI.swift */,
 				CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */,
-				CDD8850E2BC3711800C7390F /* SwiftUI1.swift */,
-				CDD8851C2BC3A48800C7390F /* SwiftUI2.swift */,
+				CDD8850E2BC3711800C7390F /* UIComponentExample.swift */,
+				CDD8851C2BC3A48800C7390F /* PaddingExample.swift */,
+				CDD8851E2BC3AD2400C7390F /* ZStackExample.swift */,
 				CDD885102BC3711900C7390F /* Assets.xcassets */,
 				CDD885122BC3711900C7390F /* Preview Content */,
 			);
@@ -143,9 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD8850F2BC3711800C7390F /* SwiftUI1.swift in Sources */,
+				CDD8850F2BC3711800C7390F /* UIComponentExample.swift in Sources */,
 				CDD8851B2BC3863E00C7390F /* CustomUI.swift in Sources */,
-				CDD8851D2BC3A48800C7390F /* SwiftUI2.swift in Sources */,
+				CDD8851D2BC3A48800C7390F /* PaddingExample.swift in Sources */,
+				CDD8851F2BC3AD2400C7390F /* ZStackExample.swift in Sources */,
 				CDD8850D2BC3711800C7390F /* HelloSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

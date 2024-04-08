@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SwiftUI1: View {
+struct UIComponentExample: View {
     
     @State private var isToggle: Bool = true
     @State private var value: Int = 0
@@ -58,5 +58,5 @@ struct SwiftUI1: View {
 }
 
 #Preview {
-    SwiftUI1()
+    UIComponentExample()
 }
