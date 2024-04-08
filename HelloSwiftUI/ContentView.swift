@@ -11,7 +11,11 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-
+            Capsule().fill(Color.yellow)
+            Circle().fill(Color.blue)
+            Ellipse().fill(Color.brown)
+            Rectangle().fill(Color.red)
+            RoundedRectangle(cornerRadius: 20).fill(Color.green)
         }
     }
 }
