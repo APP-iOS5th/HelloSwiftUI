@@ -9,47 +9,47 @@ import SwiftUI
 
 struct ContentView: View {
    
-    //토글을 누를때마다 true,false값 변경
-    @State private var isOn = true
-    
-    @State private var value = 0
-    
-    @State private var sliderValue = 0.5
-    
     var body: some View {
-        VStack {
-            Slider(value: $sliderValue, in:0...1)
-                .accentColor(.green)
-                //.tint(.yellow)
+        VStack (alignment: .trailing, spacing: 24){
+             
+            Text("Default padding of 16 points")
+                .padding()
+                .background(Color.yellow)
+            Text("Default padding of 45 points")
+                .padding(45)
+                .background(Color.yellow)
+            Text("Default padding of 3 points")
+                .padding(3)
+                .background(Color.yellow)
             
-            Stepper("값 \(value)", value: $value, in: 0...10)
+            //뷰의 남은공간을 다 띄운다?
+            Spacer()
             
-            Toggle("Toggle message on/off", isOn: $isOn)
-            Text("위")
-            //폰트크기 크게
-                .font(.largeTitle)
-            //폰트 살짝 두껍게
-                .fontWeight(.semibold)
-            HStack {
-                Text("왼쪽")
-                Text("오른쪽")
-            }.background(Color.purple)
-            
-            ZStack {
-                Text("배경")
-                Text("전경")
+            HStack (alignment: .bottom, spacing: 24){
+                Text("Top padding only!")
+                    .padding(.top) //위쪽 여백
+                    .background(Color.yellow)
+                Text("trailing padding only!")
+                    .padding(.trailing) //오른쪽 여백
+                    .background(Color.yellow)
+                Text("Bottom padding only!")
+                    .padding(.bottom) //아래쪽 여백
+                    .background(Color.yellow)
             }
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                print("Button 1 click!")
+            Spacer(minLength: 100)
+                Text("Leading padding only!")
+                    .padding(.leading, 45) //왼쪽 여백
+                    .background(Color.yellow)
+            Spacer()
+            Spacer()
+                Text("Top, Leading padding")
+                    .padding([.top, .leading], 45) //위쪽, 왼쪽 여백
+                    .background(Color.yellow)
+                Text("Top, Leading and Bottom")
+                    .padding([.top, .leading, .bottom], 45) //위쪽,왼쪽,아래쪽 여백
+                    .background(Color.yellow)
             }
-            Button(action: {
-                print("button 2 click!")
-            }, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-            })
         }
-        
-    }
 }
 
 #Preview {
