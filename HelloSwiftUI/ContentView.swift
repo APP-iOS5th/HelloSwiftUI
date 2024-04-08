@@ -22,6 +22,27 @@ struct ContentView: View {
             Text("Default padding of 3 point")
                 .padding(3)
                 .background(Color.yellow)
+            
+            Text("Trailing padding only")
+                .padding(.trailing)
+                .background(Color.yellow)
+            Text("Bottom padding only")
+                .padding(.bottom)
+                .background(Color.yellow)
+            Text("Leading padding only")
+                .padding(.leading, 45)
+                .background(Color.yellow)
+            
+            Text("Top, Leading padding")
+                .padding([.top, .leading], 45)
+                .background(Color.yellow)
+            Text("Topm, Leading and Bottom padding")
+                .padding([.top, .leading, .bottom], 45)
+                .background(Color.yellow)
+            
+            
+            
+            
         }
     }
 }
