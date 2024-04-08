@@ -9,51 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack (alignment: .trailing, spacing: 24) {
-            
-            Text("Default padding of 16 points")
-                .padding()
-                .background(Color.yellow)
-            
-            Text("Default padding of 45 points")
-                .padding(45)
-                .background(Color.yellow)
-                
-            Text("Default padding of 3 points")
-                .padding(3)
-                .background(Color.yellow)
-            
-            Spacer()
-            
-            HStack (alignment: .bottom, spacing: 24) {
-                
-                Text("Top padding only")
-                    .padding(.top)
+        VStack {
+            ZStack {
+                Text("Top")
+                    .font(.system(size: 40))
                     .background(Color.yellow)
-                
-                Text("Trailing padding only")
-                    .padding(.trailing)
+                Text("Top")
+                    .font(.system(size: 40))
                     .background(Color.yellow)
-                
-                Text("Bottom padding only")
-                    .padding(.bottom)
+                    .position(x: 74, y: 125)
+                Text("Top")
+                    .font(.system(size: 40))
+                    .background(Color.yellow)
+                    .offset(x: 74, y: 125)
+            }
+            VStack {
+                Text ("First")
+                    .font(.system(size: 40))
+                    .background(Color.yellow)
+                Text ("Second")
+                    .font(.system(size: 40))
                     .background(Color.yellow)
             }
+            .offset(x: 55, y: 66)
             
-            Spacer()
-            Text("Leading padding only")
-                .padding(.leading, 30)
-                .background(Color.yellow)
-            
-            Text("Top, Leading padding")
-                .padding([.top, .leading], 45)
-                .background(Color.yellow)
-            Text("Top, Leading and Bottom")
-                .padding([.top, .leading, .bottom])
-                .background(Color.yellow)
         }
-        
     }
+    
 }
 
 #Preview {
