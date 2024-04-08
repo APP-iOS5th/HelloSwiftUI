@@ -9,29 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-//        Capsule().fill(Color.blue)
-//        Circle().fill(Color.yellow)
-//        Ellipse().fill(Color.brown)
-//        Rectangle().fill(Color.red)
-//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).Color.green
-        
-        Spacer()
-        Ellipse().fill(
-            RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .top, startRadius: 10, endRadius: 65)
-        )
-        Spacer()
-        Ellipse().fill(
-            RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .center, startRadius: 10, endRadius: 65)
-        )
-        Spacer()
-        Ellipse().fill(
-        AngularGradient.init(gradient: Gradient(colors: [Color.blue, Color.yellow]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        )
-        Spacer()
-        Image("clock-solid")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 150, height: 50)
+        VStack{
+            Image("sample_dog_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                .shadow(color: .red, radius: 46, x: 0, y: 0)
+                .overlay(Rectangle().stroke(Color.blue, lineWidth: 10))
+                .opacity(0.5)
+            
+            Image("sample_dog_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                .clipShape(Circle())
+                .shadow(color: .green, radius: 46, x:90, y: 50)
+                .overlay(Circle().stroke(Color.purple, lineWidth: 20))
+                .opacity(0.25)
+        }
     }
 }
 
