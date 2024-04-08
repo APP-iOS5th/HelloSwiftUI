@@ -12,15 +12,29 @@ struct ContentView: View {
     @State private var value = 0
     @State private var sliderValue = 0.5
     var body: some View {
-        VStack {
-            Text("First")
-                .font(.system(size: 40))
-                .background(Color.yellow)
-            Text("Second View")
-                .font(.system(size: 40))
-                .background(Color.yellow)
+        VStack{
+            let myString = "Displays a string variable"
+            //            Text("Hello World, \(myString)")
+            Text("This is my age \(myString). Since I am retired, I am now eligible for a pension and Social Security so I can spend the rest of my life relaxing and enjoying life without having to work for an income anymore.")
+                .multilineTextAlignment(.trailing)
+                .truncationMode(.tail)
+                .lineLimit(3)
+            Spacer()
+            Text("Bold text")
+                .font(.title)
+                .bold()
+            Text("Italic")
+                .font(.title2)
+                .italic()
+            Text("Strikethrough")
+                .font(.subheadline)
+                .strikethrough()
+            Text("Custom Font Text")
+                .font(.custom("AmericanTypewriter", size: 24))
+            Text("Line Spacing\nSecond Line")
+                .font(.body)
+                .lineSpacing(20)
         }
-        .offset(x: 25, y: 125)
         
     }
 }
