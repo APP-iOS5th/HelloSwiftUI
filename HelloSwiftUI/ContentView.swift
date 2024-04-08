@@ -20,6 +20,8 @@ struct ContentView: View {
             Text("padding of 3")
                 .padding(3)
                 .background(Color.yellow)
+            
+            Spacer() // 양쪽 여백 추가
             //hstack으로 묶어주기
             HStack (alignment:.top) {
                 Text("Top padding only")
@@ -32,9 +34,12 @@ struct ContentView: View {
                     .padding(.bottom)
                     .background(Color.yellow)
             }
+            Spacer()
+
             Text("Leading padding only")
                 .padding(.leading,45)
                 .background(Color.yellow)
+            Spacer()
             Text("Top, Leading padding")
                 .padding([.top,.leading],45)
                 .background(Color.yellow)
