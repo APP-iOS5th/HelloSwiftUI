@@ -17,33 +17,30 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-//            ZStack {
-//                Image(systemName: "heart.fill")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .foregroundStyle(Color("custom_brown"))
-//                
-//                Image("sample_dog_square")
-//                                .resizable()
-//                                .frame(width: 250, height: 250)
-//                                .aspectRatio(contentMode: .fill)
-//            }
-//            Image(systemName: "heart.fill")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .foregroundStyle(Color("custom_brown"))
+            Button("여기를 클릭하세요") {
+                print("1")
+            }
             
-//            let customColor = Color(red: 1, green: 0, blue: 0)
-//            Image(systemName: "heart.fill")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .foregroundStyle(customColor)
-//            
-//            
-//            Image(systemName: "heart.fill")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .foregroundStyle(Color.myCustomColor)
+            Button {
+                print("2")
+            } label: {
+                Text("Click here")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color.green)
+                    .padding()
+                    .border(Color.red, width: 6)
+            }
+            
+            Button {
+                print("3")
+            } label : {
+                Image("sample_dog_square")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    .overlay(Circle().stroke(Color.yellow, lineWidth: 4))
+            }
+                
         }
     }
 }
