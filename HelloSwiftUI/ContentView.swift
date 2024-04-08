@@ -55,17 +55,51 @@ struct ContentView: View {
             //                .overlay(Circle().stroke(Color.purple, lineWidth: 20))
             
             /// 이미지 투명도 조절
-            Image("sample_dog_square")
-                .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .opacity(0.5)
+            //            Image("sample_dog_square")
+            //                .resizable()
+            //                .frame(width: 250, height: 250)
+            //                .aspectRatio(contentMode: .fill)
+            //                .opacity(0.5)
+            //
+            //            Image("sample_cat_square")
+            //                .resizable()
+            //                .frame(width: 250, height: 250)
+            //                .aspectRatio(contentMode: .fill)
+            //                .opacity(0.25)
             
-            Image("sample_cat_square")
-                .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .opacity(0.25)
+            HStack(alignment: .center) {
+                Image("sample_dog_square")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .aspectRatio(contentMode: .fill)
+                    .clipShape(Circle())
+                    .padding(.trailing, 15)
+                    .shadow(color: .red, radius: 46, x: 0, y: 0)
+                    .overlay(Circle().stroke(Color.purple, lineWidth: 10))
+                    .opacity(0.5)
+                
+                
+                Image("sample_cat_square")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(color: .green, radius: 46, x: 90, y: 50)
+                    .overlay(Rectangle().stroke(Color.blue, lineWidth: 10))
+                    .opacity(0.3)
+            }
+            
+            VStack {
+                Text("Mandoo, Tuna")
+                    .font(.largeTitle)
+                    .bold()
+                    .italic()
+                    .padding(.top, 25)
+                
+                Text("iOS World")
+                    .font(.largeTitle)
+                    .bold()
+                    .italic()
+            }.opacity(0.7).shadow(color: .blue, radius: 46, x: 0, y: 0)
         }
     }
 }
