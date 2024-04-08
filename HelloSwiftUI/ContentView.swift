@@ -7,33 +7,30 @@
 
 import SwiftUI
 
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
 struct ContentView: View {
-    @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
-    
     var body: some View {
         VStack {
-            Spacer()
-            // 이미지 크기 조정, 크롭(자르기, 원형), 그림자, 테두리, 투명도
-            Image("sample_dog_square")
+            // Asset Color scheme 사용
+            Image(systemName: "heart.fill")
                 .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .shadow(color: .red, radius: 46, x: 0, y: 0)
-                .overlay(Rectangle().stroke(.red, lineWidth: 3))
-                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-            Spacer()
-            Image("sample_cat_square")
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color("custom_brown"))
+
+            // 지역상수 사용
+            let customColor = Color(red: 1, green: 0, blue: 0)
+            Image(systemName: "heart.fill")
                 .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .clipShape(Circle())
-                .shadow(color: .green, radius: 10, x: 8, y: 8)
-                .overlay(Circle().stroke(.green, lineWidth: 5))
-                .opacity(0.2)
-            Spacer()
-            
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(customColor)
+
+            // 전역상수 사용
+            Image(systemName: "heart.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color.myCustomColor)
         }
     }
 }
