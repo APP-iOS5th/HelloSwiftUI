@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var sliderValue = 0.5
     
     var body: some View {
-        VStack() {
+        VStack(alignment: . trailing, spacing: 24) {
            Text("Default padding of 16 points")
                 .padding()
                 .background(.yellow)
@@ -25,23 +25,27 @@ struct ContentView: View {
             Text("Default padding of 3 points")
                  .padding(3)
                  .background(.yellow)
-            
-            Text("Top padding only")
-                .padding(.top)
-                 .background(.yellow)
-            
-            Text("Trailing padding only")
-                .padding(.trailing)
-                 .background(.yellow)
-            
-            Text("Bottom padding only")
-                .padding(.bottom)
-                 .background(.yellow)
-            
+            Spacer()
+            HStack(alignment: .top, spacing: 24){
+                Text("Top padding only")
+                    .padding(.top)
+                    .background(.yellow)
+                
+                Text("Trailing padding only")
+                    .padding(.trailing)
+                    .background(.yellow)
+                
+                Text("Bottom padding only")
+                    .padding(.bottom)
+                    .background(.yellow)
+            }
+            Spacer(minLength: 100)
             Text("Leading padding only")
                 .padding(.leading, 45)
                  .background(.yellow)
             
+            Spacer()
+            Spacer()
             Text("Top Leading padding only")
                 .padding([.top, .leading], 45)
                  .background(.yellow)
@@ -49,7 +53,6 @@ struct ContentView: View {
             Text("Top Leading and Bottom padding only")
                 .padding([.top, .leading, .bottom], 45)
                  .background(.yellow)
-            
         }//: VSTACK
     }
 }
