@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct CustomButtonExample: View {
+    
+    @State private var colorMe: Bool = false
+    
     var body: some View {
         VStack {
+            Rectangle()
+                .fill(colorMe ? .green : .gray)
+                .frame(width: 200, height: 200)
+            
+            MultipleSpacer(multiple: 1)
+            
             Button("클릭해봐 1") {
-                print("클릭했네? 1")
+                colorMe.toggle()
             }
             
             Button(action: {
-                print("클릭했네? 2")
+                colorMe.toggle()
             }, label: {
                 Text("클릭해봐 2")
                     .font(.largeTitle)
@@ -25,7 +34,7 @@ struct CustomButtonExample: View {
             })
             
             Button {
-                print("클릭했네? 3")
+                colorMe.toggle()
             } label: {
                 HStack {
                     Text("클릭해봐 3")
