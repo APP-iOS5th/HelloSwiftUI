@@ -27,7 +27,7 @@ struct ContentView: View {
                 .padding(3)
                 .background(.yellow)
             
-            HStack (alignment: .bottom) {
+            HStack (alignment: .bottom, spacing: 24) {
                 
                 Text("Top padding only")
                     .padding(.top)
