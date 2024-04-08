@@ -13,28 +13,28 @@ struct ContentView: View {
     @State private var sliderValue = 0.5
     
     var body: some View {
-        VStack (alignment: .leading) {
-            Text("Default padding of 16 points")
-                .padding()
-                .background(Color.yellow)
-            Text("Padding of 45")
-                .padding(45)
-                .background(Color.yellow)
-            Spacer(minLength: 500)
-            HStack (alignment: .center, spacing: 25){
-                Text("Top padding only")
-                    .padding(.top)
+        VStack {
+            ZStack {
+                Text("Top")
+                    .font(.system(size: 40))
                     .background(Color.yellow)
-                Text("Top and trailing padding of 45")
-                    .padding([.top, .trailing], 45)
+                Text("offset")
+                    .font(.system(size: 40))
                     .background(Color.yellow)
-            }
-            Spacer()
-            Text("Padding of 45")
-                .padding(.top, 45)
-                .padding(.bottom, 30)
-                .background(Color.yellow)
+                    .offset(x: 45, y: 125)
+                Text("position")
+                    .font(.system(size: 40))
+                    .background(Color.yellow)
+                    .position(x: 45, y: 125)
+                Text("First")
+                    .font(.system(size: 40))
+                    .background(Color.yellow)
+                Text("Second")
+                    .font(.system(size: 40))
+                    .background(Color.yellow)            }
         }
+        .offset(x: 30, y: 100)
+//        .position(x: 30, y: 100)
     }
 }
 
