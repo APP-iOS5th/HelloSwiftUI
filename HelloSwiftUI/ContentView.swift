@@ -13,22 +13,14 @@ struct ContentView: View {
     @State private var sliderValue = 0.5
     var body: some View {
         VStack {
-            ZStack{
-                Text("Top")
-                    .font(.system(size: 40))
-                    .background(Color.yellow)
-                Text("Top")
-                    .font(.system(size: 40))
-                    .background(Color.yellow)
-                    .position(x: 255, y: 127)
-                Text("Top")
-                    .font(.system(size: 40))
-                    .background(Color.yellow)
-                    .offset(x: 74, y: 125)
-            }
-            
-            
+            Text("First")
+                .font(.system(size: 40))
+                .background(Color.yellow)
+            Text("Second View")
+                .font(.system(size: 40))
+                .background(Color.yellow)
         }
+        .offset(x: 25, y: 125)
         
     }
 }
