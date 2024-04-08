@@ -7,29 +7,30 @@
 
 import SwiftUI
 
+extension Color {
+    static let myCustomColor = Color(red: 0.9, green: 0.6, blue: 0.8)
+}
+
 struct ContentView: View {
     
     var body: some View {
         VStack {
             
-            Image("sample_dog_square")
+            Image(systemName: "heart.fill")
                 .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 20, x: 0, y:0) // 그림자
-                .overlay(Rectangle().stroke(Color.gray, lineWidth: 10)) // border
-                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/) // 투명도
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color("custom_color"))
             
-            Spacer()
-            
-            Image("sample_dog_square")
+            let customColor = Color(red:1, green:0.1, blue: 0)
+            Image(systemName: "heart.fill")
                 .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/) // 원형으로 도형 변경
-                .shadow(color: .yellow, radius: 20, x: 30, y:20) // 그림자
-                .overlay(Circle().stroke(Color.purple, lineWidth: 20)) // border
-                .opacity(0.5) // 투명도
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(customColor)
+            
+            Image(systemName: "heart.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color.myCustomColor)
         }
     }
 }
