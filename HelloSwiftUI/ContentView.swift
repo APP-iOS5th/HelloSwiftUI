@@ -23,17 +23,20 @@ struct ContentView: View {
                 .padding(3)
                 .background(Color.yellow)
             
-            Text("Top padding only")
-                .padding(.top)
-                .background(Color.yellow)
-            
-            Text("Trailing padding only")
-                .padding(.trailing)
-                .background(Color.yellow)
-            
-            Text("Bottom padding only")
-                .padding(.bottom)
-                .background(Color.yellow)
+            HStack (alignment: .bottom) {
+                
+                Text("Top padding only")
+                    .padding(.top)
+                    .background(Color.yellow)
+                
+                Text("Trailing padding only")
+                    .padding(.trailing)
+                    .background(Color.yellow)
+                
+                Text("Bottom padding only")
+                    .padding(.bottom)
+                    .background(Color.yellow)
+            }
             
             Text("Leading padding only")
                 .padding(.leading, 30)
