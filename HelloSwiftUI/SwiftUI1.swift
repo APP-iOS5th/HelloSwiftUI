@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SwiftUI1: View {
     
     @State private var isToggle: Bool = true
     @State private var value: Int = 0
@@ -37,7 +37,7 @@ struct ContentView: View {
             HStack {
                 Text("왼쪽")
                     .tint(.red)
-                CustomText(text: "오른쪽")
+                CustomText(text: "오른쪽", textColor: .brown)
             }
             ZStack {
                 Text("\t배경")
@@ -58,5 +58,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    SwiftUI1()
 }

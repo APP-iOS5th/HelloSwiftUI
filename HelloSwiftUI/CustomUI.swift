@@ -10,9 +10,10 @@ import SwiftUI
 
 struct CustomText: View {
     var text: String
+    var textColor: Color
     
     var body: some View {
         Text(text)
-            .tint(.red)
+            .foregroundStyle(textColor)
     }
 }
