@@ -10,7 +10,15 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            
+            Text("Default padding of 16 points")
+                .padding()
+                .background(Color.yellow)
+            Text("Default padding of 45 points")
+                .padding(45)
+                .background(Color.yellow)
+            Text("Default padding of 3 points")
+                .padding(3)
+                .background(Color.yellow)
         }
     }
 }
