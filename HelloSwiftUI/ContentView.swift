@@ -9,13 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack { //Vertical
+            Text("위")
+            HStack { //Horizontal
+                Text("왼쪽")
+                Text("오른쪽")
+            }
+            ZStack {
+                Text("배경")
+                Text("전경")
+            }
+            Button("Button"){
+                print("button click1")
+            }
+            
+            Button(action: {
+                print("button click1")
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
         }
-        .padding()
     }
 }
 
