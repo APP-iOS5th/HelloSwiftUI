@@ -7,30 +7,35 @@
 
 import SwiftUI
 
-extension Color {
-    static let myCustomColor = Color(red: 0.9, green: 0.6, blue: 0.8)
-}
 
 struct ContentView: View {
     
     var body: some View {
         VStack {
+            Button("여기를 클릭하세요") {
+                print("클릭시 실행코드 1")
+            }
             
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(Color("custom_color"))
+            Button {
+                print("클릭시 실행코드 2")
+            } label: {
+                Text("Click here")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color(.green))
+                    .padding()
+                    .border(Color.black, width: 6)
+            }
             
-            let customColor = Color(red:1, green:0.1, blue: 0)
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(customColor)
+            Button {
+                print("클릭시 실행코드 3")
+            } label: {
+                Image("sample_dog_square")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    .overlay(Circle().stroke(Color.yellow, lineWidth: 4))
+            }
             
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(Color.myCustomColor)
         }
     }
 }
