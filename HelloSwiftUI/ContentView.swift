@@ -369,7 +369,7 @@ struct ContentView: View {
                 Text("Bored").tag("bored")
             })
             .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) { newValue in
+            .onChange(of: message) { oldValue, newValue in
                 switch newValue {
                 case "happy": message = "Be happy and joyous"
                 case "sad": message = "Life can be a struggle at times"
