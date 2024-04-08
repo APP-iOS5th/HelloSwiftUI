@@ -12,33 +12,24 @@ extension Color {
 }
 
 struct ContentView: View {
-    @State var colorMe = false
+    @State private var message = ""
+    
     var body: some View {
-        VStack {
-            Rectangle()
-                .fill(colorMe ? Color.green : Color.gray)
-                .frame(width: 250, height: 100)
-            
-            Button("여기를 클릭하세요") {
-                colorMe.toggle()
-            }
-            Button {
-                colorMe.toggle()
-            } label: {
-                Text("Click here")
-                    .font(.largeTitle)
-                    .foregroundColor(.green)
-                    .padding()
-                    .border(Color.red, width: 6)
-            }
-            Button {
-                colorMe.toggle()
-            } label: {
-                Image("sample_dog_square")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.yellow, lineWidth: 4))
+        VStack (spacing: 28) {
+            Text(message)
+            Picker("Favorite Color", selection: $message, content: {
+                Text("Happy").tag("happy")
+                Text("Sad").tag("sad")
+                Text("Bored").tag("bored")
+            })
+            .pickerStyle(SegmentedPickerStyle())
+            .onChange(of: message) { oldValue, newValue in
+                switch newValue {
+                case "happy": message = "Be happy and joyous"
+                case "sad": message = "Life can be a struggle at times"
+                case "bored": message = "Look for your purpose"
+                default: break
+                }
             }
         }
     }
