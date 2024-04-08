@@ -8,39 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack (alignment: .trailing, spacing: 24){
-
-            Text("Default padding of 16 points")
-                .padding()
-                .background(Color.orange)
-            Text("Default padding of 45 points")
-                .padding(45)
-                .background(Color.orange)
-            Text("Default padding of 3 points")
-                .padding(3)
-                .background(Color.orange)
-            HStack(alignment: .top) {
-                Text("Top padding only")
-                    .padding(.top)
-                    .background(Color.orange)
-                Text("Trailing padding only")
-                    .padding(.trailing)
-                    .background(Color.orange)
-                Text("Trailing padding only")
-                    .padding(.bottom)
-                    .background(Color.orange)
-            }
-            Text("Leading padding only")
-                .padding(.leading)
-                .background(Color.orange)
-            Text("Top, Leading padding")
-                .padding([.leading, .top])
-                .background(Color.orange)
-            Text("Top, Leading and Bottom padding")
-                .padding([.leading, .top, .bottom])
-                .background(Color.orange)
-            
+    var body: some View{
+        VStack {
+//            Capsule().fill(Color.yellow)
+//            Circle().fill(Color.blue)
+//            Ellipse().fill(Color.green)
+//            Rectangle().fill(Color.red)
+//            RoundedRectangle(cornerRadius: 40)
+//                .fill(Color.brown)
+            Spacer()
+            Ellipse().fill(
+                RadialGradient(gradient: Gradient(colors: [.blue, .red]), center: .top, startRadius: 10, endRadius: 60))
+            Spacer()
+            Ellipse().fill(
+                RadialGradient(gradient: Gradient(colors: [.blue, .red]), center: .center, startRadius: 10, endRadius: 60))
+            Spacer()
+            Ellipse().fill(
+                AngularGradient(colors: [.blue, .yellow], center: .center)
+    )
+            Image(systemName: "tortoise.fill")
+                       Image(systemName: "tortoise.fill").font(.largeTitle)
+                       Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+                       Spacer()
+                       Image("clock-solid")
+                           .resizable()
+                           .aspectRatio(contentMode: .fit)
+                           .frame(width: 150, height: 50)
             
         }
     }
