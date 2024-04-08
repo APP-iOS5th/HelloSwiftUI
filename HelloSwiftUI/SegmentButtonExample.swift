@@ -9,16 +9,17 @@ import SwiftUI
 
 struct SegmentButtonExample: View {
     
-    @State private var selectedColor: Color = Color.gray
+//    @State private var selectedColor: Color = Color.gray
     @State private var message: String = ""
     
     var body: some View {
         VStack(spacing: 28) {
             
             Text(message)
+                .transition(.opacity)
             
-            Rectangle()
-                .fill(selectedColor)
+//            Rectangle()
+//                .fill(selectedColor)
             
             Picker("Favorite Color", selection: $message) {
                 Text("Happy").tag("happy")
@@ -36,6 +37,7 @@ struct SegmentButtonExample: View {
             }
         }
         .padding() // MARK: default padding: 16
+        .animation(.bouncy)
     }
 }
 
