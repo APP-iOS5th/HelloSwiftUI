@@ -10,35 +10,37 @@ import SwiftUI
 struct ContentView: View {
     var body: some View{
         VStack {
-//            ZStack{
-//                Text("Top")
-//                    .font(.system(size: 40))
-//                    .background(Color.yellow)
-//                Text("Top")
-//                    .font(.system(size: 40))
-//                    .background(Color.yellow)
-//                //position은 절대 좌표계에서 이동한위치
-//                    .position(x:255, y:127)
-//                Text("Top")
-//                        .font(.system(size:40))
-//                        .background(Color.yellow)
-//                //offset은 나의 위치에서 이동한 위치
-//                        .offset(x:74, y:125)
-//            }
-            Text("First")
-                .font(.system(size:40))
-                .background(Color.yellow)
-               
-            Text("second view")
-                .font(.system(size: 40))
-                .background(Color.yellow)
-
-                }
-        //VStack offset 설정
-        .offset(x:25,y:125)
+            let myString = "Displays a string variable"
+            //            Text("Hello World, \(myString)")
+            Text("This is my age \(myString). Since I am retired, I am now eligible for a pension and Social Security so I can spend the rest of my life relaxing and enjoying life without having to work for an income anymore.")
+                .multilineTextAlignment(.trailing)
+                .truncationMode(.tail)
+                .lineLimit(3)
             
-            }
+            
+            Spacer()
+            Text("Bold Text")
+                .font(.title)
+                .bold()
+            Text("Italic")
+                .font(.title2)
+                .italic()
+            Text("Underlined")
+                .font(.headline)
+                .underline()
+            Text("Strikethrough")
+                .font(.subheadline)
+                .strikethrough()
+            Text("Custom Font Text")
+                .font(.custom("AmericanTyperwriter", size: 24))
+                .bold()
+            Text("Line Spacing")
+                .font(.body)
+                .lineSpacing(10)
+            
         }
+    }
+}
 
 #Preview {
     ContentView()
