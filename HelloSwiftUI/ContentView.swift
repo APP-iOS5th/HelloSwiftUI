@@ -12,22 +12,35 @@ extension Color {
 }
 
 
+
 struct ContentView: View {
+    @State var colorMe = false
     var body: some View{
         VStack {
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(Color("custom_e"))
-            let customColor = Color(red:1, green: 0.2, blue: 0.1)
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(customColor)
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(Color(Color.myCustomColor))
+            Rectangle()
+                .fill(colorMe ? Color.green : Color.red)
+                .frame(width: 80, height: 80)
+            Button("클릭") {
+                colorMe.toggle()
+            }
+            Button{
+                colorMe.toggle()
+            } label: {
+                Text("클릭해")
+                    .font(.largeTitle)
+                    .foregroundColor(.green)
+                    .padding()
+                    .border(Color.black)
+            }
+            Button{
+                colorMe.toggle()
+            } label: {
+                Image("IMG_1608")
+                    .resizable()
+                    .frame(width: 100, height: 150)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.yellow, lineWidth: 4))
+            }
         }
     }
 }
