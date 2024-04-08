@@ -19,7 +19,8 @@ struct ContentView: View {
             Text("Default paddding of 3 points")
                 .padding(3)
                 .background(Color.yellow)
-            HStack (alignment: .bottom) {
+            Spacer()
+            HStack (alignment: .bottom, spacing: 24) {
                 Text("Top padding only")
                     .padding(.top)
                     .background(Color.yellow)
@@ -30,6 +31,7 @@ struct ContentView: View {
                     .padding(.bottom)
                     .background(Color.yellow)
             }
+            Spacer()
             Text("Leading padding only")
                 .padding(.leading, 45)
                 .background(Color.yellow)
