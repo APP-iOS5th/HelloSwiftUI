@@ -14,29 +14,34 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors: [.blue, .yellow]), center: .top, startRadius: 10, endRadius: 65)
-            )
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors: [.blue, .yellow]), center: .center, startRadius: 10, endRadius: 65)
-            )
-            Ellipse().fill(
-                AngularGradient(
-                    gradient: Gradient(colors: [.purple, .yellow]), center: .center)
-            )
+//            Image("sample_dog_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//            
+//            Image("sample_cat_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
-            
-            Spacer()
-            
-            Image(systemName: "clock.fill")
+            Image("sample_dog_square")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 50)
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                .shadow(color: .red, radius: 46, x: 0, y: 0)
+                .overlay(Rectangle().stroke(Color.blue, lineWidth: 10))
+                .opacity(0.5)
+            
+            Image("sample_cat_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                .shadow(color: .red, radius: 46, x: 90, y: 50)
+                .overlay(Circle().stroke(Color.purple, lineWidth: 10))
+                .opacity(0.2)
+            
         }
     }
 }
