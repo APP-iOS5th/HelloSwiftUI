@@ -9,16 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        VStack() {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
         }
-        .padding()
+        
+        
+        
+        
     }
 }
 
 #Preview {
     ContentView()
 }
+
+/*
+ swift 3.0 이전 프리뷰
+struct ContentView_Preview: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+*/
