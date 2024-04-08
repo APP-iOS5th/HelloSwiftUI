@@ -14,8 +14,29 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Label("Text", systemImage: "clock.circle")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors: [.blue, .yellow]), center: .top, startRadius: 10, endRadius: 65)
+            )
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors: [.blue, .yellow]), center: .center, startRadius: 10, endRadius: 65)
+            )
+            Ellipse().fill(
+                AngularGradient(
+                    gradient: Gradient(colors: [.purple, .yellow]), center: .center)
+            )
+            
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill").font(.largeTitle)
+            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+            
+            Spacer()
+            
+            Image(systemName: "clock.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 50)
         }
     }
 }
