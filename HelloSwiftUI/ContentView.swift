@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var sliderValue = 0.5
     
     var body: some View {
-        VStack {
+        VStack (alignment: .leading, spacing: 14) {
             
             Text("Default padding of 16 points")
                 .padding()
