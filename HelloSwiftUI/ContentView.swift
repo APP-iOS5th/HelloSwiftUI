@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
 struct ContentView: View {
     @State private var isOn = true
     @State private var value = 0
@@ -14,34 +17,33 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-//            Image("sample_dog_square")
+//            ZStack {
+//                Image(systemName: "heart.fill")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .foregroundStyle(Color("custom_brown"))
+//                
+//                Image("sample_dog_square")
+//                                .resizable()
+//                                .frame(width: 250, height: 250)
+//                                .aspectRatio(contentMode: .fill)
+//            }
+//            Image(systemName: "heart.fill")
 //                .resizable()
-//                .frame(width: 250, height: 250)
-//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                .aspectRatio(contentMode: .fit)
+//                .foregroundStyle(Color("custom_brown"))
+            
+//            let customColor = Color(red: 1, green: 0, blue: 0)
+//            Image(systemName: "heart.fill")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .foregroundStyle(customColor)
 //            
-//            Image("sample_cat_square")
+//            
+//            Image(systemName: "heart.fill")
 //                .resizable()
-//                .frame(width: 250, height: 250)
-//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-//                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-            
-            Image("sample_dog_square")
-                .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                .shadow(color: .red, radius: 46, x: 0, y: 0)
-                .overlay(Rectangle().stroke(Color.blue, lineWidth: 10))
-                .opacity(0.5)
-            
-            Image("sample_cat_square")
-                .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                .shadow(color: .red, radius: 46, x: 90, y: 50)
-                .overlay(Circle().stroke(Color.purple, lineWidth: 10))
-                .opacity(0.2)
-            
+//                .aspectRatio(contentMode: .fit)
+//                .foregroundStyle(Color.myCustomColor)
         }
     }
 }
