@@ -10,44 +10,29 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            //            Capsule().fill(Color.yellow)
-            //            Circle().fill(Color.blue)
-            //            Ellipse().fill(Color.brown)
-            //            Rectangle().fill(Color.red)
-            //            RoundedRectangle(cornerRadius: 50).fill(Color.green)
-            
-//            Spacer()
-//            Ellipse().fill(
-//                RadialGradient(
-//                    gradient: Gradient(colors: [.blue,.yellow]),
-//                    center: .top,
-//                    startRadius: 10,
-//                    endRadius: 65))
-//            Ellipse().fill(
-//                RadialGradient(
-//                    gradient: Gradient(colors: [.blue,.yellow]),
-//                    center: .center,
-//                    startRadius: 10,
-//                    endRadius: 100))
-//            Ellipse().fill(
-//                RadialGradient(
-//                    gradient: Gradient(colors: [.blue,.yellow]),
-//                    center: .center,
-//                    startRadius: 10,
-//                    endRadius: 65))
-//            Ellipse().fill(
-//                AngularGradient(
-//                    gradient: Gradient(colors: [.blue,.yellow]),
-//                    center: .center
-//                ))
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
-            Spacer()
-            Image("clock-solid")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150,height: 50)
+         Image("뿅망치섬")
+//                .resizable()
+                .frame(width: 300, height: 300)
+                .aspectRatio(contentMode: .fill)
+                .clipped()
+                .opacity(0.5)
+            Image("고양이")
+                   .resizable()
+                   .frame(width: 300, height: 300)
+                   .aspectRatio(contentMode: .fill)
+                   .opacity(0.8)
+            Image("뿅망치섬")
+//                   .resizable()
+                   .frame(width: 300, height: 300)
+                   .aspectRatio(contentMode: .fill)
+                   .clipped()
+                   .shadow(color: .customColor1, radius: 50, x:0, y:0)
+                   .overlay(Rectangle().stroke(Color.customColor2, lineWidth: 6))
+            Image("고양이")
+                   .resizable()
+                   .frame(width: 300, height: 300)
+                   .aspectRatio(contentMode: .fill)
+                   .opacity(0.8)
         }
     }
 }
