@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    //SwiftUI Slider, Stepper, @State
     @State private var isOn = true
     @State private var value = 0
     @State private var sliderValue = 0.5
