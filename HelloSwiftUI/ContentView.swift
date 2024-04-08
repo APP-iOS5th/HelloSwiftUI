@@ -8,10 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var count = 0
     
     var body: some View {
         VStack {
-
+            Text("Count")
+                .font(.largeTitle)
+                .padding()
+            Spacer()
+            Text("\(count)")
+                .font(.largeTitle)
+            HStack {
+                Button("+") {
+                    count += 1
+                }
+                .font(.title)
+                .padding()
+                
+                Button("-") {
+                    count -= 1
+                }
+                .font(.title)
+                .padding()
+            }
+            Spacer()
         }
     }
 }
