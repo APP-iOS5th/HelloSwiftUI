@@ -8,23 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-   
+    
     var body: some View {
         VStack{
-            Text("Top")
+            /*Text("Top")
+             .font(.system(size: 40))
+             .background(Color.yellow)
+             Text("Top")
+             .font(.system(size: 40))
+             .background(Color.yellow)
+             .offset(x: 74, y: 125)
+             Text("Top")
+             .font(.system(size: 40))
+             .background(Color.yellow)
+             .offset(x: 74, y: 125)
+             } */
+            
+            Text("First")
+                .font(.system(size:40))
+                .background(Color.yellow)
+            Text("Second View")
                 .font(.system(size: 40))
                 .background(Color.yellow)
-            Text("Top")
-                .font(.system(size: 40))
-                .background(Color.yellow)
-                .offset(x: 74, y: 125)
-            Text("Top")
-                .font(.system(size: 40))
-                .background(Color.yellow)
-                .offset(x: 74, y: 125)
         }
-        
-       
+        // VStack offset 설명
+        .offset(x: 25, y: 125)
     }
 }
 
