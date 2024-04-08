@@ -67,9 +67,9 @@
 				4A0705FF2BC3ACFA003A8AC1 /* ZStackView.swift */,
 				4A0706012BC3B2D6003A8AC1 /* Text_View.swift */,
 				4A8D48272BC3C9B100C9871B /* GeometryImage.swift */,
+				4A8D48252BC3C2E400C9871B /* Shape.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
-				4A8D48252BC3C2E400C9871B /* Shape.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";

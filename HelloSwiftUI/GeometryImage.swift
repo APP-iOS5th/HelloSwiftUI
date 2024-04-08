@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
+
 struct GeometryImage: View {
     var body: some View {
         
@@ -43,10 +47,10 @@ struct GeometryImage: View {
                 Image("sample_dog_square")
                     .resizable()
                     .frame(width: 50, height: 50)
-                    .clipShape(Circle())
+                    .clipShape(Rectangle())
                     .aspectRatio(contentMode: .fill)
                     .shadow(color: .green, radius: 46, x:90, y: 50)
-                    .overlay(Rectangle().stroke(.blue))
+                    .overlay(Rectangle().stroke(.blue, lineWidth:  3))
                 
                 Image("sample_cat_square")
                     .resizable()
@@ -54,7 +58,7 @@ struct GeometryImage: View {
                     .clipShape(Circle())
                     .aspectRatio(contentMode: .fill)
                     .shadow(color: .green, radius: 46, x:90, y: 50)
-                    .overlay(Circle().stroke(.blue, lineWidth: 8))
+                    .overlay(Circle().stroke(.blue, lineWidth: 3))
                 
                 
             }
@@ -77,6 +81,28 @@ struct GeometryImage: View {
                     .opacity(0.25)
                 
             }
+            Spacer()
+            
+            HStack {
+                Image(systemName: "heart.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color("custom_brown"))
+                
+                let customColor = Color(red: 1, green: 0, blue: 0)
+                Image(systemName: "heart.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(customColor)
+                
+                //전역상수 사용
+                Image(systemName: "heart.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color.myCustomColor)
+
+            }
+            
             Spacer()
         }
         
