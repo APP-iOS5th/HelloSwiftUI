@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Padding: View {
     var body: some View {
-        VStack {
+        VStack(alignment: .trailing,spacing: 24) {
             Text("Default padding of 16 points")
                 .padding()
                 .background(.yellow)
@@ -41,7 +41,6 @@ struct Padding: View {
             Text("Top,Leading Padding only")
                 .padding([.top,.leading],45)
                 .background(.yellow)
-            
             
             Text("Top,Leading and Bottom")
                 .padding([.top,.leading,.bottom],45)
