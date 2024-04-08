@@ -20,6 +20,7 @@
 		CDD885412BC3CEDC00C7390F /* ImageControlExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD885402BC3CEDC00C7390F /* ImageControlExample.swift */; };
 		CDD885432BC3D54100C7390F /* CustomColorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD885422BC3D54100C7390F /* CustomColorExample.swift */; };
 		CDD885452BC3D80900C7390F /* CustomButtonExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD885442BC3D80900C7390F /* CustomButtonExample.swift */; };
+		CDD885472BC3DEF500C7390F /* SegmentButtonExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD885462BC3DEF500C7390F /* SegmentButtonExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		CDD885402BC3CEDC00C7390F /* ImageControlExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageControlExample.swift; sourceTree = "<group>"; };
 		CDD885422BC3D54100C7390F /* CustomColorExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorExample.swift; sourceTree = "<group>"; };
 		CDD885442BC3D80900C7390F /* CustomButtonExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonExample.swift; sourceTree = "<group>"; };
+		CDD885462BC3DEF500C7390F /* SegmentButtonExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentButtonExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				CDD885402BC3CEDC00C7390F /* ImageControlExample.swift */,
 				CDD885422BC3D54100C7390F /* CustomColorExample.swift */,
 				CDD885442BC3D80900C7390F /* CustomButtonExample.swift */,
+				CDD885462BC3DEF500C7390F /* SegmentButtonExample.swift */,
 				CDD885102BC3711900C7390F /* Assets.xcassets */,
 				CDD885122BC3711900C7390F /* Preview Content */,
 			);
@@ -168,6 +171,7 @@
 				CDD885412BC3CEDC00C7390F /* ImageControlExample.swift in Sources */,
 				CDD8850F2BC3711800C7390F /* UIComponentExample.swift in Sources */,
 				CDD885212BC3B34600C7390F /* TextStyleExample.swift in Sources */,
+				CDD885472BC3DEF500C7390F /* SegmentButtonExample.swift in Sources */,
 				CDD885432BC3D54100C7390F /* CustomColorExample.swift in Sources */,
 				CDD8851B2BC3863E00C7390F /* CustomUI.swift in Sources */,
 				CDD8853F2BC3C25400C7390F /* UIComponent2Example.swift in Sources */,
