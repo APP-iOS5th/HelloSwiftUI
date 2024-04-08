@@ -3,31 +3,32 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            //            ZStack {
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(Color.yellow)
-            //
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(Color.blue)
-            //                    .offset(x: 255, y: 127)
-            //
-            //                Text("Top")
-            //                    .font(.system(size: 40))
-            //                    .background(Color.red)
-            //                    .offset(x: 74, y: 125)
-            //            }
-            VStack {
-                Text("First")
-                    .font(.system(size: 40))
-                    .background(Color.yellow)
-                
-                Text("Second View")
-                    .font(.system(size: 40))
-                    .background(Color.blue)
-            }
-            .offset(x: 25, y: 125)
+            let myString = "Displays a string variable"
+            Text("This is my age \(myString). Since I am retired, I am now eligible for a pension and Social Security so I can spend the rest of my life relaxing and enjoying life without having to work for an income anymore.")
+                .multilineTextAlignment(.leading)
+                .truncationMode(.tail)
+                .lineLimit(3)
+            
+            Spacer()
+            
+            Text("Bold Text")
+                .font(.title)
+                .bold()
+            Text("Italic")
+                .font(.title2)
+                .italic()
+            Text("UnderLined")
+                .font(.headline)
+                .underline()
+            Text("Strikethrough")
+                .font(.subheadline)
+                .strikethrough()
+            Text("Custom Font Text")
+                .font(.custom("AmericanTypewriter", size: 20))
+            Text("Line Spacing\nSecond Line")
+                .font(.body)
+                .lineSpacing(20)
+            
         }
     }
 }
