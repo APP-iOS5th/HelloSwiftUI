@@ -25,7 +25,7 @@ struct MultipleSpacer: View {
         if multiple > 0 {        
             let multipleArray: Range<Int> = Range(1...multiple)
             
-            ForEach(multipleArray) { _ in
+            ForEach(multipleArray, id: \.self) { _ in
                 Spacer()
             }
         }
