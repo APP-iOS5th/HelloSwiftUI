@@ -11,23 +11,23 @@ struct ZStackView: View {
     var body: some View {
         VStack {
             
-            ZStack {
-                
-                Text("Top")
-                    .font(.system(size: 40))
-                    .background(.yellow)
-                
-                Text("Top")
-                    .font(.system(size: 40))
-                    .background(.yellow)
-                    .position(x: 255, y: 127)
-                
-                Text("Top")
-                    .font(.system(size: 40))
-                    .background(.yellow)
-                    .offset(x: 74, y: 125)
-                
-            }//ZStack
+//            ZStack {
+//                
+//                Text("Top")
+//                    .font(.system(size: 40))
+//                    .background(.yellow)
+//                
+//                Text("Top")
+//                    .font(.system(size: 40))
+//                    .background(.yellow)
+//                    .position(x: 255, y: 127)
+//                
+//                Text("Top")
+//                    .font(.system(size: 40))
+//                    .background(.yellow)
+//                    .offset(x: 74, y: 125)
+//                
+//            }//ZStack
             
             VStack {
                 Text("First")
