@@ -22,6 +22,8 @@ struct Padding: View {
                 .padding(3)
                 .background(.yellow)
             
+            Spacer()
+            
             HStack(alignment:.bottom,spacing: 24){
                 Text("Top Padding only")
                     .padding(.top)
@@ -36,11 +38,11 @@ struct Padding: View {
                     .background(.yellow)
             }
             
-           
-            
+            Spacer()
             Text("Leading Padding only")
                 .padding(.leading,45)
                 .background(.yellow)
+            Spacer()
             
             Text("Top,Leading Padding only")
                 .padding([.top,.leading],45)
@@ -49,7 +51,6 @@ struct Padding: View {
             Text("Top,Leading and Bottom")
                 .padding([.top,.leading,.bottom],45)
                 .background(.yellow)
-            
             
             
         }
