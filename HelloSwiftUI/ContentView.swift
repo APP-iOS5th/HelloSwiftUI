@@ -20,7 +20,7 @@ struct ContentView: View {
                     .border(Color.red, width: 6)
             }
             Button {
-                
+                print("Click here2")
             } label: {
                 Image("sample_dog_square")
                     .resizable()
