@@ -13,32 +13,35 @@ struct ContentView: View {
     @State private var sliderValue = 0.5
     var body: some View {
         VStack{
-            Slider(value: $sliderValue, in: 0...10)
-            Stepper("값\(value)",value: $value, in: 0...10)
-            
-            Toggle("Toggle message on/off", isOn: $isOn)
-                
-            Text("위")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                
-            HStack {
-                Text("왼쪽")
-                Text("오른쪽")
-            }
-            ZStack {
-                Text("  배경")
-                Text("전경  ")
-            }
-            Button("Button") {
-                print("button1 click")
-            }
-            Button(action:  {
-                print("button2 click")
-            }, label: {
-                Text("Button")
-            })
+            Text("Default padding of 16 points")
+                .padding()
+                .background(Color.yellow)
+            Text("Default padding of 45 posints")
+                .padding(45)
+                .background(Color.yellow)
+            Text("Default padding of 3 posints")
+                .padding(3)
+                .background(Color.yellow)
+            Text("Top padding only")
+                .padding(.top)
+                .background(Color.yellow)
+            Text("Trailing padding only")
+                .padding(.trailing)
+                .background(Color.yellow)
+            Text("Bottom padding only")
+                .padding(.bottom)
+                .background(Color.yellow)
+            Text("Leading padding only")
+                .padding(.leading, 45)
+                .background(Color.yellow)
+            Text("Top, Leading padding")
+                .padding([.top, .leading], 30)
+                .background(Color.yellow)
+            Text("Top, Leading and Bottom")
+                .padding([.top, .leading, .bottom], 40)
+                .background(Color.yellow)
         }
+        
     }
 }
 
