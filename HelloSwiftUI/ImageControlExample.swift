@@ -61,6 +61,7 @@ struct ImageControlExample: View {
                 .frame(width: 250, height: 250)
                 .aspectRatio(contentMode: .fill)
                 .opacity(0.25)
+            
         }
     }
 }
