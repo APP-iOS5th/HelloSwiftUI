@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            Spacer()
             Text("Default paddding of 16 points")
                 .padding()
                 .background(Color.yellow)
@@ -29,6 +30,7 @@ struct ContentView: View {
             Text("Bottom padding only")
                 .padding(.bottom)
                 .background(Color.yellow)
+            Spacer()
             Text("Leading padding only")
                 .padding(.leading, 45)
                 .background(Color.yellow)
@@ -39,6 +41,7 @@ struct ContentView: View {
             Text("Top, Leading and Bottom")
                 .padding([.top, .leading, .bottom], 45)
                 .background(Color.yellow)
+            Spacer()
         }
     }
 }
