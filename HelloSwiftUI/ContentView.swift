@@ -9,16 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack() {
-            Label("Text", systemImage: "clock.circle").font(.title)
-            Label {
-                Text("No modifiers")
-            } icon: {
-                Image("clock-solid")
-                    .resizable()
-                    .frame(width: 20.0, height: 20.0)
-            }
-        }
+//        Capsule().fill(Color.blue)
+//        Circle().fill(Color.yellow)
+//        Ellipse().fill(Color.brown)
+//        Rectangle().fill(Color.red)
+//        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).Color.green
+        
+        Spacer()
+        Ellipse().fill(
+            RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .top, startRadius: 10, endRadius: 65)
+        )
+        Spacer()
+        Ellipse().fill(
+            RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .center, startRadius: 10, endRadius: 65)
+        )
+        Spacer()
+        Ellipse().fill(
+        AngularGradient.init(gradient: Gradient(colors: [Color.blue, Color.yellow]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        )
+        Spacer()
+        Image("clock-solid")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 150, height: 50)
     }
 }
 
