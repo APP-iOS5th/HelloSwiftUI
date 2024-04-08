@@ -11,18 +11,20 @@ extension Color {
     static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
 }
 struct ContentView: View {
-    @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
+    @State var colorMe = false
     
     var body: some View {
         VStack {
+            Rectangle()
+                .fill(colorMe ? Color.green : Color.gray)
+                .frame(width: 250, height: 100)
+            
             Button("여기를 클릭하세요") {
-                print("1")
+                colorMe.toggle()
             }
             
             Button {
-                print("2")
+                colorMe.toggle()
             } label: {
                 Text("Click here")
                     .font(.largeTitle)
