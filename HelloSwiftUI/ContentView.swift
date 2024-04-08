@@ -10,12 +10,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("위")
+            HStack {
+                Text("왼쪽")
+                Text("오른쪽")
+            }
+            ZStack {
+                Text("배경")
+                Text("전경")
+            }
+            Button("Button") {
+                print("button1 click")
+            }
+            Button(action: {
+                print("button2 click")
+            }, label: {
+                    Text("Button")
+            })
         }
-        .padding()
     }
 }
 
