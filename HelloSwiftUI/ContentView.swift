@@ -9,46 +9,50 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-//                        Capsule().fill(Color.yellow)
-//                        Circle().fill(Color.blue)
-//                        Ellipse().fill(Color.brown)
-//                        Rectangle().fill(Color.red)
-//                        RoundedRectangle(cornerRadius:  25).fill(Color.green)
-            
-//                        Spacer()
-//                        Ellipse().fill(
-//                            RadialGradient(
-//                                gradient: Gradient(colors:[.blue,.yellow]),
-//                                center: .top,
-//                                startRadius: 10,
-//                                endRadius: 65
-//                            ))
-//                        Spacer()
-//                        Ellipse().fill(
-//                            RadialGradient(
-//                                gradient: Gradient(colors:[.blue,.yellow]),
-//                                center: .center,
-//                                startRadius: 10,
-//                                endRadius: 65
-//                            ))
-//                        Spacer()
-//                        Ellipse().fill(
-//                            AngularGradient(
-//                                gradient: Gradient(colors:[.blue,.yellow]),
-//                                center: .center
-//                            ))
-//                        Spacer()
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
-            Spacer()
-            Image(systemName: "sun.min").font(.custom("", size: 50))
-            
-//          Image("clock-solid")
+        VStack{
+//            Image("toby2")
 //                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 150, height: 50)
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//            
+//            Image("toby")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+
+            
+// 이미지 테두리 오버레이
+            
+//            Image("toby2")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                .shadow(color: .yellow, radius: 46 )
+//                .overlay(Rectangle().stroke(Color.brown, lineWidth: 10))
+//            
+//            Image("toby")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+//                .shadow(color: .blue, radius: 46, x: 90, y: 50 )
+//                .overlay(Circle().stroke(Color.cyan, lineWidth: 20))
+            
+            
+// 이미지 투명도
+                        Image("toby2")
+                            .resizable()
+                            .frame(width: 250, height: 250)
+                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                            .opacity(0.5)
+            
+                        Image("toby")
+                            .resizable()
+                            .frame(width: 250, height: 250)
+                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                            .opacity(0.25)
+                            
         }
     }
 }
