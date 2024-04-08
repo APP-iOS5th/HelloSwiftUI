@@ -10,14 +10,45 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack  {
-            Label("Text", systemImage: "clock.circle").font(.title) //아이콘 넣기 sf~에서 이름 보고 넣기. "text", 이후 system~("") 까지. 모디파이어는 크기 때문에 붙인 것.
-            Label {
-                Text("No modifiers")
-            } icon: {
-                Image("clock-solid")
-                    .resizable() //이걸 넣어야 이미지 크기 조절이 됨. 
-                    .frame(width: 20.0, height: 20.0)
-            }//Assets에 이미지를 추가하고 불러오는 방법. 난 추가 안해놓음..
+            
+            //            Capsule().fill(Color.yellow)
+            //            Circle().fill(Color.blue)
+            //            Ellipse().fill(Color.brown)
+            //            Rectangle().fill(Color.red)
+            //            RoundedRectangle(cornerRadius: 30).fill(Color.green)//cornerRadius는 모서리 곡률
+            
+            //            Spacer()
+            //            Ellipse().fill(
+            //                RadialGradient (
+            //                    gradient: Gradient(colors:[.blue, .yellow]),
+            //                    center: .top,
+            //                    startRadius: 10,
+            //                endRadius: 65))
+            //            Spacer()
+            //            Ellipse().fill(
+            //                RadialGradient (
+            //                    gradient: Gradient(colors:[.blue, .yellow]),
+            //                    center: .top,
+            //                    startRadius: 10,
+            //                endRadius: 65))
+            //            Spacer()
+            //            Ellipse().fill(
+            //                RadialGradient (
+            //                    gradient: Gradient(colors:[.blue, .yellow]),
+            //                    center: .top,
+            //                    startRadius: 10,
+            //                endRadius: 65))
+            //            Spacer()
+            
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill").font(.largeTitle)
+            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+            //내장 아이콘 가져오기.
+            
+            Image("clock-solid").resizable().aspectRatio(contentMode: .fill).frame(width: 150, height: 50) //fill은 그냥 넘어가도 되고, fit은 맞게 들어가게 하는 것.
+            // asset에 추가한 아이콘 사용하기.
+            
+            
         }
     }
 }
