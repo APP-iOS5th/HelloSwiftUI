@@ -10,14 +10,40 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Label("Text", systemImage: "clock.circle").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            Label {
-                Text("No modifiers")
-            } icon: {
-                Image("clock-solid")
-                    .resizable()
-                    .frame(width: 20.0, height: 20.0)
-            }
+//            Capsule().fill(Color.purple)
+//            Circle().fill(Color.blue)
+//            Ellipse().fill(Color.yellow)
+//            Rectangle().fill(Color.red)
+//            RoundedRectangle(cornerRadius: 30).fill(Color.green)
+            
+            Spacer()
+            
+            Ellipse().fill(RadialGradient(
+                gradient: Gradient(colors: [.blue, .yellow]),
+                center: .top,
+                startRadius: 10,
+                endRadius: 65
+            ))
+            Spacer()
+            Ellipse().fill(RadialGradient(
+                gradient: Gradient(colors: [.blue, .yellow]),
+                center: .center,
+                startRadius: 10,
+                endRadius: 65
+            ))
+            Spacer()
+            Ellipse().fill(
+                AngularGradient(
+                gradient: Gradient(colors: [.blue, .yellow]),
+                center: .center
+            ))
+            Spacer()
+            
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill").font(.largeTitle)
+            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+            Spacer()
+            Image("clock-solid").resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/).frame(width: 150, height: 50)
         }
     }
 }
