@@ -9,45 +9,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedColor = Color.gray
+    @State private var message = ""
     
     var body: some View {
-        List {
-            Rectangle().fill(selectedColor)
-            Picker("Favorite Color", selection: $selectedColor, content: {
-                Text("Red").tag(Color.red)
-                Text("Green").tag(Color.green)
-                Text("Blue").tag(Color.blue)
+        VStack (spacing: 28) {
+            Text(message)
+            Picker("Favorite Color", selection: $message, content: {
+                Text("Happy").tag("happy")
+                Text("Sad").tag("sad")
+                Text("Bored").tag("board")
             })
             .pickerStyle(SegmentedPickerStyle())
-            Rectangle().fill(selectedColor)
-            Picker("Favorite Color", selection: $selectedColor, content: {
-                Text("Red").tag(Color.red)
-                Text("Green").tag(Color.green)
-                Text("Blue").tag(Color.blue)
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            Rectangle().fill(selectedColor)
-            Picker("Favorite Color", selection: $selectedColor, content: {
-                Text("Red").tag(Color.red)
-                Text("Green").tag(Color.green)
-                Text("Blue").tag(Color.blue)
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            Rectangle().fill(selectedColor)
-            Picker("Favorite Color", selection: $selectedColor, content: {
-                Text("Red").tag(Color.red)
-                Text("Green").tag(Color.green)
-                Text("Blue").tag(Color.blue)
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            Rectangle().fill(selectedColor)
-            Picker("Favorite Color", selection: $selectedColor, content: {
-                Text("Red").tag(Color.red)
-                Text("Green").tag(Color.green)
-                Text("Blue").tag(Color.blue)
-            })
-            .pickerStyle(SegmentedPickerStyle())
+            .onChange(of: message) { oldValue, newValue in
+                switch newValue {
+                case "happy": message = "Be happy and joyous"
+                case "sad": message = "Life can be a struggle at"
+                case "board": message = "Look for your purpose"
+                default:
+                    break
+                }
+            }
         }
     }
 }
