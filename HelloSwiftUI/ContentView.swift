@@ -21,7 +21,7 @@ struct ContentView: View {
             .pickerStyle(SegmentedPickerStyle())
             
             // Picker 변화 추적
-            .onChange(of: message) {newValue in
+            .onChange(of: message) { oldValue, newValue in
                 switch newValue {
                 case "happy": message = "Be happy and joyous"
                 case "sad": message = "Life can be a struggle at times"
