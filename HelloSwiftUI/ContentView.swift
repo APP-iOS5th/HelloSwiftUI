@@ -11,7 +11,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            
+            Capsule().fill(Color.indigo)
+            Circle().fill(Color.pink)
+            Ellipse().fill(Color.purple)
+            Rectangle().fill(Color.secondary)
+            RoundedRectangle(cornerRadius:  31).fill(Color.green)
         }
     }
 }
