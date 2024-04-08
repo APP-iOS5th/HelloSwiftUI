@@ -10,55 +10,58 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Capsule().fill(Color.yellow)
-            Circle().fill(Color.blue)
-            Ellipse().fill(Color.brown)
-            Rectangle().fill(Color.red)
-            RoundedRectangle(cornerRadius: 25).fill(Color.green)
-            
-            Spacer()
-            
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors: [.blue, .yellow]),
-                    center: .top,
-                    startRadius: 10,
-                    endRadius: 65
-                    )
-                )
-            
-            Spacer()
-            
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors: [.blue, .yellow]),
-                    center: .center,
-                    startRadius: 10,
-                    endRadius: 65
-                    )
-                )
-            
-            Spacer()
-            
-            Ellipse().fill(
-                AngularGradient(
-                    gradient: Gradient(colors: [.blue, .yellow]),
-                    center: .center
-                    )
-                )
-            
-            Spacer()
-            
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill")
-            
-            Spacer()
-            
-            Image("clock-solid")
+            // 이미지 크기 조정, 크롭(자르기, 원형)
+            Image("sample_dog_square")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 50)
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+            
+            Image("sample_cat_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(Circle())
+            
+            // 이미지 그림자 효과
+            Image("sample_dog_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .shadow(color: .red, radius: 46, x:0, y: 0)
+            
+            Image("sample_cat_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(Circle())
+                .shadow(color: .green, radius: 46, x: 90, y: 50)
+            
+            // 이미지 테두리 오버레이(=boarder)
+            Image("sample_dog_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .shadow(color: .red, radius: 46, x:0, y: 0)
+                .overlay(Rectangle().stroke(Color.blue, lineWidth: 10))
+            
+            Image("sample_cat_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(Circle())
+                .shadow(color: .green, radius: 46, x: 90, y: 50)
+                .overlay(Circle().stroke(Color.purple, lineWidth: 20))
+            
+            // 이미지 투명도 조절
+            Image("sample_dog_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .opacity(0.5)
+            
+            Image("sample_cat_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .opacity(0.25)
         }
     }
 }
