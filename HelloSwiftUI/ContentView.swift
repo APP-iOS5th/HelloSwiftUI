@@ -2,37 +2,49 @@
 //  ContentView.swift
 //  HelloSwiftUI
 //
-//  Created by SungWoonLee on 4/8/24.
+//  Created by Jungman Bae on 4/8/24.
 //
 
 import SwiftUI
+
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
+
 struct ContentView: View {
-
-    @State private var selectedColor = Color.gray
-
+    @State private var message = ""
+    
     var body: some View {
-        VStack (spacing:28) {
-            Rectangle().fill(selectedColor)
-            Picker("Favorite Color", selection: $selectedColor, content: {
-                Text("Red").tag(Color.red)
-                Text("Blue").tag(Color.blue)
-                Text("Green").tag(Color.green)
+        VStack (spacing: 28) {
+            Text(message)
+            Picker("Favorite Color", selection: $message, content: {
+                Text("Happy").tag("happy")
+                Text("Sad").tag("sad")
+                Text("Bored").tag("bored")
             })
-            .pickerStyle(SegmentedPickerStyle()) //이 struct picker에 스타일을 적용한 것. segment 스타일을 쓴 것.
+            .pickerStyle(SegmentedPickerStyle())
+            .onChange(of: message) {oldValue, newValue in
+                switch newValue {
+                case "happy": message = "Be happy and joyous"
+                case "sad": message = "Life can be a struggle at times"
+                case "bored": message = "Look for your purpose"
+                default:
+                    break
+                }
+            }
         }
     }
 }
+
 #Preview {
     ContentView()
 }
 
 /*
- 
  Swift 3.0 이전 프리뷰
- struct ContentView)Previews: PreviewProvider {
+ struct ContentView_Previews: PreviewProvider {
  static var previews: some View {
  ContentView()
  }
  }
- 
  */
