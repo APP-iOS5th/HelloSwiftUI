@@ -9,14 +9,26 @@ import SwiftUI
 
 struct BTN: View {
     var body: some View {
+        
+        @State var colorMe = false
        
         VStack {
+            
+            Rectangle()
+                .fill(colorMe ? Color.green : Color.gray)
+                .frame(width: 250,height:100)
+            
+            
             Button("여기를 클릭하세요") {
-                print("클릭시 실행코드 1")
+                print("\(colorMe.description)")
+                
+                colorMe.toggle()
+               
             }
             
             Button {
-                 print("클릭시 실행코드 2")
+                colorMe.toggle()
+                print("2")
             } label: {
                 Text("Click here")
                     .font(.largeTitle)
@@ -29,7 +41,8 @@ struct BTN: View {
             }
             
             Button {
-                print("클릭시 실행코드 3")
+                colorMe.toggle()
+                print("3")
             } label: {
                 Image("sample_dog_square")
                     .resizable()
