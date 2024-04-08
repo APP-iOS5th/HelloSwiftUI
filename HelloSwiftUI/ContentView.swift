@@ -25,6 +25,7 @@ struct ContentView: View {
             Text("Top padding only")
                 .padding(.top)
                 .background(Color.blue)
+            Spacer(minLength: 100)
             Text("Trailing padding only")
                 .padding(.trailing)
                 .background(Color.blue)
