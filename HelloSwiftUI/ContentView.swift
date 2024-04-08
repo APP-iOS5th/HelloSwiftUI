@@ -13,51 +13,33 @@ struct ContentView: View {
     @State private var sliderValue = 0.0
     
     var body: some View {
-        VStack(alignment: .trailing, spacing: 24) {
-            Text("Default padding of 16 points")
-                .padding()
+        VStack() {
+//            ZStack {
+//                Text("Top")
+//                    .font(.system(size: 40))
+//                    .background(.yellow)
+//                
+//                Text("Top")
+//                    .font(.system(size: 40))
+//                    .background(.yellow)
+//                    .position(x: 255, y: 127)
+//
+//                Text("Top")
+//                    .font(.system(size: 40))
+//                    .background(.yellow)
+//                    .offset(x: 74 ,y: 125)
+//        }
+            Text("First")
+                .font(.system(size: 40))
                 .background(.yellow)
-          
-            Text("Default padding of 45 points")
-                .padding(45)
+            Text("Second View")
+                .font(.system(size: 40))
                 .background(.yellow)
-            
-            Text("Default padding of 3 points")
-                .padding(3)
-                .background(.yellow)
-            
-            Spacer()
-            
-            HStack(alignment: .center, spacing: 24) {
-                Text("Top padding only")
-                    .padding(.top)
-                    .background(.yellow)
                 
-                Text("Trailing padding only")
-                    .padding(.trailing)
-                    .background(.yellow)
-                
-                Text("Bottom padding only")
-                    .padding(.bottom)
-                    .background(.yellow)
-            }
-            
-    
-            Spacer()
-            
-            Text("Leading padding only")
-                .padding(.leading, 45)
-                .background(.yellow)
-            
-            Text("Top, Leading padding ")
-                .padding([.top, .leading], 45)
-                .background(.yellow)
-            
-            Text("Top, Leading and Botto")
-                .padding([.top, .leading, .bottom], 45)
-                .background(.yellow)
-            
         }
+        .offset(x:25, y:125)
+
+    
        
     }
 }
