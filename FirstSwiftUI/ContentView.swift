@@ -9,22 +9,39 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var toggleTF = true
-    @State private var stepValue = 0
-    @State private var slideValue: Float = 0
+    let myString = "Displays a string variable"
     
     var body: some View {
         VStack {
-            ZStack {
-                Text("Top")
-                    .font(.system(size: 40))
-                    .background(.yellow)
-                Text("Top")
-                    .font(.system(size: 40))
-                    .background(.red)
-                    .offset(x: 20, y: 20)
-            }
-            .position(x: 200, y: 200)
+//            Text("Hello World & \(myString)")
+            Text("Displays a string variable Displays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a string variableDisplays a str1ng variable")
+                .multilineTextAlignment(.trailing) // 정렬
+                .lineLimit(3)
+                .truncationMode(.middle)
+            
+            
+            Text("Bold Text")
+                .font(.title) // 크기
+                .fontWeight(.bold)
+            
+            Text("Italic")
+                .font(.title2)
+                .italic()
+            
+            Text("UnderLined")
+                .font(.headline)
+                .underline()
+            
+            Text("Strikethrough")
+                .font(.subheadline)
+                .strikethrough()
+            
+            Text("Custom Font Text")
+                .font(.custom("AmericanTypewriter", size: 24))
+            
+            Text("Line Spacing")
+                .font(.body)
+                .lineSpacing(10)
         }
     }
 }
@@ -32,3 +49,4 @@ struct ContentView: View {
 //#Preview {
 //    ContentView()
 //}
+
