@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextExample: View {
+struct TextStyleExample: View {
     var body: some View {
 //        let myString = "Displays a string variable"
 //        Text("Hello World, \(myString)")
@@ -48,5 +48,5 @@ struct TextExample: View {
 }
 
 #Preview {
-    TextExample()
+    TextStyleExample()
 }

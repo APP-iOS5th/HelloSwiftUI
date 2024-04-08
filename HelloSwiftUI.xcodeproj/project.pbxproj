@@ -14,7 +14,8 @@
 		CDD8851B2BC3863E00C7390F /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8851A2BC3863E00C7390F /* CustomUI.swift */; };
 		CDD8851D2BC3A48800C7390F /* PaddingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8851C2BC3A48800C7390F /* PaddingExample.swift */; };
 		CDD8851F2BC3AD2400C7390F /* ZStackExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8851E2BC3AD2400C7390F /* ZStackExample.swift */; };
-		CDD885212BC3B34600C7390F /* TextExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD885202BC3B34600C7390F /* TextExample.swift */; };
+		CDD885212BC3B34600C7390F /* TextStyleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD885202BC3B34600C7390F /* TextStyleExample.swift */; };
+		CDD885232BC3B8E100C7390F /* SymbolExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD885222BC3B8E100C7390F /* SymbolExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,8 @@
 		CDD8851A2BC3863E00C7390F /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
 		CDD8851C2BC3A48800C7390F /* PaddingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingExample.swift; sourceTree = "<group>"; };
 		CDD8851E2BC3AD2400C7390F /* ZStackExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStackExample.swift; sourceTree = "<group>"; };
-		CDD885202BC3B34600C7390F /* TextExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExample.swift; sourceTree = "<group>"; };
+		CDD885202BC3B34600C7390F /* TextStyleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleExample.swift; sourceTree = "<group>"; };
+		CDD885222BC3B8E100C7390F /* SymbolExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 				CDD8850E2BC3711800C7390F /* UIComponentExample.swift */,
 				CDD8851C2BC3A48800C7390F /* PaddingExample.swift */,
 				CDD8851E2BC3AD2400C7390F /* ZStackExample.swift */,
-				CDD885202BC3B34600C7390F /* TextExample.swift */,
+				CDD885202BC3B34600C7390F /* TextStyleExample.swift */,
+				CDD885222BC3B8E100C7390F /* SymbolExample.swift */,
 				CDD885102BC3711900C7390F /* Assets.xcassets */,
 				CDD885122BC3711900C7390F /* Preview Content */,
 			);
@@ -150,9 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD8850F2BC3711800C7390F /* UIComponentExample.swift in Sources */,
-				CDD885212BC3B34600C7390F /* TextExample.swift in Sources */,
+				CDD885212BC3B34600C7390F /* TextStyleExample.swift in Sources */,
 				CDD8851B2BC3863E00C7390F /* CustomUI.swift in Sources */,
 				CDD8851D2BC3A48800C7390F /* PaddingExample.swift in Sources */,
+				CDD885232BC3B8E100C7390F /* SymbolExample.swift in Sources */,
 				CDD8851F2BC3AD2400C7390F /* ZStackExample.swift in Sources */,
 				CDD8850D2BC3711800C7390F /* HelloSwiftUIApp.swift in Sources */,
 			);

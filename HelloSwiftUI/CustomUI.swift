@@ -22,10 +22,8 @@ struct MultipleSpacer: View {
     var multiple: Int
     
     var body: some View {
-        if multiple > 0 {        
-            let multipleArray: Range<Int> = Range(1...multiple)
-            
-            ForEach(multipleArray, id: \.self) { _ in Spacer() }
+        if multiple > 0 {
+            ForEach(Range(1...multiple), id: \.self) { _ in Spacer() }
         }
     }
 }
