@@ -14,37 +14,23 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-//            Toggle(isOn: $isOn, label: {
-//                Text("Toggle Example")
-//            })
-            Toggle("Toggle message turn on / off", isOn: $isOn)
-            Stepper("값 \(value)", value: $value, in: 0...10)
-            Slider(value: $sliderValue, in: 0...1)
-                .tint(.red)
-            Text("위")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .foregroundStyle(Color.red)
-            HStack {
-                Text("윈쪽")
-                Text("오른쪽")
-            }
-            ZStack {
-                Text("     배경").background(Color.red)
-                Text("전경").background(Color.green)
-            }
-            // add button from Object Library
-            Button("Button1") {
-                print("button1 clicked")
-            }
-            // add button by coding
-            Button(action: {
-                print("button2 clicked")
-            }, label: {
-                Text("Button2")
-            })
+            Text("Default padding of 16 points")
+                .padding()
+                .background(Color.yellow)
+            Text("Padding of 45")
+                .padding(45)
+                .background(Color.yellow)
+            Text("Top padding only")
+                .padding(.top)
+                .background(Color.yellow)
+            Text("Top and trailing padding of 45")
+                .padding([.top, .trailing], 45)
+                .background(Color.yellow)
+            Text("Padding of 45")
+                .padding(.top, 45)
+                .padding(.bottom, 30)
+                .background(Color.yellow)
         }
-        .padding()
     }
 }
 
