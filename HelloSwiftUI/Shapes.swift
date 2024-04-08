@@ -45,7 +45,7 @@ struct Shapes: View {
             Spacer()
             Image("clock-solid").resizable().aspectRatio(contentMode: .fit).frame(width: 150,height: 50)
             
-            
+        
             
             
         }

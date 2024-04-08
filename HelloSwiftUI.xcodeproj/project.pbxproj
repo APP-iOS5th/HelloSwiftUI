@@ -16,6 +16,7 @@
 		462930EF2BC3B30100EEABD1 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930EE2BC3B30100EEABD1 /* TextView.swift */; };
 		462930F12BC3BC8000EEABD1 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930F02BC3BC8000EEABD1 /* ImageView.swift */; };
 		462930F32BC3C21400EEABD1 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930F22BC3C21400EEABD1 /* Shapes.swift */; };
+		462930F52BC3CF2100EEABD1 /* DogAndCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930F42BC3CF2100EEABD1 /* DogAndCat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		462930EE2BC3B30100EEABD1 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		462930F02BC3BC8000EEABD1 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		462930F22BC3C21400EEABD1 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		462930F42BC3CF2100EEABD1 /* DogAndCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAndCat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 		462930D02BC3711200EEABD1 = {
 			isa = PBXGroup;
 			children = (
+				462930F42BC3CF2100EEABD1 /* DogAndCat.swift */,
 				462930DB2BC3711200EEABD1 /* HelloSwiftUI */,
 				462930DA2BC3711200EEABD1 /* Products */,
 			);
@@ -159,6 +162,7 @@
 				462930EB2BC3A54300EEABD1 /* Padding.swift in Sources */,
 				462930ED2BC3ACFD00EEABD1 /* Zstack.swift in Sources */,
 				462930EF2BC3B30100EEABD1 /* TextView.swift in Sources */,
+				462930F52BC3CF2100EEABD1 /* DogAndCat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
