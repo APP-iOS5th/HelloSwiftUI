@@ -8,41 +8,50 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
     var body: some View {
-        VStack {
-            Slider(value: $sliderValue, in: 0...1)
-                .tint(.brown)
+        VStack(alignment: .trailing) {
             
-            Stepper("값 \(value)", value: $value, in: 0...10)
+            Text("Default padding of 16 points")
+                .padding()
+                .background(Color.yellow)
             
-            Toggle("Toggle Example", isOn: $isOn)
+            Text("Default padding of 45 points")
+                .padding(45)
+                .background(Color.yellow)
             
-            Text("위")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
+            Text("Default padding of 3 points")
+                .padding(3)
+                .background(Color.yellow)
+            
+            Spacer()
+            
+            HStack(alignment: .bottom) {
+                Text("Top padding only")
+                    .padding(.top)
+                    .background(Color.yellow)
                 
-            HStack {
-                Text("왼쪽")
-                Text("오른쪽")
-            }
-            .background(Color.purple)
-            
-            ZStack {
-                Text("배경")
-                Text("전경")
+                Text("Trailing padding only")
+                    .padding(.trailing)
+                    .background(Color.yellow)
+                
+                Text("Bottom padding only")
+                    .padding(.bottom)
+                    .background(Color.yellow)
             }
             
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                print("button1 click")
-            }
-            Button(action: {
-                print("button2 click")
-            }, label: {
-                Text("Button")
-            })
+            Spacer()
+            
+            Text("Leading padding only")
+                .padding(.leading)
+                .background(Color.yellow)
+            
+            Text("Top, Leading padding")
+                .padding([.top, .leading])
+                .background(Color.yellow)
+            
+            Text("Top, Leading and Bottom")
+                .padding([.top, .leading, .bottom], 45)
+                .background(Color.yellow)
         }
     }
 }
