@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct CustomButton: View {
+    
+    @State var colorMe = false
+    
     var body: some View {
+        
+        Rectangle()
+            .fill(colorMe ? Color.green : Color.gray)
+            .frame(width: 250, height: 250)
+        
         Button("여기를 클릭하세요") {
-            print("클릭시 실행코드1")
+            colorMe.toggle()
         }
         
         Button {
-            print("클릭시 실행코드 2")
+            colorMe.toggle()
         } label: {
             Text("Click here")
                 .font(.largeTitle)
@@ -24,7 +32,7 @@ struct CustomButton: View {
         }
         
         Button(action: {
-            print("버튼 클릭시 실행코드3")
+            colorMe.toggle()
         }, label: {
             Image("sample_cat_square")
                 .resizable()
