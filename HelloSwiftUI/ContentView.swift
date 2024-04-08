@@ -18,32 +18,27 @@ struct ContentView: View {
     
     var body: some View {
         VStack() {
-            // Asset Color scheme 사용
-            Image(systemName: "heart.fill")
-                .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .opacity(0.5)
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(Color("custom_brown"))
-            
-            //                        Image("sample_cat_square")
-            // 지역상수 사용
-            let customColor = Color(red: 1, green: 0, blue: 0)
-            Image(systemName: "heart.fill")
-                .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .opacity(0.25)
-            
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(customColor)
-            
-            // 전역상수 사용
-            Image(systemName: "heart.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(Color.myCustomColor)
+            Button("여기를 클릭하세요") {
+                print("클릭시 실행코드 1")
+            }
+            Button {
+                print("클릭시 실행코드 2")
+            } label: {
+                Text("Click here")
+                    .font(.largeTitle)
+                    .foregroundColor(.green)
+                    .padding()
+                    .border(Color.red, width: 6)
+            }
+            Button {
+                print("클릭시 실행코드 3")
+            } label: {
+                Image("sample_dog_square")
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.yellow, lineWidth: 4))
+            }
         }
     }
 }
