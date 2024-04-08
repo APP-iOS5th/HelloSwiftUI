@@ -11,36 +11,60 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-//            Capsule().fill(.yellow)
-//            Circle().fill(.blue)
-//            Ellipse().fill(.brown)
-//            Rectangle().fill(.red)
-//            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(.green)
-            
-//            Spacer()
+//            이미지 크기 조정, 그롭(자르기, 원형)
+//            Image("dog")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
 //            
-//            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]),
-//                                          center: .top,
-//                                          startRadius: 10,
-//                                          endRadius: 65))
+//            Image("cat")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//                .clipShape(Circle())
+            
+//          이미지 그림자 효과
+//            Image("dog")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//                .shadow(color: .red, radius: 46, x: 0, y: 0)
 //            
-//            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]),
-//                                          center: .center,
-//                                          startRadius: 10,
-//                                          endRadius: 65))
+//            Image("cat")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//                .clipShape(Circle())
+//                .shadow(color: .green, radius: 46, x: 90, y: 50)
+
+//          이미지 테두리 오버레이
+//            Image("dog")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//                .overlay {
+//                    Rectangle().stroke(Color.blue, lineWidth: 10)
+//                }
 //            
-//            Ellipse().fill(AngularGradient.init(gradient: Gradient(colors: [Color.red, Color.blue]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/))
+//            Image("cat")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//                .clipShape(Circle())
+//                .overlay {
+//                    Circle().stroke(Color.purple, lineWidth: 20)
+//                }
             
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
-            
-            Spacer()
-            
-            Image(systemName: "clock")
+//          이미지 투명도
+            Image("dog")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 50)
+                .frame(width: 250, height: 250)
+                .opacity(0.5)
+            Image("cat")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .opacity(0.25)
         }
     }
 }
