@@ -14,37 +14,16 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            let myString = "Displays a string variable"
-            //            Text("Hello World, \(myString)")
-            Text("This is my age \(myString). \nSince I am retired, I am now eligible for a pension and Social Security \nso I can spend the rest of my life relaxing and enjoying life without having to work for an income anymore.")
-                .multilineTextAlignment(.trailing) // 문단 정렬
-                .truncationMode(.tail) // 생략 위치
-                .lineLimit(3) // 표시 라인
-            
-            Spacer()
-            
-            Text("Bold Text")
-                .font(.title)
-                .bold()
-            
-            Text("Italic")
-                .font(.title2)
-                .italic()
-            
-            Text("Underlined")
-                .font(.headline)
-                .underline()
-            
-            Text("Strikethrough")
-                .font(.subheadline)
-                .strikethrough()
-            
-            Text("Custom Font Text")
-                .font(.custom("AmericanTypewriter", size: 24))
-            
-            Text("Line Spacing Line Spacing Line Spacing Line Spacing")
-                .font(.body)
-                .lineSpacing(30) // 줄간격
+            Label("Text", systemImage: "flag.checkered")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            // 아이콘 Assets에 추가 후 사용 시
+//            Label {
+//                Text("No modifiers")
+//            } icon: {
+//                Image("clock-solid")
+//                    .resizable()
+//                    .frame(width: 20.0, height: 20.0)
+//            }
         }
     }
 }
