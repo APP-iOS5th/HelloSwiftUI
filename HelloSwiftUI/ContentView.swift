@@ -8,16 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var colorMe = false
+    
     var body: some View {
         VStack {
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
-            Spacer()
-            Image("clock-solid")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 50)
+            Rectangle()
+                .fill(colorMe ? .green : .gray)
+                .frame(width: 250, height: 100)
+            Button("Click here") {
+                colorMe.toggle()
+            }
+            Button {
+                colorMe.toggle()
+            } label: {
+                Text("Click here")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color.green)
+                    .padding()
+                    .border(.red, width: 6)
+            }
         }
     }
 }
