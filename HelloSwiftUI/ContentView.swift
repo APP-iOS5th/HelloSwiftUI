@@ -11,6 +11,13 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Label("Text", systemImage: "clock.circle").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Label {
+                Text("No modifiers")
+            } icon: {
+                Image("clock-solid")
+                    .resizable()
+                    .frame(width: 20.0, height: 20.0)
+            }
         }
     }
 }
