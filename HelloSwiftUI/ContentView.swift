@@ -9,16 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack() {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack {
+            Text("위")
+            HStack {
+                Text("왼쪽")
+                Text("오른쪽")
+            }
+            ZStack{
+                Text("배경")
+                Text("전경")
+            }
+            Button(action: {
+                print("button click")
+            }, label: {
+                Text("Button")
+            })
+            Button(action: {
+                print("button2 click")
+            }, label: {
+                Text("Button")
+                
+            })
+            
         }
-        
-        
-        
-        
+       
     }
 }
 
