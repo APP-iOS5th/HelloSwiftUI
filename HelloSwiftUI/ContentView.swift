@@ -10,14 +10,44 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Label("Text", systemImage: "clock.circle").font(.title)
-            Label {
-                Text("No modifires")
-            } icon: {
-                Image("clock-solid")
-                    .resizable()
-                    .frame(width: 20.0, height: 20.0)
-            }
+            //            Capsule().fill(Color.yellow)
+            //            Circle().fill(Color.blue)
+            //            Ellipse().fill(Color.brown)
+            //            Rectangle().fill(Color.red)
+            //            RoundedRectangle(cornerRadius: 50).fill(Color.green)
+            
+//            Spacer()
+//            Ellipse().fill(
+//                RadialGradient(
+//                    gradient: Gradient(colors: [.blue,.yellow]),
+//                    center: .top,
+//                    startRadius: 10,
+//                    endRadius: 65))
+//            Ellipse().fill(
+//                RadialGradient(
+//                    gradient: Gradient(colors: [.blue,.yellow]),
+//                    center: .center,
+//                    startRadius: 10,
+//                    endRadius: 100))
+//            Ellipse().fill(
+//                RadialGradient(
+//                    gradient: Gradient(colors: [.blue,.yellow]),
+//                    center: .center,
+//                    startRadius: 10,
+//                    endRadius: 65))
+//            Ellipse().fill(
+//                AngularGradient(
+//                    gradient: Gradient(colors: [.blue,.yellow]),
+//                    center: .center
+//                ))
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill").font(.largeTitle)
+            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+            Spacer()
+            Image("clock-solid")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150,height: 50)
         }
     }
 }
