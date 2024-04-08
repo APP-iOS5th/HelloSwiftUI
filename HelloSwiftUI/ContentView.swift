@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isOn = true
+    @State private var value = 0
     var body: some View {
         VStack{
+            Stepper("값\(value)",value: $value, in: 0...10)
+            
+            Toggle("Toggle message on/off", isOn: $isOn)
+                
             Text("위")
+                .background(Color.purple)
+                
             HStack {
                 Text("왼쪽")
                 Text("오른쪽")
@@ -19,7 +27,7 @@ struct ContentView: View {
                 Text("  배경")
                 Text("전경  ")
             }
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+            Button("Button") {
                 print("button1 click")
             }
             Button(action:  {
