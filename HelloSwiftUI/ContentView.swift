@@ -14,16 +14,52 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Label("Text", systemImage: "flag.checkered")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            // 아이콘 Assets에 추가 후 사용 시
-//            Label {
-//                Text("No modifiers")
-//            } icon: {
-//                Image("clock-solid")
-//                    .resizable()
-//                    .frame(width: 20.0, height: 20.0)
-//            }
+            Capsule().fill(/*@START_MENU_TOKEN@*/Color.blue/*@END_MENU_TOKEN@*/)
+            Circle().fill(Color.green)
+            Ellipse().fill(Color.yellow)
+            Rectangle().fill(Color.secondary)
+            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(Color.indigo)
+            
+            Spacer()
+            
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors: [.blue, .yellow]),
+                    center: .top,
+                    startRadius: 10,
+                    endRadius: 65))
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors: [.blue, .yellow]),
+                    center: .center,
+                    startRadius: 10,
+                    endRadius: 65))
+            Ellipse().fill(
+                RadialGradient(
+                    gradient: Gradient(colors: [.blue, .yellow]),
+                    center: .bottom,
+                    startRadius: 10,
+                    endRadius: 65))
+            
+            Spacer()
+            
+            Ellipse().fill(
+                AngularGradient(
+                    gradient: Gradient(colors:[.blue,.yellow]),
+                    center: .center))
+            
+            Spacer()
+            
+            Image(systemName: "tortoise.fill")
+            Image(systemName: "tortoise.fill").font(.largeTitle)
+            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+            
+            Spacer()
+            
+//            Image("clock-solid")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 150, height: 50)
         }
     }
 }
