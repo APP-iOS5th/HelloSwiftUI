@@ -207,11 +207,11 @@
 //    }
 //}
 
-import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        VStack {
+//import SwiftUI
+//
+//struct ContentView: View {
+//    var body: some View {
+//        VStack {
 //        이미지 크기 조정, 크롭 (자르기)
 //            Image("sample_dog_square")
 //                .resizable()
@@ -254,17 +254,50 @@ struct ContentView: View {
             
             
 //           이미지 투명도 조절
-            Image("sample_dog_square")
-                .resizable()
-                .frame(width: 250, height: 250)
-                .aspectRatio(contentMode: .fill)
-                .opacity(0.6)
+//            Image("sample_dog_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .aspectRatio(contentMode: .fill)
+//                .opacity(0.6)
+//            
+//            Image("sample_cat_square")
+//                .resizable()
+//                .frame(width: 250, height: 250)
+//                .clipShape(Circle())
+//                .opacity(0.3)
+//            
+//        }
+//    }
+//}
+
+import SwiftUI
+
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
             
-            Image("sample_cat_square")
+            // asset color scheme 사용
+            Image(systemName: "heart.fill")
                 .resizable()
-                .frame(width: 250, height: 250)
-                .clipShape(Circle())
-                .opacity(0.3)
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color("custom_brown"))
+            
+            // 지역 상수 사용
+            let customColor = Color(red: 1, green: 0, blue: 0)
+            Image(systemName: "heart.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(customColor)
+            
+            // 전역 상수 사용
+            Image(systemName: "heart.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(Color.myCustomColor)
             
         }
     }
