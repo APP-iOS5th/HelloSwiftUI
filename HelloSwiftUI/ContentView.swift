@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-extension Color {
-    static let myCustomColor = Color(red: 0.6, green: 0.9, blue: 0.2)
-}
-
 struct ContentView: View {
+    @State var colorMe = false
+    
     var body: some View {
         VStack{
+            Rectangle()
+                .fill(colorMe ? Color.green : Color.gray)
+                .frame(width: 250, height: 100)
+            
             Button("여기를 클릭하세요") {
                 print("클릭시 실행코드 1")
             }
