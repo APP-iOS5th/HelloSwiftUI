@@ -16,6 +16,7 @@
 		4A0706042BC3BC67003A8AC1 /* SFsymbolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0706032BC3BC66003A8AC1 /* SFsymbolTest.swift */; };
 		4A8D48262BC3C2E400C9871B /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48252BC3C2E400C9871B /* Shape.swift */; };
 		4A8D48282BC3C9B100C9871B /* GeometryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48272BC3C9B100C9871B /* GeometryImage.swift */; };
+		4A8D482A2BC3D77E00C9871B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48292BC3D77E00C9871B /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4A0706032BC3BC66003A8AC1 /* SFsymbolTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFsymbolTest.swift; sourceTree = "<group>"; };
 		4A8D48252BC3C2E400C9871B /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		4A8D48272BC3C9B100C9871B /* GeometryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryImage.swift; sourceTree = "<group>"; };
+		4A8D48292BC3D77E00C9871B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				4A0706012BC3B2D6003A8AC1 /* Text_View.swift */,
 				4A8D48272BC3C9B100C9871B /* GeometryImage.swift */,
 				4A8D48252BC3C2E400C9871B /* Shape.swift */,
+				4A8D48292BC3D77E00C9871B /* CustomButton.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
@@ -156,6 +159,7 @@
 				4A8D48262BC3C2E400C9871B /* Shape.swift in Sources */,
 				4A0706022BC3B2D6003A8AC1 /* Text_View.swift in Sources */,
 				4A0706042BC3BC67003A8AC1 /* SFsymbolTest.swift in Sources */,
+				4A8D482A2BC3D77E00C9871B /* CustomButton.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
 				4A8D48282BC3C9B100C9871B /* GeometryImage.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
