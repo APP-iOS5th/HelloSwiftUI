@@ -39,10 +39,10 @@ struct ContentView: View {
 //                RadialGradient(
 //                    gradient: Gradient(colors:[.blue,.yellow]), center: .center, startRadius: 10, endRadius: 65))
 //            Spacer()
-
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors:[.blue,.yellow]), center: .top))
+//
+//            Ellipse().fill(
+//                RadialGradient(
+//                    gradient: Gradient(colors:[.blue,.yellow]), center: .top))
             Spacer()
             Image(systemName: "tortoise.fill")
             Image(systemName: "tortoise.fill").font(.largeTitle)
