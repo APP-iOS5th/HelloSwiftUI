@@ -36,7 +36,7 @@ struct ContentView: View {
             Text("Custom Font Text")
                 .font(.custom("AmericanTypewriter", size: 24))
             
-            Text("Line Spacing")
+            Text("Line Spacing\nSecond Line")
                 .font(.body)
                 .lineSpacing(10)
             
