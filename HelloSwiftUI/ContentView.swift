@@ -8,58 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
     
     var body: some View {
         VStack {
-            Capsule().fill(/*@START_MENU_TOKEN@*/Color.blue/*@END_MENU_TOKEN@*/)
-            Circle().fill(Color.green)
-            Ellipse().fill(Color.yellow)
-            Rectangle().fill(Color.secondary)
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(Color.indigo)
+            
+            Image("sample_dog_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 20, x: 0, y:0) // 그림자
+                .overlay(Rectangle().stroke(Color.gray, lineWidth: 10)) // border
+                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/) // 투명도
             
             Spacer()
             
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors: [.blue, .yellow]),
-                    center: .top,
-                    startRadius: 10,
-                    endRadius: 65))
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors: [.blue, .yellow]),
-                    center: .center,
-                    startRadius: 10,
-                    endRadius: 65))
-            Ellipse().fill(
-                RadialGradient(
-                    gradient: Gradient(colors: [.blue, .yellow]),
-                    center: .bottom,
-                    startRadius: 10,
-                    endRadius: 65))
-            
-            Spacer()
-            
-            Ellipse().fill(
-                AngularGradient(
-                    gradient: Gradient(colors:[.blue,.yellow]),
-                    center: .center))
-            
-            Spacer()
-            
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
-            
-            Spacer()
-            
-//            Image("clock-solid")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 150, height: 50)
+            Image("sample_dog_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/) // 원형으로 도형 변경
+                .shadow(color: .yellow, radius: 20, x: 30, y:20) // 그림자
+                .overlay(Circle().stroke(Color.purple, lineWidth: 20)) // border
+                .opacity(0.5) // 투명도
         }
     }
 }
