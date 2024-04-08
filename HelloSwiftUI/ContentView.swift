@@ -14,45 +14,25 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-//            Capsule().fill(Color.yellow)
-//            Circle().fill(Color.blue)
-//            Ellipse().fill(Color.brown)
-//            Rectangle().fill(Color.red)
-//            RoundedRectangle(cornerRadius: 25).fill(Color.green)
-            
-//            Spacer()
-//            Ellipse().fill(
-//                RadialGradient(
-//                    gradient: Gradient(colors: [.blue, .yellow]),
-//                    center:.top,
-//                    startRadius: 10,
-//                    endRadius: 65
-//                    )
-//            )
-//            Ellipse().fill(
-//                RadialGradient(
-//                    gradient: Gradient(colors: [.blue, .yellow]),
-//                    center:.center,
-//                    startRadius: 10,
-//                    endRadius: 65
-//                    )
-//            )
-//            Ellipse().fill(
-//                AngularGradient(
-//                    gradient: Gradient(colors: [.blue, .yellow]),
-//                    center:.center
-//                    )
-//            )
-//            Spacer()
-            
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
             Spacer()
-            Image("clock-solid")
+            // 이미지 크기 조정, 크롭(자르기, 원형), 그림자, 테두리, 투명도
+            Image("sample_dog_square")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 50)
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .shadow(color: .red, radius: 46, x: 0, y: 0)
+                .overlay(Rectangle().stroke(.red, lineWidth: 3))
+                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+            Spacer()
+            Image("sample_cat_square")
+                .resizable()
+                .frame(width: 250, height: 250)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(Circle())
+                .shadow(color: .green, radius: 10, x: 8, y: 8)
+                .overlay(Circle().stroke(.green, lineWidth: 5))
+                .opacity(0.2)
+            Spacer()
             
         }
     }
