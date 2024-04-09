@@ -8,25 +8,23 @@
 import SwiftUI
 
 struct LinkExample: View {
-    @State var message: String = ""
+    @State var message: String = "No Selection"
     
     var body: some View {
         VStack {
-            MultipleSpacer(multiple: 1)
             Link(destination: URL(string: "https://www.apple.com")!, label: {
                 Text("Apple")
             })
             
-            MultipleSpacer(multiple: 1)
             Text("\(message)")
-            MultipleSpacer(multiple: 1)
             
             Menu("Options") {
-                Button("Delete...", action: deleteFile)
-                Button("Find", action: findFile)
                 Button("Open", action: openFile)
+                Button("Find", action: findFile)
+                Button("Delete...", action: deleteFile)
             }
-            MultipleSpacer(multiple: 1)
+            .menuOrder(.fixed) // MARK: menuOrder default: automatic
+//            MultipleSpacer(multiple: 1)
         }
         .padding()
     }
