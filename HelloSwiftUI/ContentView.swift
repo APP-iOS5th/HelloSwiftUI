@@ -5,15 +5,23 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Show") {
+            Button("Show AcitonSheet") {
                 showAlert.toggle()
             }
-            .alert("alert", isPresented: $showAlert) {
-                Button("OK") {}
+            .confirmationDialog("Warring", isPresented: $showAlert, titleVisibility: .visible) {
+                Button(role: .none) {
+                    print("option1 action")
+                } label: {
+                    Text("option1")
+                }
+                Button(role: .destructive) {
+                    print("option2 action")
+                } label: {
+                    Text("option2")
+                }
             } message: {
-                Text("message")
+                Text("Zombies on the loose")
             }
-            
         }
     }
 }
