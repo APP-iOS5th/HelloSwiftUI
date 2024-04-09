@@ -1,26 +1,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showAlert = false
-    
+    var myArray = ["cat","dog","turtle","bird","reptile","fish"]
     var body: some View {
         VStack {
-            Button("Show Alert") {
-                showAlert.toggle()
+            List {
+                Text("Cat")
+                Text("Dog")
+                Text("Bird")
+                Text("Reptile")
+                Text("Fish")
             }
-            .confirmationDialog("Warning!", isPresented: $showAlert, titleVisibility: .visible) {
-                Button(role: .none) {
-                    print("option1 action")
-                } label: {
-                    Text("option1")
+            List {
+                ForEach(1...25, id: \.self) {index in
+                Text("Animal #\(index)")
                 }
-                Button(role: .destructive) {
-                    print("option2 action")
-                } label: {
-                    Text("option2")
+            }
+            List {
+                ForEach(0...myArray.count - 1, id: \.self) { index in
+                Text(myArray[index])
                 }
-            } message: {
-                Text("Zombie on the loose")
             }
         }
     }
