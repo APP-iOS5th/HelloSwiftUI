@@ -15,7 +15,8 @@ struct ContentView: View {
             Button("Show ActionSheet") {
                 showAlert.toggle()
             }
-            .confirmationDialog("Warning!", isPresented: $showAlert) {
+            .confirmationDialog("Warning!", isPresented: $showAlert,
+                                titleVisibility: .visible) {
                 Button(role: .none) {
                     print("option1 action")
                 } label: {
