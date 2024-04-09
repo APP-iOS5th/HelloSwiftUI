@@ -11,39 +11,26 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var changeMe1 = false
-    @State var changeMe2 = false
-    @State var changeMe3 = false
-    @State var message = ""
-    
+    @State private var tempValue: CGFloat = 0 //private 이 화면 밖에서 temp value를 수정할 일이 있을까요? 없으니 private 을 사용
+    @State private var finalValue: CGFloat = 1
     var body: some View {
         VStack  {
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundStyle(changeMe1 ? .red : .yellow)
-                .onTapGesture {
-                    changeMe1.toggle()
-                }
-            
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundStyle(changeMe2 ? .red : .yellow)
-                .onTapGesture(count: 2) {
-                    changeMe2.toggle()
-                }
-            
-            Text(message).padding()
-            
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundStyle(changeMe3 ? .red : .yellow)
-                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2, pressing: { stillPressed in
-                    message = "Long press in progress: \(stillPressed)"
-                }) {
-                    changeMe3.toggle()
-                }
-            
-            
+            Image(systemName: "star.fill")
+                .resizable()
+                .scaledToFit() //얘는 부모크기에 맞춰줌
+               // .aspectRatio(contentMode: .fit) 얘는 비율에 fit, fill을 시키는 거고
+                .frame(width: 200, height: 200)
+                .scaleEffect(finalValue + tempValue)
+                .gesture(
+                    MagnificationGesture()
+                        .onChanged { amount in
+                            tempValue = amount - 1
+                        }
+                        .onEnded { amount in
+                            finalValue += tempValue
+                            tempValue = 0
+                        }
+                )
         }
     }
 }
