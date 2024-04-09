@@ -2,25 +2,22 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var message = ""
+    @State private var message: String = ""
+    @State private var password: String = ""
     var body: some View {
         VStack {
-            Text(message)
-            Picker("Favorite Color", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) {newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyus"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default:
-                    break
-                }
-            }
+            
+            TextField("Placeholder text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true)
+                .textContentType(.emailAddress)
+                .padding()
+            
+            
+            SecureField("Password", text: $password)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
         }
     }
 }
