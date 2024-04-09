@@ -9,36 +9,34 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var message = ""
-
-        
+    @State var message  = false
+    @State var initiat = ""
+    
     var body: some View {
         VStack {
+            Rectangle()
+                .frame(width: 175, height:125)
+                .foregroundStyle(message ? .red : .yellow)
+                .onTapGesture(count:2) {   //두번 터치하면 동작. 일종의 트리거.
+                    message.toggle()}
             
-            Link(destination: URL(string: "https://www.apple.com")!, label: {
-                Text("Apple")
-            })
+            Rectangle()
+                .frame(width: 175, height:125)
+                .foregroundStyle(message ? .red : .yellow)
+                .onTapGesture(count:2) {   //두번 터치하면 동작. 일종의 트리거.
+                    message.toggle()}
             
-            Text(message).padding()
             
-            Menu("Options") {
-                Button("Open", action: openFile)
-                Button("Find", action: findFile)
-                Button("Del", action: deleteFile)
-
-            }
+            Text(initiat).padding()
+            
+            Rectangle()
+                .frame(width: 175, height:125)
+                .foregroundStyle(message ? .red : .yellow)
+                .onLongPressGesture (minimumDuration: 2, maximumDistance: 2, pressing: { stillPressed in initiat = "LongPress in progress \(stillPressed))"
+                })
+            {message.toggle() }
+            
         }
-    }
-    func openFile() {
-        message = "Open File"
-        
-    }
-    func findFile() {
-        message = "Find File"
-        
-    }
-    func deleteFile() {
-        message = "del File"
     }
 }
 
