@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var message = ""
-    @FocusState private var dismissKeyboard: Bool
+    @State private var choice = 0.0
+    @State private var myColor = Color.red
+    @State private var myDate = Date.now
     
     var body: some View {
         VStack {
-            TextField("Placeholder text", text: $message)
-                .textFieldStyle(.roundedBorder)
-                .autocorrectionDisabled()
-                .textContentType(.emailAddress)
-                .submitLabel(.done)
-                .padding()
-                .focused($dismissKeyboard)
-            SecureField("Password", text: $message)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-            Button("Hide Keyboard") {
-                dismissKeyboard = false
+            Picker(selection: $choice) {
+                Text("Bird").tag(1.7)
+                Text("Cat").tag(2.7)
+            } label: {
+                Text("Picker")
             }
+            .pickerStyle(.segmented)
+            Text("You choose \(choice)")
+            ColorPicker("Pick a color", selection: $myColor)
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundStyle(myColor)
+            DatePicker(selection: $myDate) {
+                Text("Date")
+            }
+            .datePickerStyle(.graphical)
         }
     }
 }
