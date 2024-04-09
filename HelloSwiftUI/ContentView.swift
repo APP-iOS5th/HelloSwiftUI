@@ -13,26 +13,21 @@ struct ContentView: View {
     @State private var message = ""
     
     var body: some View {
-        VStack (spacing: 20) {
-            Text(message)
-            Picker("Message", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) { oldValue, newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyous"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default:
-                    break
-                }
-            }
+        VStack {
+            TextField("Placeholder Text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true) // 자동완성 off
+                .textContentType(.emailAddress)
+                .submitLabel(.done) // 키보드 Enter 버튼 모양
+                .padding()
+            
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
         }
     }
 }
+
 
 #Preview {
     ContentView()
