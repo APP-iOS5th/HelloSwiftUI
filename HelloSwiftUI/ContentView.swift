@@ -14,46 +14,45 @@ import SwiftUI
 extension Color {
     
 }
-    
+
 struct ContentView: View {
+    @State var changeMe = false
+    @State var changeMe2 = false
+    @State var changeMe3 = false
     @State var message = ""
-
-        var body: some View {
-            VStack {
-               
-
-               
-
-                Menu("Options") {
-                    Button("Open", action: openFile)
-                    Button("Find", action: findFile)
-                    Button("Delete...", action: deleteFile)
-                }
-                
-                
-                Text(message).padding()
-                
-                
-                Link(destination: /*@START_MENU_TOKEN@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/, label: {
-                    Text("Apple")
-                })
-            }
-        }
-
-        func openFile() {
-            message = "Open chosen"
-        }
-
-        func findFile() {
-            message = "Find chosen"
-        }
-
-        func deleteFile() {
-            message = "Delete chosen"
-        }
-   
-        }
     
-#Preview {
-    ContentView()
-}
+    var body: some View {
+        VStack {
+            Rectangle()
+                .frame(width: 175, height: 125)
+                .foregroundColor(changeMe ? .red : .yellow)
+                .onTapGesture {
+                    changeMe.toggle()
+                }
+            Rectangle()
+                .frame(width: 175, height: 125)
+                .foregroundColor(changeMe2 ? .red : .gray)
+                .onTapGesture {
+                    changeMe2.toggle()
+                }
+            Text(message).padding()
+
+            Rectangle()
+                .frame(width: 175, height: 125)
+                .foregroundColor(changeMe3 ? .red : .blue)
+                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2,  pressing: {stillPressed in message = "Long press in progress: \(stillPressed)"}){
+                    changeMe3.toggle()
+                }
+                                    
+                                    
+                                    }
+                                    }
+                                    
+                                    
+                                    
+                                    }
+                                    
+                                    #Preview
+                                    {
+                    ContentView()
+                }
