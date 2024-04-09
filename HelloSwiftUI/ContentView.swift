@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-extension Color {
-    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
-}
-
 struct ContentView: View {
     @State var myDate = Date.now
     let dateRange: ClosedRange<Date> = {
@@ -21,15 +17,21 @@ struct ContentView: View {
         ...
         calendar.date(from:endComponents)!
     }()
+    let formatter = DateFormatter()
 
     var body: some View {
         VStack {
-            Text("Chosen date = \(myDate)")
+            Text("Chosen date = \(formatter.string(from: myDate))")
                             .padding()
             DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: { Text("Date") })
                 .datePickerStyle(.graphical)
                 .padding()
 
+        }.onAppear() {
+            formatter.locale = Locale(identifier: "ko_KR")
+            formatter.dateStyle = .medium
+//            formatter.dateStyle = .full
+//            formatter.dateStyle = .long
         }
     }
 }
