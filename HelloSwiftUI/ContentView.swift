@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-
+@available(iOS 15.0, *)
 struct ContentView: View {
     
     @State private var message = ""
+    @FocusState var dismissKeyboard: Bool
     
     var body: some View {
         VStack {
@@ -20,10 +21,17 @@ struct ContentView: View {
                 .textContentType(.emailAddress)
                 .submitLabel(.done) // 키보드 Enter 버튼 모양
                 .padding()
+                .focused($dismissKeyboard)
             
             SecureField("Password", text: $message)
                 .textFieldStyle(.roundedBorder)
                 .padding()
+            
+            TextEditor(text: $message)
+            
+            Button("Hide keyboard") {
+                dismissKeyboard = false
+            }
         }
     }
 }
