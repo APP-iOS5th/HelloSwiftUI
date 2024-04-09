@@ -387,24 +387,74 @@
 //}
 
 
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State var messageOne = ""
+//    @State var messageTwo = ""
+//    
+//    var body: some View {
+//        VStack (spacing: 20) {
+//            Form {
+//                Text("This is the first form")
+//                TextField("Type here", text: $messageOne)
+//            }
+//            Form {
+//                Text("This is the second form")
+//                TextField("Type here", text: $messageTwo)
+//            }
+//            Text("Form #1 = \(messageOne)")
+//            Text("Form #2 = \(messageTwo)")
+//        }
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
+
 import SwiftUI
 
 struct ContentView: View {
-    @State var messageOne = ""
-    @State var messageTwo = ""
+    @State var flag = false
+    @State var message = ""
     
     var body: some View {
         VStack (spacing: 20) {
+            
             Form {
-                Text("This is the first form")
-                TextField("Type here", text: $messageOne)
+                Section {
+                    Text("This Section has no header")
+                }
+                Section("Just a Header") {
+                    Text("This Section uses a simple header")
+                }
+                Section {
+                    Text("This Section uses a simple footer")
+                } footer: {
+                    Text("Just a Footer")
+                }
+                Section {
+                    Text("This Section uses both a header and footer")
+                } header: {
+                    Text("The header")
+                } footer: {
+                    Text("The footer")
+                }
             }
+            
             Form {
-                Text("This is the second form")
-                TextField("Type here", text: $messageTwo)
+                Text("This is a Form")
+                Toggle(isOn: $flag, label: {
+                    Text("Click me")
+                })
+                .disabled(flag)
             }
-            Text("Form #1 = \(messageOne)")
-            Text("Form #2 = \(messageTwo)")
+            
+            GroupBox(label: Text("Group Box")) {
+                Text("This is a Group Box")
+            }
         }
     }
 }
