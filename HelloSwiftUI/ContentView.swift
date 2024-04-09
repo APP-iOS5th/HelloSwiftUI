@@ -13,48 +13,24 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Show Alert") {
-                showAlert.toggle()
-            }
-//            .actionSheet(isPresented: $showAlert, content: {
-//                ActionSheet(title: Text("Waring!"), message: Text("Zombies on the loose"), buttons: [.default(Text("OK"))])
-//            })
-            .confirmationDialog("Waring", isPresented: $showAlert, titleVisibility: .visible) {
-                Button(role: .cancel) {
-                    print("button action")
-                } label: {
-                    Text("OK")
+            Text("Turtle Rock")
+                .padding()
+                .contextMenu {
+                    Button {
+                        
+                    } label: {
+                     Label("Add to Fabvorite", systemImage: "heart")
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                     Label("Show in Maps", systemImage: "mappin")
+                    }
+                    
+                    
                 }
-                
-                Button(role: .destructive) {
-                    print("button action")
-                } label: {
-                    Text("Option")
-                }
-                
-                Button(role: .none) {
-                    print("button action")
-                } label: {
-                    Text("Option2")
-                }
-
-            } message: {
-                Text("Zombies on the loose")
-            }
-                
-//            .alert(Text("Waring!"), isPresented: $showAlert) {
-//                Button("OK") {
-//                    
-//                }
-//            } message: {
-//                Text("Zombies on the loose")
-//            }
             
-//            .alert(isPresented: $showAlert) {
-//                Alert(title: Text("Waring!"),
-//                      message: Text("Zombies on the loose"),
-//                      dismissButton: .default(Text("OK")))
-//            }
         }
         
     }
