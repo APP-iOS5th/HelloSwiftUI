@@ -12,27 +12,20 @@ extension Color {
 }
 struct ContentView: View {
     @State private var message = ""
+    @State private var passmessage = ""
     
     var body: some View {
-        VStack (spacing: 28) {
-            Text(message)
-            Picker("Favorite Color", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) { oldValue, newValue in
-                switch newValue {
-                case "happy": 
-                    print(oldValue)
-                    message = "Be happy and joy"
-                case "sad": message = "Life can be a struggle"
-                case "bored": message = "Look for your purpose"
-                default:
-                    break
-                }
-            }
+        VStack {
+            TextField("Placeholder text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .autocorrectionDisabled(true)
+                .textContentType(.emailAddress)
+                .submitLabel(.done)
+                .padding()
+            
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
         }
     }
 }
