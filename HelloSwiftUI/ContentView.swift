@@ -15,8 +15,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack  {
-            Link(destination: /*@START_MENU_TOKEN@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/, label: {
-                    Text("Apple")
+            Link(destination: URL(string: "https://www.apple.com")!, label: {
+                Text("Apple")
             })
             
             Text(message).padding()
@@ -26,6 +26,8 @@ struct ContentView: View {
                 Button("Find", action: findFile)
                 Button("Delete...", action: deleteFile)
             }
+            .menuStyle(DefaultMenuStyle())
+            .menuOrder(.fixed)
         }
     }
     
