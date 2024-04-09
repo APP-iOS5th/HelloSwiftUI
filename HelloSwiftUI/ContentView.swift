@@ -18,11 +18,15 @@ struct ContentView: View {
             Button("Show Alert") {
                 showAlert.toggle()
             }
-            .alert(isPresented: $showAlert, content: {
-                Alert(title: Text("Warning!"), message: Text("Zombies on the loose"),
-                      dismissButton: .default(Text("OK"))
-                )
-            })
+            .alert("Warning!", isPresented: $showAlert) { //alert 이라는 모디파이어가 생성자 함수처럼,, 기존은 content 에서 별도의 객체?
+                Button(role: .cancel) {
+                    print("button action")
+                } label: {
+                    Text("OK!")
+                }
+            } message: {
+                Text("Zombies on the loose")
+            }
         }
     }
 }
