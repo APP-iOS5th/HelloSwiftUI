@@ -11,25 +11,21 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct ContentView: View {
     
-    @State private var tempValue: CGFloat = 0
-    @State private var finalValue: CGFloat = 1
+    @State private var degree: CGFloat = 0.0
     
     var body: some View {
         VStack {
+            Text("tempValue = \(degree)")
             Image(systemName: "star.fill")
                 .resizable()
                 .scaledToFit()
-//                .aspectRatio(contentMode: .fit)
+//                .aspectRatio(0.5, contentMode: .fit) -> 0.5(1:2) 비율로 fit하게 비율 맞춰줌.
                 .frame(width: 200)
-                .scaleEffect(finalValue + tempValue)
+                .rotationEffect(Angle.degrees(degree))
                 .gesture(
-                    MagnificationGesture()
-                        .onChanged { amount in
-                            finalValue = amount - 1
-                        }
-                        .onEnded { amount in
-                            finalValue += tempValue
-                            tempValue = 0
+                    RotationGesture()
+                        .onChanged { angle in
+                            degree = angle.degrees
                         }
                 )
         }
