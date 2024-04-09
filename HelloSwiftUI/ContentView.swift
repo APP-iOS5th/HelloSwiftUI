@@ -4,6 +4,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var message: String = ""
     @State private var password: String = ""
+    @FocusState var dismissKeyboard: Bool
     var body: some View {
         VStack {
             
@@ -12,12 +13,19 @@ struct ContentView: View {
                 .disableAutocorrection(true)
                 .textContentType(.emailAddress)
                 .padding()
+                .submitLabel(.done)
+                .focused($dismissKeyboard)
             
             
             SecureField("Password", text: $password)
                 .textFieldStyle(.roundedBorder)
                 .padding()
             
+            TextEditor(text: $message)
+            
+            Button("Hide Keyboard") {
+                dismissKeyboard = false
+            }
         }
     }
 }
