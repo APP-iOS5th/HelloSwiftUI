@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ZoomInOutExample: View {
     
-    // MARK: CGFloat -> 그래픽 처리할때 쓰는 Float
-    @State private var tempValue: CGFloat = 0.0
-    @State private var finalValue: CGFloat = 1.0
+//    MARK: CGFloat -> 그래픽 처리할때 쓰는 Float (확대, 축소할 때 썼음
+//    @State private var tempValue: CGFloat = 0.0
+//    @State private var finalValue: CGFloat = 1.0
+    @State private var degree: Double = 0
     
     var body: some View {
         VStack {
@@ -19,17 +20,26 @@ struct ZoomInOutExample: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
-                .scaleEffect(finalValue + tempValue)
+                .rotationEffect(Angle.degrees(degree))
                 .gesture(
-                    MagnificationGesture()
-                        .onChanged({ value in
-                            finalValue = value - 1
-                        })
-                        .onEnded({ value in
-                            finalValue += tempValue
-                            tempValue = 1
+                    RotationGesture()
+                        .onChanged({ angle in
+                            print(angle.degrees)
+                            degree = angle.degrees
                         })
                 )
+//                 MARK: - 확대, 축소
+//                .scaleEffect(finalValue + tempValue)
+//                .gesture(
+//                    MagnificationGesture()
+//                        .onChanged({ value in
+//                            finalValue = value - 1
+//                        })
+//                        .onEnded({ value in
+//                            finalValue += tempValue
+//                            tempValue = 1
+//                        })
+//                )
         }
         .padding()
     }
