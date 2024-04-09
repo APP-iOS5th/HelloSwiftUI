@@ -22,6 +22,7 @@
 		462930FC2BC3DF1900EEABD1 /* selectedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930FB2BC3DF1900EEABD1 /* selectedColor.swift */; };
 		462930FE2BC3E26900EEABD1 /* selectedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930FD2BC3E26900EEABD1 /* selectedText.swift */; };
 		46360E342BC4C0CE004FACBE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46360E332BC4C0CE004FACBE /* TextField.swift */; };
+		46360E362BC4CECA004FACBE /* PickerSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46360E352BC4CECA004FACBE /* PickerSelection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		462930FB2BC3DF1900EEABD1 /* selectedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedColor.swift; sourceTree = "<group>"; };
 		462930FD2BC3E26900EEABD1 /* selectedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedText.swift; sourceTree = "<group>"; };
 		46360E332BC4C0CE004FACBE /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		46360E352BC4CECA004FACBE /* PickerSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				462930FB2BC3DF1900EEABD1 /* selectedColor.swift */,
 				462930FD2BC3E26900EEABD1 /* selectedText.swift */,
 				46360E332BC4C0CE004FACBE /* TextField.swift */,
+				46360E352BC4CECA004FACBE /* PickerSelection.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				462930F32BC3C21400EEABD1 /* Shapes.swift in Sources */,
 				462930F12BC3BC8000EEABD1 /* ImageView.swift in Sources */,
+				46360E362BC4CECA004FACBE /* PickerSelection.swift in Sources */,
 				462930F82BC3D49500EEABD1 /* CustomColor.swift in Sources */,
 				462930DF2BC3711200EEABD1 /* ContentView.swift in Sources */,
 				462930DD2BC3711200EEABD1 /* HelloSwiftUIApp.swift in Sources */,
