@@ -16,16 +16,21 @@ struct ContentView: View {
         return calender.date(from: startComponents)!...calender.date(from: endComponents)!
     }()
     
+    let formatter = DateFormatter()
     
     var body: some View {
         VStack {
-            Text("Chosen date = \(myDate)")
+            Text("Chosen date = \(formatter.string(from: myDate))")
                 .padding()
             DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: {
                 Text("Date")
             })
             .datePickerStyle(.graphical)
             .padding()
+        }.onAppear() {
+            formatter.locale = Locale(identifier: "ko_KR")
+            formatter.dateStyle = .long
+            formatter.timeStyle = .medium
         }
     }
 }
