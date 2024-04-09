@@ -15,6 +15,8 @@ struct TextFieldView: View {
     @FocusState var dissmissKeyboard: Bool
     
     var body: some View {
+        
+        //TextField
         TextField("Placeholder Text", text: $message)
             .textFieldStyle(.roundedBorder)
             .autocorrectionDisabled(true)
@@ -23,10 +25,15 @@ struct TextFieldView: View {
             .padding()
             .focused($dissmissKeyboard)
         
+        //SecureField
         SecureField("password Text", text: $message)
             .textFieldStyle(.roundedBorder)
             .padding()
         
+        //TextEditor
+        TextEditor(text: $message)
+        
+        //Button
         Button("Hide Keyboard") {
             dissmissKeyboard = false
         }
