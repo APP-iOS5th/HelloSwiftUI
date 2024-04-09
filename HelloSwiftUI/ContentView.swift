@@ -15,11 +15,15 @@ struct ContentView: View {
             Button("Show Alert") {
                 showAlert.toggle()
             }
-            .alert(isPresented: $showAlert, content: {
-                Alert(title: Text("Warning!"), message: Text("Zombies on the loose"),
-                      dismissButton: .default(Text("OK"))
-                )
-            })
+            .alert("Warning!", isPresented: $showAlert) {
+                Button(role: .cancel) {
+                    print("button action")
+                } label: {
+                    Text("OK!")
+                }
+            } message: {
+                Text("Zombies on the loose")
+            }
         }
     }
 }
