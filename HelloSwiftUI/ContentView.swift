@@ -21,6 +21,7 @@ struct ContentView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
+                .scaleEffect(finalValue + tempValue)
                 .gesture(MagnificationGesture()
                     .onChanged { amount in
                         tempValue = amount - 1 }
