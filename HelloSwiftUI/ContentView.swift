@@ -8,28 +8,35 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var myToggle = true //boolean
-    @State var newValue = 0 //int
-    @State var sliderValue = 0.0
+    @State var message = ""
     
     var body: some View{
         VStack{
-            Toggle(isOn: $myToggle){
-                Text("Toggle Text")
+            Link(destination: URL(string: "https://www.apple.com")!, label: {
+                Text("Apple")
+                
+            })
+            Text(message).padding()
+            
+            Menu("Options"){
+                Button("Open", action: openFile)
+                Button("Find", action: findFile)
+                Button("Delete...", action: deleteFile)
             }
-            Rectangle()
-                .frame(width: 200, height:150)
-                .foregroundColor(myToggle ? .orange: .green)
-            // int 값의 범위한정자를 지정해줘야함. (1~10으로)
-            Stepper(value: $newValue, in: 1...10) {
-                Text("Stepper value = \(newValue)")
-            }
-            .padding()
-            // step: 구간에 대한 단위 지정 (4씩 커짐)
-            Slider(value: $sliderValue, in: 1...50,step: 4)
-                .padding()
-            Text("Slider value = \(sliderValue)")
         }
+    }
+    
+    func openFile(){
+        message = "Open chosen"
+        
+    }
+    func findFile(){
+        message = "Find chosen"
+        
+    }
+    func deleteFile(){
+        message = "Delete chosen"
+        
     }
 }
 
