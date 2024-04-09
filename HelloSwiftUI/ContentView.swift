@@ -7,25 +7,26 @@
 
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct ContentView: View {
     @State private var message = ""
+    @FocusState var dismissKeyboard: Bool
     var body: some View {
         VStack {
-            Text(message)
-            Picker("Message", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) { oldValue, newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyous"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default:
-                    break
-                }
+            TextField("Placeholder", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .autocorrectionDisabled(false)
+                .textContentType(.URL)
+                .submitLabel(.go)
+                .padding()
+                .focused($dismissKeyboard)
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            TextEditor(text: $message)
+                .padding()
+            Button("Hide Keyboard") {
+                dismissKeyboard = false
             }
         }
     }
