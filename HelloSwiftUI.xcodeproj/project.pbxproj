@@ -28,6 +28,7 @@
 		4A8D483C2BC50B9F00C9871B /* RotateGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */; };
 		4A8D483E2BC511CE00C9871B /* AlertWithActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483D2BC511CE00C9871B /* AlertWithActionSheet.swift */; };
 		4A8D48402BC5194B00C9871B /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483F2BC5194B00C9871B /* ContextMenu.swift */; };
+		4A8D48422BC5213C00C9871B /* ListEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48412BC5213C00C9871B /* ListEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateGestureView.swift; sourceTree = "<group>"; };
 		4A8D483D2BC511CE00C9871B /* AlertWithActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithActionSheet.swift; sourceTree = "<group>"; };
 		4A8D483F2BC5194B00C9871B /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
+		4A8D48412BC5213C00C9871B /* ListEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */,
 				4A8D483D2BC511CE00C9871B /* AlertWithActionSheet.swift */,
 				4A8D483F2BC5194B00C9871B /* ContextMenu.swift */,
+				4A8D48412BC5213C00C9871B /* ListEx.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
@@ -204,6 +207,7 @@
 				4A8D483C2BC50B9F00C9871B /* RotateGestureView.swift in Sources */,
 				4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
+				4A8D48422BC5213C00C9871B /* ListEx.swift in Sources */,
 				4A8D48282BC3C9B100C9871B /* GeometryImage.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
 				4A8D48342BC4E2AD00C9871B /* ToggleView.swift in Sources */,
