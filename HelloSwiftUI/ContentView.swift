@@ -8,16 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var myToggle = true
-    @State private var newValue = 1
-    @State private var sliderValue = 1.0
+    @State private var message = ""
     
     var body: some View {
         VStack {
-            Slider(value: $sliderValue, in: 1...10)
+            Link(destination: URL(string: "https://www.apple.com")!) {
+                Text("Apple")
+            }
+            Text(message)
                 .padding()
-            Text("\(sliderValue)")
+            Menu("Options") {
+                Button("Open", action: openFile)
+                Button("Find", action: findFile)
+                Button("Delete...", action: deleteFile)
+            }
         }
+    }
+    
+    func openFile() {
+        message = "Open chosen"
+    }
+    
+    func findFile() {
+        message = "Find chosen"
+    }
+    
+    func deleteFile() {
+        message = "Delete chosen"
     }
 }
 
