@@ -14,6 +14,7 @@ struct ContentView: View {
 
     @State var myToggle = true
     @State var newValue = 0
+    @State var sliderValue = 0.0
         
     var body: some View {
         VStack {
@@ -28,6 +29,10 @@ struct ContentView: View {
                 Text("stepper value = \(newValue)")
             }
             .padding()
+            
+            Slider(value: $sliderValue, in: 1...1000, step: 0.1) //1-50까지, 4만큼씩 움직임.
+                .padding()
+            Text("Slider value = \(sliderValue)")
             
         }
     }
