@@ -10,29 +10,29 @@ import SwiftUI
 
 @available(iOS 15.0, *)  //ios 15 이상에서 가능.
 struct ContentView: View {
-    @State private var message = ""
-    @FocusState var dismissKeyboard: Bool
+    
+    @State private var choice = 0
+    @State private var myColor = Color.red
+    @State private var myDate = Date.now
+    
     var body: some View {
         VStack {
-            
-            
-            TextField("Placeholder text", text: $message)
-                .textFieldStyle(.roundedBorder)
-                .disableAutocorrection(true)
-                .padding()
-                .submitLabel(.done) //리턴키에 뜨는 문구.
-                .focused($dismissKeyboard)
-            
-            SecureField("Password", text: $message)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-            
-            TextEditor(text: $message)
-            
-            Button ("Hide Keyboard") {
-                dismissKeyboard = false
-            }
-            
+            Picker(selection: $choice, label: Text("Picker")) {
+                Text("Bird").tag(1)
+                Text("Cat").tag(2)
+                Text("Lizard").tag(3)
+                Text("Dog").tag(4)
+                Text("Hamster").tag(5)
+                
+                
+                
+            }.pickerStyle(SegmentedPickerStyle())
+            Text("You chose \(choice)")
+            ColorPicker("Pick a color", selection: $myColor)
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myColor)
+            DatePicker(selection: $myDate, label: { Text("Date")}).datePickerStyle(.graphical)
         }
     }
 }
