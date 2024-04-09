@@ -355,29 +355,56 @@
 //    }
 //}
 
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State private var message = ""
+//    
+//    var body: some View {
+//        VStack (spacing: 28) {
+//            Text(message)
+//            Picker("Favorite Color", selection: $message, content: {
+//                Text("Happy").tag("happy")
+//                Text("Sad").tag("sad")
+//                Text("Bored").tag("bored")
+//            })
+//            .pickerStyle(SegmentedPickerStyle())
+//            .onChange(of: message) { oldValue, newValue in
+//                switch newValue {
+//                case "happy": message = "Be happy and joyous"
+//                case "sad": message = "Life can be a struggle at times"
+//                case "bored": message = "Look for your purpose"
+//                default:
+//                    break
+//                }
+//            }
+//        }
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
+
 import SwiftUI
 
 struct ContentView: View {
-    @State private var message = ""
+    @State var messageOne = ""
+    @State var messageTwo = ""
     
     var body: some View {
-        VStack (spacing: 28) {
-            Text(message)
-            Picker("Favorite Color", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) { oldValue, newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyous"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default:
-                    break
-                }
+        VStack (spacing: 20) {
+            Form {
+                Text("This is the first form")
+                TextField("Type here", text: $messageOne)
             }
+            Form {
+                Text("This is the second form")
+                TextField("Type here", text: $messageTwo)
+            }
+            Text("Form #1 = \(messageOne)")
+            Text("Form #2 = \(messageTwo)")
         }
     }
 }
