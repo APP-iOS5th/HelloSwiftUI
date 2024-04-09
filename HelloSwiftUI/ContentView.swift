@@ -9,22 +9,28 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var degree = 0.0
+    @State var degree: Angle = .zero
     
     var body: some View {
         VStack {
             Text("angle = \(degree)")
+            
             Image(systemName: "star.fill")
                 .resizable()
                 .scaledToFit()
 //                .aspectRatio(contentMode: .fill)
                 .frame(width: 200, height: 200)
-                .rotationEffect(Angle.degrees(degree))
+                .rotationEffect(degree)
                 .gesture(
-                    RotationGesture()
-                        .onChanged{ angle in
-                            degree = angle.degrees
-                        }
+                    RotateGesture()
+                        .onChanged({ a in
+                            degree = a.rotation
+                        })
+                    
+//                    RotationGesture()
+//                        .onChanged{ angle in
+//                            degree = angle.degrees
+//                        }
                     
                 )
             
