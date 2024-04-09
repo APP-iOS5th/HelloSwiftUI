@@ -28,7 +28,7 @@ struct ContentView: View {
                 Section {
                     Text("This Section uses both a header and footer")
                 } header: {
-                    Text("The header")
+                    Text("The header").textCase(nil)
                 } footer: {
                     Text("The footer")
                 }
@@ -39,6 +39,7 @@ struct ContentView: View {
                 Toggle(isOn: $flag, label: {
                     Text("Click me")
                 })
+                .disabled(flag) // 토글 비활성화
             }
             // 기본 배경색에 텍스트 출력
             GroupBox(label: Text("Group Box")) {
