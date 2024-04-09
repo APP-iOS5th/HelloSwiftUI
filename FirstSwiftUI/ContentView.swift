@@ -11,47 +11,32 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct ContentView: View {
     
-    @State private var oneTouch = false
-    @State private var twoTouch = false
-    @State private var threeTouch = false
-    
-    @State private var message = ""
+    @State private var tempValue: CGFloat = 0
+    @State private var finalValue: CGFloat = 1
     
     var body: some View {
         VStack {
-            Rectangle()
-                .frame(width: 100, height: 100)
-                .foregroundColor(oneTouch ? .red : .blue)
-                .onTapGesture(count: 2) {
-                    oneTouch.toggle()
-                }
-            
-            Rectangle()
-                .frame(width: 100, height: 100)
-                .foregroundColor(twoTouch ? .black : .gray)
-                .onLongPressGesture {
-                    twoTouch.toggle()
-                }
-            
-            Text(message).padding()
-            
-            Rectangle()
-                .frame(width: 100, height: 100)
-                .foregroundColor(threeTouch ? .black : .gray)
-                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2, pressing: {
-                    stillPressed in
-                    message = "Long press in progress: \(stillPressed)"
-                }) {
-                    threeTouch.toggle()
-                }
+            Image(systemName: "star.fill")
+                .resizable()
+                .scaledToFit()
+//                .aspectRatio(contentMode: .fit)
+                .frame(width: 200)
+                .scaleEffect(finalValue + tempValue)
+                .gesture(
+                    MagnificationGesture()
+                        .onChanged { amount in
+                            finalValue = amount - 1
+                        }
+                        .onEnded { amount in
+                            finalValue += tempValue
+                            tempValue = 0
+                        }
+                )
         }
         .onAppear() {
             print("ContentView Load.")
         }
     }
-    
-
-    
 }
 
 //#Preview {
