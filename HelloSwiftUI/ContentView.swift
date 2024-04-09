@@ -15,6 +15,8 @@ extension Color{
 struct ContentView: View{
     @State private var email = ""
     @State private var password = ""
+    //boolean value
+    @FocusState var dismissKeyboard: Bool
 
     
     
@@ -26,10 +28,15 @@ struct ContentView: View{
                 .textContentType(.emailAddress)
                 .submitLabel(.done)
                 .padding()
+                .focused($dismissKeyboard)
                 
             SecureField("Password", text: $password)
                 .textFieldStyle(.roundedBorder)
                 .padding()
+            
+            Button("Hide Keyboard"){
+                dismissKeyboard = false
+            }
         }
     }
 }
