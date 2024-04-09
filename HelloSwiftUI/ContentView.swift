@@ -11,8 +11,10 @@ extension Color {
     static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
 }
 
+@available(iOS 15.0, *)
 struct ContentView: View {
     @State private var message = ""
+    @FocusState var dismissKeyboard: Bool
     
     var body: some View {
         VStack {
@@ -22,10 +24,15 @@ struct ContentView: View {
                 .textContentType(.emailAddress)
                 .submitLabel(.done)
                 .padding()
+                .focused($dismissKeyboard)
             
             SecureField("Password", text: $message)
                 .textFieldStyle(.roundedBorder)
                 .padding()
+            
+            Button("Hide Keyboard") {
+                dismissKeyboard = false
+            }
         }
     }
 }
