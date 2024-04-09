@@ -43,6 +43,7 @@ struct ContentView: View {
                 Toggle(isOn: $flag) {
                     Text("Click Me")
                 }
+                .disabled(flag)
             }
             
             GroupBox(label: Text("Group Box")) {
