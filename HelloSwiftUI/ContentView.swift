@@ -12,31 +12,32 @@ extension Color {
 }
 
 struct ContentView: View {
-    @State var myDate = Date.now
-    let dateRange: ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
-        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
-        return calendar.date(from: startComponents)! ... calendar.date(from:endComponents)!
-    }()
-    let formatter = DateFormatter()
+    @State var myToggle = true
+    @State var newValue = 0
+    @State var sliderValue = 0.0
     
     var body: some View {
         VStack {
-            Text("Chosen date = \(formatter.string(from: myDate))")
-                .padding()
-            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: { Text("Date") })
-                .datePickerStyle(.graphical)
-                .padding()
+            Toggle(isOn: $myToggle) {
+                Text(myToggle ? "Cyan" : "Green")
+            }
+            .padding()
             
-        }.onAppear() {
-            formatter.locale = Locale(identifier: "ko_KR")
-            formatter.dateStyle = .long
-            formatter.timeStyle = .medium
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myToggle ? .cyan : .green)
+            
+            Stepper(value: $newValue, in: 1...10) {
+                Text("Stepper value = \(newValue)")
+            }
+            .padding()
+            
+            Slider(value: $sliderValue, in: 1...50, step: 4)
+                .padding()
+            Text("Slider value = \(sliderValue)")
         }
     }
 }
-
 
 #Preview {
     ContentView()
