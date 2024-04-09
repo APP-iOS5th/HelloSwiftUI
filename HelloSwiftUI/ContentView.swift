@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Toggle(isOn: $myToggle){
+            Toggle(isOn: $myToggle){ //$쓰면 뷰에 연결시켜줌, SwiftUI는 readonly기반
                 Text(myToggle ? "Orange" : "Green")
             }.padding()
             
