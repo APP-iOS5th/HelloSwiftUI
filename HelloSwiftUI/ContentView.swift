@@ -8,31 +8,28 @@
 import SwiftUI
 @available(iOS 15.0, *) // 15 이하로는 실행 안되게하는?
 struct ContentView: View {
-    @State private var message = ""
-    @FocusState var dismissKeyboard: Bool
+    @State private var choice = 0.0 //중간에 뭔가 추가해야할거같을 때 double로 하면 정수는 뒤에걸 다 수정해야하지만 소수점은 중간에 추가가 용이함.
+    @State private var myColor = Color.red
+    @State private var myDate = Date.now
+    
     var body: some View {
         VStack  {
-            TextField("Placehloder text", text: $message) //달러사인(4)은 뷰에서 나온 텍스트가 메세지에 연결되게끔 바인딩시켜주는것
-                .textFieldStyle(.roundedBorder)
-                .disableAutocorrection(true)
-                .textContentType(.emailAddress)
-                .submitLabel(.send)
-                .padding()
-                .focused($dismissKeyboard)
+            Picker(selection: $choice, label: Text("Picerk")) {
+                Text("Bird").tag(1.7)
+                Text("Cat").tag(2.06)
+                Text("Lizard").tag(3.41)
+                Text("Dog").tag(4.13)
+                Text("Hamster").tag(5.28)
+            }.pickerStyle(SegmentedPickerStyle())
+            Text("You chose \(choice)")
             
-            SecureField("Password", text: $message) //같은 메세지 바인딩이 되어있어서 연동됨
-                .textFieldStyle(.roundedBorder)
-                .padding()
+            ColorPicker("Pick a color", selection: $myColor)
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myColor)
             
-            TextEditor(text: $message)
-                
-            
-            Button("Hide Keyboard") {
-                dismissKeyboard = false
-            }
-            
-            
-            
+            DatePicker(selection: $myDate, label: { Text("Date") } )
+                .datePickerStyle(.graphical)
         }
     }
 }
