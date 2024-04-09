@@ -12,14 +12,15 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Show Alert"){
+            Button("Show Alert") {
                 showAlert.toggle()
             }
-            .alert(isPresented: $showAlert, content: {
-                Alert(title: Text("Warning!"), message: Text("Zombies on the loose"),
-                      dismissButton: .default(Text("OK"))
-                )
-            })
+            .alert("Warning", isPresented: $showAlert) {
+                Button("OK") {}
+            } message: {
+                Text("Zombies on the loose")
+            }
+
         }
     }
 }
