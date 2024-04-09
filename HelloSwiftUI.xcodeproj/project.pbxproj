@@ -27,6 +27,7 @@
 		4A8D483A2BC5053900C9871B /* MagnificationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48392BC5053900C9871B /* MagnificationGestureView.swift */; };
 		4A8D483C2BC50B9F00C9871B /* RotateGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */; };
 		4A8D483E2BC511CE00C9871B /* AlertWithActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483D2BC511CE00C9871B /* AlertWithActionSheet.swift */; };
+		4A8D48402BC5194B00C9871B /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483F2BC5194B00C9871B /* ContextMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		4A8D48392BC5053900C9871B /* MagnificationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnificationGestureView.swift; sourceTree = "<group>"; };
 		4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateGestureView.swift; sourceTree = "<group>"; };
 		4A8D483D2BC511CE00C9871B /* AlertWithActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithActionSheet.swift; sourceTree = "<group>"; };
+		4A8D483F2BC5194B00C9871B /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				4A8D48392BC5053900C9871B /* MagnificationGestureView.swift */,
 				4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */,
 				4A8D483D2BC511CE00C9871B /* AlertWithActionSheet.swift */,
+				4A8D483F2BC5194B00C9871B /* ContextMenu.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
@@ -193,6 +196,7 @@
 				4A8D483E2BC511CE00C9871B /* AlertWithActionSheet.swift in Sources */,
 				4A0706022BC3B2D6003A8AC1 /* Text_View.swift in Sources */,
 				4A0706042BC3BC67003A8AC1 /* SFsymbolTest.swift in Sources */,
+				4A8D48402BC5194B00C9871B /* ContextMenu.swift in Sources */,
 				4A8D48322BC4D94100C9871B /* DatePickerWithRange.swift in Sources */,
 				4A8D48302BC4D14D00C9871B /* PickerView.swift in Sources */,
 				4A8D482A2BC3D77E00C9871B /* CustomButton.swift in Sources */,
