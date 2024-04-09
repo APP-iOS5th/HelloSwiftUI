@@ -18,26 +18,27 @@ extension Color {
 }
 
 struct ContentView: View {
-    @State private var choice: Animal = .bird
-    @State private var myColor = Color.red
-    @State var myDate = Date.now
+    @State private var myDate = Date.now
+    let dateRange: ClosedRange<Date> = {
+        let calendar = Calendar.current
+        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
+        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
+        return calendar.date(from: startComponents)! ... calendar.date(from: endComponents)!
+    } ()
+    let formatter = DateFormatter()
     
     var body: some View {
         VStack {
-            Picker(selection: $choice, label: Text("Picker")) {
-                Text("Bird").tag(Animal.bird)
-                Text("Cat").tag(Animal.cat)
-                Text("Lizard").tag(Animal.lizard)
-            }.pickerStyle(SegmentedPickerStyle())
-            Text("You choose \(choice)")
-            
-            ColorPicker("Pick a color", selection: $myColor)
-            Rectangle()
-                .frame(width: 200, height: 150)
-                .foregroundColor(myColor)
-            
-            DatePicker(selection: $myDate, label: {Text("Date")})
-                .datePickerStyle(.wheel)
+            Text("Chosen date = \(formatter.string(from: myDate))")
+                .padding()
+            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date],
+            label: { Text("Date") })
+            .datePickerStyle(.graphical)
+            .padding()
+        }.onAppear() {
+            formatter.locale = Locale(identifier: "ko-KR")
+            formatter.dateStyle = .long
+            formatter.timeStyle = .short
         }
     }
 }
