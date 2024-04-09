@@ -12,7 +12,8 @@ struct ContentView: View {
     @State private var tempValue: CGFloat = 0
     @State private var finalValue: CGFloat = 1
 
-    
+    //state선언할때 뷰 밖에서 안쓸때는 private var으로 선언
+    //이유: 뷰안에서 바인딩해야 밖으로 나갈 값을 private로 보호할수있음
     var body: some View{
         VStack{
             Image(systemName: "heart.fill")
