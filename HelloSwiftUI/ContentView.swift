@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct ContentView: View {
     @State private var message = ""
+    @FocusState var dismissKeyboard: Bool
     
     var body: some View {
         VStack {
@@ -25,11 +27,16 @@ struct ContentView: View {
                 //입력을 완료했을때 Enter키 변경
                 .submitLabel(.done)
                 .padding()
+                .focused($dismissKeyboard)
             
             //비밀번호창처럼 비공개 텍스트박스
             SecureField("Password", text: $message)
                 .textFieldStyle(.roundedBorder)
                 .padding()
+            
+            Button("Hide Keyboard") {
+                dismissKeyboard = false
+            }
         }
     }
 }
