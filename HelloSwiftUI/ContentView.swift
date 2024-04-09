@@ -28,6 +28,7 @@ struct ContentView: View {
 //                }
 //            }
             
+            //실습 2
             Form {
                 Text("This is a Form")
                 Toggle(isOn: $flag, label: {
