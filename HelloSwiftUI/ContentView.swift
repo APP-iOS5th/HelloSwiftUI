@@ -9,9 +9,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var message = ""
+    
     var body: some View {
         VStack {
+            TextField("Placeholder text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true)
+                .textContentType(.emailAddress)
+                .submitLabel(.done)
+                .padding()
             
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
         }
     }
 }
