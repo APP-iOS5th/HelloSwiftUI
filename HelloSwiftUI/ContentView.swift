@@ -30,7 +30,7 @@ struct ContentView: View {
                 Section {
                     Text("This Section uses both a header and footer")
                 } header: {
-                    Text("The Header")
+                    Text("The Header")/*.textCase(nil) 헤더 대문자 해제 */
                 } footer: {
                     Text("The Footer")
                 }
