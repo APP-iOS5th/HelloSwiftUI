@@ -39,6 +39,7 @@ struct DatePickerExample: View {
             formatter.locale = .current
 //            print(formatter.locale)
 //            formatter.dateFormat = "yyyy.MM.dd"
+//            formatter.dateStyle = .full
         }
     }
 }
