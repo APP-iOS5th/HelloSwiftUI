@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tempValue: CGFloat = 0
-    @State private var finalValue: CGFloat = 1
+    @State private var angle: Angle = .zero
+    
     
     var body: some View {
         VStack {
@@ -17,18 +17,13 @@ struct ContentView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
-                .scaleEffect(tempValue + finalValue)
+                .rotationEffect(angle)
                 .gesture(
-                MagnifyGesture()
-                    .onChanged { value in
-                        tempValue = value.magnification - 1
-                    }
-                    .onEnded { _ in
-                        finalValue += tempValue
-                        tempValue = 0
-                    }
+                    RotateGesture()
+                        .onChanged { value in
+                            angle = value.rotation
+                        }
                 )
-                
         }
     }
 }
