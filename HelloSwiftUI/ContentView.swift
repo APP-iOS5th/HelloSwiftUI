@@ -8,10 +8,24 @@
 
 import SwiftUI
 
-struct ContentView: View {    
+struct ContentView: View {
+    @State var myDate = Date.now
+    
+    let dateRange: ClosedRange<Date> = {
+        let calendar = Calendar.current
+        let startComponent = DateComponents(year: 2024, month: 3, day: 25)
+        let endComponent = DateComponents(year: 2024, month: 9, day: 13)
+        return calendar.date(from: startComponent)!...calendar.date(from: endComponent)!
+    }()
+    
     var body: some View {
         VStack {
+            Text("Chosen date = \(myDate)")
+                .padding()
             
+            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: { Text("Date") })
+                .datePickerStyle(.graphical)
+                .padding()
         }
     }
 }
