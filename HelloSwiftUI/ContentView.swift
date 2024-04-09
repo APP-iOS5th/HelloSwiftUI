@@ -8,34 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showAlert = false
+    @State var myColor = Color.gray
     
     var body: some View {
         VStack {
-            Button("Show") {
-                showAlert.toggle()
-            }
-            .alert("Warning!", isPresented: $showAlert) {
-                Button(role: .cancel) {
-                    print("button action")
-                } label: {
-                    Text("OK!")
-                }
-            } message: {
-                Text("Zombies on the loose")
-            }
+            Rectangle()
+                .foregroundColor(myColor)
             
-            // deprecated
-            Button("Show Alert") {
-                showAlert.toggle()
-            }
-            .alert(isPresented: $showAlert, content: {
-                Alert(title: Text("Warning!"), message: Text("Zombies on the loose"), dismissButton: .default(Text("OK"))
-                )
-            })
-
+            Text("Pick a color")
+                .padding()
+                .contextMenu {
+                    Button("Red", action: {
+                        myColor = Color.red // closure
+                    })
+                    Button("Purple", action: purple)
+                    Button("Green", action: green)
+                    Button("Orange", action: orange)
+                }
         }
     }
+    func purple() {
+        myColor = Color.purple
+    }
+    func green() {
+        myColor = Color.green
+    }
+    func orange() {
+        myColor = Color.orange
+    }
+    
 }
 
 
