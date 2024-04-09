@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showAlert = false
+    @State private var myColor = Color.gray
     var body: some View {
         VStack {
-            Button("Show Alert") {
-                showAlert.toggle()
-            }
-            .confirmationDialog("Warning!", isPresented: $showAlert, titleVisibility: .visible) {
-                Button(role: .destructive) {
-                    print("option 1 action")
-                } label: {
-                    Text("Option 1")
+            Rectangle()
+                .foregroundColor(myColor)
+            Text("Pick a color")
+                .padding()
+                .contextMenu {
+                    Button("Red", action: {
+                        myColor = Color.red
+                    })
+                    Button("Purple", action: purple)
+                    Button("Green", action: green)
                 }
-                Button(role: .none) {
-                    print("option 2 action")
-                } label: {
-                    Text("Option 2")
-                }
-            } message: {
-                Text("message")
-            }
         }
+    }
+    func purple() {
+        myColor = Color.purple
+    }
+    func green() {
+        myColor = Color.green
     }
 }
 
