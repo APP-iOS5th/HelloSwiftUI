@@ -9,20 +9,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showAlert = false
-    
     var body: some View {
         VStack {
-            Button("Show ActionSheet") {
-                showAlert.toggle()
-            }.confirmationDialog("Warning", isPresented: $showAlert, titleVisibility: .visible) {
-                Button(role: .none) {
-                    print("option 1 action")
-                } label: {
-                    Text("option 1")
+            Text("Turtle Rock")
+                .padding()
+                .contextMenu {
+                    Button { } label: {
+                        Label("Add to Favorite", systemImage: "heart")
+                    }
+                    Button { } label: {
+                        Label("Show in Maps", systemImage: "mappin")
+                    }
                 }
-                Button(role: .destructive) { print("option 2 action") } label: { Text("option 2") }
-            } message: { Text("Zombies on the loose") }
         }
     }
 }
