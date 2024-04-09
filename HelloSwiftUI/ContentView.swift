@@ -12,27 +12,33 @@ extension Color {
 }
 
 struct ContentView: View {
-    @State var myToggle = true
-    @State var newValue = 0
-    @State var sliderValue = 0.0
-    
+    @State var message = ""
     var body: some View {
         VStack {
-            Toggle(isOn: $myToggle) {
-                Text(myToggle ? "Orange" : "Green")
-            }
-            Rectangle()
-                .frame(width: 200, height: 150)
-                .foregroundColor(myToggle ? .orange : .green)
-            Stepper(value: $newValue, in: 1...10) {
-                Text("Stepper value = \(newValue)")
-            }
-            .padding()
+            Link(destination: URL(string: "https://www.apple.com")!, label: {
+                Text("Apple")
+            })
             
-            Slider(value: $sliderValue, in: 1...50)
-                .padding()
-            Text("Slider value = \(sliderValue)")
+            Text(message).padding()
+            
+            Menu("Options") {
+                Button("Open", action: openFile)
+                Button("Find", action: findFile)
+                Button("Delete...", action: deleteFile)
+            }
         }
+    }
+    
+    func openFile() {
+        message = "Open chosen"
+    }
+    
+    func findFile() {
+        message = "Find chosen"
+    }
+    
+    func deleteFile() {
+        message = "Delete chosen"
     }
 }
 
