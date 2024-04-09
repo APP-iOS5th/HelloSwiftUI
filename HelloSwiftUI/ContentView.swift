@@ -20,11 +20,14 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Chosne date = \(myDate)")
+            Text("Chosne date = \(formatter.string(from: myDate))")
                 .padding()
             DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: { Text("Date") })
                 .datePickerStyle(.graphical)
                 .padding()
+        }.onAppear() {
+            formatter.locale = Locale(identifier: "ko_KR")
+            formatter.dateStyle = .medium
         }
     }
 }
