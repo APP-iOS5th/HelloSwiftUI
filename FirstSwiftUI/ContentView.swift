@@ -11,50 +11,28 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct ContentView: View {
     
-    @State private var choice = 0.0
-    @State private var color = Color.red
-    @State private var myDate = Date.now
-    
-    let dateRange: ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
-        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
-        return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
-    }()
-    
-    let formatter = DateFormatter()
+    @State private var toggleValue: Bool = true
+    @State private var stepperValue: Int = 1
+    @State private var sliderValue: Float = 0.0
     
     var body: some View {
         VStack {
-            Picker(selection: $choice, label: Text("Picker")) {
-                Text("Bird").tag(1.2)
-                Text("Dog").tag(2.08)
-                Text("Crested Gecko").tag(31.723)
+            Toggle(isOn: $toggleValue) {
+                Text(toggleValue ? "Green" : "Red")
             }
-            .pickerStyle(.segmented)
-            Text("Your pet is \(choice)")
-            
-            ColorPicker("Pick a color", selection: $color)
             Rectangle()
                 .frame(width: 100, height: 100)
-                .foregroundColor(color)
+                .foregroundColor(toggleValue ? .green : .red)
             
-            DatePicker(selection: $myDate, label: {
-                Text("Date.")
-            })
+            Stepper(value: $stepperValue, in: 1...10) {
+                Text("Stepper value = \(stepperValue)")
+            }
             
-            //dateRange 기간만큼 DatePicker에서 disable함.
-            DatePicker(selection: $myDate, in:dateRange, displayedComponents: [.date, .hourAndMinute], label: {
-                Text(formatter.string(from: myDate))
-            })
-            .datePickerStyle(.graphical)
-            .padding()
-            
-            Text(formatter.string(from: myDate))
+            Slider(value: $sliderValue, in: 0...100, step: 5)
+            Text("\(sliderValue)")
         }
         .onAppear() {
-            formatter.dateFormat = "yyyy년 MM월 dd일"
-            formatter.string(from: myDate)
+            print("ContentView Load.")
         }
     }
 }
