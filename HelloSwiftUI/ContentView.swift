@@ -8,22 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var angle: Angle = .zero
-    
+    @State var showAlert = false
     
     var body: some View {
         VStack {
-            Image(systemName: "star.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 200)
-                .rotationEffect(angle)
-                .gesture(
-                    RotateGesture()
-                        .onChanged { value in
-                            angle = value.rotation
-                        }
-                )
+            Button("Show ActionSheet") {
+                showAlert.toggle()
+            }
+            .confirmationDialog("삭제하시겠습니까?", isPresented: $showAlert, titleVisibility: .visible) {
+                Button(role: .none) {
+                    print("option1 action")
+                } label: {
+                    Text("삭제")
+                }
+                Button(role: .destructive) {
+                    print("option2 action")
+                } label: {
+                    Text("취소")
+                }
+            } message: {
+                Text("ZOMBIE")
+            }
         }
     }
 }
