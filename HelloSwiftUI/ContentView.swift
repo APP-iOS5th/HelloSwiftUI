@@ -13,28 +13,24 @@ extension Color {
 
 @available(iOS 15.0, *)
 struct ContentView: View {
-   @State var showAlert = false
+  
     
     var body: some View {
         VStack {
-            Button("Show ActionSheet") {
-                showAlert.toggle()
-            }
-            .confirmationDialog("Warning!", isPresented: $showAlert,
-                                titleVisibility: .visible) {
-                Button(role: .none) {
-                    print("optional action")
-                } label: {
-                    Text("option1")
+            Text("Turtle Rock")
+                .padding()
+                .contextMenu {
+                    Button {
+                        print("favorite!")
+                    }label: {
+                        Label("Add to Faborite", systemImage: "heart")
+                    }
+                    Button {
+                        print("pin")
+                    }label: {
+                        Label("Show in Maps", systemImage: "mappin")
+                    }
                 }
-                Button(role: .destructive) {
-                    print("option2 action")
-                } label: {
-                    Text("option2")
-                }
-            } message: {
-                Text("Zombies on the loose")
-            }
         }
     }
 }
