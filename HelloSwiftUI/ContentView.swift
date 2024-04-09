@@ -6,6 +6,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Text("tempValue = \(tempValue)")
+            Spacer()
             Image(systemName: "star.fill")
                             .resizable()
                             .scaledToFit()
@@ -21,6 +23,7 @@ struct ContentView: View {
                                         tempValue = 0
                                     }
                             )
+            Spacer()
         }
     }
 }
