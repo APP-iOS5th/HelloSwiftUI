@@ -9,36 +9,34 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 struct ContentView: View {
-    @State private var message = ""
-    @FocusState var dismissKeyboard: Bool
+    @State private var choice = 0.0
+    @State private var myColor = Color.red
+    @State var myDate = Date.now
     
     var body: some View {
         VStack {
-            TextField("Placeholder text", text: $message)
-                .textFieldStyle(.roundedBorder)
-//                .autocorrectionDisabled(true)//자동철자수정 사용 여부
-                .disableAutocorrection(true)//자동철자수정 사용 여부
-                .textContentType(.emailAddress)
-                .submitLabel(.done)
-                .padding()
-                .focused($dismissKeyboard) // 해당 텍스트 필드의 키보드 포커스 제거
-                
-                
-            SecureField("Password", text: $message)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-            
-            TextEditor(text: $message)
-                .border(Color.black)
-                
-            
-            
-            
-            Button("Hide Keyboard") {
-                dismissKeyboard = false
+            Picker(selection: $choice, label: Text("Picker")) {
+                Text("Bird").tag(1.7)
+                Text("Cat").tag(2.06)
+                Text("Lizard").tag(3.41)
+                Text("Dog").tag(4.13)
+                Text("Hamster").tag(5.28)
             }
+            .pickerStyle(.segmented)
+            
+            Text("You choose \(choice)")
+            
+            ColorPicker("Pick a color", selection: $myColor)
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myColor)
+            
+            DatePicker(selection: $myDate) {
+                Text("Date")
+            }
+            .datePickerStyle(.graphical)
+            
         }
-        
     }
 }
 
