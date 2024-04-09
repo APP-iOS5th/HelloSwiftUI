@@ -29,6 +29,7 @@
 		4A8D483E2BC511CE00C9871B /* AlertWithActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483D2BC511CE00C9871B /* AlertWithActionSheet.swift */; };
 		4A8D48402BC5194B00C9871B /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483F2BC5194B00C9871B /* ContextMenu.swift */; };
 		4A8D48422BC5213C00C9871B /* ListEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48412BC5213C00C9871B /* ListEx.swift */; };
+		4A8D48442BC5253100C9871B /* ArrayIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48432BC5253100C9871B /* ArrayIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		4A8D483D2BC511CE00C9871B /* AlertWithActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithActionSheet.swift; sourceTree = "<group>"; };
 		4A8D483F2BC5194B00C9871B /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
 		4A8D48412BC5213C00C9871B /* ListEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEx.swift; sourceTree = "<group>"; };
+		4A8D48432BC5253100C9871B /* ArrayIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				4A8D48412BC5213C00C9871B /* ListEx.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
+				4A8D48432BC5253100C9871B /* ArrayIdentifiable.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				4A8D482C2BC3DF3D00C9871B /* SegmentPicker.swift in Sources */,
 				4A8D48362BC4F7DE00C9871B /* UseLink.swift in Sources */,
 				4A8D483E2BC511CE00C9871B /* AlertWithActionSheet.swift in Sources */,
+				4A8D48442BC5253100C9871B /* ArrayIdentifiable.swift in Sources */,
 				4A0706022BC3B2D6003A8AC1 /* Text_View.swift in Sources */,
 				4A0706042BC3BC67003A8AC1 /* SFsymbolTest.swift in Sources */,
 				4A8D48402BC5194B00C9871B /* ContextMenu.swift in Sources */,
