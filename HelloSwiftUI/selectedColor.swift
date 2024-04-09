@@ -7,12 +7,27 @@
 
 import SwiftUI
 
+
+
 struct selectedColor: View {
     
     @State private var selectedColor = Color.gray
     
     var body: some View {
-        VStack(spacing:28) {
+//        VStack(spacing:28) {
+//            Rectangle().fill(selectedColor)
+//            
+//            Picker("Favorite",selection: $selectedColor) {
+//                Text("red").tag(Color.red)
+//                Text("Green").tag(Color.green)
+//                Text("Blue").tag(Color.blue)
+//            }
+//            .pickerStyle(SegmentedPickerStyle())
+//            
+//            
+//        }
+        
+        List {
             Rectangle().fill(selectedColor)
             
             Picker("Favorite",selection: $selectedColor) {
@@ -23,10 +38,26 @@ struct selectedColor: View {
             .pickerStyle(SegmentedPickerStyle())
             
             
+        }
+        
+        
+        
+        
+        
+        
             
         }
+        
+        
     }
-}
+    
+    
+// List로 구현해보기
+    
+    
+    
+    
+
 
 #Preview {
     selectedColor()

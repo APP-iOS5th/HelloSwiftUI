@@ -20,6 +20,8 @@
 		462930F82BC3D49500EEABD1 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930F72BC3D49500EEABD1 /* CustomColor.swift */; };
 		462930FA2BC3D76F00EEABD1 /* BTN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930F92BC3D76F00EEABD1 /* BTN.swift */; };
 		462930FC2BC3DF1900EEABD1 /* selectedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930FB2BC3DF1900EEABD1 /* selectedColor.swift */; };
+		462930FE2BC3E26900EEABD1 /* selectedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462930FD2BC3E26900EEABD1 /* selectedText.swift */; };
+		46360E342BC4C0CE004FACBE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46360E332BC4C0CE004FACBE /* TextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		462930F72BC3D49500EEABD1 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		462930F92BC3D76F00EEABD1 /* BTN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTN.swift; sourceTree = "<group>"; };
 		462930FB2BC3DF1900EEABD1 /* selectedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedColor.swift; sourceTree = "<group>"; };
+		462930FD2BC3E26900EEABD1 /* selectedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedText.swift; sourceTree = "<group>"; };
+		46360E332BC4C0CE004FACBE /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				462930F72BC3D49500EEABD1 /* CustomColor.swift */,
 				462930F92BC3D76F00EEABD1 /* BTN.swift */,
 				462930FB2BC3DF1900EEABD1 /* selectedColor.swift */,
+				462930FD2BC3E26900EEABD1 /* selectedText.swift */,
+				46360E332BC4C0CE004FACBE /* TextField.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -177,12 +183,14 @@
 				462930F82BC3D49500EEABD1 /* CustomColor.swift in Sources */,
 				462930DF2BC3711200EEABD1 /* ContentView.swift in Sources */,
 				462930DD2BC3711200EEABD1 /* HelloSwiftUIApp.swift in Sources */,
+				46360E342BC4C0CE004FACBE /* TextField.swift in Sources */,
 				462930FA2BC3D76F00EEABD1 /* BTN.swift in Sources */,
 				462930EB2BC3A54300EEABD1 /* Padding.swift in Sources */,
 				462930ED2BC3ACFD00EEABD1 /* Zstack.swift in Sources */,
 				462930FC2BC3DF1900EEABD1 /* selectedColor.swift in Sources */,
 				462930EF2BC3B30100EEABD1 /* TextView.swift in Sources */,
 				462930F52BC3CF2100EEABD1 /* DogAndCat.swift in Sources */,
+				462930FE2BC3E26900EEABD1 /* selectedText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
