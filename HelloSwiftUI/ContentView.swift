@@ -11,12 +11,12 @@ struct ContentView: View {
     @State var message = ""
     var body: some View {
         VStack {
-            Link(destination: URL(string: "http: //www.apple.com")!, label: { //링크 프리뷰에서는 동작 지원하지 않음
+            Link(destination: URL(string: "http://www.apple.com")!, label: { //링크 프리뷰에서는 동작 지원하지 않음
                 Text("Apple")
             })
             Text(message).padding()
             
-            Menu("Options") {
+            Menu("Options") { //Menu라는 버튼안에 기능을 숨기는거
                 Button("Open", action: openFile)
                 Button("Find", action: findFile)
                 Button("Delete...", action: deleteFile)
