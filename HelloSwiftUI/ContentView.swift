@@ -13,29 +13,24 @@ extension Color{
 
 @available(iOS 15.0, *)
 struct ContentView: View {
-    @State var myDate = Date.now
-    let dateRange:  ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
-        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
-        return calendar.date(from: startComponents)!
-        ...
-        calendar.date(from:endComponents)!
-    }()
-    let formatter = DateFormatter()
+    @State var myToggle = true
+    @State var newValue = 0
 
     var body: some View {
         VStack {
-            Text("Chosen date = \(formatter.string(from: myDate))")
-                .padding()
-            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: {Text("Date")})
-                .datePickerStyle(.graphical)
-                .padding()
-        }.onAppear() {
-            formatter.locale = Locale(identifier: "ko_KR")
-            formatter.dateStyle = .long
-            formatter.timeStyle = .medium
-            // long, full, medium, short
+            Toggle(isOn: $myToggle){
+                Text("Toggle Text")
+            }
+            .padding()
+            
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myToggle ? .orange : .green)
+            
+            Stepper(value: $newValue, in: 1...10){
+                Text("Stepper value = \(newValue)")
+            }
+            .padding()
         }
     }
 }
