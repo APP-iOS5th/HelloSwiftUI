@@ -11,23 +11,10 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var degree = 0.0
     
     var body: some View {
         VStack  {
-            Text("degree = \(degree)")
-            Image(systemName: "star.fill")
-                .resizable()
-                .scaledToFit() //얘는 부모크기에 맞춰줌
-               // .aspectRatio(contentMode: .fit) 얘는 비율에 fit, fill을 시키는 거고
-                .frame(width: 200, height: 200)
-                .rotationEffect(Angle.degrees(degree))
-                .gesture(
-                    RotationGesture()
-                        .onChanged{ angle in
-                            degree = angle.degrees
-                        }
-                )
+            
         }
     }
 }
