@@ -27,6 +27,7 @@ struct ContentView: View {
                 .padding()
         }.onAppear() {
             formatter.locale = Locale(identifier: "ko_KR")
+//            formatter.locale = Locale(languageCode: "ko", languageRegion: "KR")
             formatter.dateStyle = .medium
         }
     }
