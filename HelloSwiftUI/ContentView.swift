@@ -14,17 +14,19 @@ struct ContentView: View {
             Button("Show Alert") {
                 showAlert.toggle()
             }
-            .alert(Text("Warning!"), isPresented: $showAlert) {
-//                Button("OK") {
-//                    print("Click OK")
-//                }
-                Button(role: .cancel) {
-                    print("Click OK")
+            .confirmationDialog("Warning!", isPresented: $showAlert, titleVisibility: .visible) {
+                Button(role: .destructive) {
+                    print("option 1 action")
                 } label: {
-                    Text("OK")
+                    Text("Option 1")
+                }
+                Button(role: .none) {
+                    print("option 2 action")
+                } label: {
+                    Text("Option 2")
                 }
             } message: {
-                Text("Zombies on the loose")
+                Text("message")
             }
         }
     }
