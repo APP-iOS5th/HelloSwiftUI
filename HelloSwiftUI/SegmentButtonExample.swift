@@ -38,7 +38,7 @@ struct SegmentButtonExample: View {
             }
         }
         .padding() // MARK: default padding: 16
-        .animation(.default)
+//        .animation(.default)
     }
 }
 

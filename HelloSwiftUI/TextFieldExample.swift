@@ -26,6 +26,8 @@ struct TextFieldExample: View {
                 .keyboardType(.numberPad)
                 .focused($dismisskeyboard)
             
+            TextEditor(text: $message)
+            
             Button("Hide Keyboard") {
                 dismisskeyboard = false
             }
