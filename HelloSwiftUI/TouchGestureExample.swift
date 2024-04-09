@@ -34,8 +34,10 @@ struct TouchGestureExample: View {
             Rectangle()
                 .frame(width: 175, height: 125)
                 .foregroundStyle(changeMe3 ? .red : .yellow)
-                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2, pressing: {stillPressed in
-                        message = "Long press in pregress: \(stillPressed)"
+                .onLongPressGesture(minimumDuration: 2,
+                                    maximumDistance: 2,
+                                    pressing: { stillPressed in
+                    message = "Long press in pregress: \(stillPressed)"
                 }) {
                     changeMe3.toggle()
                 }
