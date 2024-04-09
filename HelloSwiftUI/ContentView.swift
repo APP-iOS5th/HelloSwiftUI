@@ -7,33 +7,33 @@
 
 import SwiftUI
 
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
+
+@available(iOS 15.0, *)
 struct ContentView: View {
+    @State private var message = ""
+    @FocusState var dismissKeyboard: Bool
+    
     var body: some View {
         VStack {
-            Capsule().fill(Color.yellow)
-            Circle().fill(Color.blue)
-            Ellipse().fill(Color.brown)
-            Rectangle().fill(Color.orange)
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(Color.green)
+            TextField("Placeholder text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true)
+                .textContentType(.emailAddress)
+                .submitLabel(.done)
+                .padding()
+                .focused($dismissKeyboard)
             
-            Spacer()
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
             
-            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .bottom, startRadius: 10, endRadius: 65))
-            Spacer()
-            Ellipse().fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .center, startRadius: 10, endRadius: 65))
-            Spacer()
-            Ellipse().fill(AngularGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .center))
-    
-            Image(systemName: "tortoise.fill")
-            Image(systemName: "tortoise.fill").font(.largeTitle)
-            Image(systemName: "tortoise.fill").font(.custom("", size: 50))
+            Button("Hide Keyboard") {
+                dismissKeyboard = false
+            }
             
-            Spacer()
-            
-            Image("clock-solid")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 50)
         }
     }
 }
