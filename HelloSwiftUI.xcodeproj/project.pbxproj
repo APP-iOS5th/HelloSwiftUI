@@ -23,6 +23,7 @@
 		4A8D48322BC4D94100C9871B /* DatePickerWithRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48312BC4D94100C9871B /* DatePickerWithRange.swift */; };
 		4A8D48342BC4E2AD00C9871B /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48332BC4E2AD00C9871B /* ToggleView.swift */; };
 		4A8D48362BC4F7DE00C9871B /* UseLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48352BC4F7DE00C9871B /* UseLink.swift */; };
+		4A8D48382BC4FE0B00C9871B /* GestureEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48372BC4FE0B00C9871B /* GestureEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		4A8D48312BC4D94100C9871B /* DatePickerWithRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithRange.swift; sourceTree = "<group>"; };
 		4A8D48332BC4E2AD00C9871B /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		4A8D48352BC4F7DE00C9871B /* UseLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseLink.swift; sourceTree = "<group>"; };
+		4A8D48372BC4FE0B00C9871B /* GestureEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				4A8D482F2BC4D14D00C9871B /* PickerView.swift */,
 				4A8D48312BC4D94100C9871B /* DatePickerWithRange.swift */,
 				4A8D48352BC4F7DE00C9871B /* UseLink.swift */,
+				4A8D48372BC4FE0B00C9871B /* GestureEx.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
@@ -182,6 +185,7 @@
 				4A8D48322BC4D94100C9871B /* DatePickerWithRange.swift in Sources */,
 				4A8D48302BC4D14D00C9871B /* PickerView.swift in Sources */,
 				4A8D482A2BC3D77E00C9871B /* CustomButton.swift in Sources */,
+				4A8D48382BC4FE0B00C9871B /* GestureEx.swift in Sources */,
 				4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
 				4A8D48282BC3C9B100C9871B /* GeometryImage.swift in Sources */,
