@@ -19,7 +19,7 @@ import SwiftUI
  VStack /*버티컬 스택*/ {
  Stepper("값 \(value)", value: $value, in: 0...10)
  Slider(value: $sliderValue, in: 0...1 )
- .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
+ .accentColor(.black)
  /*
   Toggle(isOn: $isOn, label: {
   Text("Toggle Example")
@@ -44,14 +44,14 @@ import SwiftUI
  Text("전경")
  }
  
- .padding(/*@START_MENU_TOKEN@*/.horizontal, 10.0/*@END_MENU_TOKEN@*/)
+ .padding(.horizontal, 10.0)
  Button(action: {
  print("button2 click")
  }, label: {
- /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+ Text("Button")
  })
  
- Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+ Button("Button") {
  print("button1 click")
  }
  }
@@ -429,58 +429,277 @@ import SwiftUI
 
 //실습11: 피커
 /*
-struct ContentView: View {
-    @State private var selectedColor = Color.gray
-    
-    var body: some View {
-        VStack {
-            Rectangle().fill(selectedColor)
-            Picker("Favorite Color", selection: $selectedColor, content: {
-                Text("Red").tag(Color.red) //.tag 모디파이어 덕분에 세그먼트 선택시에 태그 정보가 selectedColor로 넘어가면서 컬러 변경이 가능
-                Text("Green").tag(Color.green)
-                Text("Blue").tag(Color.blue)
-            }
-        )}
-        .pickerStyle(SegmentedPickerStyle())
-    }
-}
+ struct ContentView: View {
+ @State private var selectedColor = Color.gray
+ 
+ var body: some View {
+ VStack {
+ Rectangle().fill(selectedColor)
+ Picker("Favorite Color", selection: $selectedColor, content: {
+ Text("Red").tag(Color.red) //.tag 모디파이어 덕분에 세그먼트 선택시에 태그 정보가 selectedColor로 넘어가면서 컬러 변경이 가능
+ Text("Green").tag(Color.green)
+ Text("Blue").tag(Color.blue)
+ }
+ )}
+ .pickerStyle(SegmentedPickerStyle())
+ }
+ }
  */
 
 //실습12: 태그 모디파이어 활용
+/*
+ struct ContentView: View {
+ @State private var message = ""
+ 
+ var body: some View {
+ VStack {
+ Text(message)
+ //뷰에 바인딩되는 부분은 $사인으로 표시
+ Picker("Favorite Color", selection: $message, content: {
+ //앞의 문자는 화면에 보이는 내용, 뒤의 태그는 보이지 않는 곳에서 정보를 전달
+ Text("Happy").tag("happy")
+ Text("Sad").tag("sad")
+ Text("Bored").tag("bored")
+ }
+ )}
+ .pickerStyle(SegmentedPickerStyle())
+ .onChange(of: message) {oldValue, newValue in
+ switch newValue {
+ case "happy": message = "Be happy and joyous"
+ case "sad": message = "Life can be a struggle at time"
+ case "bored": message = "Look for your purpose"
+ default:
+ break
+ }
+ }
+ }
+ }
+ */
+
+//실습13: 텍스트 입력창
+/*
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
+
+//ios 15.0 이하에서는 작동 못함
+@available(iOS 15.0, *)
+
 struct ContentView: View {
     @State private var message = ""
+    @State private var password = ""
+    @FocusState var dismissKeyboard: Bool
     
     var body: some View {
         VStack {
-            Text(message)
-            //뷰에 바인딩되는 부분은 $사인으로 표시
-            Picker("Favorite Color", selection: $message, content: {
-                //앞의 문자는 화면에 보이는 내용, 뒤의 태그는 보이지 않는 곳에서 정보를 전달
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            }
-        )}
-        .pickerStyle(SegmentedPickerStyle())
-        .onChange(of: message) {oldValue, newValue in
-            switch newValue {
-            case "happy": message = "Be happy and joyous"
-            case "sad": message = "Life can be a struggle at time"
-            case "bored": message = "Look for your purpose"
-            default:
-                break
+            TextField("Placeholder text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true)
+                .textContentType(.emailAddress)
+                .submitLabel(.done)
+                .padding()
+                .focused($dismissKeyboard)
+            
+            SecureField("Password", text: $password)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            TextEditor(text: $message)
+            
+            Button("Hide Keyboard") {
+                dismissKeyboard = false
             }
         }
     }
 }
+ */
+
+//실습14: 피커 종류
+/*
+struct ContentView: View {
+    @State private var choice = 0.0
+    @State private var myColor = Color.red
+    @State var myDate = Date.now
+    
+    var body: some View {
+       VStack {
+           Picker(selection: $choice, label: Text("Picker")) {
+               Text("Bird").tag(1.7)
+               Text("Cat").tag(2.86)
+               Text("Lizard").tag(3.41)
+               Text("Dog").tag(4.13)
+               Text("Hamster").tag(5.28)
+               //소수점을 사용하면 추후에 순서를 추가 할 때 좋음
+               //1,2,3,4,5에서 중간에 뭔가를 추가하려면 뒷부분도 추가해야 하지만
+               //소수점을 활용하면 중간에 2.5 같은 식으로 추가 가능
+           } .pickerStyle(SegmentedPickerStyle())
+           Text("You chose \(choice)")
+           
+           ColorPicker("Pick a color", selection: $myColor)
+           Rectangle()
+               .frame(width: 200, height: 150)
+               .foregroundColor(myColor)
+           
+           DatePicker(selection: $myDate, label: {Text("Date") })
+               .datePickerStyle(.graphical)
+           
+       }
+   }
+}
+ */
+
+//실습15: 데이트 피커
+/*
+struct ContentView: View {
+    @State var myDate = Date.now
+    
+    let dateRange: ClosedRange<Date> = {
+        let calendar = Calendar.current //달력의 종류
+        let startComponents = DateComponents(year: 2024, month: 3, day: 25) //특정 날에 대한 정보, 자료형
+        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
+        return calendar.date(from: startComponents)!
+        ...
+        calendar.date(from:endComponents)!
+    }()
+    let formatter = DateFormatter()
+    
+    var body: some View {
+        VStack {
+            //DatePicker(selection: $myDate, label: { Text("Date") })
+            
+            Text("Chosen date = \(formatter.string(from: myDate))")
+                .padding()
+            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: { Text("Date") })
+                .datePickerStyle(.graphical)
+                .padding()
+        } .onAppear() {
+            formatter.locale = Locale(identifier: "ko_KR")
+            //formatter.dateStyle = .long
+            //formatter.dateStyle = .medium
+            formatter.dateStyle = .full
+            formatter.timeStyle = .medium
+        }
+    }
+}
+ */
+
+//실습16: 토글
+/*
+struct ContentView: View {
+    @State var myToggle = true
+    @State var newValue = 0
+    @State var sliderValue = 0.0
+
+    var body: some View {
+        VStack {
+            Toggle(isOn: $myToggle) {
+                Text(myToggle ? "Orange" : "Green") /true면 Orange, false면 Green
+            }
+            .padding()
+
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myToggle ? .orange : .green)
+
+            Stepper(value: $newValue, in: 1...10) {
+                Text("Stepper value = \(newValue)")
+            }
+            .padding()
+            
+            Slider(value: $sliderValue, in: 1...50, step: 4)
+                .padding()
+            Text("Slider value = \(sliderValue)")
+
+        }
+    }
+}
+*/
+
+//실습17: 링크
+/*
+struct ContentView: View {
+    @State var message = ""
+    
+    var body: some View {
+        VStack {
+            Menu("Options") {
+                Button("Open", action: openFile)
+                Button("Find", action: findFile)
+                Button("Delete...", action: deleteFile)
+            }
+            .menuStyle(DefaultMenuStyle())
+            .menuOrder(.fixed)
+            
+            Text(message).padding()
+            
+            Link(destination: URL(string: "https://www.apple.com")!, label: {
+                Text("Apple")
+            })
+        }
+    }
+    
+    func openFile() {
+        message = "Open chosen"
+    }
+    
+    func findFile() {
+        message = "Find chosen"
+    }
+    
+    func deleteFile() {
+        message = "Delete chosen"
+    }
+}*/
+
+
+//실습18: 터치 제스처
+struct ContentView: View {
+    @State var changeMe1 = false
+    @State var changeMe2 = false
+    @State var changeMe3 = false
+    @State var message = ""
+    
+    
+    var body: some View {
+        VStack {
+            //탭
+            Rectangle()
+                .frame(width: 175, height: 125)
+                .foregroundStyle(changeMe1 ? .red : .yellow)
+                .onTapGesture {
+                    changeMe1.toggle()
+                }
+            
+            //더블탭
+            Rectangle()
+                .frame(width: 175, height: 125)
+                .foregroundStyle(changeMe2 ? .red : .yellow)
+                .onTapGesture(count: 2/*2번 탭하면 동작*/) {
+                    changeMe2.toggle()
+                }
+            
+            Text(message).padding()
+            
+            //롱프레스
+            Rectangle()
+                .frame(width: 175, height: 125)
+                .foregroundStyle(changeMe3 ? .red : .yellow)
+                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2, pressing: {stillPressed in //제스처 실행 시간 설정: 최소2, 최대2 동안 누르고 있어야 동작
+                    message = "Long press in progress: \(stillPressed)"
+                }) {
+                    changeMe3.toggle()
+                }
+        }
+    }
+ }
 
 /*
- struct ContentView: View {
- var body: some View {
- VStack {
+struct ContentView: View {
+    var body: some View {
+        VStack {
  
- }
- }
+        }
+    }
  }
  */
 
