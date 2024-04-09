@@ -11,38 +11,12 @@ extension Color {
     static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
 }
 
-struct ContentView: View {
-    @State var message = ""
-    
+struct ContentView: View {    
     var body: some View {
         VStack {
-            Menu("Options") {
-                Button("Open", action: openFile)
-                Button("Find", action: findFile)
-                Button("Delete...", action: deleteFile)
-            }
-            .menuStyle(DefaultMenuStyle())
-            .menuOrder(.fixed)
 
-            Text(message).padding()
-
-            Link(destination: URL(string: "https://www.apple.com")!,
-                 label: { Text("Apple")})
         }
     }
-    
-    func openFile() {
-        message = "Open chosen"
-    }
-    
-    func findFile() {
-        message = "Find chosen"
-    }
-    
-    func deleteFile() {
-        message = "Delete chosen"
-    }
-    
 }
 
 #Preview {
