@@ -15,17 +15,18 @@ struct ContentView: View {
     @State var message = ""
     var body: some View {
         VStack {
-            Link(destination: URL(string: "https://www.apple.com")!, label: {
-                Text("Apple")
-            })
-            
-            Text(message).padding()
-            
             Menu("Options") {
                 Button("Open", action: openFile)
                 Button("Find", action: findFile)
                 Button("Delete...", action: deleteFile)
             }
+            .menuStyle(DefaultMenuStyle())
+            // 펼쳐지는 방향으로 나옴
+            .menuOrder(.fixed)
+            Text(message).padding()
+            
+            Link(destination: URL(string: "https://www.apple.com")!,
+                 label: { Text("Apple") })
         }
     }
     
