@@ -14,6 +14,7 @@
 		CD3BE68D2BC4F809004D4CF7 /* LinkExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE68C2BC4F809004D4CF7 /* LinkExample.swift */; };
 		CD3BE68F2BC4FDDA004D4CF7 /* TouchGestureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE68E2BC4FDDA004D4CF7 /* TouchGestureExample.swift */; };
 		CD3BE6912BC50527004D4CF7 /* ZoomInOutExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE6902BC50527004D4CF7 /* ZoomInOutExample.swift */; };
+		CD3BE6932BC511CE004D4CF7 /* AlertExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE6922BC511CE004D4CF7 /* AlertExample.swift */; };
 		CDD8850D2BC3711800C7390F /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */; };
 		CDD8850F2BC3711800C7390F /* UIComponentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850E2BC3711800C7390F /* UIComponentExample.swift */; };
 		CDD885112BC3711900C7390F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD885102BC3711900C7390F /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		CD3BE68C2BC4F809004D4CF7 /* LinkExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkExample.swift; sourceTree = "<group>"; };
 		CD3BE68E2BC4FDDA004D4CF7 /* TouchGestureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExample.swift; sourceTree = "<group>"; };
 		CD3BE6902BC50527004D4CF7 /* ZoomInOutExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomInOutExample.swift; sourceTree = "<group>"; };
+		CD3BE6922BC511CE004D4CF7 /* AlertExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExample.swift; sourceTree = "<group>"; };
 		CDD885092BC3711800C7390F /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
 		CDD8850E2BC3711800C7390F /* UIComponentExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponentExample.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				CD3BE68C2BC4F809004D4CF7 /* LinkExample.swift */,
 				CD3BE68E2BC4FDDA004D4CF7 /* TouchGestureExample.swift */,
 				CD3BE6902BC50527004D4CF7 /* ZoomInOutExample.swift */,
+				CD3BE6922BC511CE004D4CF7 /* AlertExample.swift */,
 				CDD885102BC3711900C7390F /* Assets.xcassets */,
 				CDD885122BC3711900C7390F /* Preview Content */,
 			);
@@ -197,6 +200,7 @@
 				CDD885472BC3DEF500C7390F /* SegmentButtonExample.swift in Sources */,
 				CDD885432BC3D54100C7390F /* CustomColorExample.swift in Sources */,
 				CDD8851B2BC3863E00C7390F /* CustomUI.swift in Sources */,
+				CD3BE6932BC511CE004D4CF7 /* AlertExample.swift in Sources */,
 				CDD8853F2BC3C25400C7390F /* UIComponent2Example.swift in Sources */,
 				CD3BE68F2BC4FDDA004D4CF7 /* TouchGestureExample.swift in Sources */,
 				CD3BE6872BC4CEB7004D4CF7 /* PickerExample.swift in Sources */,
