@@ -12,22 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Show ActionSheet") {
-                showAlert.toggle()
-            }
-            .confirmationDialog("삭제하시겠습니까?", isPresented: $showAlert, titleVisibility: .visible) {
-                Button(role: .none) {
-                    print("option1 action")
-                } label: {
-                    Text("삭제")
-                }
-                Button(role: .destructive) {
-                    print("option2 action")
-                } label: {
-                    Text("취소")
-                }
-            } message: {
-                Text("ZOMBIE")
+            Text("Turtle Rock")
+            .padding()
+            .contextMenu {
+                Button("Add to Favorite", systemImage: "heart") {}
+                Button("Show in Maps", systemImage: "mappin") {}
             }
         }
     }
