@@ -7,41 +7,21 @@
 
 import SwiftUI
 
-extension Color{
-    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
-}
-
 @available(iOS 15.0, *)
 struct ContentView: View {
-    @State var changeMe1 = false
-    @State var changeMe2 = false
-    @State var changeMe3 = false
-    @State var message = ""
+    @State private var tempValue: CGFloat = 0
+    @State private var finalValue: CGFloat = 1
     var body: some View {
         VStack {
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundStyle(changeMe1 ? .red: .yellow)
-                .onTapGesture {
-                    changeMe1.toggle()
-                }
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundStyle(changeMe2 ? .red: .yellow)
-                .onTapGesture (count: 2){
-                    changeMe2.toggle()
-                }
-    
-            Text(message).padding()
-            
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundStyle(changeMe3 ? .red: .yellow)
-                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2, pressing: {stillPressed in message = "Long press in porgress: \(stillPressed)"
-                }) {
-                    changeMe3.toggle()
-                }
-    
+           Image(systemName: "star.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+                .scaleEffect(finalValue + tempValue)
+                .gesture(MagnificationGesture()
+                    .onChanged { amount in tempValue = amount - 1}
+                    .onEnded { amount in finalValue += tempValue 
+                        tempValue = 0})
         }
     }
 }
