@@ -10,20 +10,13 @@ import SwiftUI
 struct ContentView: View {
     @State private var myToggle = true
     @State private var newValue = 1
+    @State private var sliderValue = 1.0
     
     var body: some View {
         VStack {
-            Toggle(isOn: $myToggle) {
-                Text(myToggle ? "Orange" : "Green")
-            }
-            .padding()
-            Rectangle()
-                .frame(width: 200, height: 150)
-                .foregroundStyle(myToggle ? .orange : .green)
-            Stepper(value: $newValue, in: 1...10) {
-                Text("Stepper Value = \(newValue)")
-            }
-            .padding()
+            Slider(value: $sliderValue, in: 1...10)
+                .padding()
+            Text("\(sliderValue)")
         }
     }
 }
