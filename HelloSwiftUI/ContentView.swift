@@ -7,25 +7,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showAlert = false
+    @State var myColor = Color.gray
     
     var body: some View{
         VStack {
-            Text("Turtle Rock")
+            Rectangle()
+                .foregroundColor(myColor)
+            
+            Text("Pick a color")
                 .padding()
                 .contextMenu{
-                    Button{
-                        
-                    }label:{
-                        Label("Add to favorite",systemImage: "heart")
-                    }
-                    Button{
-                    } label: {
-                        Label("show in maps", systemImage: "mappin")
+                    Button("Red", action: {
+                        myColor = Color.red
+                })
+                    Button("Purple", action: purple)
+                    Button("Green", action: green)
+                    Button("Orange", action: orange)
+
                     }
                 }
           }
+    func purple(){
+        myColor = Color.purple
       }
+    func green(){
+        myColor = Color.green
+    }
+    func orange(){
+        myColor = Color.orange
+    }
   }
 
 #Preview {
