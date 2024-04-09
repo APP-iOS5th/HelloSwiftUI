@@ -7,31 +7,38 @@
 
 import SwiftUI
 
+extension Color {
+    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
+}
 struct ContentView: View {
+    @State private var message = ""
+    @FocusState var dismissKeyboard: Bool
+    
     var body: some View {
         VStack {
-            Image(systemName: "heart.fill")
-                   .resizable()
-                   .aspectRatio(contentMode: .fit)
-                   .foregroundColor(Color.customColor1)
-        
-            // 지역상수 사용
-            let customColor2 = Color(red: 1, green: 0, blue: 0)
-            Image(systemName: "heart.fill")
-                   .resizable()
-                   .aspectRatio(contentMode: .fit)
-                   .foregroundColor(customColor2)
+            TextField("Placeholder", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .autocorrectionDisabled(true)
+                .textContentType(.emailAddress)
+                .submitLabel(.done)
+                .padding()
+                .focused($dismissKeyboard)
             
-            // 전역상수 사용
-            Image(systemName: "heart.fill")
-                   .resizable()
-                   .aspectRatio(contentMode: .fit)
-                   .foregroundColor(Color.customColor2)
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            TextEditor(text: $message)
+            
+            Button("버튼 숨기기") {
+                dismissKeyboard = false
+            }
+            
+           
+             
         }
     }
 }
-
-
 #Preview {
     ContentView()
 }
