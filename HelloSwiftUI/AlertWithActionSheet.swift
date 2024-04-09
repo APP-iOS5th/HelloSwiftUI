@@ -7,13 +7,35 @@
 
 import SwiftUI
 
-struct alertView: View {
+struct AlertWithActionSheet: View {
     
     @State var showAlert = false
     
     var body: some View {
         VStack {
             
+            //ActionSheet -> confirmationDialog
+            Button("Show ActionSheet") {
+                showAlert.toggle()
+            }
+            .confirmationDialog("Warning!", isPresented: $showAlert) {
+                Button(role: .destructive) {
+                    print("Option1 action")
+                } label: {
+                    Text("Option1")
+                }
+                Button(role: .destructive) {
+                    print("Option2 action")
+                } label: {
+                    Text("Option2")
+                }
+            } message: {
+                Text("Zombies on the loose")
+            }
+            .padding()
+
+            
+            //Alert
             Button("Show Alert") {
                 showAlert.toggle()
             }
@@ -37,5 +59,5 @@ struct alertView: View {
 }
 
 #Preview {
-    alertView()
+    AlertWithActionSheet()
 }
