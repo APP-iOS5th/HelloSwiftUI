@@ -9,35 +9,23 @@ import SwiftUI
 
 
 struct ContentView: View {
-    struct Animal: Identifiable {
-        let id = UUID()
-        let name: String
-    }
-    
-    
-    struct AnimalCategory: Identifiable {
-        let id = UUID()
-        var category: String
-        var animals: [Animal]
-    }
-    
-    let categories = [
-    AnimalCategory(category: "포유류", animals: [Animal(name: "고양이"), Animal(name: "강아지")]),
-    AnimalCategory(category: "파충류", animals: [Animal(name: "거북이"), Animal(name: "도마뱀")]),
-    AnimalCategory(category: "파충류", animals: [Animal(name: "거북이"), Animal(name: "도마뱀"), Animal(name: "악어")])
-    ]
+    @State var messageOne = ""
+    @State var messageTwo = ""
     
     var body: some View {
         VStack {
-            List {
-                ForEach(categories, id: \.id) {category in
-                    Section(header: Text(category.category)) {
-                        ForEach(category.animals) { animal in
-                            Text(animal.name)
-                        }
-                    }
-                }
+            Form {
+             Text("This is the first Form")
+                TextField("Type here", text: $messageOne)
             }
+            
+            Form {
+             Text("This is the second Form")
+                TextField("Type here", text: $messageTwo)
+            }
+            
+            Text("Form #1 = \(messageOne)")
+            Text("Form #2 = \(messageTwo)")
         }
     }
     
