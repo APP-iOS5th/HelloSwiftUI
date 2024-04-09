@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    var myArray = ["Cat", "Dog", "Turtle", "Ferret", "Parrot", "Goldfish", "Lizard", "Canary", "Tarantula", "Hamster"]
+    struct Animal: Identifiable {
+        var id = UUID()
+        var name: String
+    }
+    
+    struct AnimalCategory: Identifiable {
+        var id = UUID()
+        var category: String
+        var animals: [Animal]
+    }
+    
+    let categories = [
+        AnimalCategory(category: "포유류", animals: [Animal(name: "고양이"), Animal(name: "강아지")]),
+        AnimalCategory(category: "파충류", animals: [Animal(name: "거북이"), Animal(name: "도마뱀")])
+    ]
+    
     
     var body: some View {
         VStack {
             List {
-                Text("Cat")
-                Text("Dog")
-                Text("Bird")
-                Text("Reptile")
-                Text("Fish")
-            }
-            List {
-                ForEach(1...25, id: \.self) { index in
-                    Text("Animal #\(index)")
-                }
-            }
-            List {
-                ForEach(0...myArray.count - 1, id: \.self) { index in
-                    Text(myArray[index])
+                ForEach(categories, id: \.id) { c in
+                    Section(header: Text(c.category)) {
+                        ForEach(c.animals, id: \.id) { animal in
+                            Text(animal.name)}
+                    }
                 }
             }
         }
