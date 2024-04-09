@@ -8,33 +8,37 @@
 import SwiftUI
 
 
-@available(iOS 15.0, *)  //ios 15 이상에서 가능.
 struct ContentView: View {
-    
+    @State var message = ""
 
-    @State var myToggle = true
-    @State var newValue = 0
-    @State var sliderValue = 0.0
         
     var body: some View {
         VStack {
-            Toggle(isOn: $myToggle) {
-                Text(myToggle ? "Orange" :"Green")
+            
+            Link(destination: URL(string: "https://www.apple.com")!, label: {
+                Text("Apple")
+            })
+            
+            Text(message).padding()
+            
+            Menu("Options") {
+                Button("Open", action: openFile)
+                Button("Find", action: findFile)
+                Button("Del", action: deleteFile)
+
             }
-            Rectangle()
-                .frame(width:200, height: 150)
-                .foregroundColor(myToggle ? .orange : .green)
-            
-            Stepper (value: $newValue, in: 1...10) {
-                Text("stepper value = \(newValue)")
-            }
-            .padding()
-            
-            Slider(value: $sliderValue, in: 1...1000, step: 0.1) //1-50까지, 4만큼씩 움직임.
-                .padding()
-            Text("Slider value = \(sliderValue)")
-            
         }
+    }
+    func openFile() {
+        message = "Open File"
+        
+    }
+    func findFile() {
+        message = "Find File"
+        
+    }
+    func deleteFile() {
+        message = "del File"
     }
 }
 
