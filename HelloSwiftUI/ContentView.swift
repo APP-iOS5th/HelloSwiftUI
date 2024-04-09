@@ -18,6 +18,8 @@ struct ContentView: View {
                 Button("Find", action: findFile)
                 Button("Delete...", action: deleteFile)
             }
+            .menuStyle(DefaultMenuStyle())
+            .menuOrder(.fixed)
             
             Text(message).padding()
             
