@@ -8,43 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var message = ""
+    @State private var message = ""
     
     var body: some View {
         VStack {
-            Text(message)
-            if #available(iOS 17.0, *) {
-                Picker("Color", selection: $message) {
-                    Text("Happy").tag("happy")
-                    Text("Sad").tag("sad")
-                    Text("Bored").tag("bored")
-                }
-                .pickerStyle(.segmented)
-                .onChange(of: message) { _, newValue in
-                    switch newValue {
-                        case "happy": message = "HAPPY"
-                        case "sad": message = "SAAAAD"
-                        case "bored": message = "BORRRRREDDDDD"
-                        default: break
-                    }
-                }
-            } else {
-                Picker("Color", selection: $message) {
-                    Text("Happy").tag("happy")
-                    Text("Sad").tag("sad")
-                    Text("Bored").tag("bored")
-                }
-                .pickerStyle(.segmented)
-                .onChange(of: message) { newValue in
-                    switch newValue {
-                        case "happy": message = "HAPPY"
-                        case "sad": message = "SAAAAD"
-                        case "bored": message = "BORRRRREDDDDD"
-                        default: break
-                    }
-                }
-            }
-            
+            TextField("Placeholder text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .autocorrectionDisabled()
+                .textContentType(.emailAddress)
+                .submitLabel(.done)
+                .padding()
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
         }
     }
 }
