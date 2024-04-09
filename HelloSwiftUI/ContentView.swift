@@ -16,16 +16,18 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Link(destination: URL(string: "https://www.apple.com")!,
-                 label: { Text("Apple")})
-            
-            Text(message).padding()
-            
             Menu("Options") {
                 Button("Open", action: openFile)
                 Button("Find", action: findFile)
                 Button("Delete...", action: deleteFile)
             }
+            .menuStyle(DefaultMenuStyle())
+            .menuOrder(.fixed)
+
+            Text(message).padding()
+
+            Link(destination: URL(string: "https://www.apple.com")!,
+                 label: { Text("Apple")})
         }
     }
     
