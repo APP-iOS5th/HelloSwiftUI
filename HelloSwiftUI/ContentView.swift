@@ -14,7 +14,8 @@ struct ContentView: View {
         VStack {
             Image(systemName: "star.fill")
                 .resizable()
-                .scaledToFit()
+                .aspectRatio(contentMode: .fit)
+                .scaledToFit() //부모 크기에 맞춰서
                 .frame(width: 200, height: 200)
                 .scaleEffect(finalValue + tempValue)
                 .gesture(
