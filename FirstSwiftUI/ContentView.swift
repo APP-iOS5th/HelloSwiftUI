@@ -10,64 +10,47 @@ import SwiftUI
 //특정 버전 지원 제한 -> 15.0 버전 이하는 실행불가.
 @available(iOS 15.0, *)
 struct ContentView: View {
-
-    @State private var message: String = ""
+    
+    @State private var oneTouch = false
+    @State private var twoTouch = false
+    @State private var threeTouch = false
+    
+    @State private var message = ""
     
     var body: some View {
         VStack {
-            Link(destination: /*@START_MENU_TOKEN@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/, label: {
-                Text("Apple")
-            })
+            Rectangle()
+                .frame(width: 100, height: 100)
+                .foregroundColor(oneTouch ? .red : .blue)
+                .onTapGesture(count: 2) {
+                    oneTouch.toggle()
+                }
             
-            Menu("Menu") {
-                Button(action: {
-                    iPhoneAction()
-                }) {
-                    Text("iPhone")
+            Rectangle()
+                .frame(width: 100, height: 100)
+                .foregroundColor(twoTouch ? .black : .gray)
+                .onLongPressGesture {
+                    twoTouch.toggle()
                 }
-                Button(action: {
-                    MacAction()
-                }) {
-                    Text("Mac")
-                }
-                Button(action: {
-                    iPadAction()
-                }) {
-                    Text("iPad")
-                }
-                Menu("Inside Menu") {
-                    Button(action: {}) {
-                        Text("iPhone 12")
-                    }
-                    Button(action: {}) {
-                        Text("Mac 2")
-                    }
-                    Button(action: {}) {
-                        Text("iPad2")
-                    }
-                }
-            }
             
-            Text(message)
+            Text(message).padding()
             
+            Rectangle()
+                .frame(width: 100, height: 100)
+                .foregroundColor(threeTouch ? .black : .gray)
+                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2, pressing: {
+                    stillPressed in
+                    message = "Long press in progress: \(stillPressed)"
+                }) {
+                    threeTouch.toggle()
+                }
         }
         .onAppear() {
             print("ContentView Load.")
         }
     }
     
-    
-    func iPhoneAction() {
-        message = "iPhone Chosen"
-    }
-    
-    func MacAction() {
-        message = "Mac Chosen"
-    }
-    
-    func iPadAction() {
-        message = "iPad Chosen"
-    }
+
     
 }
 
