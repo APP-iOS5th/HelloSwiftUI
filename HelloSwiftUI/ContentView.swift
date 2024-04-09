@@ -15,26 +15,24 @@ struct ContentView: View {
     
     var body: some View {
         VStack  {
-            Button("Show ActionSheet") {
-                showAlert.toggle()
-            }
-            .confirmationDialog("Warning!", isPresented: $showAlert, titleVisibility: .visible) {
-                Button(role: .none) {
-                   print("option1 action")
-                } label: {
-                    Text("option1")
+            Text("Turtle Rock(Long press to view option")
+                .padding()
+                .contextMenu {
+                    Button {
+                        
+                    } label: {
+                        Label("Add to Favorite", systemImage: "heart")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Label("Show in Maps", systemImage: "mappin")
+                    }
                 }
-                Button(role: .destructive) {
-                    print("option2 action")
-                } label: {
-                    Text("option2")
-                }
-            } message: {
-                Text("Zombies on the loose")
-            }
         }
     }
 }
+
 
 
 #Preview {
