@@ -25,11 +25,14 @@ struct MagnificationGestureView: View {
                     //확대축소 제스처
                     MagnificationGesture()
                         .onChanged { amount in
+                            let _ = print("onChanged \(amount) ")
                             tempValue = amount - 1
                         }
                         .onEnded { amount in
                             //원복을 위해서 주석
 //                            finalValue += tempValue
+                            
+                            let _ = print("onEnded \(amount) ")
                             tempValue = 0
                         }
                 )
