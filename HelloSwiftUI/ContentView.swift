@@ -14,7 +14,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            
             //일반텍스트상자처럼 공개된 텍스트박스
             TextField("Placeholder text", text: $message)
                 .textFieldStyle(.roundedBorder)
@@ -33,6 +32,9 @@ struct ContentView: View {
             SecureField("Password", text: $message)
                 .textFieldStyle(.roundedBorder)
                 .padding()
+            
+            //텍스트 에디터
+            TextEditor(text: $message)
             
             Button("Hide Keyboard") {
                 dismissKeyboard = false
