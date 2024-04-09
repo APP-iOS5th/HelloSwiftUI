@@ -19,7 +19,7 @@ struct ContentView: View {
 //            .actionSheet(isPresented: $showAlert, content: {
 //                ActionSheet(title: Text("Waring!"), message: Text("Zombies on the loose"), buttons: [.default(Text("OK"))])
 //            })
-            .confirmationDialog("Waring", isPresented: $showAlert) {
+            .confirmationDialog("Waring", isPresented: $showAlert, titleVisibility: .visible) {
                 Button(role: .cancel) {
                     print("button action")
                 } label: {
