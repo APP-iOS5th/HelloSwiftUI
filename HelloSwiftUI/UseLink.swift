@@ -27,7 +27,7 @@ struct UseLink: View {
                 Button("Open", action: openFile)
                 Button("Find", action: findFile)
                 Button("Delete", action: deleteFile)
-            }
+            }.menuOrder(.fixed) //메뉴의 순서 모디파이어
             
         }
         
