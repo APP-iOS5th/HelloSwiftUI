@@ -8,26 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tempValue: CGFloat = 0
-    @State private var finalValue: CGFloat = 1
+    @State private var degree = 0.0
     
     var body: some View {
         VStack {
+            Text("tempValue = \(degree)")
+            Spacer()
             Image(systemName: "star.fill")
                 .resizable()
-                .scaledToFit()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)
-                .scaleEffect(finalValue + tempValue)
+                .rotationEffect(Angle.degrees(degree))
                 .gesture(
-                    MagnificationGesture()
-                        .onChanged { amount in
-                            tempValue = amount - 1
-                        }
-                        .onEnded { amount in
-                            finalValue += tempValue
-                            tempValue = 0
+                    RotationGesture()
+                        .onChanged { angle in
+                            degree = angle.degrees
                         }
                 )
+            Spacer()
         }
     }
 }
