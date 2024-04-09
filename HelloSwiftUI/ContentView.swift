@@ -16,14 +16,19 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Show Alert") {
+            Button("Show ActionSheet") {
                 showAlert.toggle()
             }
-            .alert("경고!", isPresented: $showAlert) {
-                Button(role: .destructive) { 
-                    print("button action")
+            .confirmationDialog("Warning!", isPresented: $showAlert, titleVisibility: .visible) {
+                Button(role: .none) {
+                    print("option1 action")
                 } label: {
-                    Text("OK!")
+                    Text("option1")
+                }
+                Button(role: .destructive) {
+                    print("option2 action")
+                } label: {
+                    Text("option2")
                 }
             } message: {
                 Text("Zombies on the loose")
