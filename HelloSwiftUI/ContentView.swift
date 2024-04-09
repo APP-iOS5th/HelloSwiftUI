@@ -25,6 +25,8 @@ struct ContentView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding()
             
+            TextEditor(text: $message) //여러 줄 입력할때
+            
             Button("Hide Keyboard") {
                 dismissKeybord = false
             }
