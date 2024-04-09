@@ -9,30 +9,25 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 struct ContentView: View {
-
-    @State var myDate = Date.now
-    let dateRange: ClosedRange<Date> = {
-        let calender = Calendar.current
-        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
-        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
-        return calender.date(from: startComponents)!
-        ...
-        calender.date(from: endComponents)!
-    }()
     
-    let formatter = DateFormatter()
+    @State var myToggle = true
+    @State var newValue = 0
     
     var body: some View {
         VStack {
-            Text("Chosen Date\n\n\(formatter.string(from: myDate))")
-                .multilineTextAlignment(.center)
+            Toggle(isOn: $myToggle) {
+                Text(myToggle ? "Orange" : "Green")
+            }
+            .padding()
+            
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myToggle ? .orange : .green)
                 .padding()
-            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: { Text("Date") })
-                .datePickerStyle(.graphical)
-                .padding()
-        }.onAppear() {
-            formatter.dateStyle = .medium
-            formatter.locale = Locale(identifier: "ko_KR")
+            Stepper(value: $newValue, in: 1...10) {
+                Text("Stepper Value : \(newValue)")
+            }
+            .padding()
         }
     }
 }
