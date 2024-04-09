@@ -10,34 +10,31 @@ import SwiftUI
 // 버전 컨트롤(버전 15 아래는 실행되지 않음)
 @available(iOS 15.0, *)
 struct ContentView: View {
-    @State private var message = ""
-    @FocusState var dismissKeyboard: Bool
+    @State private var choice = 0.0
+    @State private var myColor = Color.red
+    @State var myDate = Date.now
     
     var body: some View {
         VStack {
-            TextField("Placeholder text", text:$message)
-                .textFieldStyle(.roundedBorder)
-//                .disableAutocorrection(true) // 자동완성 기능 끄기
-                .autocorrectionDisabled(true) // 자동완성 기능 끄기
-                .textContentType(.emailAddress) // 키보드 타입
-                .submitLabel(.done) // 제출 버튼
-                .padding()
-                .focused($dismissKeyboard)
+            Picker(selection: $choice, label: Text("Picker")) {
+                Text("Bird").tag(1.7)
+                Text("Cat").tag(2.06)
+                Text("Lizard").tag(3.41)
+                Text("Dog").tag(4.13)
+                Text("Hamster").tag(5.28)
+            }.pickerStyle(SegmentedPickerStyle())
+            // 각 목록의 tag 값이 나옴
+            Text("You choose \(choice)")
             
-            // 보안 필드
-            SecureField("Password", text: $message)
-                .textFieldStyle(.roundedBorder)
-                .padding()
+            // 색상 선택
+            ColorPicker("Pick a color", selection: $myColor)
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myColor)
             
-            // 넓은 문장 입력기
-            TextEditor(text: $message)
-            
-            // 키보드 숨기기 버튼
-            Button("Hide Keyboard") {
-                dismissKeyboard = false
-            }
-            
-            
+            // 날짜 선택
+            DatePicker(selection: $myDate, label: { Text("Date") })
+                .datePickerStyle(.graphical) // 캘린더
         }
     }
 }
