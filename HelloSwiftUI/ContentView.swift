@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var myToggle = true //boolean
     @State var newValue = 0 //int
+    @State var sliderValue = 0.0
     
     var body: some View{
         VStack{
@@ -24,6 +25,10 @@ struct ContentView: View {
                 Text("Stepper value = \(newValue)")
             }
             .padding()
+            // step: 구간에 대한 단위 지정 (4씩 커짐)
+            Slider(value: $sliderValue, in: 1...50,step: 4)
+                .padding()
+            Text("Slider value = \(sliderValue)")
         }
     }
 }
