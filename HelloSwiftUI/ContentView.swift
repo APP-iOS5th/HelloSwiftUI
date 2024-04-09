@@ -11,25 +11,20 @@ struct ContentView: View {
     @State private var message = ""
     
     var body: some View {
-        VStack (spacing: 28){
-            Text(message)
-            Picker("Favorite Color", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
+        VStack {
+            TextField("Placeholder text", text:$message)
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true) // 자동완성 기능 끄기
+                .textContentType(.emailAddress) // 키보드 타입
+                .submitLabel(.done) // 제출 버튼
+                .padding()
             
-            // Picker 변화 추적
-            .onChange(of: message) { oldValue, newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyous"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default:
-                    break
-                }
-            }
+            // 보안 필드
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            
         }
     }
 }
