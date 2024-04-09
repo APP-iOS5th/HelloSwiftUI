@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    var myArray = ["Cat", "Dog", "Turtle", "Ferret", "Parrot", "Goldfinsh", "Lizard", "Canary", "Tarantula", "Hamster"]
     var body: some View {
         VStack {
-
-
-         }
-     }
- }
+            List {
+                Text("Cat")
+                Text("Dog")
+                Text("Bird")
+                Text("Reptile")
+                Text("Fish")
+            }
+            List {
+                ForEach(1...25, id: \.self) { index in  //id: \.self, key-value
+                    Text("Animal # \(index)")
+                }
+            }
+            List {
+                ForEach(0...myArray.count - 1, id:\.self) { index in
+                    Text(myArray[index])
+                }
+                
+            }
+        }
+    }
+}
 
 #Preview {
     ContentView()
