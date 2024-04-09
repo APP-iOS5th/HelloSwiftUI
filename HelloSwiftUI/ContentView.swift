@@ -8,23 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var degree = 0.0
+    @State private var showAlert = false
     
     var body: some View {
         VStack {
-            Text("Rotation Degree : \(degree)")
-            // Spacer()
-            Image(systemName: "star.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 200)
-                .rotationEffect(Angle.degrees(degree))
-                .gesture(
-                    RotationGesture()
-                        .onChanged { angle in
-                            degree = angle.degrees
-                        }
-                )
+            Button("Show Alert") {
+                showAlert.toggle()
+            }.alert("Warning!", isPresented: $showAlert) {
+                Button("OK") {}
+            } message: {
+                Text("Zombie on the loose")
+            }
         }
     }
 }
