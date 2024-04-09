@@ -8,25 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tempValue: CGFloat = 0
-    @State private var finalValue: CGFloat = 1
+    @State private var degree = 0.0
     var body: some View {
         VStack {
+            Text("degree = \(degree)")
+            Spacer()
             Image(systemName: "star.fill")
                 .resizable() // 이미지 사이즈 조정 가능
-                .scaledToFit() // 비율 유지
+                .aspectRatio(contentMode: .fit) // 비율 유지
                 .frame(width: 200, height: 200) // 프레임 크기
-                .scaleEffect(finalValue + tempValue) // 확대/축소 효과
+                .rotationEffect(Angle.degrees(degree))
                 .gesture( // 이미지에 제스처 추가
-                    MagnificationGesture() //를 사용해서 확대/축소
-                        .onChanged { amount in
-                            tempValue = amount - 1 // 변화량 저장
-                        }
-                        .onEnded { amount in
-                            finalValue += tempValue
-                            tempValue = 0 // 초기화
-                        }
+                    RotationGesture()
+                        .onChanged({ angle in
+                            degree = angle.degrees
+                        })
                 )
+            Spacer()
         }
     }
 }
