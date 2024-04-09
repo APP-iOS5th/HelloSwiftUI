@@ -8,26 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    var myArray = ["Cat", "Dog", "Turtle", "Ferret", "Parrot", "Goldfinsh", "Lizard", "Canary", "Tarantula", "Hamster"]
+        struct Animal: Identifiable {
+            var id = UUID() //나혼자 쓰는 고유한 아이디를 만들어줌
+            var name: String
+        }
+        
+        struct AnimalCategory: Identifiable {
+            var id = UUID()
+            var category: String
+            var animals: [Animal]
+        }
+        
+        let categories = [
+            AnimalCategory(category: "포유류", animals:[Animal(name: "고양이"), Animal(name: "강아지")]),
+            AnimalCategory(category: "파충류", animals:[Animal(name: "거북이"), Animal(name: "도마뱀")]),
+        ]
+    
+    
+    
     var body: some View {
         VStack {
             List {
-                Text("Cat")
-                Text("Dog")
-                Text("Bird")
-                Text("Reptile")
-                Text("Fish")
-            }
-            List {
-                ForEach(1...25, id: \.self) { index in  //id: \.self: .self는 키 경로(key path)를 나타내는 특수한 문법으로, 컬렉션의 각 요소 자체를 의미합니다. 즉, .self를 사용하면 컬렉션의 요소가 고유한 식별자 역할을 하게 됩니다.
-                    Text("Animal # \(index)")
+                ForEach(categories) { c in
+                    Section(header: Text(c.category)){
+                        ForEach(c.animals) { animal in
+                            Text(animal.name)
+                            
+                        }
+                    }
+                    
                 }
-            }
-            List {
-                ForEach(0...myArray.count - 1, id:\.self) { index in
-                    Text(myArray[index])
-                }
-                
             }
         }
     }
