@@ -15,13 +15,19 @@ struct DatePickerExample: View {
         let endComponents = DateComponents(year: 2024, month: 9, day: 13)
         return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
     }()
+    let formatter: DateFormatter = {
+        let fm = DateFormatter()
+        fm.dateFormat = "yyyy. MM. dd"
+        
+        return fm
+    }()
     
     @State private var myDate: Date = Date.now
     
     var body: some View {
         VStack {
-            Text("선택된 데이터 > \(myDate)")
-            DatePicker(selection: $myDate, 
+            Text("선택된 데이터 > \(formatter.string(from: myDate))")
+            DatePicker(selection: $myDate,
                        in: dateRange,
                        displayedComponents: [.date]) {
                 Text("Date")
@@ -29,6 +35,11 @@ struct DatePickerExample: View {
             .datePickerStyle(.graphical)
         }
         .padding()
+        .onAppear() {
+            formatter.locale = .current
+//            print(formatter.locale)
+//            formatter.dateFormat = "yyyy.MM.dd"
+        }
     }
 }
 
