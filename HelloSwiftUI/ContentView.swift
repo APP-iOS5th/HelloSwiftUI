@@ -11,25 +11,27 @@ extension Color {
     static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
 }
 
+@available(iOS 15.0, *)
 struct ContentView: View {
     @State private var message = ""
+    @FocusState var dismissKeyboard: Bool
     
     var body: some View {
-        VStack (spacing: 28) {
-            Text(message)
-            Picker("Favorite Color", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) { oldValue, newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyous"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default: break
-                }
+        VStack {
+            TextField("Placeholder text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .autocorrectionDisabled(true)
+                .textContentType(.emailAddress)
+                .submitLabel(.done)
+                .padding()
+                .focused($dismissKeyboard)
+            
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            Button("Hide Keyboard") {
+                dismissKeyboard = false
             }
         }
     }
