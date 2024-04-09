@@ -16,20 +16,45 @@ struct ContentView: View {
             Button("Show Alert") {
                 showAlert.toggle()
             }
-            .alert(Text("Waring!"), isPresented: $showAlert) {
-                Button("OK") {
-                    
+//            .actionSheet(isPresented: $showAlert, content: {
+//                ActionSheet(title: Text("Waring!"), message: Text("Zombies on the loose"), buttons: [.default(Text("OK"))])
+//            })
+            .confirmationDialog("Waring", isPresented: $showAlert) {
+                Button(role: .cancel) {
+                    print("button action")
+                } label: {
+                    Text("OK")
                 }
+                
+                Button(role: .destructive) {
+                    print("button action")
+                } label: {
+                    Text("Option")
+                }
+                
+                Button(role: .none) {
+                    print("button action")
+                } label: {
+                    Text("Option2")
+                }
+
             } message: {
                 Text("Zombies on the loose")
             }
+                
+//            .alert(Text("Waring!"), isPresented: $showAlert) {
+//                Button("OK") {
+//                    
+//                }
+//            } message: {
+//                Text("Zombies on the loose")
+//            }
             
 //            .alert(isPresented: $showAlert) {
 //                Alert(title: Text("Waring!"),
 //                      message: Text("Zombies on the loose"),
 //                      dismissButton: .default(Text("OK")))
 //            }
-                
         }
         
     }
