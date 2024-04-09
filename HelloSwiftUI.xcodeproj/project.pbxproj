@@ -26,6 +26,7 @@
 		4A8D48382BC4FE0B00C9871B /* GestureEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48372BC4FE0B00C9871B /* GestureEx.swift */; };
 		4A8D483A2BC5053900C9871B /* MagnificationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48392BC5053900C9871B /* MagnificationGestureView.swift */; };
 		4A8D483C2BC50B9F00C9871B /* RotateGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */; };
+		4A8D483E2BC511CE00C9871B /* alertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D483D2BC511CE00C9871B /* alertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		4A8D48372BC4FE0B00C9871B /* GestureEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureEx.swift; sourceTree = "<group>"; };
 		4A8D48392BC5053900C9871B /* MagnificationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnificationGestureView.swift; sourceTree = "<group>"; };
 		4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateGestureView.swift; sourceTree = "<group>"; };
+		4A8D483D2BC511CE00C9871B /* alertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				4A8D48372BC4FE0B00C9871B /* GestureEx.swift */,
 				4A8D48392BC5053900C9871B /* MagnificationGestureView.swift */,
 				4A8D483B2BC50B9F00C9871B /* RotateGestureView.swift */,
+				4A8D483D2BC511CE00C9871B /* alertView.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
@@ -187,6 +190,7 @@
 				4A8D48262BC3C2E400C9871B /* Shape.swift in Sources */,
 				4A8D482C2BC3DF3D00C9871B /* SegmentPicker.swift in Sources */,
 				4A8D48362BC4F7DE00C9871B /* UseLink.swift in Sources */,
+				4A8D483E2BC511CE00C9871B /* alertView.swift in Sources */,
 				4A0706022BC3B2D6003A8AC1 /* Text_View.swift in Sources */,
 				4A0706042BC3BC67003A8AC1 /* SFsymbolTest.swift in Sources */,
 				4A8D48322BC4D94100C9871B /* DatePickerWithRange.swift in Sources */,
