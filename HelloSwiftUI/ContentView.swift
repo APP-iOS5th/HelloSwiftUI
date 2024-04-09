@@ -40,13 +40,7 @@ struct ContentView: View {
                 Text("This is a Form")
                 Toggle(isOn: $flag1, label: {
                     Text("Click me")
-                })
-                Toggle(isOn: $flag1, label: {
-                    Text("Click me")
-                })
-                Toggle(isOn: $flag1, label: {
-                    Text("Click me")
-                })
+                }).disabled(flag1)
             }
             
             GroupBox(label: Text("Group Box")) {
