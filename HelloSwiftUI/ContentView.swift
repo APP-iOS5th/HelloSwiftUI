@@ -9,22 +9,46 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var messageOne = ""
-    @State var messageTwo = ""
+    @State var message = ""
+    @State var flag = false
     
     var body: some View {
         VStack (spacing: 20) {
             Form {
-                Text("This is the first form")
-                TextField("Type Here", text: $messageOne)
+                Section {
+                    Text("This is Section has no Header")
+                }
+                Section ("Just a Header") {
+                    Text("This is Section has no Header")
+                }
+                Section {
+                    Text("This is Section has no Header")
+                } footer: {
+                    Text("Just a Footer")
+                }
+                Section {
+                    Text("This is Section has no Header")
+                } header: {
+                    Text("Header")
+                } footer: {
+                    Text("Footer")
+                }
             }
             
             Form {
-                Text("This is the second form")
-                TextField("Type Here", text: $messageTwo)
+                Text("This is a Form")
+                Toggle(isOn: $flag, label: {
+                    Text("Click Me")
+                })
             }
-            Text("Form #1 : \(messageOne)")
-            Text("Form #2 : \(messageTwo)")
+            
+            GroupBox(label: Text("GroupBox")) {
+                Text("This is a GroupBox")
+                Toggle(isOn: $flag, label: {
+                    Text("Click Me")
+                })
+                TextField("Type Here", text: $message)
+            }
         }
     }
 }
