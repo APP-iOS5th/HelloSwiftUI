@@ -11,27 +11,30 @@ extension Color {
     static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
 }
 
+@available(iOS 15.0, *)
 struct ContentView: View {
-    @State private var message = ""
+    @State private var choice = 0.0
+    @State private var myColor = Color.red
+    @State var myDate = Date.now
     
     var body: some View {
-        VStack (spacing: 28) {
-            Text(message)
-            Picker("Favorite Color", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) { oldValue, newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyous"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default:
-                    break
-                }
-            }
+        VStack  {
+            Picker(selection: $choice, label: Text("Picker"))  {
+                Text("Bird").tag(1.7)
+                Text("Cat").tag(2.06)
+                Text("Lizard").tag(3.41)
+                Text("Dog").tag(4.13)
+                Text("Hamster").tag(5.2)
+            }.pickerStyle(SegmentedPickerStyle())
+            Text("You chose \(choice)")
+            
+            ColorPicker("Pick a color", selection: $myColor)
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(myColor)
+            
+            DatePicker(selection: $myDate, label: { Text("Data") })
+                .datePickerStyle(.graphical)
         }
     }
 }
