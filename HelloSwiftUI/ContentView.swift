@@ -29,6 +29,9 @@ struct ContentView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding()
             
+            // 넓은 문장 입력기
+            TextEditor(text: $message)
+            
             // 키보드 숨기기 버튼
             Button("Hide Keyboard") {
                 dismissKeyboard = false
