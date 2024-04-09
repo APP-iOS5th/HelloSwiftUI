@@ -6,35 +6,42 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
-    //CGFloat => 그래픽처리할때 쓰는 Float & CGPoint => 그래픽처리할때 쓰는 좌표(x,y)값
-    @State private var tempValue: CGFloat = 0
-    @State private var finalValue: CGFloat = 1
+    @State private var tempScaleValue: CGFloat = 1 // 현재 제스처로 인한 임시 스케일 값
+    @State private var finalScaleValue: CGFloat = 1 // 최종 스케일 값을 저장
+    @State private var degree: Double = 0.0 // 회전 각도
 
-    //state선언할때 뷰 밖에서 안쓸때는 private var으로 선언
-    //이유: 뷰안에서 바인딩해야 밖으로 나갈 값을 private로 보호할수있음
-    var body: some View{
-        VStack{
+    var body: some View {
+        VStack {
+            Text("tempValue = \(tempScaleValue)")
+            Spacer()
             Image(systemName: "heart.fill")
                 .resizable()
                 .scaledToFit()
-                .frame(width:100, height:200)
-                .scaleEffect(finalValue + tempValue)
-                .gesture(MagnificationGesture()
-                    .onChanged { amount in
-                        tempValue = amount - 1
-                    }
-                    .onEnded{ amount in
-                        finalValue += tempValue
-                        tempValue = 0
-                    })
-
-            
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 200)
+                .scaleEffect(finalScaleValue * tempScaleValue) // 스케일 적용
+                .rotationEffect(.degrees(degree)) // 회전 적용
+                .gesture(
+                    MagnificationGesture()
+                        .onChanged { amount in
+                            tempScaleValue = amount // 임시 스케일 값 업데이트
+                        }
+                        .onEnded { amount in
+                            finalScaleValue *= tempScaleValue // 최종 스케일 값 업데이트
+                            tempScaleValue = 1 // 임시 스케일 값 초기화
+                        }
+                        .simultaneously(with: RotationGesture() // 회전 제스처와 동시에 적용
+                            .onChanged { angle in
+                                degree = angle.degrees // 회전 각도 업데이트
+                            }
+                        )
+                )
+            Spacer()
         }
     }
 }
-
+                    
 #Preview {
     ContentView()
 }
