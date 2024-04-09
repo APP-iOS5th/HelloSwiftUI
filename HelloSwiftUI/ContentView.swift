@@ -23,6 +23,8 @@ struct ContentView: View {
                 Button("Find", action: findFile)
                 Button("Delete...", action: deleteFile)
             }
+            //change default line 
+            .menuOrder(.fixed)
         }
     }
     
