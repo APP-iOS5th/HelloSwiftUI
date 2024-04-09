@@ -9,42 +9,35 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var myColor = Color.gray
+    var myArray = ["Cat", "Dog", "Turtle", "Ferret", "Parrot", "Goldfish", "Lizard", "Canary", "Tarantula", "Hamster"]
     
     var body: some View {
         VStack {
-            Text("Turtle Rock")
+            List {
+                Text("Cat")
+                Text("Dog")
+                Text("Bird")
+                Text("Reptile")
+                Text("Fish")
+            }
             
-            Rectangle()
-                .foregroundColor(myColor)
+            List {
+                ForEach(1...25, id: \.self) { index in
+                    Text("animal #\(index)")
+                }
+            }
             
-            Text("Pick a color")
-                .padding()
-                .contextMenu {
-                    Button("Red") {
-                        myColor = Color.red
-                    }
-                    
-                    Button("Purple", action: purple)
-                    Button("Green", action: green)
-                    Button("Orange", action: orange)
-                    
+            List {
+                ForEach(0..<myArray.count, id: \.self) { index in
+                    Text(myArray[index])
                     
                 }
+                
+            }
+            
         }
-        
     }
     
-    
-    func purple() {
-        myColor = Color.purple
-    }
-    func green() {
-        myColor = Color.green
-    }
-    func orange() {
-        myColor = Color.orange
-    }
 }
 
 #Preview {
