@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Link(destination: /*@START_MENU_TOKEN@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/, label: {
+            Link(destination: URL(string: "https://www.apple.com")!, label: {
                 Text("Apple")
             })
             
@@ -23,7 +23,7 @@ struct ContentView: View {
                 Button("Open", action: openFile)
                 Button("Find", action: findFile)
                 Button("Delete", action: delFile)
-            }
+            }.menuOrder(.fixed) // 메뉴 정렬 방식
             
         }
     }
