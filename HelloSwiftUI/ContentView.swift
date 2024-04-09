@@ -2,31 +2,35 @@ import SwiftUI
 
 struct ContentView: View {
     @State var message = ""
-    
+    @State var changeMe1 = false
+    @State var changeMe2 = false
+    @State var changeMe3 = false
     var body: some View {
         VStack {
-            Link(destination: URL(string: "https://www.apple.com")!, label: {
-                Text("Apple")
-            })
+            Rectangle()
+                .frame(width: 100, height: 100)
+                .foregroundStyle(changeMe1 ? .orange : .primary)
+                .onTapGesture (count: 2){
+                    changeMe1.toggle()
+                }
+            Rectangle()
+                .frame(width: 100, height: 100)
+                .foregroundStyle(changeMe2 ? .orange : .primary)
+                .onTapGesture (count: 2){
+                    changeMe2.toggle()
+                }
             
             Text(message).padding()
             
-            Menu("Options") {
-                Button("Open", action: openFile)
-                Button("Find", action: findFile)
-                Button("Delete...", action: deleteFile)
-            }
+            Rectangle()
+                .frame(width: 100, height: 100)
+                .foregroundStyle(changeMe3 ? .orange : .primary)
+                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2, pressing: { stillPressed in
+                    message = "Long press in progress \(stillPressed)"
+                }){
+                    changeMe3.toggle()
+                }
         }
-    }
-    
-    func openFile() {
-        message = "Open chosen"
-    }
-    func findFile() {
-        message = "Find chosen"
-    }
-    func deleteFile() {
-        message = "Delete chosen"
     }
 }
 
