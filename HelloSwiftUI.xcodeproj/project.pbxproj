@@ -19,6 +19,7 @@
 		CD3BE6992BC5228E004D4CF7 /* ListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE6982BC5228E004D4CF7 /* ListExample.swift */; };
 		CD3BE69B2BC5251B004D4CF7 /* StructExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE69A2BC5251B004D4CF7 /* StructExample.swift */; };
 		CD3BE69D2BC52A32004D4CF7 /* FormExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE69C2BC52A32004D4CF7 /* FormExample.swift */; };
+		CD3BE69F2BC52FB8004D4CF7 /* SectionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE69E2BC52FB8004D4CF7 /* SectionExample.swift */; };
 		CDD8850D2BC3711800C7390F /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */; };
 		CDD8850F2BC3711800C7390F /* UIComponentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850E2BC3711800C7390F /* UIComponentExample.swift */; };
 		CDD885112BC3711900C7390F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD885102BC3711900C7390F /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		CD3BE6982BC5228E004D4CF7 /* ListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExample.swift; sourceTree = "<group>"; };
 		CD3BE69A2BC5251B004D4CF7 /* StructExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructExample.swift; sourceTree = "<group>"; };
 		CD3BE69C2BC52A32004D4CF7 /* FormExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormExample.swift; sourceTree = "<group>"; };
+		CD3BE69E2BC52FB8004D4CF7 /* SectionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionExample.swift; sourceTree = "<group>"; };
 		CDD885092BC3711800C7390F /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
 		CDD8850E2BC3711800C7390F /* UIComponentExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponentExample.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				CD3BE6982BC5228E004D4CF7 /* ListExample.swift */,
 				CD3BE69A2BC5251B004D4CF7 /* StructExample.swift */,
 				CD3BE69C2BC52A32004D4CF7 /* FormExample.swift */,
+				CD3BE69E2BC52FB8004D4CF7 /* SectionExample.swift */,
 			);
 			path = 24.04.09;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				CD3BE69D2BC52A32004D4CF7 /* FormExample.swift in Sources */,
 				CD3BE68F2BC4FDDA004D4CF7 /* TouchGestureExample.swift in Sources */,
 				CD3BE6872BC4CEB7004D4CF7 /* PickerExample.swift in Sources */,
+				CD3BE69F2BC52FB8004D4CF7 /* SectionExample.swift in Sources */,
 				CDD8851D2BC3A48800C7390F /* PaddingExample.swift in Sources */,
 				CDD885232BC3B8E100C7390F /* SymbolExample.swift in Sources */,
 				CD3BE6952BC51A22004D4CF7 /* ContextMenuExample.swift in Sources */,
