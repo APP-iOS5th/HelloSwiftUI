@@ -28,6 +28,12 @@ struct ContentView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding()
             
+            TextEditor(text: $message)
+                .border(Color.black)
+                
+            
+            
+            
             Button("Hide Keyboard") {
                 dismissKeyboard = false
             }
