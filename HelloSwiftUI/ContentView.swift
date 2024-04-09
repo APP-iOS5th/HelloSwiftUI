@@ -16,11 +16,19 @@ struct ContentView: View {
             Button("Show Alert") {
                 showAlert.toggle()
             }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Waring!"),
-                      message: Text("Zombies on the loose"),
-                      dismissButton: .default(Text("OK")))
+            .alert(Text("Waring!"), isPresented: $showAlert) {
+                Button("OK") {
+                    
+                }
+            } message: {
+                Text("Zombies on the loose")
             }
+            
+//            .alert(isPresented: $showAlert) {
+//                Alert(title: Text("Waring!"),
+//                      message: Text("Zombies on the loose"),
+//                      dismissButton: .default(Text("OK")))
+//            }
                 
         }
         
