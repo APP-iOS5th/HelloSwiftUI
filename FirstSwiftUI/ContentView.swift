@@ -11,29 +11,44 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct ContentView: View {
     
-    @State private var message = ""
-    @FocusState var dismissKeyBoard: Bool
+    @State private var choice = 0.0
+    @State private var color = Color.red
+    @State private var myDate = Date.now
     
+    let dateRange: ClosedRange<Date> = {
+        let calendar = Calendar.current
+        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
+        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
+        return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
+    }()
     
     var body: some View {
         VStack {
-            TextField("This is TF.", text: $message)
-                .autocorrectionDisabled()
-                .keyboardType(.emailAddress)
-                .submitLabel(.done)
-                .focused($dismissKeyBoard)
-                .textFieldStyle(.roundedBorder)
-                .frame(width: 200)
-            
-            SecureField("This is SecureTF.", text: $message)
-                .textFieldStyle(.roundedBorder)
-                .frame(width: 200)
-            
-            Button(action: {
-                dismissKeyBoard = false
-            }){
-                Text("Hide KeyBoard")
+            Picker(selection: $choice, label: Text("Picker")) {
+                Text("Bird").tag(1.2)
+                Text("Dog").tag(2.08)
+                Text("Crested Gecko").tag(31.723)
             }
+            .pickerStyle(.segmented)
+            Text("Your pet is \(choice)")
+            
+            ColorPicker("Pick a color", selection: $color)
+            Rectangle()
+                .frame(width: 100, height: 100)
+                .foregroundColor(color)
+            
+            DatePicker(selection: $myDate, label: {
+                Text("Date.")
+            })
+            
+            //dateRange 기간만큼 DatePicker에서 disable함.
+            DatePicker(selection: $myDate, in:dateRange, displayedComponents: [.date], label: {
+                Text("Date!")
+            })
+            .datePickerStyle(.graphical)
+            .padding()
+            
+            Text(dateRange)
         }
     }
 }
