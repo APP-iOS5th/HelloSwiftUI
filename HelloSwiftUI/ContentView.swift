@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showAlert = false
+    private var myArray = ["Cat", "Dog", "Turtle", "Ferret", "Parrot", "Goldfish", "Lizard", "Canary", "Tarantula", "Hamster"]
     
     var body: some View {
         VStack {
-            Text("Turtle Rock")
-            .padding()
-            .contextMenu {
-                Button("Add to Favorite", systemImage: "heart") {}
-                Button("Show in Maps", systemImage: "mappin") {}
+            List {
+                ForEach(0...myArray.count - 1, id: \.self) { index in
+                    Text(myArray[index])
+                }
             }
         }
     }
