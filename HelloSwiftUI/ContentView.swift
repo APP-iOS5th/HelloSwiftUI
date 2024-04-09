@@ -20,14 +20,19 @@ struct ContentView: View {
         calender.date(from: endComponents)!
     }()
     
+    let formatter = DateFormatter()
+    
     var body: some View {
         VStack {
-            Text("Chosen Date\n\n\(myDate)")
+            Text("Chosen Date\n\n\(formatter.string(from: myDate))")
                 .multilineTextAlignment(.center)
                 .padding()
-            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date] ,label: { Text("Date") })
+            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: { Text("Date") })
                 .datePickerStyle(.graphical)
                 .padding()
+        }.onAppear() {
+            formatter.dateStyle = .medium
+            formatter.locale = Locale(identifier: "ko_KR")
         }
     }
 }
