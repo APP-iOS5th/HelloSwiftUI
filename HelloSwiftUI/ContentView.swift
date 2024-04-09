@@ -13,12 +13,11 @@ extension Color {
 
 struct ContentView: View {
     @State var message = ""
-
+    
     var body: some View {
         VStack {
-            Link(destination: /*@START_MENU_TOKEN@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/, label: {
-                Text("Apple")
-            })
+            Link(destination: URL(string: "https://www.apple.com")!,
+                 label: { Text("Apple")})
             
             Text(message).padding()
             
