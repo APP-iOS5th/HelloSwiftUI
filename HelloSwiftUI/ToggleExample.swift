@@ -11,6 +11,7 @@ struct ToggleExample: View {
     
     @State private var myToggle: Bool = true
     @State var newValue: Int = 0
+    @State var slider: Float = 0.0
     
     var body: some View {
         VStack {
@@ -25,6 +26,10 @@ struct ToggleExample: View {
             Stepper(value: $newValue, in: 0...25) {
                 Text("Stepper value: \(newValue)")
             }
+            
+            Slider(value: $slider, in: 0...100, step: 1)
+            
+            Text("\(slider)")
         }
         .padding()
     }
