@@ -9,32 +9,25 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var message  = false
-    @State var initiat = ""
+    @State private var tempValue: CGFloat = 0
+    @State private var finalValue: CGFloat = 1
     
     var body: some View {
         VStack {
-            Rectangle()
-                .frame(width: 175, height:125)
-                .foregroundStyle(message ? .red : .yellow)
-                .onTapGesture(count:2) {   //두번 터치하면 동작. 일종의 트리거.
-                    message.toggle()}
-            
-            Rectangle()
-                .frame(width: 175, height:125)
-                .foregroundStyle(message ? .red : .yellow)
-                .onTapGesture(count:2) {   //두번 터치하면 동작. 일종의 트리거.
-                    message.toggle()}
-            
-            
-            Text(initiat).padding()
-            
-            Rectangle()
-                .frame(width: 175, height:125)
-                .foregroundStyle(message ? .red : .yellow)
-                .onLongPressGesture (minimumDuration: 2, maximumDistance: 2, pressing: { stillPressed in initiat = "LongPress in progress \(stillPressed))"
+            Image(systemName: "star.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width:200, height:200)
+                .scaleEffect(finalValue + tempValue)  //커지고 작아지는 효과.
+                .gesture(
+                MagnificationGesture()
+                    .onChanged{amount in tempValue = amount - 1 }
+                
+                    .onEnded{amount in finalValue += tempValue
+                    tempValue = 0
                 })
-            {message.toggle() }
+            
+            
             
         }
     }
