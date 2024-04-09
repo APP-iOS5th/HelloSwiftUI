@@ -12,7 +12,7 @@ extension Color {
 }
 struct ContentView: View {
     @State private var message = ""
-    @State private var passmessage = ""
+    @FocusState var dismissKeyboard: Bool
     
     var body: some View {
         VStack {
@@ -22,10 +22,18 @@ struct ContentView: View {
                 .textContentType(.emailAddress)
                 .submitLabel(.done)
                 .padding()
+                .focused($dismissKeyboard)
             
             SecureField("Password", text: $message)
                 .textFieldStyle(.roundedBorder)
                 .padding()
+            
+            TextEditor(text: $message)
+                .focused($dismissKeyboard)
+            
+            Button("Hide Keyboard") {
+                dismissKeyboard = false
+            }
         }
     }
 }
