@@ -18,8 +18,8 @@ struct AlertWithActionSheet: View {
             Button("Show ActionSheet") {
                 showAlert.toggle()
             }
-            .confirmationDialog("Warning!", isPresented: $showAlert) {
-                Button(role: .destructive) {
+            .confirmationDialog("Warning!", isPresented: $showAlert, titleVisibility: .visible) {
+                Button(role: .none) {
                     print("Option1 action")
                 } label: {
                     Text("Option1")
