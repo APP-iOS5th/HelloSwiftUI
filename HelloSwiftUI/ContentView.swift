@@ -12,18 +12,22 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Show Alert") {
+            Button("Show ActionSheet") {
                 showAlert.toggle()
             }
-//            .alert(isPresented: $showAlert, content: {
-//                Alert(title: Text("Warning"), message: Text("Zombies on the loose"), dismissButton: .default(Text("OK"))
-//                )
-//            })
-            .alert("Warning!", isPresented: $showAlert) {
-                Button(role: .cancel) {
+//            .actionSheet(isPresented: $showAlert) {
+//                ActionSheet(title: Text("Warning!"), message: Text("Zombies on the loose"), buttons: [.default(Text("OK"))])
+//            }
+            .confirmationDialog("Warning!", isPresented: $showAlert, titleVisibility: .visible) {
+                Button(role: .none) {
                     print("button action")
                 } label: {
-                    Text("OK!")
+                    Text("option1")
+                }
+                Button(role: .destructive) {
+                    print("option2 action")
+                } label: {
+                    Text("option2")
                 }
             } message: {
                 Text("Zombies on the loose")
