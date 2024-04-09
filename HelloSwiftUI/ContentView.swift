@@ -7,35 +7,29 @@
 
 import SwiftUI
 
-extension Color {
-    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
-}
-
 struct ContentView: View {
     @State private var message = ""
     var body: some View {
-        VStack (spacing: 28) {
-            Text(message)
-            Picker("Favorite Color", selection: $message, content: {
-                Text("Happy").tag("happy")
-                Text("Sad").tag("sad")
-                Text("Bored").tag("bored")
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) {oldValue, newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyous"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default:
-                    break
-                }
-            }
+        VStack  {
+            TextField("Placehloder text", text: $message) //달러사인(4)은 뷰에서 나온 텍스트가 메세지에 연결되게끔 바인딩시켜주는것
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true)
+                .textContentType(.emailAddress)
+                .submitLabel(.send)
+                .padding()
+            
+            SecureField("Password", text: $message) //같은 메세지 바인딩이 되어있어서 연동됨
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            
+            
+            
             
         }
-  
     }
 }
+
 #Preview {
     ContentView()
 }
@@ -48,4 +42,4 @@ struct ContentView: View {
  }
  }
  */
-  
+
