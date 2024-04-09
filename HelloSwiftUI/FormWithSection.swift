@@ -46,6 +46,7 @@ struct FormWithSection: View {
                 Toggle(isOn: $flag, label: {
                     Text("Click Me")
                 })
+                Button(flag ? "비활성화됨" : "클릭하세요") {}.disabled(flag)
             }
             
             //ex) 약관같은 경우..?
