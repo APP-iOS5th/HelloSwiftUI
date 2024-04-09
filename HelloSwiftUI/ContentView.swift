@@ -2,28 +2,22 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var myDate = Date.now
-    let dateRange: ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
-        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
-        return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
-    }()
-    let formatter = DateFormatter()
+    @State var settingValue = true
+    @State var newValue = 0
     
-    var body: some View {
+   var body: some View {
         VStack {
-            Text("Chosen date = \(formatter.string(from:myDate))")
-                .padding()
-            DatePicker(selection: $myDate, displayedComponents: [.date], label: {
-                Text("Date")})
-            .datePickerStyle(.graphical)
-            .padding()
+            Toggle(isOn: $settingValue) {
+                Text(settingValue ? "green" : "orange")
+            }
+            Rectangle()
+                .frame(width: 200, height: 150)
+                .foregroundColor(settingValue ? .green : .orange)
             
-        }.onAppear() {
-            formatter.locale = Locale(identifier: "ko_KR")
-//            formatter.dateStyle = .short
-            formatter.timeStyle = .short
+            Stepper(value: $newValue, in: 1...10) {
+                Text("Stepper value = \(newValue)")
+            }
+            .padding()
         }
     }
 }
