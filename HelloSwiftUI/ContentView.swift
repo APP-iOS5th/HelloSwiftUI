@@ -6,35 +6,40 @@
 //
 
 import SwiftUI
+
 struct ContentView: View {
-    @State var myColor = Color.gray
+    struct Animal: Identifiable{
+        var id = UUID()
+        var name: String
+    }
+    
+    struct AnimalCategory: Identifiable {
+        var id = UUID()
+        var category: String
+        var animals: [Animal]
+    }
+    
+    let categories = [
+        AnimalCategory(category: "포유류", animals: [Animal(name: "고양이"), Animal(name: "강아지")]),
+        AnimalCategory(category: "파충류", animals: [Animal(name: "거북이"), Animal(name: "도마뱀")])]
+    
     var body: some View {
-        VStack {
-            Rectangle()
-                .foregroundColor(myColor)
-            
-            Text("Pick a color")
-                .padding()
-                .contextMenu{
-                    Button("Red", action: {
-                        myColor = Color.red
-                    })
-                    Button("Purple", action: purple)
-                    Button("Green", action: green)
-                    Button("Orange", action: orange)
+        VStack{
+            List {
+                ForEach(categories, id: \.id){
+                    c in Section(header:
+                                            Text(c.category)){
+                        ForEach(c.animals, id: \.id){
+                            animal in Text(animal.name)
+                        }
+                    }
                 }
+            }
+            
+            
         }
-        
     }
-    func purple() {
-        myColor = Color.purple
-    }
-    func green() {
-        myColor = Color.green
-    }
-    func orange() {
-        myColor = Color.orange
-    }
+    
 }
 
 
