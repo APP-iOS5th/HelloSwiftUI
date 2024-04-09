@@ -10,31 +10,65 @@ import SwiftUI
 //특정 버전 지원 제한 -> 15.0 버전 이하는 실행불가.
 @available(iOS 15.0, *)
 struct ContentView: View {
-    
-    @State private var toggleValue: Bool = true
-    @State private var stepperValue: Int = 1
-    @State private var sliderValue: Float = 0.0
+
+    @State private var message: String = ""
     
     var body: some View {
         VStack {
-            Toggle(isOn: $toggleValue) {
-                Text(toggleValue ? "Green" : "Red")
-            }
-            Rectangle()
-                .frame(width: 100, height: 100)
-                .foregroundColor(toggleValue ? .green : .red)
+            Link(destination: /*@START_MENU_TOKEN@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/, label: {
+                Text("Apple")
+            })
             
-            Stepper(value: $stepperValue, in: 1...10) {
-                Text("Stepper value = \(stepperValue)")
+            Menu("Menu") {
+                Button(action: {
+                    iPhoneAction()
+                }) {
+                    Text("iPhone")
+                }
+                Button(action: {
+                    MacAction()
+                }) {
+                    Text("Mac")
+                }
+                Button(action: {
+                    iPadAction()
+                }) {
+                    Text("iPad")
+                }
+                Menu("Inside Menu") {
+                    Button(action: {}) {
+                        Text("iPhone 12")
+                    }
+                    Button(action: {}) {
+                        Text("Mac 2")
+                    }
+                    Button(action: {}) {
+                        Text("iPad2")
+                    }
+                }
             }
             
-            Slider(value: $sliderValue, in: 0...100, step: 5)
-            Text("\(sliderValue)")
+            Text(message)
+            
         }
         .onAppear() {
             print("ContentView Load.")
         }
     }
+    
+    
+    func iPhoneAction() {
+        message = "iPhone Chosen"
+    }
+    
+    func MacAction() {
+        message = "Mac Chosen"
+    }
+    
+    func iPadAction() {
+        message = "iPad Chosen"
+    }
+    
 }
 
 //#Preview {
