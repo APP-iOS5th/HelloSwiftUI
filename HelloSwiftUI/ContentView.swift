@@ -7,38 +7,26 @@
 
 import SwiftUI
 
-extension Color {
-    static let myCustomColor = Color(red: 0.5, green: 0.8, blue: 0.3)
-}
-
 struct ContentView: View {
-//    @State private var selectedColor = Color.gray
     @State private var message = ""
+    
     var body: some View {
-        VStack(spacing: 28) {
-//            Rectangle()
-//                .fill(selectedColor)
-            Text(message)
-            Picker("Favorite Color" ,selection: $message) {
-                Text("Happy")
-//                    .tag(Color.red)
-                    .tag("happy")
-                Text("Sad")
-//                    .tag(Color.green)
-                    .tag("sad")
-                Text("Bored")
-//                    .tag(Color.blue)
-                    .tag("bored")
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: message) { oldValue, newValue in
-                switch newValue {
-                case "happy": message = "Be happy and joyous"
-                case "sad": message = "Life can be a struggle at times"
-                case "bored": message = "Look for your purpose"
-                default : break
-                }
-            }
+        VStack {
+            TextField("Placeholder text", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true)//자동철자수정 사용 여부
+                .textContentType(.emailAddress)
+                .submitLabel(.done)
+                .padding()
+                
+                
+            SecureField("Password", text: $message)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            
+ 
+            
         }
     }
 }
