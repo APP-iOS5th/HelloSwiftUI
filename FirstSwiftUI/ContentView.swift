@@ -22,6 +22,8 @@ struct ContentView: View {
         return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
     }()
     
+    let formatter = DateFormatter()
+    
     var body: some View {
         VStack {
             Picker(selection: $choice, label: Text("Picker")) {
@@ -42,13 +44,17 @@ struct ContentView: View {
             })
             
             //dateRange 기간만큼 DatePicker에서 disable함.
-            DatePicker(selection: $myDate, in:dateRange, displayedComponents: [.date], label: {
-                Text("Date!")
+            DatePicker(selection: $myDate, in:dateRange, displayedComponents: [.date, .hourAndMinute], label: {
+                Text(formatter.string(from: myDate))
             })
             .datePickerStyle(.graphical)
             .padding()
             
-            Text(dateRange)
+            Text(formatter.string(from: myDate))
+        }
+        .onAppear() {
+            formatter.dateFormat = "yyyy년 MM월 dd일"
+            formatter.string(from: myDate)
         }
     }
 }
