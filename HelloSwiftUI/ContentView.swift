@@ -8,30 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var myToggle = true
-    @State private var newValue = 0
-    @State private var sliderValue = 0.0
+    @State private var message = ""
     
     var body: some View {
         VStack {
-            Toggle(isOn: $myToggle) {
-                Text(myToggle ? "Orange" : "Green")
+            Menu("options") {
+                Button("Open", action: openFile)
+                Button("Find", action: findFile)
+                Button("Delete", action: deleteFile)
             }
-            .padding()
+            .menuStyle(DefaultMenuStyle())
+            .menuOrder(.fixed)
             
-            Rectangle()
-                .frame(width: 200, height: 150)
-                .foregroundColor(myToggle ? .orange : .green)
+            Text(message).padding()
             
-            Stepper(value: $newValue, in: 1...10) {
-                Text("Stepper value = \(newValue)")
+            Link(destination: URL(string: "https://www.apple.com")!) {
+                Text("Apple")
             }
-            .padding()
-            
-            Slider(value: $sliderValue, in: 1...50, step: 4)
-                .padding()
-            Text("Slider value = \(sliderValue)")
         }
+    }
+    
+    func openFile() {
+        message = "Open"
+    }
+    
+    func findFile() {
+        message = "Find"
+    }
+    
+    func deleteFile() {
+        message = "Delete"
     }
 }
 
