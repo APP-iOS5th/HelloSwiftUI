@@ -7,35 +7,27 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
+
 struct ContentView: View {
-    @State private var choice = 0.0
-    @State private var myColor = Color.red
     @State var myDate = Date.now
+    let dateRange: ClosedRange<Date> = {
+        let calendar = Calendar.current
+        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
+        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
+        
+        return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
+    }()
     
     var body: some View {
         VStack {
-            Picker(selection: $choice, label: Text("Picker")) {
-                Text("Bird").tag(1.7)
-                Text("Cat").tag(2.06)
-                Text("Lizard").tag(3.41)
-                Text("Dog").tag(4.13)
-                Text("Hamster").tag(5.28)
-            }
-            .pickerStyle(.segmented)
+            Text("Chosen date = \(myDate)")
+                .padding()
             
-            Text("You choose \(choice)")
-            
-            ColorPicker("Pick a color", selection: $myColor)
-            Rectangle()
-                .frame(width: 200, height: 150)
-                .foregroundColor(myColor)
-            
-            DatePicker(selection: $myDate) {
+            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date]) {
                 Text("Date")
             }
             .datePickerStyle(.graphical)
-            
+            .padding()
         }
     }
 }
