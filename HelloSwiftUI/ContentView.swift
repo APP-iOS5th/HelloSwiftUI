@@ -13,12 +13,44 @@ extension Color {
 
 @available(iOS 15.0, *)
 struct ContentView: View {
-   
-    
+    @State var flag = false
+    @State var message = ""
     
     var body: some View {
         VStack (spacing: 0) {
-            
+            Form {
+                Section {
+                    Text("This section has no header")
+                }
+                Section("Just a Header") {
+                    Text("This sectin uses a simple header")
+                }
+                Section {
+                    Text("This Section uses a simple footer")
+                } footer: {
+                    Text("Just a footer")
+                }
+                Section {
+                    Text("This section uses both a header and footer")
+                } header: {
+                    Text("The header")
+                } footer: {
+                    Text("The footer")
+                }
+            }
+            Form {
+                Text("This is a Form")
+                Toggle(isOn: $flag, label: {
+                    Text("Click me")
+                })
+            }
+            GroupBox(label: Text("Group Box")) {
+                Text("This is a Group box")
+                Toggle(isOn: $flag, label: {
+                    Text("Click me")
+                })
+                TextField("Type here", text: $message)
+            }
         }
     }
 }
