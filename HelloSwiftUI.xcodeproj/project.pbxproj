@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD3BE6852BC4C159004D4CF7 /* TextFieldExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE6842BC4C159004D4CF7 /* TextFieldExample.swift */; };
 		CDD8850D2BC3711800C7390F /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */; };
 		CDD8850F2BC3711800C7390F /* UIComponentExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD8850E2BC3711800C7390F /* UIComponentExample.swift */; };
 		CDD885112BC3711900C7390F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD885102BC3711900C7390F /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD3BE6842BC4C159004D4CF7 /* TextFieldExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExample.swift; sourceTree = "<group>"; };
 		CDD885092BC3711800C7390F /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD8850C2BC3711800C7390F /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
 		CDD8850E2BC3711800C7390F /* UIComponentExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponentExample.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				CDD885422BC3D54100C7390F /* CustomColorExample.swift */,
 				CDD885442BC3D80900C7390F /* CustomButtonExample.swift */,
 				CDD885462BC3DEF500C7390F /* SegmentButtonExample.swift */,
+				CD3BE6842BC4C159004D4CF7 /* TextFieldExample.swift */,
 				CDD885102BC3711900C7390F /* Assets.xcassets */,
 				CDD885122BC3711900C7390F /* Preview Content */,
 			);
@@ -177,6 +180,7 @@
 				CDD8853F2BC3C25400C7390F /* UIComponent2Example.swift in Sources */,
 				CDD8851D2BC3A48800C7390F /* PaddingExample.swift in Sources */,
 				CDD885232BC3B8E100C7390F /* SymbolExample.swift in Sources */,
+				CD3BE6852BC4C159004D4CF7 /* TextFieldExample.swift in Sources */,
 				CDD8851F2BC3AD2400C7390F /* ZStackExample.swift in Sources */,
 				CDD8850D2BC3711800C7390F /* HelloSwiftUIApp.swift in Sources */,
 			);

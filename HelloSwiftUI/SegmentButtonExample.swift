@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Vision
 
 struct SegmentButtonExample: View {
     
@@ -37,7 +38,7 @@ struct SegmentButtonExample: View {
             }
         }
         .padding() // MARK: default padding: 16
-        .animation(.bouncy)
+        .animation(.default)
     }
 }
 
