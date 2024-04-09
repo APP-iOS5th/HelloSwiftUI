@@ -5,38 +5,43 @@
 //  Created by 육현서 on 4/8/24.
 //
 
+
+
 import SwiftUI
 
 struct ContentView: View {
-        @State var showAlert = false
-    
+    @State var myColor = Color.gray
+
     var body: some View {
-            VStack {
-                Button("Show ActionSheet") {
-                    showAlert.toggle()
+        VStack {
+            Rectangle()
+                .foregroundColor(myColor)
+
+            Text("Pick a color")
+                .padding()
+                .contextMenu {
+                    Button("Red", action: {
+                        myColor = Color.red
+                    })
+                    Button("Purple", action: purple)
+                    Button("Green", action: green)
+                    Button("Orange", action: orange)
                 }
-                .confirmationDialog("Warning!", isPresented: $showAlert, titleVisibility: .visible) {
-                    Button(role: .none) {
-                        print("option1 action")
-                    } label: {
-                        Text("option1")
-                    }
-                    
-                    Button(role: .destructive) {
-                        print("option2 action")
-                    } label: {
-                        Text("option2")
-                    }
-                    
-                } message: {
-                    Text("Zombies on the loose")
-                }
-            }
         }
     }
+    
+    func purple() {
+        myColor = Color.purple
+    }
+    func green() {
+        myColor = Color.green
+    }
+    func orange() {
+        myColor = Color.orange
+    }
 
+}
 
 #Preview {
     ContentView()
 }
- 
