@@ -19,6 +19,7 @@
 		4A8D482A2BC3D77E00C9871B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48292BC3D77E00C9871B /* CustomButton.swift */; };
 		4A8D482C2BC3DF3D00C9871B /* SegmentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D482B2BC3DF3C00C9871B /* SegmentPicker.swift */; };
 		4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D482D2BC4C4F900C9871B /* TextFieldView.swift */; };
+		4A8D48302BC4D14D00C9871B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D482F2BC4D14D00C9871B /* PickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		4A8D48292BC3D77E00C9871B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4A8D482B2BC3DF3C00C9871B /* SegmentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentPicker.swift; sourceTree = "<group>"; };
 		4A8D482D2BC4C4F900C9871B /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		4A8D482F2BC4D14D00C9871B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +78,10 @@
 				4A8D48252BC3C2E400C9871B /* Shape.swift */,
 				4A8D48292BC3D77E00C9871B /* CustomButton.swift */,
 				4A8D482B2BC3DF3C00C9871B /* SegmentPicker.swift */,
+				4A8D482D2BC4C4F900C9871B /* TextFieldView.swift */,
+				4A8D482F2BC4D14D00C9871B /* PickerView.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
-				4A8D482D2BC4C4F900C9871B /* TextFieldView.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				4A8D482C2BC3DF3D00C9871B /* SegmentPicker.swift in Sources */,
 				4A0706022BC3B2D6003A8AC1 /* Text_View.swift in Sources */,
 				4A0706042BC3BC67003A8AC1 /* SFsymbolTest.swift in Sources */,
+				4A8D48302BC4D14D00C9871B /* PickerView.swift in Sources */,
 				4A8D482A2BC3D77E00C9871B /* CustomButton.swift in Sources */,
 				4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
