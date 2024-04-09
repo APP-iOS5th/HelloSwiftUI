@@ -19,6 +19,7 @@ struct DatePickerWithRange: View {
     
     let formatter = DateFormatter()
     
+    
     var body: some View {
         VStack {
             Text("Chosen date = \(formatter.string(from: myDate))")

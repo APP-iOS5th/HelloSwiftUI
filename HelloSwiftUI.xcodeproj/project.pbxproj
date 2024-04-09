@@ -21,6 +21,7 @@
 		4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D482D2BC4C4F900C9871B /* TextFieldView.swift */; };
 		4A8D48302BC4D14D00C9871B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D482F2BC4D14D00C9871B /* PickerView.swift */; };
 		4A8D48322BC4D94100C9871B /* DatePickerWithRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48312BC4D94100C9871B /* DatePickerWithRange.swift */; };
+		4A8D48342BC4E2AD00C9871B /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48332BC4E2AD00C9871B /* ToggleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		4A8D482D2BC4C4F900C9871B /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		4A8D482F2BC4D14D00C9871B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		4A8D48312BC4D94100C9871B /* DatePickerWithRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerWithRange.swift; sourceTree = "<group>"; };
+		4A8D48332BC4E2AD00C9871B /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				37CEFBCC2BC3711000DB9F65 /* HelloSwiftUIApp.swift */,
+				4A8D48332BC4E2AD00C9871B /* ToggleView.swift */,
 				4A0706032BC3BC66003A8AC1 /* SFsymbolTest.swift */,
 				37CEFBCE2BC3711000DB9F65 /* ContentView.swift */,
 				4A0705FF2BC3ACFA003A8AC1 /* ZStackView.swift */,
@@ -82,9 +85,9 @@
 				4A8D482B2BC3DF3C00C9871B /* SegmentPicker.swift */,
 				4A8D482D2BC4C4F900C9871B /* TextFieldView.swift */,
 				4A8D482F2BC4D14D00C9871B /* PickerView.swift */,
+				4A8D48312BC4D94100C9871B /* DatePickerWithRange.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
-				4A8D48312BC4D94100C9871B /* DatePickerWithRange.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
 				4A8D48282BC3C9B100C9871B /* GeometryImage.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
+				4A8D48342BC4E2AD00C9871B /* ToggleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
