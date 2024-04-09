@@ -7,52 +7,31 @@
 
 import SwiftUI
 
-
-
-import SwiftUI
-
-extension Color {
-    
-}
-
 struct ContentView: View {
-    @State var changeMe = false
-    @State var changeMe2 = false
-    @State var changeMe3 = false
-    @State var message = ""
-    
+    @State private var degree = 0.0
+
     var body: some View {
         VStack {
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundColor(changeMe ? .red : .yellow)
-                .onTapGesture {
-                    changeMe.toggle()
-                }
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundColor(changeMe2 ? .red : .gray)
-                .onTapGesture {
-                    changeMe2.toggle()
-                }
-            Text(message).padding()
+            Text("tempValue = \(degree)")
+            Spacer()
+            Image(systemName: "star.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 200)
+                .rotationEffect(Angle.degrees(degree))
+                .gesture(
+                    RotationGesture()
+                        .onChanged { A in
+                            degree = A.degrees
+                        }
+                )
+            Spacer()
+        }
+    }
+}
 
-            Rectangle()
-                .frame(width: 175, height: 125)
-                .foregroundColor(changeMe3 ? .red : .blue)
-                .onLongPressGesture(minimumDuration: 2, maximumDistance: 2,  pressing: {stillPressed in message = "Long press in progress: \(stillPressed)"}){
-                    changeMe3.toggle()
-                }
-                                    
-                                    
-                                    }
-                                    }
-                                    
-                                    
-                                    
-                                    }
-                                    
-                                    #Preview
-                                    {
-                    ContentView()
-                }
+                    
+                    #Preview
+                    {
+                        ContentView()
+                    }
