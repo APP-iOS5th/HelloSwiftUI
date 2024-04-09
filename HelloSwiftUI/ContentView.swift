@@ -6,30 +6,29 @@
 //
 
 import SwiftUI
+
 @available(iOS 15.0, *) // 15 이하로는 실행 안되게하는?
 struct ContentView: View {
-    @State private var choice = 0.0 //중간에 뭔가 추가해야할거같을 때 double로 하면 정수는 뒤에걸 다 수정해야하지만 소수점은 중간에 추가가 용이함.
-    @State private var myColor = Color.red
     @State private var myDate = Date.now
+    let dateRange:  ClosedRange<Date> = {
+        let calendar = Calendar.current
+        let startComponents = DateComponents(year: 2024, month: 3, day: 25)
+        let endComponents = DateComponents(year: 2024, month: 9, day: 13)
+        return calendar.date(from: startComponents)!...calendar.date(from: endComponents)!
+    } () //() 이게 있어서 선언하자마자 바로 실행됨
+    
+    let formatter = DateFormatter() //얘는 함수 아니고 객체임 밑의 정보들을 가지고 있는,,
     
     var body: some View {
         VStack  {
-            Picker(selection: $choice, label: Text("Picerk")) {
-                Text("Bird").tag(1.7)
-                Text("Cat").tag(2.06)
-                Text("Lizard").tag(3.41)
-                Text("Dog").tag(4.13)
-                Text("Hamster").tag(5.28)
-            }.pickerStyle(SegmentedPickerStyle())
-            Text("You chose \(choice)")
-            
-            ColorPicker("Pick a color", selection: $myColor)
-            Rectangle()
-                .frame(width: 200, height: 150)
-                .foregroundColor(myColor)
-            
-            DatePicker(selection: $myDate, label: { Text("Date") } )
+            Text("Chosen data = \(formatter.string(from: myDate))")
+                .padding()
+            DatePicker(selection: $myDate, in: dateRange, displayedComponents: [.date], label: { Text("Date")} )
                 .datePickerStyle(.graphical)
+                .padding()
+        } .onAppear() {
+            formatter.locale = Locale(identifier: "ko_KR")
+            formatter.dateStyle = .full
         }
     }
 }
