@@ -10,7 +10,7 @@ import SwiftUI
 struct GridTestView: View {
     var body: some View {
         VStack {
-            let gridItems = [GridItem(.fixed(25)),GridItem(.fixed(25)),GridItem(.fixed(25))]
+            let gridItems = [GridItem(.flexible(minimum: 25, maximum: 450)),GridItem(.flexible(minimum: 25, maximum: 450)),GridItem(.flexible(minimum: 25, maximum: 450))]
             
             ScrollView(.horizontal, showsIndicators: true) {
                 LazyHGrid(rows: gridItems) {
