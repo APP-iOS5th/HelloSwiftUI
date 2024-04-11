@@ -32,6 +32,7 @@
 		4A8D48442BC5253100C9871B /* ArrayIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48432BC5253100C9871B /* ArrayIdentifiable.swift */; };
 		4A8D48462BC529BD00C9871B /* FormEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48452BC529BD00C9871B /* FormEx.swift */; };
 		4A8D48482BC52F0100C9871B /* FormWithSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48472BC52F0100C9871B /* FormWithSection.swift */; };
+		4A8D484A2BC7610B00C9871B /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		4A8D48432BC5253100C9871B /* ArrayIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIdentifiable.swift; sourceTree = "<group>"; };
 		4A8D48452BC529BD00C9871B /* FormEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEx.swift; sourceTree = "<group>"; };
 		4A8D48472BC52F0100C9871B /* FormWithSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormWithSection.swift; sourceTree = "<group>"; };
+		4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				4A8D48432BC5253100C9871B /* ArrayIdentifiable.swift */,
 				4A8D48452BC529BD00C9871B /* FormEx.swift */,
 				4A8D48472BC52F0100C9871B /* FormWithSection.swift */,
+				4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
@@ -217,6 +220,7 @@
 				4A8D483C2BC50B9F00C9871B /* RotateGestureView.swift in Sources */,
 				4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
+				4A8D484A2BC7610B00C9871B /* DisclosureGroupView.swift in Sources */,
 				4A8D48422BC5213C00C9871B /* ListEx.swift in Sources */,
 				4A8D48462BC529BD00C9871B /* FormEx.swift in Sources */,
 				4A8D48482BC52F0100C9871B /* FormWithSection.swift in Sources */,
