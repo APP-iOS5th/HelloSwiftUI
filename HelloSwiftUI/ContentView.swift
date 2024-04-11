@@ -25,7 +25,7 @@ struct FileView: View {
             VStack {
                 Spacer()
                 TextField("Type here:", text: $choice.message)
-                Text("\(choice)")
+                Text("\(choice.message)")
 //                Text("This is a separate structure")
 //                Text("that's stored in the same file")
                 Spacer()
