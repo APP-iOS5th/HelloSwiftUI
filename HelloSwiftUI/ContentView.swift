@@ -6,38 +6,35 @@
 //
 
 import SwiftUI
-
-class Species: Identifiable {
-    let id = UUID()
-    var name: String
-    var classification: [Species]?
-    init(name: String, classification: [Species]? = nil) {
-        self.name = name
-        self.classification = classification
-    }
-}
 struct ContentView: View {
-    var Animals: [Species] = [
-        Species(name: "포유류", classification: [
-            Species(name: "개", classification: [
-                Species(name: "Poodle"),
-                Species(name: "Collie")
-            ]),
-            Species(name: "고양이"),
-            Species(name: "코끼리"),
-            Species(name: "고래")
-        ]),
-        Species(name: "조류", classification: [
-            Species(name: "Canary"),
-            Species(name: "Eagle")
-        ])
-    ]
+    @State var message = ""
+    @State var flag = true
     var body: some View {
-        List {
-            OutlineGroup(Animals, id: \.id, children: \.classification) { creature in
-                Text(creature.name)
+        NavigationStack {
+            Text(message)
+            Toggle(isOn: $flag, label: {
+                Text("toggle display mode")
+            })
+            .navigationTitle("Navigation Title")
+            .navigationBarHidden(false)
+            .navigationBarTitleDisplayMode(flag ? .large : .inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        message = "iCloud Icond Tapped"
+                    } label: {
+                        Image(systemName: "icloud")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        message = "Complete Button Tapped"
+                    } label: {
+                        Text("Complete")
+                    }
+                }
             }
-        }
+        }.accentColor(.purple)
     }}
 
 #Preview {
