@@ -7,44 +7,34 @@
 
 import SwiftUI
 
-class Species: Identifiable {
-    let id = UUID()
-    var name: String
-    var classification:[Species]?
-    init(name: String, classification: [Species]? = nil) {
-        self.name = name
-        self.classification = classification
-    }
-}
-
 //특정 버전 지원 제한 -> 15.0 버전 이하는 실행불가.
 @available(iOS 15.0, *)
 struct ContentView: View {
     
-    var animals: [Species] = [
-            Species(name: "포유류", classification: [
-                Species(name: "개", classification: [
-                    Species(name: "Poodle"),
-                    Species(name: "Collie"),
-                    Species(name: "St. Bernard"),
-                ]),
-                Species(name: "고양이"),
-                Species(name: "코끼리"),
-                Species(name: "고래"),
-            ]),
-            Species(name: "조류", classification: [
-                Species(name: "Canary"),
-                Species(name: "Parakeet"),
-                Species(name: "Eagle"),
-            ]),
-        ]
+    @State var flag = true
+    @State var message = ""
     
     var body: some View {
-        List {
-            OutlineGroup(animals, id: \.id, children: \.classification) { creature in
-                Text(creature.name)
+        NavigationStack {
+            Text(message)
+            Toggle(isOn: $flag) {
+                Text("토글 디스플레이 모드")
+            }
+            .padding()
+            .navigationTitle("네비게이션 타이틀")
+//            .toolbar(.hidden)
+            .navigationBarTitleDisplayMode(flag ? .large : .inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        message = "iCloud 아이콘 탭 되었음."
+                    }) {
+                        Image(systemName: "icloud")
+                    }
+                }
             }
         }
+        .accentColor(.purple)
     }
 }
 
