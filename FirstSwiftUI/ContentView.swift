@@ -10,27 +10,45 @@ import SwiftUI
 //특정 버전 지원 제한 -> 15.0 버전 이하는 실행불가.
 @available(iOS 15.0, *)
 struct ContentView: View {
-    
-    @State private var degree: CGFloat = 0.0
-    
+    @State var flag = false
+    @State var message =  ""
     var body: some View {
-        VStack {
-            Text("tempValue = \(degree)")
-            Image(systemName: "star.fill")
-                .resizable()
-                .scaledToFit()
-//                .aspectRatio(0.5, contentMode: .fit) -> 0.5(1:2) 비율로 fit하게 비율 맞춰줌.
-                .frame(width: 200)
-                .rotationEffect(Angle.degrees(degree))
-                .gesture(
-                    RotationGesture()
-                        .onChanged { angle in
-                            degree = angle.degrees
-                        }
-                )
-        }
-        .onAppear() {
-            print("ContentView Load.")
+        VStack (spacing: 20) {
+            Form {
+                Section {
+                    Text("This is Section has no header")
+                }
+                Section("Just a Header") {
+                    Text("This Section uses a simple header")
+                }
+                Section {
+                    Text("This Section  uses a simple footer")
+                } footer: {
+                    Text("Just a Footer")
+                }
+                Section {
+                    Text("This Section uses both a header and footer")
+                } header: {
+                    Text("The header")
+                } footer: {
+                    Text("The footer")
+                }
+            }
+            
+            Form {
+                Text("This is a Form")
+                Toggle(isOn: $flag, label: {
+                    Text("Click me")
+                })
+            }
+            
+            GroupBox(label: Text("Group Box")) {
+                Text("This is a Group box")
+                Toggle(isOn: $flag, label: {
+                    Text("Click me")
+                })
+                TextField("Type here", text: $message)
+            }
         }
     }
 }
