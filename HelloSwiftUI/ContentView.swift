@@ -414,51 +414,96 @@
 //}
 
 
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State var flag = false
+//    @State var message = ""
+//    
+//    var body: some View {
+//        VStack (spacing: 20) {
+//            
+//            Form {
+//                Section {
+//                    Text("This Section has no header")
+//                }
+//                Section("Just a Header") {
+//                    Text("This Section uses a simple header")
+//                }
+//                Section {
+//                    Text("This Section uses a simple footer")
+//                } footer: {
+//                    Text("Just a Footer")
+//                }
+//                Section {
+//                    Text("This Section uses both a header and footer")
+//                } header: {
+//                    Text("The header")
+//                } footer: {
+//                    Text("The footer")
+//                }
+//            }
+//            
+//            Form {
+//                Text("This is a Form")
+//                Toggle(isOn: $flag, label: {
+//                    Text("Click me")
+//                })
+//                .disabled(flag)
+//            }
+//            
+//            GroupBox(label: Text("Group Box")) {
+//                Text("This is a Group Box")
+//            }
+//        }
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
+
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State var sliderValue = 0.0
+//    @State var message = ""
+//    @State var flag = true
+//    
+//    var body: some View {
+//        DisclosureGroup("펼치기") {
+//            Text("입력한 내용 = \(message)")
+//            TextField("Type here", text: $message)
+//                .padding()
+//            Text(flag ? "Toggle = true" : "Toggle = false")
+//            Toggle(isOn: $flag) {
+//                Text("Toggle")
+//            }
+//            Text("The slider value = \(sliderValue)")
+//            Slider(value: $sliderValue, in: 0...15)
+//                .padding()
+//        }
+//        .padding()
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
 import SwiftUI
 
 struct ContentView: View {
-    @State var flag = false
-    @State var message = ""
-    
     var body: some View {
-        VStack (spacing: 20) {
-            
-            Form {
-                Section {
-                    Text("This Section has no header")
-                }
-                Section("Just a Header") {
-                    Text("This Section uses a simple header")
-                }
-                Section {
-                    Text("This Section uses a simple footer")
-                } footer: {
-                    Text("Just a Footer")
-                }
-                Section {
-                    Text("This Section uses both a header and footer")
-                } header: {
-                    Text("The header")
-                } footer: {
-                    Text("The footer")
-                }
-            }
-            
-            Form {
-                Text("This is a Form")
-                Toggle(isOn: $flag, label: {
-                    Text("Click me")
-                })
-                .disabled(flag)
-            }
-            
-            GroupBox(label: Text("Group Box")) {
-                Text("This is a Group Box")
+        ScrollView(Axis.Set.vertical, showsIndicators: true) {
+            ForEach(0..<50) {
+                Text("Item #\($0)")
             }
         }
     }
 }
 
-#Preview {
+#Preview{
     ContentView()
 }
