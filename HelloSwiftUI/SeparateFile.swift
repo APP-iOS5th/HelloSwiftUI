@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct SeparateFile: View {
-   @Binding var passedData: String
+   @EnvironmentObject var passedData: ShareString
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                Text("This is another structure")
-                Text("but stored in a separate file")
-                Text("You chose= \(passedData)")
+                TextField("Type here", text: $passedData.message)
                 Spacer()
             }
             Spacer()
@@ -25,5 +23,5 @@ struct SeparateFile: View {
 }
 
 #Preview {
-    SeparateFile(passedData: .constant("")) //.constant 가짜부모
+    SeparateFile()
 }
