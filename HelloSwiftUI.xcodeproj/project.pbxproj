@@ -11,7 +11,6 @@
 		37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CEFBCE2BC3711000DB9F65 /* ContentView.swift */; };
 		37CEFBD12BC3711100DB9F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CEFBD02BC3711100DB9F65 /* Assets.xcassets */; };
 		37CEFBD42BC3711200DB9F65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CEFBD32BC3711200DB9F65 /* Preview Assets.xcassets */; };
-		7F73389C2BC7866500384AF5 /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73389B2BC7866500384AF5 /* SeparateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		37CEFBCE2BC3711000DB9F65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37CEFBD02BC3711100DB9F65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37CEFBD32BC3711200DB9F65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7F73389B2BC7866500384AF5 /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +53,6 @@
 			children = (
 				37CEFBCC2BC3711000DB9F65 /* HelloSwiftUIApp.swift */,
 				37CEFBCE2BC3711000DB9F65 /* ContentView.swift */,
-				7F73389B2BC7866500384AF5 /* SeparateFile.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F73389C2BC7866500384AF5 /* SeparateFile.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
 			);
