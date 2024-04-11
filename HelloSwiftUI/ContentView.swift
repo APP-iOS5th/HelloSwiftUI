@@ -23,6 +23,7 @@ import SwiftUI
          NavigationStack {
              NavigationLink(destination: FileView()) {
                  Text("Send a message")
+                 Text("Send a message")
              }
          }
      }
