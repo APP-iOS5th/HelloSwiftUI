@@ -4,38 +4,43 @@
 //
 //  Created by 차지용 on 4/8/24.
 //
+//바인딩을쓰면 거기에 쓰이는 변수를 고칠 수 있게 해줌
 
 import SwiftUI
 
-
+class ShareString: ObservableObject {
+    @Published var message = ""
+}
 
 struct FileView: View {
-    @Binding var choice: String
+    @EnvironmentObject var choice: ShareString
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                TextField("Type here:", text: $choice)
+                TextField("Type here:", text: $choice.message)
                 Spacer()
             }
             Spacer()
-        }.background(Color.yellow)
+        }
     }
 }
 
 struct ContentView: View {
-    @State var message = ""
+    @StateObject var showMe = ShareString()
     var body: some View {
         NavigationStack {
-            TextField("Type here:", text: $message)
-            NavigationLink(destination: FileView(choice: $message)) {
+            TextField("Type here:", text: $showMe.message)
+            NavigationLink(destination: FileView()) {
                 Text("Head")
             }
-            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+            NavigationLink(destination: SeparateFile()) {
                 Text("Tails")
-            }.navigationTitle("Flip a Coin")
+            }
+            .navigationTitle("Flip a Coin")
         }
+        .environmentObject(showMe)
     }
 }
 
