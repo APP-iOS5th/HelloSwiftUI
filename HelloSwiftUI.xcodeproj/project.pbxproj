@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F7183EB2BC786630069D7A0 /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7183EA2BC786630069D7A0 /* SeparateFile.swift */; };
 		8F98317A2BC37119003FC6C0 /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9831792BC37119003FC6C0 /* HelloSwiftUIApp.swift */; };
 		8F98317C2BC37119003FC6C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98317B2BC37119003FC6C0 /* ContentView.swift */; };
 		8F98317E2BC3711B003FC6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F98317D2BC3711B003FC6C0 /* Assets.xcassets */; };
@@ -15,7 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8F7183EA2BC786630069D7A0 /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 		8F9831762BC37119003FC6C0 /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9831792BC37119003FC6C0 /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
 		8F98317B2BC37119003FC6C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,7 +35,6 @@
 		8F98316D2BC37119003FC6C0 = {
 			isa = PBXGroup;
 			children = (
-				8F7183EA2BC786630069D7A0 /* SeparateFile.swift */,
 				8F9831782BC37119003FC6C0 /* HelloSwiftUI */,
 				8F9831772BC37119003FC6C0 /* Products */,
 			);
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F7183EB2BC786630069D7A0 /* SeparateFile.swift in Sources */,
 				8F98317C2BC37119003FC6C0 /* ContentView.swift in Sources */,
 				8F98317A2BC37119003FC6C0 /* HelloSwiftUIApp.swift in Sources */,
 			);
