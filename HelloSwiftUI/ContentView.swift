@@ -7,36 +7,30 @@
 
 import SwiftUI
 
-
-struct FileView: View {
-    @Binding var choice: String
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            VStack {
-                Spacer()
-                TextField("Type here", text: $choice)
-                Spacer()
-            }
-            Spacer()
-        }.background(Color.yellow)
-    }
-}
-
 struct ContentView: View {
-    @State var message = ""
     
     var body: some View {
-        NavigationStack {
-            Text("Choose Heads or Tails")
-            NavigationLink(destination: FileView(choice: $message)) {
-                Text("Heads")
-            }
-            NavigationLink(destination: SeperateFile(passedData: "Tails")) {
-                Text("Tails")
-            }
-            .navigationTitle("Flip a coin")
+        TabView {
+            Text("One")
+                .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("One")
+                }
+            Text("Two")
+                .tabItem {
+                    Image(systemName: "hare.fill")
+                    Text("Two")
+                }
+            Text("Three")
+                .tabItem {
+                    Image(systemName: "tortoise.fill")
+                    Text("Three")
+                }
+            Text("Four")
+                .tabItem {
+                    Image(systemName: "folder.fill")
+                    Text("Four")
+                }
         }
     }
 }
