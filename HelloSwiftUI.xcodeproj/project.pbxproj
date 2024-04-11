@@ -35,6 +35,7 @@
 		4A8D484A2BC7610B00C9871B /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */; };
 		4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484B2BC7669900C9871B /* ExScrollView.swift */; };
 		4A8D484E2BC76A7E00C9871B /* OutlineGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */; };
+		4A8D48502BC776C800C9871B /* NavigationStackEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484F2BC776C800C9871B /* NavigationStackEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
 		4A8D484B2BC7669900C9871B /* ExScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExScrollView.swift; sourceTree = "<group>"; };
 		4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineGroupView.swift; sourceTree = "<group>"; };
+		4A8D484F2BC776C800C9871B /* NavigationStackEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,10 +125,11 @@
 				4A8D48452BC529BD00C9871B /* FormEx.swift */,
 				4A8D48472BC52F0100C9871B /* FormWithSection.swift */,
 				4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */,
-				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
-				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 				4A8D484B2BC7669900C9871B /* ExScrollView.swift */,
 				4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */,
+				4A8D484F2BC776C800C9871B /* NavigationStackEx.swift */,
+				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
+				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
 				4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */,
 				4A8D48342BC4E2AD00C9871B /* ToggleView.swift in Sources */,
+				4A8D48502BC776C800C9871B /* NavigationStackEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
