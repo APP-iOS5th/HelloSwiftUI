@@ -23,5 +23,5 @@ struct SeparateFile: View {
 }
 
 #Preview {
-    SeparateFile()
+    SeparateFile().environmentObject(ShareString())
 }
