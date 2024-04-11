@@ -14,7 +14,7 @@ struct SeparateFile: View {
             Spacer()
             VStack{
                 Spacer()
-                Text("You chos = \(passedData)")
+                Text("You chose = \(passedData)")
 //                Text("This is another structure")
 //                Text("but stored in a separate file")
                 Spacer()

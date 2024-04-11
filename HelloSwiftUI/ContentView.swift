@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct FileView: View {
-    let choice: String
+    @Binding var choice: String
     
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
+                TextField("Type here:", text: $choice)
                 Text("\(choice)")
 //                Text("This is a separate structure")
 //                Text("that's stored in the same file")
@@ -26,13 +27,15 @@ struct FileView: View {
 }
 
 struct ContentView: View {
+    @State var message: String = "basic choice"
+    
     var body: some View {
         NavigationStack {
             Spacer()
             
-            Text("Choose Heads or Tails")
-            
-            NavigationLink(destination: FileView(choice: "Heads")) {
+            TextField("Type hear: ", text: $message)
+                .padding()
+            NavigationLink(destination: FileView(choice: $message )) {
                 Text("Heads")
             }
             
@@ -42,6 +45,8 @@ struct ContentView: View {
                 Text("Tails")
             }
             .navigationTitle("Flip a coin")
+            
+        
             Spacer()
         }
     }
