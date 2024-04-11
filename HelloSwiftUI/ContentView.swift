@@ -7,15 +7,24 @@
 
 import SwiftUI
 
+
+class ShareString: ObservableObject {
+    @Published var message = ""
+    @Published var tailMessage = ""
+    
+}
+
+
 struct FileView: View {
-    @Binding var choice: String
+    @EnvironmentObject var choice: ShareString
+    
     
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                TextField("Type here:", text: $choice)
+                TextField("Type here:", text: $choice.message)
                 Text("\(choice)")
 //                Text("This is a separate structure")
 //                Text("that's stored in the same file")
@@ -27,21 +36,23 @@ struct FileView: View {
 }
 
 struct ContentView: View {
-    @State var message: String = "basic choice"
+    @StateObject var showMe = ShareString()
     
     var body: some View {
         NavigationStack {
             Spacer()
             
-            TextField("Type hear: ", text: $message)
+            TextField("Type hear: ", text: $showMe.message)
                 .padding()
-            NavigationLink(destination: FileView(choice: $message )) {
+            NavigationLink(destination: FileView()) {
                 Text("Heads")
             }
             
             
             Spacer()
-            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+            Text("\(showMe.tailMessage)")
+                .padding()
+            NavigationLink(destination: SeparateFile()) {
                 Text("Tails")
             }
             .navigationTitle("Flip a coin")
@@ -49,6 +60,7 @@ struct ContentView: View {
         
             Spacer()
         }
+        .environmentObject(showMe)
     }
 }
 
