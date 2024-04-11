@@ -24,6 +24,12 @@ struct ContentView: View {
                 Button("4") {
                     selectedView = 4
                 }
+                Button("5") {
+                    selectedView = 5
+                }
+                Button("6") {
+                    selectedView = 6
+                }
             }
             TabView (selection: $selectedView) {
                 Text("One")
@@ -50,13 +56,16 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "internaldrive.fill")
                         Text("five")
-                    }
+                    }.tag(5)
                 Text("six")
                     .tabItem {
                         Image(systemName: "cloud.drizzle.fill")
                         Text("six")
-                    }
-            }.tint(.pink)
+                    }.tag(6)
+            }
+            .tabViewStyle(.page)
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:  .always))
+            .tint(.pink)
         }
         
     }
