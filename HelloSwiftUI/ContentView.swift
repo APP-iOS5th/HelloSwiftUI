@@ -8,24 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var message = ""
-    @State var flag = true
-    @State var sliderValue = 0.0
-    @State var disclosureExpanded = false
     var body: some View {
-        DisclosureGroup(("Expand"), isExpanded: $disclosureExpanded) {
-            Text("text = \(message)")
-            TextField("Type here", text: $message)
-                .padding()
-            Text(flag ? "Toggle = true" : "Toggle = false")
-            Toggle(isOn: $flag) {
-                Text("Toggle")
+        ScrollView(Axis.Set.vertical, showsIndicators: false) {
+            ForEach(0..<45) {
+                Text("Item #\($0)")
             }
-            Text("The slider value = \(sliderValue)")
-            Slider(value: $sliderValue, in: 0...15)
-                .padding()
         }
-        .padding()
     }}
 
 #Preview {
