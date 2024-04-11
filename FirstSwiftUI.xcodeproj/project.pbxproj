@@ -11,7 +11,6 @@
 		582DAD562BC379C9009623CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582DAD552BC379C9009623CF /* ContentView.swift */; };
 		582DAD582BC379CA009623CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582DAD572BC379CA009623CF /* Assets.xcassets */; };
 		582DAD5B2BC379CA009623CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582DAD5A2BC379CA009623CF /* Preview Assets.xcassets */; };
-		585C735F2BC78647008F795D /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C735E2BC78647008F795D /* SeparateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		582DAD552BC379C9009623CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		582DAD572BC379CA009623CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		582DAD5A2BC379CA009623CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		585C735E2BC78647008F795D /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				582DAD532BC379C9009623CF /* FirstSwiftUIApp.swift */,
-				585C735E2BC78647008F795D /* SeparateFile.swift */,
 				582DAD552BC379C9009623CF /* ContentView.swift */,
 				582DAD572BC379CA009623CF /* Assets.xcassets */,
 				582DAD592BC379CA009623CF /* Preview Content */,
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585C735F2BC78647008F795D /* SeparateFile.swift in Sources */,
 				582DAD562BC379C9009623CF /* ContentView.swift in Sources */,
 				582DAD542BC379C9009623CF /* FirstSwiftUIApp.swift in Sources */,
 			);
