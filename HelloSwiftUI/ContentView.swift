@@ -14,13 +14,32 @@ struct ContentView: View {
     @State var flag = false
     
      var body: some View {
-         VStack{
-             Text("Hello, world!")
-                 .padding()
-                 .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-                 .animation(.default, value: flag)
+         VStack(spacing: 25){
+             Image(systemName: "tortoise.fill")
+                 .font(.system(size:50))
+                 .foregroundStyle(.red)
+                 .scaleEffect(flag ? 1.75 : 1)
+            //     .animation(.default, value: flag)
+             Image(systemName: "tortoise.fill")
+                 .font(.system(size:50))
+                 .foregroundStyle(.red)
+                 .scaleEffect(flag ? 1.75 : 1)
+               //  .animation(.easeIn, value: flag)
+             Image(systemName: "tortoise.fill")
+                 .font(.system(size:50))
+                 .foregroundStyle(.red)
+                 .scaleEffect(flag ? 1.75 : 1)
+               //  .animation(.easeOut, value: flag)
+             Image(systemName: "tortoise.fill")
+                 .font(.system(size:50))
+                 .foregroundStyle(.red)
+                 .scaleEffect(flag ? 1.75 : 1)
+                // .animation(.easeInOut, value: flag)
+             
              Button("Animate now"){
-                 flag.toggle()
+                 withAnimation(.easeInOut(duration: 2.1)) {
+                     flag.toggle()
+                 }
              }
              Slider(value: $myDegrees, in: -100...180, step: 1)
                  .padding()
