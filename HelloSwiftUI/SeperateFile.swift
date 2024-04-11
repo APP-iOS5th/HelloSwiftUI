@@ -24,5 +24,6 @@ struct SeperateFile: View {
 
 #Preview {
     SeperateFile()
+        .environmentObject(ShareString())
 }
 //실행될 변수가 꼭 필요하다. 초기화 하기 위해. 근데 넣어줄 값이 없어서 ""로.
