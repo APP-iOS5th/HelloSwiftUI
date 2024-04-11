@@ -14,7 +14,7 @@ struct ContentView: View {
             }
             Slider(value: $myDegrees, in: -180...180, step: 1)
                 .padding()
-            
+            Text("The degree is \(Int(myDegrees))")
         }
     }
 }
