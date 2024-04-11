@@ -28,6 +28,12 @@ import SwiftUI
                  Button("4") {
                      selectedView = 1
                  }
+                 Button("5") {
+                     selectedView = 1
+                 }
+                 Button("6") {
+                     selectedView = 1
+                 }
              }
              TabView (selection: $selectedView){
                  Text("One")
@@ -61,9 +67,11 @@ import SwiftUI
                          Text("Six")
                      }.tag(6)
              }
-             //.tint(.pink)
-             .accentColor(.cyan)
+             .tabViewStyle(.page)
+             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
          }
+         //.tint(.pink)
+         .accentColor(.cyan)
      }
  }
          
