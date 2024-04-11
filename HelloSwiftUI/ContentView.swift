@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            let gridItems = [GridItem(.fixed(25)), GridItem(.fixed(25)), GridItem(.fixed(25))]
+            let gridItems = [GridItem(.flexible(minimum: 25, maximum: 450)), GridItem(.flexible(minimum: 25, maximum: 450)), GridItem(.flexible(minimum: 25, maximum: 450))]
             ScrollView(Axis.Set.horizontal, showsIndicators: true){
                 LazyHGrid(rows: gridItems) {
                     Image(systemName: "1.circle")
@@ -24,6 +24,8 @@ struct ContentView: View {
                     Image(systemName: "8.circle")
                     Image(systemName: "9.circle")
                     Image(systemName: "10.circle")
+                    
+                    
                 }
                 .font(.largeTitle)
             }
@@ -39,6 +41,7 @@ struct ContentView: View {
                     Image(systemName: "8.square")
                     Image(systemName: "9.square")
                     Image(systemName: "10.square")
+                    
 
                 }
             }
