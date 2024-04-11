@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04185DFE2BC787090085565B /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04185DFD2BC787090085565B /* SeparateFile.swift */; };
 		04A418B22BC3720B00F04138 /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A418B12BC3720B00F04138 /* HelloSwiftUIApp.swift */; };
 		04A418B42BC3720B00F04138 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A418B32BC3720B00F04138 /* ContentView.swift */; };
 		04A418B62BC3720F00F04138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A418B52BC3720F00F04138 /* Assets.xcassets */; };
@@ -15,7 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04185DFD2BC787090085565B /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 		04A418AE2BC3720B00F04138 /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A418B12BC3720B00F04138 /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
 		04A418B32BC3720B00F04138 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 			children = (
 				04A418B12BC3720B00F04138 /* HelloSwiftUIApp.swift */,
 				04A418B32BC3720B00F04138 /* ContentView.swift */,
-				04185DFD2BC787090085565B /* SeparateFile.swift */,
 				04A418B52BC3720F00F04138 /* Assets.xcassets */,
 				04A418B72BC3720F00F04138 /* Preview Content */,
 			);
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04185DFE2BC787090085565B /* SeparateFile.swift in Sources */,
 				04A418B42BC3720B00F04138 /* ContentView.swift in Sources */,
 				04A418B22BC3720B00F04138 /* HelloSwiftUIApp.swift in Sources */,
 			);
