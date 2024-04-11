@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SeparateFile: View {
+    var passedData: String
     var body: some View {
         HStack {
             Spacer()
@@ -15,6 +16,7 @@ struct SeparateFile: View {
                 Spacer()
                 Text("This is another structure")
                 Text("but stored in a separate file")
+                Text("You chose= \(passedData)")
                 Spacer()
             }
             Spacer()
@@ -23,5 +25,5 @@ struct SeparateFile: View {
 }
 
 #Preview {
-    SeparateFile()
+    SeparateFile(passedData: "")
 }
