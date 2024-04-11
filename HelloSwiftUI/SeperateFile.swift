@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct SeperateFile: View {
-    var passedData: String
+    @EnvironmentObject var passedData: ShareString
+    
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                Text("You chose = \(passedData)")
+                TextField("Type here", text: $passedData.message)
                 Spacer()
             }
             Spacer()
@@ -23,5 +24,5 @@ struct SeperateFile: View {
 }
 
 #Preview {
-    SeperateFile(passedData: "")
+    SeperateFile()
 }
