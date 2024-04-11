@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View {    
     var body: some View {
         TabView {
             Text("One")
@@ -26,12 +26,23 @@ struct ContentView: View {
                     Image(systemName: "tortoise.fill")
                     Text("Three")
                 }
-            Text("Fort")
+            Text("Four")
                 .tabItem {
                     Image(systemName: "folder.fill")
-                    Text("Fort")
+                    Text("Four")
+                }
+            Text("Five")
+                .tabItem {
+                    Image(systemName: "internaldrive.fill")
+                    Text("Five")
+                }
+            Text("Six")
+                .tabItem {
+                    Image(systemName: "cloud.fill")
+                    Text("Six")
                 }
         }
+        .tint(.indigo)
     }
 }
 
