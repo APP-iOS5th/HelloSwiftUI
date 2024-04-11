@@ -13,8 +13,8 @@ struct Movie: Identifiable, Hashable {
     let description: String
 }
 
-class MovieLsitViewModel:    ObservableObject {
-    @Published var movies: [Movie] = [
+class MovieLsitViewModel {
+     var movies: [Movie] = [
         Movie(title: "영화 1 ", description: "영화 1 설명"),
         Movie(title: "영화 2 ", description: "영화 2 설명"),
         Movie(title: "영화 3 ", description: "영화 3 설명")
@@ -35,7 +35,7 @@ struct MovieDetailView: View {
 }
 
 struct ContentView: View {
-    @StateObject private var viewModel = MovieLsitViewModel()
+    private var viewModel = MovieLsitViewModel()
     var body: some View {
         NavigationStack {
             List(viewModel.movies) { movie in
