@@ -11,6 +11,7 @@
 		58A546B82BC37116004FDBAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A546B72BC37116004FDBAB /* ContentView.swift */; };
 		58A546BA2BC37117004FDBAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A546B92BC37117004FDBAB /* Assets.xcassets */; };
 		58A546BD2BC37117004FDBAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A546BC2BC37117004FDBAB /* Preview Assets.xcassets */; };
+		58B5C3CD2BC786770028328B /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B5C3CC2BC786770028328B /* SeparateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		58A546B72BC37116004FDBAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58A546B92BC37117004FDBAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58A546BC2BC37117004FDBAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58B5C3CC2BC786770028328B /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		58A546B42BC37116004FDBAB /* HelloSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				58B5C3CC2BC786770028328B /* SeparateFile.swift */,
 				58A546B52BC37116004FDBAB /* HelloSwiftUIApp.swift */,
 				58A546B72BC37116004FDBAB /* ContentView.swift */,
 				58A546B92BC37117004FDBAB /* Assets.xcassets */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B5C3CD2BC786770028328B /* SeparateFile.swift in Sources */,
 				58A546B82BC37116004FDBAB /* ContentView.swift in Sources */,
 				58A546B62BC37116004FDBAB /* HelloSwiftUIApp.swift in Sources */,
 			);

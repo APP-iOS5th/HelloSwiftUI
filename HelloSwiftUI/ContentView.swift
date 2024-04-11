@@ -7,46 +7,44 @@
 
 import SwiftUI
 
-struct Movie: Identifiable, Hashable {
-    let id = UUID() // 생성자 함수
-    let title: String
-    let description: String
+class ShareString: ObservableObject {
+    @Published var message = ""
 }
 
-class MovieListViewModel: ObservableObject {
-    @Published var movies: [Movie] = [ // 값 게시
-        Movie(title: "영화1", description: "영화 1 설명"),
-        Movie(title: "영화2", description: "영화 2 설명"),
-        Movie(title: "영화3", description: "영화 3 설명")
-    ]
-}
-
-struct MovieDetailView: View {
-    let movie: Movie
+struct FileView: View {
+//    @Binding var choice: String // ContentView와 binding
+    @EnvironmentObject var choice: ShareString
     
     var body: some View {
-        VStack {
-            Text(movie.title)
-                .font(.title)
-            Text(movie.description)
-                .padding()
-        }
+        HStack {
+            Spacer()
+            VStack {
+                Spacer()
+                TextField("Type here: ", text: $choice.message)
+//                Text("You chose = \(choice)")
+                Spacer()
+            }
+            Spacer()
+        }.background(Color.yellow)
     }
 }
 
 struct ContentView: View {
-    @StateObject private var viewModel = MovieListViewModel() // 값 유지
+//    @State var message = ""
+    @StateObject var showMe = ShareString()
     
     var body: some View {
         NavigationStack {
-            List(viewModel.movies) { movie in
-                NavigationLink(movie.title, value: movie)
+            TextField("Type here: ", text: $showMe.message)
+            NavigationLink(destination: FileView()) {
+                Text("Heads")
             }
-            .navigationTitle("영화 목록")
-            .navigationDestination(for: Movie.self) { movie in
-                MovieDetailView(movie: movie)
+            NavigationLink(destination: SeparateFile()) {
+                Text("Tails")
             }
+            .navigationTitle("Flip a Coin")
         }
+        .environmentObject(showMe)
     }
 }
 
