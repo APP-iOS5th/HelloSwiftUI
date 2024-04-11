@@ -41,6 +41,7 @@
 		4A8D48572BC7865000C9871B /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48562BC7865000C9871B /* SeparateFile.swift */; };
 		4A8D48592BC7B63E00C9871B /* TabViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48582BC7B63E00C9871B /* TabViewEx.swift */; };
 		4A8D485B2BC7C64F00C9871B /* GridViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D485A2BC7C64F00C9871B /* GridViewEx.swift */; };
+		4A8D485D2BC7CBA200C9871B /* MoveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		4A8D48562BC7865000C9871B /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 		4A8D48582BC7B63E00C9871B /* TabViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewEx.swift; sourceTree = "<group>"; };
 		4A8D485A2BC7C64F00C9871B /* GridViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewEx.swift; sourceTree = "<group>"; };
+		4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				4A8D485A2BC7C64F00C9871B /* GridViewEx.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
+				4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				4A8D48462BC529BD00C9871B /* FormEx.swift in Sources */,
 				4A8D48482BC52F0100C9871B /* FormWithSection.swift in Sources */,
 				4A8D48282BC3C9B100C9871B /* GeometryImage.swift in Sources */,
+				4A8D485D2BC7CBA200C9871B /* MoveAnimation.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
 				4A8D48532BC77CCC00C9871B /* NavigationLinkEx.swift in Sources */,
 				4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */,
