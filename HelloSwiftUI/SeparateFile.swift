@@ -25,5 +25,5 @@ struct SeparateFile: View {
 
 
 #Preview {
-    SeparateFile()
+    SeparateFile(passedData: "")
 }
