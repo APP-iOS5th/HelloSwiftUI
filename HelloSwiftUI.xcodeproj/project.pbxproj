@@ -37,6 +37,8 @@
 		4A8D484E2BC76A7E00C9871B /* OutlineGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */; };
 		4A8D48502BC776C800C9871B /* NavigationStackEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484F2BC776C800C9871B /* NavigationStackEx.swift */; };
 		4A8D48532BC77CCC00C9871B /* NavigationLinkEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48522BC77CCC00C9871B /* NavigationLinkEx.swift */; };
+		4A8D48552BC785F100C9871B /* NavigationStackFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48542BC785F100C9871B /* NavigationStackFileView.swift */; };
+		4A8D48572BC7865000C9871B /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48562BC7865000C9871B /* SeparateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineGroupView.swift; sourceTree = "<group>"; };
 		4A8D484F2BC776C800C9871B /* NavigationStackEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackEx.swift; sourceTree = "<group>"; };
 		4A8D48522BC77CCC00C9871B /* NavigationLinkEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkEx.swift; sourceTree = "<group>"; };
+		4A8D48542BC785F100C9871B /* NavigationStackFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackFileView.swift; sourceTree = "<group>"; };
+		4A8D48562BC7865000C9871B /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,6 @@
 		37CEFBC02BC3711000DB9F65 = {
 			isa = PBXGroup;
 			children = (
-				4A8D48522BC77CCC00C9871B /* NavigationLinkEx.swift */,
 				37CEFBCB2BC3711000DB9F65 /* HelloSwiftUI */,
 				37CEFBCA2BC3711000DB9F65 /* Products */,
 			);
@@ -104,10 +107,13 @@
 		37CEFBCB2BC3711000DB9F65 /* HelloSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				4A8D48522BC77CCC00C9871B /* NavigationLinkEx.swift */,
+				4A8D48542BC785F100C9871B /* NavigationStackFileView.swift */,
 				37CEFBCC2BC3711000DB9F65 /* HelloSwiftUIApp.swift */,
 				4A8D48332BC4E2AD00C9871B /* ToggleView.swift */,
 				4A0706032BC3BC66003A8AC1 /* SFsymbolTest.swift */,
 				37CEFBCE2BC3711000DB9F65 /* ContentView.swift */,
+				4A8D48562BC7865000C9871B /* SeparateFile.swift */,
 				4A0705FF2BC3ACFA003A8AC1 /* ZStackView.swift */,
 				4A0706012BC3B2D6003A8AC1 /* Text_View.swift */,
 				4A8D48272BC3C9B100C9871B /* GeometryImage.swift */,
@@ -219,6 +225,7 @@
 				4A0706002BC3ACFA003A8AC1 /* ZStackView.swift in Sources */,
 				4A8D48262BC3C2E400C9871B /* Shape.swift in Sources */,
 				4A8D482C2BC3DF3D00C9871B /* SegmentPicker.swift in Sources */,
+				4A8D48572BC7865000C9871B /* SeparateFile.swift in Sources */,
 				4A8D48362BC4F7DE00C9871B /* UseLink.swift in Sources */,
 				4A8D483E2BC511CE00C9871B /* AlertWithActionSheet.swift in Sources */,
 				4A8D48442BC5253100C9871B /* ArrayIdentifiable.swift in Sources */,
@@ -234,6 +241,7 @@
 				4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
 				4A8D484A2BC7610B00C9871B /* DisclosureGroupView.swift in Sources */,
+				4A8D48552BC785F100C9871B /* NavigationStackFileView.swift in Sources */,
 				4A8D48422BC5213C00C9871B /* ListEx.swift in Sources */,
 				4A8D48462BC529BD00C9871B /* FormEx.swift in Sources */,
 				4A8D48482BC52F0100C9871B /* FormWithSection.swift in Sources */,

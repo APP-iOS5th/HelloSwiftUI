@@ -1,63 +1,40 @@
 //
-//  ContentView.swift
+//  ToggleView.swift
 //  HelloSwiftUI
 //
-//  Created by Jungman Bae on 4/8/24.
+//  Created by 정종원 on 4/9/24.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    @State private var isOn = true
-    @State private var value = 0
-    @State private var sliderValue = 0.5
-    
+
+struct FileView: View {
+    var choice: String
     var body: some View {
-        VStack (alignment: .trailing, spacing: 24) {
-            
-            Text("Default padding of 16 points")
-                .padding()
-                .background(.yellow)
-            
-            Text("Default padding of 45 points")
-                .padding(45)
-                .background(.yellow)
-            
-            Text("Default padding of 3 points")
-                .padding(3)
-                .background(.yellow)
-            
+        HStack {
             Spacer()
-             
-            HStack (alignment: .bottom, spacing: 24) {
-                
-                Text("Top padding only")
-                    .padding(.top)
-                    .background(.yellow)
-                
-                Text("trailing padding only")
-                    .padding(.trailing)
-                    .background(.yellow)
-                
-                Text("bottom padding only")
-                    .padding(.bottom)
-                    .background(.yellow)
+            VStack {
+                Spacer()
+                Text("This chose = \(choice)")
+                Spacer()
+            }
+            Spacer()
+        }.background(Color.yellow)
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        
+        NavigationStack {
+            Text("choose Heads or Tails")
+            NavigationLink(destination: FileView(choice: "Heads")) {
+                Text("Heads")
             }
             
-            Spacer(minLength: 100)
-
-            Text("top, leading padding ")
-                .padding([.top, .leading], 45)
-                .background(.yellow)
-            
-            Spacer()
-            Spacer()
-
-
-            Text("top, leading and bottom padding ")
-                .padding([.top, .leading, .bottom], 45)
-                .background(.yellow)
-                
+            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+                Text("Tails")
+            }
         }
     }
 }
@@ -69,8 +46,8 @@ struct ContentView: View {
 /*
  Swift 3.0 이전 프리뷰
  struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+ static var previews: some View {
+ ContentView()
+ }
  }
  */
