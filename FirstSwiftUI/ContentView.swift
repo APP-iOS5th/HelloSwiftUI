@@ -12,7 +12,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var flag = true
-    @State var message = ""
+    @State var message = "상단바의 아이콘을 탭 해보세요. "
     
     var body: some View {
         NavigationStack {
@@ -30,6 +30,20 @@ struct ContentView: View {
                         message = "iCloud 아이콘 탭 되었음."
                     }) {
                         Image(systemName: "icloud")
+                    }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        message = "gear 아이콘 탭 되었음."
+                    }) {
+                        Image(systemName: "gear")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        message = "house 아이콘 탭 되었음."
+                    }) {
+                        Image(systemName: "house")
                     }
                 }
             }
