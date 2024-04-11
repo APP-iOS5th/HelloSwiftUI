@@ -47,7 +47,7 @@ struct ContentView: View {
             .navigationTitle("영화 목록")
             .navigationDestination(for: Movie.self) { movie in
  //               MovieDetail
-                
+                MovieDetailView(movie: movie)
             }
         }
     }
