@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct FileView: View {
+    var choice: String
     var body: some View {
         HStack {
             Spacer()
@@ -27,8 +28,11 @@ struct FileView: View {
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-            NavigationLink(destination: FileView()) {
-                Text("Send a message")
+            NavigationLink(destination: FileView(choice: "Heads")) {
+                Text("Head")
+            }
+            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+                Text("Tails")
             }
         }
     }
