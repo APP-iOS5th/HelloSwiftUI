@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct AnimationTestView: View {
-    @State var changeMe = true
+    
+    @State var myDgrees: Double = 0.0
+    @State var flag = false
     
     var body: some View {
-        
-        Image(systemName: "tortoise.fill")
-            .font(.system(size: 100))
-            .foregroundStyle(.red)
-            .scaleEffect(changeMe ? 1.75 : 1.0 )
-            .animation(.default, value: changeMe)
-            .onTapGesture {
-                changeMe.toggle()
+        VStack {
+            Text("Hello, World")
+                .padding()
+                .rotationEffect(Angle.degrees(flag ? myDgrees : 0))
+                .animation(.default, value: flag)
+            
+            Button("Animate now") {
+                flag.toggle()
             }
-        
-        
+            
+            Slider(value: $myDgrees, in: -180...180, step: 1)
+                .padding()
+            
+        }
         
     }
 }
