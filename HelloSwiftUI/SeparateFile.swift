@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-
 struct SeparateFile: View {
     var passedData: String
-        var body: some View {
-            HStack {
+    var body: some View {
+        HStack {
+            Spacer()
+            VStack {
                 Spacer()
-                VStack {
-                    Spacer()
-                    Text("You chose = \(passedData)")
-                    Spacer()
-                }
+                Text("You chose = \(passedData)")
                 Spacer()
             }
+            Spacer()
+            
+            
         }
     }
-
-
-#Preview {
-    SeparateFile(passedData: "")
 }
+
+ #Preview {
+     SeparateFile(passedData: "")
+ }
