@@ -7,31 +7,25 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State private var degree = 0.0
 
+struct ContentView: View {
+    @State var sliderValue = 0.0
+    @State var message = ""
+    @State var flag = true
+    
     var body: some View {
-        VStack {
-            Text("tempValue = \(degree)")
-            Spacer()
-            Image(systemName: "star.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 200)
-                .rotationEffect(Angle.degrees(degree))
-                .gesture(
-                    RotationGesture()
-                        .onChanged { A in
-                            degree = A.degrees
-                        }
-                )
-            Spacer()
+        ScrollView(Axis.Set.vertical, showsIndicators: true) {
+            ForEach(0..<50){
+                Text("Item #\($0)")
+            }
         }
     }
+    
 }
 
-                    
-                    #Preview
-                    {
-                        ContentView()
-                    }
+
+
+#Preview
+{
+    ContentView()
+}
