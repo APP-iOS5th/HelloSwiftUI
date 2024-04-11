@@ -54,14 +54,15 @@ struct ContentView: View {
                     .tabItem {
                         Image(systemName: "internaldrive.fill")
                         Text("Five")
-                    }
+                    }.tag(5)
                 Text("Six")
                     .tabItem {
                         Image(systemName: "cloud.drizzle.fill")
                         Text("Six")
-                    }
+                    }.tag(6)
             }
-            
+            .tabViewStyle(.page)
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
         .tint(.pink)
     }
