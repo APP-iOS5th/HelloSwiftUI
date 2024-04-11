@@ -28,6 +28,13 @@ struct ContentView: View {
                         Image(systemName: "icloud")
                     }
                 }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        message = "완료 버튼 탭됨"
+                    } label: {
+                        Text("완료")
+                    }
+                }
             }
         }
         .accentColor(.purple)
