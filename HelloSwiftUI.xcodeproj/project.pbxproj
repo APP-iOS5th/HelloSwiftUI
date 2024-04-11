@@ -34,6 +34,7 @@
 		4A8D48482BC52F0100C9871B /* FormWithSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48472BC52F0100C9871B /* FormWithSection.swift */; };
 		4A8D484A2BC7610B00C9871B /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */; };
 		4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484B2BC7669900C9871B /* ExScrollView.swift */; };
+		4A8D484E2BC76A7E00C9871B /* OutlineGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		4A8D48472BC52F0100C9871B /* FormWithSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormWithSection.swift; sourceTree = "<group>"; };
 		4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
 		4A8D484B2BC7669900C9871B /* ExScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExScrollView.swift; sourceTree = "<group>"; };
+		4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineGroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 				4A8D484B2BC7669900C9871B /* ExScrollView.swift */,
+				4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				4A8D482A2BC3D77E00C9871B /* CustomButton.swift in Sources */,
 				4A8D48382BC4FE0B00C9871B /* GestureEx.swift in Sources */,
 				4A8D483C2BC50B9F00C9871B /* RotateGestureView.swift in Sources */,
+				4A8D484E2BC76A7E00C9871B /* OutlineGroupView.swift in Sources */,
 				4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
 				4A8D484A2BC7610B00C9871B /* DisclosureGroupView.swift in Sources */,
