@@ -20,43 +20,45 @@ struct ContentView: View {
                 }
             }
             TabView (selection: $selectedView) {
-            Text("One")
-                .tabItem {
-                    Image(systemName: "heart.fill")
-                    Text("One")
-                }
-                .tag(1)
-            Text("Two")
-                .tabItem {
-                    Image(systemName: "hare.fill")
-                    Text("Two")
-                }
-                .tag(2)
-            Text("Three")
-                .tabItem {
-                    Image(systemName: "tortoise.fill")
-                    Text("Three")
-                }
-                .tag(3)
-            Text("Four")
-                .tabItem {
-                    Image(systemName: "folder.fill")
-                    Text("Four")
-                }
-                .tag(4)
-            Text("Five")
-                .tabItem {
-                    Image(systemName: "folder.fill")
-                    Text("Five")
-                }
-            Text("Six")
-                .tabItem {
-                    Image(systemName: "folder.fill")
-                    Text("Six")
-                }
+                Text("One")
+                    .tabItem {
+                        Image(systemName: "heart.fill")
+                        Text("One")
+                    }
+                    .tag(1)
+                Text("Two")
+                    .tabItem {
+                        Image(systemName: "hare.fill")
+                        Text("Two")
+                    }
+                    .tag(2)
+                Text("Three")
+                    .tabItem {
+                        Image(systemName: "tortoise.fill")
+                        Text("Three")
+                    }
+                    .tag(3)
+                Text("Four")
+                    .tabItem {
+                        Image(systemName: "folder.fill")
+                        Text("Four")
+                    }
+                    .tag(4)
+                Text("Five")
+                    .tabItem {
+                        Image(systemName: "folder.fill")
+                        Text("Five")
+                    }
+                Text("Six")
+                    .tabItem {
+                        Image(systemName: "folder.fill")
+                        Text("Six")
+                    }
+            }
+            .tabViewStyle(.page)
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
         .tint(.purple)
-        }
     }
 }
 
