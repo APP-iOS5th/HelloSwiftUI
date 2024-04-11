@@ -55,9 +55,9 @@
 			children = (
 				41C63D792BC37125008D434F /* HelloSwiftUIApp.swift */,
 				41C63D7B2BC37125008D434F /* ContentView.swift */,
+				419FCB452BC78645009E8463 /* SeparateFile.swift */,
 				41C63D7D2BC37126008D434F /* Assets.xcassets */,
 				41C63D7F2BC37126008D434F /* Preview Content */,
-				419FCB452BC78645009E8463 /* SeparateFile.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";

@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct FileView: View {
+    let choice: String
+    
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                Text("This is a separate structure")
-                Text("that's stored in the same file")
+                Text("\(choice)")
+//                Text("This is a separate structure")
+//                Text("that's stored in the same file")
                 Spacer()
             }
             Spacer()
@@ -25,9 +28,21 @@ struct FileView: View {
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-            NavigationLink(destination: FileView()) {
-                Text("Send a message")
+            Spacer()
+            
+            Text("Choose Heads or Tails")
+            
+            NavigationLink(destination: FileView(choice: "Heads")) {
+                Text("Heads")
             }
+            
+            
+            Spacer()
+            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+                Text("Tails")
+            }
+            .navigationTitle("Flip a coin")
+            Spacer()
         }
     }
 }
