@@ -33,6 +33,7 @@
 		4A8D48462BC529BD00C9871B /* FormEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48452BC529BD00C9871B /* FormEx.swift */; };
 		4A8D48482BC52F0100C9871B /* FormWithSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48472BC52F0100C9871B /* FormWithSection.swift */; };
 		4A8D484A2BC7610B00C9871B /* DisclosureGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */; };
+		4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484B2BC7669900C9871B /* ExScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		4A8D48452BC529BD00C9871B /* FormEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEx.swift; sourceTree = "<group>"; };
 		4A8D48472BC52F0100C9871B /* FormWithSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormWithSection.swift; sourceTree = "<group>"; };
 		4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupView.swift; sourceTree = "<group>"; };
+		4A8D484B2BC7669900C9871B /* ExScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				4A8D48492BC7610B00C9871B /* DisclosureGroupView.swift */,
 				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
+				4A8D484B2BC7669900C9871B /* ExScrollView.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				4A8D48482BC52F0100C9871B /* FormWithSection.swift in Sources */,
 				4A8D48282BC3C9B100C9871B /* GeometryImage.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
+				4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */,
 				4A8D48342BC4E2AD00C9871B /* ToggleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
