@@ -26,6 +26,16 @@ import SwiftUI
                      Image(systemName: "folder.fill")
                      Text("Four")
                  }
+             Text("Five")
+                 .tabItem {
+                     Image(systemName: "internaldrive.fill")
+                     Text("Five")
+                 }
+             Text("Six")
+                 .tabItem {
+                     Image(systemName: "cloud.drizzle.fill")
+                     Text("Six")
+                 }
 
          }
      }
