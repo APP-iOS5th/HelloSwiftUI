@@ -19,7 +19,7 @@ class Species: Identifiable {
 }
 
 struct ContentView: View {
-    var Animals: [Species] = [
+    var animals: [Species] = [
         Species(name: "포유류", classification: [
             Species(name: "개", classification: [
                 Species(name: "Poodle"),
@@ -39,7 +39,7 @@ struct ContentView: View {
     
     var body: some View {
         List {
-            OutlineGroup(Animals, id: \.id, children: \.classification) { creature in
+            OutlineGroup(animals, id: \.id, children: \.classification) { creature in
                 Text(creature.name)
             }
         }
