@@ -7,13 +7,13 @@
 import SwiftUI
 
 struct SeparateFile: View {
+    @EnvironmentObject var passedData: ShareString
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                Text("This is another structure")
-                Text("but stored in a separate file")
+                TextField("Type here", text: $passedData.message)
                 Spacer()
             }
             Spacer()
@@ -22,5 +22,5 @@ struct SeparateFile: View {
 }
 
 #Preview {
-    SeparateFile()
+    SeparateFile().environmentObject(ShareString())
 }
