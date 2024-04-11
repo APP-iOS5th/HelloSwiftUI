@@ -9,24 +9,12 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var sliderValue = 0.0
-    @State var message = ""
-    @State var flag = true
-    
     var body: some View {
-        DisclosureGroup("펼치기") {
-            Text("입력한 내용 = \(message)")
-            TextField("Type here", text: $message)
-                .padding()
-            Text(flag ? "Toggle = true" : "Toggle = false")
-            Toggle(isOn: $flag) {
-                Text("Toggle")
+        ScrollView(Axis.Set.vertical, showsIndicators: true) {
+            ForEach(0..<50) {
+                Text("Item #\($0)")
             }
-            Text("The slider value = \(sliderValue)")
-            Slider(value: $sliderValue, in: 0...15)
-                .padding()
         }
-        .padding()
     }
 }
 
