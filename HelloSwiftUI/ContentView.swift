@@ -13,14 +13,35 @@ struct ContentView: View {
     @State var flag = false
     
     var body: some View {
-        
-        VStack{
-            Text("Hello, World!")
-                .padding()
-                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-                .animation(.default, value: flag)
+        VStack (spacing: 50) {
+            Image(systemName: "tortoise.fill")
+                        .font(.system(size: 50))
+                        .foregroundStyle(.red)
+                        .scaleEffect(flag ? 1.75 : 1)
+//                        .animation(.default, value: flag)
+            Image(systemName: "tortoise.fill")
+                        .font(.system(size: 50))
+                        .foregroundStyle(.red)
+                        .scaleEffect(flag ? 1.75 : 1)
+//                        .animation(.easeIn, value: flag)
+            Image(systemName: "tortoise.fill")
+                        .font(.system(size: 50))
+                        .foregroundStyle(.red)
+                        .scaleEffect(flag ? 1.75 : 1)
+//                        .animation(.easeOut, value: flag)
+            Image(systemName: "tortoise.fill")
+                        .font(.system(size: 50))
+                        .foregroundStyle(.red)
+                        .scaleEffect(flag ? 1.75 : 1)
+//                        .animation(.easeInOut, value: flag)
+            
             Button("Animate now") {
-                flag.toggle()
+                //한번에 선언해주기 easeinout 다음에 딜레이 시간을 설정해줄수있음
+                withAnimation(.easeInOut(duration: 2.1)){
+                    flag.toggle()
+                    
+                }
+                
             }
             Slider(value: $myDegrees, in: -180...180, step: 1 )
                 .padding()
