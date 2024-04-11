@@ -20,21 +20,21 @@ class Species: Identifiable {
 
 struct ContentView: View {
     var animals: [Species] = [
-    Species(name: "포유류", classification: [
-        Species(name: "개", classification: [
-            Species(name: "푸들"),
-            Species(name: "진도"),
-            Species(name: "비숑")
+        Species(name: "포유류", classification: [
+            Species(name: "개", classification: [
+                Species(name: "푸들"),
+                Species(name: "진도"),
+                Species(name: "비숑")
+            ]),
+            Species(name: "고양이"),
+            Species(name: "코끼리"),
+            Species(name: "고래")
         ]),
-        Species(name: "고양이"),
-        Species(name: "코끼리"),
-        Species(name: "고래")
-    ]),
-    Species(name: "조류", classification: [
-        Species(name: "독수리"),
-        Species(name: "참새"),
-        Species(name: "비둘기")
-    ])
+        Species(name: "조류", classification: [
+            Species(name: "독수리"),
+            Species(name: "참새"),
+            Species(name: "비둘기")
+        ])
     ]
     
     var body: some View {
@@ -42,11 +42,11 @@ struct ContentView: View {
             OutlineGroup(animals, id: \.id, children: \.classification) { creature in
                 Text(creature.name)
             }
-    
+            
         }
-
+        
     }
-
+    
 }
 
 #Preview {
