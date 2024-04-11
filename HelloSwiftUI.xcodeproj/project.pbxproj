@@ -43,6 +43,7 @@
 		4A8D485B2BC7C64F00C9871B /* GridViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D485A2BC7C64F00C9871B /* GridViewEx.swift */; };
 		4A8D485D2BC7CBA200C9871B /* MoveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */; };
 		4A8D485F2BC7D10900C9871B /* ScaleAnimationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D485E2BC7D10900C9871B /* ScaleAnimationEx.swift */; };
+		4A8D48612BC7D3E900C9871B /* RotationEffectViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48602BC7D3E900C9871B /* RotationEffectViewEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		4A8D485A2BC7C64F00C9871B /* GridViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewEx.swift; sourceTree = "<group>"; };
 		4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAnimation.swift; sourceTree = "<group>"; };
 		4A8D485E2BC7D10900C9871B /* ScaleAnimationEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleAnimationEx.swift; sourceTree = "<group>"; };
+		4A8D48602BC7D3E900C9871B /* RotationEffectViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationEffectViewEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 				4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */,
 				4A8D485E2BC7D10900C9871B /* ScaleAnimationEx.swift */,
+				4A8D48602BC7D3E900C9871B /* RotationEffectViewEx.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				4A8D485D2BC7CBA200C9871B /* MoveAnimation.swift in Sources */,
 				4A8D485F2BC7D10900C9871B /* ScaleAnimationEx.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
+				4A8D48612BC7D3E900C9871B /* RotationEffectViewEx.swift in Sources */,
 				4A8D48532BC77CCC00C9871B /* NavigationLinkEx.swift in Sources */,
 				4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */,
 				4A8D48342BC4E2AD00C9871B /* ToggleView.swift in Sources */,
