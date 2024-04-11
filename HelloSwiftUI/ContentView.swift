@@ -6,30 +6,23 @@
 
 import SwiftUI
 
+struct FileView : View {
+    var choice : String
+    var body : some View {
+        VStack {
+            Text("select = \(choice)")
+        }
+    }
+}
+
 struct ContentView: View {
-    @State var flag = true
-    @State var message = ""
     
     var body: some View {
         NavigationStack {
-            Text(message)
-            Toggle(isOn: $flag, label: {
-                Text("toggle display mode")
-            })
-            .navigationTitle("navigation title")
-//            .navigationBarHidden(false)
-            .navigationBarTitleDisplayMode(flag ? .large : .inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        message = "iCloud icon tap"
-                    } label: {
-                        Image(systemName: "icloud")
-                    }
-                }
+            NavigationLink(destination:  FileView(choice: "head")){
+            Text("select Head")
             }
         }
-        .accentColor(.purple)
     }
 }
 #Preview {
