@@ -9,16 +9,20 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var changeMe = true
+    @State var myDegres: Double = 0.0
+    @State var flag = false
     var body: some View {
-        Image(systemName: "tortoise.fill")
-            .font(.system(size: 100))
-            .foregroundColor(.blue)
-            .scaleEffect(changeMe ? 1.75 : 1)
-            .animation(.default, value: changeMe)
-            .onTapGesture {
-                changeMe.toggle()
+        VStack {
+            Text("Hello, world!")
+                .padding()
+                .rotationEffect(Angle(degrees: flag ? myDegres : 0))
+                .animation(.default, value: flag)
+            Button("Animate now") {
+                flag.toggle()
             }
+            Slider(value: $myDegres, in: -180...180, step: 1)
+                .padding()
+        }
     }
 }
 
