@@ -7,28 +7,47 @@
 
 import SwiftUI
 
-struct FileView: View {
-    var choice: String
+struct Movie: Identifiable, Hashable {
+    let id = UUID()
+    let title: String
+    let description: String
+    
+}
+ 
+class MovieListViewModel: ObservableObject {
+    @Published var moviews: [Movie] = [
+        Movie(title: "영화 제목1", description: "영화 내용1"),
+        Movie(title: "영화 제목2", description: "영화 내용2"),
+        Movie(title: "영화 제목3", description: "영화 내용3")
+    ]
+}
+
+struct MovieDetailView: View {
+    let movie: Movie
     
     var body: some View {
         VStack{
-            Text("선택 = \(choice)")
+            Text(movie.title)
+                .font(.title)
+            Text(movie.description)
+                .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
+            
         }
     }
 }
 
 struct ContentView: View {
+    @StateObject private var viewModel = MovieListViewModel()
     
-    @State var flag = true
-    @State var naviFlag = true
-    @State var message = ""
     
     var body: some View {
         NavigationStack {
-            NavigationLink(destination:
-                FileView(choice: "헤드")
-            ) {
-                Text("헤드선택")
+            List(viewModel.moviews) { movie in
+                NavigationLink(movie.title, value: movie)
+            }
+            .navigationTitle("영화 목록")
+            .navigationDestination(for: Movie.self) { movie in
+                MovieDetailView(movie: movie)
             }
 
         }
