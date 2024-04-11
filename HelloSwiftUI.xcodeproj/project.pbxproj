@@ -11,7 +11,6 @@
 		B85B26452BC371870040F810 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B26442BC371870040F810 /* ContentView.swift */; };
 		B85B26472BC371880040F810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85B26462BC371880040F810 /* Assets.xcassets */; };
 		B85B264A2BC371880040F810 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85B26492BC371880040F810 /* Preview Assets.xcassets */; };
-		B8C052D32BC7868500014A29 /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C052D22BC7868500014A29 /* SeparateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		B85B26442BC371870040F810 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B85B26462BC371880040F810 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B85B26492BC371880040F810 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B8C052D22BC7868500014A29 /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +53,6 @@
 			children = (
 				B85B26422BC371870040F810 /* HelloSwiftUIApp.swift */,
 				B85B26442BC371870040F810 /* ContentView.swift */,
-				B8C052D22BC7868500014A29 /* SeparateFile.swift */,
 				B85B26462BC371880040F810 /* Assets.xcassets */,
 				B85B26482BC371880040F810 /* Preview Content */,
 			);
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C052D32BC7868500014A29 /* SeparateFile.swift in Sources */,
 				B85B26452BC371870040F810 /* ContentView.swift in Sources */,
 				B85B26432BC371870040F810 /* HelloSwiftUIApp.swift in Sources */,
 			);
