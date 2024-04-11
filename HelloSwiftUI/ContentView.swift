@@ -943,7 +943,8 @@ struct ContentView: View {
  }
  */
 
-//실습27:
+//실습27: 그룹박스
+/*
 struct ContentView: View {
     @State var flag = false
     @State var message = ""
@@ -990,6 +991,221 @@ struct ContentView: View {
         }
     }
  }
+ */
+
+//실습28: 아코디언 뷰
+/*
+struct ContentView: View {
+    @State var sliderValue = 0.0
+    @State var message = ""
+    @State var flag = true
+    
+    var body: some View {
+        DisclosureGroup("펼치기") {
+            Text("입력한 내용 = \(message)")
+            TextField("Type Here", text: $message)
+                .padding()
+            
+            Text(flag ? "Toggle = true" : "Toggle = false")
+            Toggle(isOn: $flag) {
+                Text("Toggle")
+            }
+            
+            Text("The slider value = \(sliderValue)")
+            Slider(value: $sliderValue, in: 0...15)
+                .padding()
+        }
+        .padding()
+    }
+ }
+ */
+
+//실습29: 스크롤
+/*
+struct ContentView: View {
+    var body: some View {
+        ScrollView(Axis.Set.vertical, showsIndicators: true) {
+            ForEach(0..<50) {
+                Text("Item #\($0)")
+            }
+        }
+    }
+ }
+ */
+
+//실습30: 아웃라인그룹(파일탐색기 구조)
+/*
+class Species: Identifiable {
+    let id = UUID()
+    var name: String
+    var classification: [Species]?
+    init(name: String, classification: [Species]? = nil) {
+        self.name = name
+        self.classification = classification
+    }
+}
+
+struct ContentView: View {
+    var Animals: [Species] = [
+        Species(name: "포유류", classification: [
+            Species(name: "개", classification: [
+                Species(name: "Poodle"),
+                Species(name: "Collie"),
+                Species(name: "St. Bernard"),
+            ]),
+            Species(name: "고양이"),
+            Species(name: "코끼리"),
+            Species(name: "고래"),
+        ]),
+        Species(name: "조류", classification: [
+            Species(name: "Canary"),
+            Species(name: "Parakeet"),
+            Species(name: "Eagle"),
+        ]),
+    ]
+    
+    var body: some View {
+        List {
+            OutlineGroup(Animals, id: \.id, children: \.classification) {creature in
+                Text(creature.name)
+            }
+        }
+    }
+ }
+ */
+
+//실습31: 네비게이션 뷰
+/*
+struct ContentView: View {
+    @State var flag = true
+    @State var message = ""
+    
+    var body: some View {
+        NavigationStack {
+            Text(message)
+            Toggle(isOn: $flag, label: {
+                Text("토글 디스플레이 모드")
+            })
+            .navigationTitle("네이게이션 타이틀")
+            //.navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(flag ? .large : .inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        message = "iCloud 아이콘 탭됨"
+                    } label: {
+                        Image(systemName: "icloud")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        message = "완료 버튼 탭됨"
+                    } label: {
+                        Text("완료")
+                    }
+                }
+            }
+        }
+        .accentColor(.purple)
+    }
+}
+ */
+
+//실습32: 화면 전환
+/*
+struct FileView: View {
+    var choice: String
+    
+    var body: some View {
+        VStack {
+            Text("선택 = \(choice)")
+        }
+    }
+}
+
+struct ContentView: View {
+var body: some View {
+        NavigationStack {
+            NavigationLink(destination: FileView(choice: "헤드")) {
+                Text("헤드 선택")
+            }
+        }
+    }
+}
+ */
+
+//실습33: 화면 전환 심화
+/*
+struct Movie: Identifiable, Hashable {
+    let id = UUID()
+    let title: String
+    let description: String
+}
+
+class MovieListViewModel: ObservableObject {
+    @Published var movies: [Movie] = [
+        Movie(title: "영화 1", description: "영화 1 설명"),
+        Movie(title: "영화 2", description: "영화 2 설명"),
+        Movie(title: "영화 3", description: "영화 3 설명")
+    ]
+}
+
+struct MovieDetailView: View {
+    let movie: Movie
+    
+    var body: some View {
+        VStack {
+            Text(movie.title)
+                .font(.title)
+            Text(movie.description)
+                .padding()
+        }
+    }
+}
+
+struct ContentView: View {
+    @StateObject private var viewModel = MovieListViewModel()
+    
+    var body: some View {
+        NavigationStack {
+            List(viewModel.movies) {movie in
+                NavigationLink(movie.title, value: movie)
+            }
+            .navigationTitle("영화 목록")
+            .navigationDestination(for: Movie.self) { movie in
+                //                MovieDetail
+                MovieDetailView(movie: movie)
+            }
+        }
+    }
+}
+ */
+
+//실습34: 화면 전환 2
+struct FileView: View {
+    var body: some View {
+        HStack {
+            Spacer()
+            VStack {
+                Spacer()
+                Text("This is a separate structure")
+                Text("that's stored in the same file")
+                Spacer()
+            }
+            Spacer()
+        }.background(Color.yellow)
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        NavigationStack {
+            NavigationLink(destination: FileView()) {
+                Text("Send a message")
+            }
+        }
+    }
+}
 
 
 /*
