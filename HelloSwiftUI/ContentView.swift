@@ -1,17 +1,20 @@
 
 import SwiftUI
 struct ContentView: View {
-    @State var changeMe = false
+    @State var myDegrees: Double = 0.0
+    @State var flag = false
     var body: some View {
         VStack {
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 100))
-                .foregroundStyle(.red)
-                .scaleEffect(changeMe ? 1.75 : 1)
-                .animation(.default, value: changeMe)
-                .onTapGesture {
-                    changeMe.toggle()
-                }
+            Text("Hello, world!")
+                .padding()
+                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
+                .animation(.easeInOut(duration: 2), value: flag)
+            Button("Animate now"){
+                flag.toggle()
+            }
+            Slider(value: $myDegrees, in: -180...180, step: 1)
+                .padding()
+            
         }
     }
 }
