@@ -7,42 +7,36 @@
 
 import SwiftUI
 
-//ObservalObject 는 추적,관찰 가능한 Rx디자인
-class ShareString: ObservableObject {
-    @Published var message = ""
-}
 
 struct FileView: View {
+    var choice: String
     var body: some View {
-           HStack {
-               Spacer()
-               VStack {
-                   Spacer()
-                   Text("This is a separate structure")
-                   Text("that's stored in the same file")
-                   Spacer()
-               }
-               Spacer()
-           }.background(Color.yellow)
-       }
-   }
-    
-
-
-struct ContentView: View {
-    
-    @StateObject var showMe = ShareString()
-    
-    var body: some View {
-        NavigationStack{
-            NavigationLink(destination: FileView()) {
-                Text("Send Message")
+        HStack {
+            Spacer()
+            VStack {
+                Spacer()
+                Text("You chose = \(choice)")
+                Spacer()
             }
-        }
-        .environmentObject(showMe)
+            Spacer()
+        }.background(Color.yellow)
     }
 }
 
+struct ContentView: View {
+    var body: some View {
+        NavigationStack {
+            Text("Choose Heads or Tails")
+            NavigationLink(destination: FileView(choice: "Heads")) {
+                Text("Heads")
+            }
+            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+                Text("Tails")
+            }
+            .navigationTitle("Flip a Coin")
+        }
+    }
+}
 
 #Preview {
     ContentView()
@@ -56,3 +50,4 @@ struct ContentView: View {
     }
  }
  */
+
