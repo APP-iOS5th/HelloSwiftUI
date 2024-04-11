@@ -11,7 +11,6 @@
 		78626BC92BC3712000B077B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78626BC82BC3712000B077B3 /* ContentView.swift */; };
 		78626BCB2BC3712200B077B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78626BCA2BC3712200B077B3 /* Assets.xcassets */; };
 		78626BCE2BC3712200B077B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78626BCD2BC3712200B077B3 /* Preview Assets.xcassets */; };
-		78E4CFE72BC786620021A113 /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E4CFE62BC786620021A113 /* SeparateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		78626BC82BC3712000B077B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		78626BCA2BC3712200B077B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78626BCD2BC3712200B077B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		78E4CFE62BC786620021A113 /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +53,6 @@
 			children = (
 				78626BC62BC3711F00B077B3 /* HelloSwiftUIApp.swift */,
 				78626BC82BC3712000B077B3 /* ContentView.swift */,
-				78E4CFE62BC786620021A113 /* SeparateFile.swift */,
 				78626BCA2BC3712200B077B3 /* Assets.xcassets */,
 				78626BCC2BC3712200B077B3 /* Preview Content */,
 			);
@@ -140,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78E4CFE72BC786620021A113 /* SeparateFile.swift in Sources */,
 				78626BC92BC3712000B077B3 /* ContentView.swift in Sources */,
 				78626BC72BC3711F00B077B3 /* HelloSwiftUIApp.swift in Sources */,
 			);
