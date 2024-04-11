@@ -1,52 +1,34 @@
-//
-//  ContentView.swift
-//  HelloSwiftUI
-//
-//  Created by Jungjin Park on 2024-04-08.
-//
 
 import SwiftUI
 
-struct Movie: Identifiable, Hashable {
-    let id = UUID()
-    let title: String
-    let description: String
-}
-
-class MovieListViewModel: ObservableObject {
-    @Published var movies: [Movie] = [
-        Movie(title: "Movie 1", description: "Movie 1 Description"),
-        Movie(title: "Movie 2", description: "Movie 2 Description"),
-        Movie(title: "Movie 3", description: "Movie 3 Description")
-    ]
-}
-
-struct MovieDetailView: View {
-    let movie: Movie
-    
+struct FileView: View {
+    var choice: String
     var body: some View {
-        VStack {
-            Text(movie.title)
-                .font(.title)
-            Text(movie.description)
-                .padding()
-        }
+        HStack {
+            Spacer()
+            VStack {
+                Spacer()
+                Text("You chose = \(choice)")
+                Spacer()
+            }
+            Spacer()
+        }.background(Color.yellow)
     }
 }
 
 struct ContentView: View {
-    @StateObject private var viewModel = MovieListViewModel()
     var body: some View {
         NavigationStack {
-            List(viewModel.movies) { movie in
-                NavigationLink(movie.title, value: movie)
+            NavigationLink(destination: FileView(choice: "Head")) {
+                Text("Send a message")
             }
-            .navigationTitle("Movie List")
-            .navigationDestination(for: Movie.self) { movie in
-                    MovieDetailView(movie: movie)
+            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+                Text("Send a message")
             }
+            .navigationTitle("Flip a Coin")
         }
-    }}
+    }
+}
 
 #Preview {
     ContentView()
