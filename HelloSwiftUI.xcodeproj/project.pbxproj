@@ -11,6 +11,7 @@
 		C254BC352BC37114007BD088 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254BC342BC37114007BD088 /* ContentView.swift */; };
 		C254BC372BC37116007BD088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C254BC362BC37116007BD088 /* Assets.xcassets */; };
 		C254BC3A2BC37116007BD088 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C254BC392BC37116007BD088 /* Preview Assets.xcassets */; };
+		C28CB8832BC7864C0057951A /* SeperateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CB8822BC7864B0057951A /* SeperateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C254BC342BC37114007BD088 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C254BC362BC37116007BD088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C254BC392BC37116007BD088 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C28CB8822BC7864B0057951A /* SeperateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeperateFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		C254BC312BC37114007BD088 /* HelloSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				C28CB8822BC7864B0057951A /* SeperateFile.swift */,
 				C254BC322BC37114007BD088 /* HelloSwiftUIApp.swift */,
 				C254BC342BC37114007BD088 /* ContentView.swift */,
 				C254BC362BC37116007BD088 /* Assets.xcassets */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28CB8832BC7864C0057951A /* SeperateFile.swift in Sources */,
 				C254BC352BC37114007BD088 /* ContentView.swift in Sources */,
 				C254BC332BC37114007BD088 /* HelloSwiftUIApp.swift in Sources */,
 			);
