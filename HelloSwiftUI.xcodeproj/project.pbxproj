@@ -44,6 +44,7 @@
 		4A8D485D2BC7CBA200C9871B /* MoveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */; };
 		4A8D485F2BC7D10900C9871B /* ScaleAnimationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D485E2BC7D10900C9871B /* ScaleAnimationEx.swift */; };
 		4A8D48612BC7D3E900C9871B /* RotationEffectViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48602BC7D3E900C9871B /* RotationEffectViewEx.swift */; };
+		4A8D48632BC7D89100C9871B /* AnimationType_WithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48622BC7D89100C9871B /* AnimationType_WithAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAnimation.swift; sourceTree = "<group>"; };
 		4A8D485E2BC7D10900C9871B /* ScaleAnimationEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleAnimationEx.swift; sourceTree = "<group>"; };
 		4A8D48602BC7D3E900C9871B /* RotationEffectViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationEffectViewEx.swift; sourceTree = "<group>"; };
+		4A8D48622BC7D89100C9871B /* AnimationType_WithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationType_WithAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,11 +151,12 @@
 				4A8D484F2BC776C800C9871B /* NavigationStackEx.swift */,
 				4A8D48582BC7B63E00C9871B /* TabViewEx.swift */,
 				4A8D485A2BC7C64F00C9871B /* GridViewEx.swift */,
-				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
-				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 				4A8D485C2BC7CBA200C9871B /* MoveAnimation.swift */,
 				4A8D485E2BC7D10900C9871B /* ScaleAnimationEx.swift */,
 				4A8D48602BC7D3E900C9871B /* RotationEffectViewEx.swift */,
+				4A8D48622BC7D89100C9871B /* AnimationType_WithAnimation.swift */,
+				37CEFBD02BC3711100DB9F65 /* Assets.xcassets */,
+				37CEFBD22BC3711200DB9F65 /* Preview Content */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				4A8D48382BC4FE0B00C9871B /* GestureEx.swift in Sources */,
 				4A8D483C2BC50B9F00C9871B /* RotateGestureView.swift in Sources */,
 				4A8D484E2BC76A7E00C9871B /* OutlineGroupView.swift in Sources */,
+				4A8D48632BC7D89100C9871B /* AnimationType_WithAnimation.swift in Sources */,
 				4A8D482E2BC4C4F900C9871B /* TextFieldView.swift in Sources */,
 				37CEFBCF2BC3711000DB9F65 /* ContentView.swift in Sources */,
 				4A8D484A2BC7610B00C9871B /* DisclosureGroupView.swift in Sources */,
