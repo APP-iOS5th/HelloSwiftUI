@@ -1,62 +1,37 @@
 
 import SwiftUI
 struct ContentView: View {
-    @State var selectedView = 1
     var body: some View {
         VStack {
-            HStack {
-                Button("1") {
-                    selectedView = 1
-                }
-                Button("2") {
-                    selectedView = 2
-                }
-                Button("3") {
-                    selectedView = 3
-                }
-                Button("4") {
-                    selectedView = 4
-                }
-                Button("5") {
-                    selectedView = 5
-                }
-                Button("6") {
-                    selectedView = 6
-                }
+            let gridItems = [GridItem(.fixed(50)), GridItem(.fixed(50)), GridItem(.flexible(minimum: 25, maximum: 150))]
+            ScrollView(Axis.Set.horizontal, showsIndicators: true) {
+                LazyHGrid(rows: gridItems) {
+                    Image(systemName: "1.circle")
+                    Image(systemName: "2.circle")
+                    Image(systemName: "3.circle")
+                    Image(systemName: "4.circle")
+                    Image(systemName: "5.circle")
+                    Image(systemName: "6.circle")
+                    Image(systemName: "7.circle")
+                    Image(systemName: "8.circle")
+                    Image(systemName: "9.circle")
+                    Image(systemName: "10.circle")
+                }.font(.largeTitle)
             }
-            TabView (selection: $selectedView){
-                Text("One")
-                    .tabItem {
-                        Image(systemName: "heart.fill")
-                        Text("One")
-                    }.tag(1)
-                Text("Two")
-                    .tabItem {
-                        Image(systemName: "hare.fill")
-                        Text("Two")
-                    }.tag(2)
-                Text("Three")
-                    .tabItem {
-                        Image(systemName: "tortoise.fill")
-                        Text("Three")
-                    }.tag(3)
-                Text("Four")
-                    .tabItem {
-                        Image(systemName: "folder.fill")
-                        Text("Four")
-                    }.tag(4)
-                Text("Five")
-                    .tabItem {
-                        Image(systemName: "internaldrive.fill")
-                        Text("Five")
-                    }.tag(5)
-                Text("Six")
-                    .tabItem {
-                        Image(systemName: "cloud.drizzle.fill")
-                        Text("Six")
-                    }.tag(6)
+            ScrollView(Axis.Set.vertical, showsIndicators: true) {
+                LazyVGrid(columns: gridItems) {
+                    Image(systemName: "1.square")
+                    Image(systemName: "2.square")
+                    Image(systemName: "3.square")
+                    Image(systemName: "4.square")
+                    Image(systemName: "5.square")
+                    Image(systemName: "6.square")
+                    Image(systemName: "7.square")
+                    Image(systemName: "8.square")
+                    Image(systemName: "9.square")
+                    Image(systemName: "10.square")
+                }.font(.largeTitle)
             }
-            .tint(.pink)
         }
         
     }
