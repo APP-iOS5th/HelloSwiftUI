@@ -10,8 +10,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            
+        TabView {
+            Text("One")
+                .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("One")
+                }
+            Text("Two")
+                .tabItem {
+                    Image(systemName: "hare.fill")
+                    Text("Two")
+                }
+            Text("Three")
+                .tabItem {
+                    Image(systemName: "tortoise.fill")
+                    Text("Three")
+                }
+            Text("Fort")
+                .tabItem {
+                    Image(systemName: "folder.fill")
+                    Text("Fort")
+                }
         }
     }
 }
