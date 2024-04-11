@@ -11,7 +11,7 @@ struct FileView: View {
             Spacer()
             VStack {
                 Spacer()
-                Text("You = \(choice.message)")
+                TextField("Type gere:", text: $choice.message)
                 Spacer()
             }
             Spacer()
