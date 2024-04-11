@@ -10,45 +10,27 @@ import SwiftUI
 struct ContentView: View {
     
     @State var message = ""
-    @State var flag = false
+    @State var flag = true
     
     var body: some View {
-        VStack (spacing: 20) {
-            Form {
-                Section {
-                    Text("This is Section has no Header")
-                }
-                Section ("Just a Header") {
-                    Text("This is Section has no Header")
-                }
-                Section {
-                    Text("This is Section has no Header")
-                } footer: {
-                    Text("Just a Footer")
-                }
-                Section {
-                    Text("This is Section has no Header")
-                } header: {
-                    Text("Header")
-                } footer: {
-                    Text("Footer")
+        NavigationStack {
+            Text(message)
+            Toggle(isOn: $flag, label: {
+                Text("토글 디스플레이 모드")
+            })
+            .navigationTitle("네비게이션 타이틀")
+            .navigationBarHidden(flag)
+            .navigationBarTitleDisplayMode(flag ? .large : .inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        message = "iCloud 아이콘 탭 됨"
+                    } label: {
+                        Image(systemName: "icloud")
+                    }
                 }
             }
-            
-            Form {
-                Text("This is a Form")
-                Toggle(isOn: $flag, label: {
-                    Text("Click Me")
-                })
-            }
-            
-            GroupBox(label: Text("GroupBox")) {
-                Text("This is a GroupBox")
-                Toggle(isOn: $flag, label: {
-                    Text("Click Me")
-                })
-                TextField("Type Here", text: $message)
-            }
+            .accentColor(.pink)
         }
     }
 }
