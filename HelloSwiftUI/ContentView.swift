@@ -8,37 +8,47 @@
 import SwiftUI
 
 
+struct Movie: Identifiable, Hashable {
+    let id = UUID()
+    let title: String
+    let description: String
+}
+
+class MovieListViewModel: ObservableObject {
+    @Published var movies: [Movie] = [
+        Movie(title: "영화 1", description: "영화 1 설명"),
+        Movie(title: "영화 2", description: "영화 2 설명"),
+        Movie(title: "영화 3", description: "영화 3 설명")
+    ]
+}
+
+struct MovieDetailView: View {
+    let movie: Movie
+    
+    var body: some View {
+        VStack {
+            Text(movie.title)
+                .font(.title)
+            Text(movie.description)
+                .padding()
+        }
+    }
+}
+
 struct ContentView: View {
-    @State var flag = true
-    @State var message = ""
+    @StateObject private var viewModel = MovieListViewModel()
     
     var body: some View {
         NavigationStack {
-            Text(message)
-            Toggle(isOn: $flag, label: {
-                Text("토글 디스플레이 모드")
-            })
-            .navigationTitle("네비게이션 타이틀")
-            //            .navigationBarHidden(false)
-            .navigationBarTitleDisplayMode(flag ? .large : .inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        message = "iCloud 아이콘 탭됨"
-                    } label: {
-                        Image(systemName: "icloud")
-                    }
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        message = "완료 버튼 탭됨"
-                    } label: {
-                        Text("완료")
-                    }
-                }
+            List(viewModel.movies) { movie in
+                NavigationLink(movie.title, value: movie)
+            }
+            .navigationTitle("영화 목록")
+            .navigationDestination(for: Movie.self) { movie in
+                //                MovieDetail
+                MovieDetailView(movie: movie)
             }
         }
-        .accentColor(.purple)
     }
 }
 
