@@ -13,8 +13,8 @@ struct Movie: Identifiable, Hashable {
     let description: String
 }
 
-class MovieListViewModel: ObservableObject {
-    @Published var movies: [Movie] = [
+class MovieListViewModel {
+    var movies: [Movie] = [
         Movie(title: "영화 1", description: "영화 1 설명"),
         Movie(title: "영화 2", description: "영화 2 설명"),
         Movie(title: "영화 3", description: "영화 3 설명")
@@ -35,7 +35,7 @@ struct MovieDetailView: View {
 }
 
 struct ContentView: View {
-    @StateObject private var viewModel = MovieListViewModel()
+    private var viewModel = MovieListViewModel()
     
     var body: some View {
         NavigationStack {
@@ -44,7 +44,6 @@ struct ContentView: View {
             }
             .navigationTitle("영화 목록")
             .navigationDestination(for: Movie.self) { movie in
-//                MovieDetail
                 MovieDetailView(movie: movie)
             }
         }
