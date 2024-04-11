@@ -1,42 +1,27 @@
 import SwiftUI
 
 
-    struct ContentView: View {
-        @State var flag = true
-        @State var message = ""
+struct FileView: View {
+    var choice: String
+    
+    var body: some View {
         
-        var body: some View {
-            NavigationStack {
-                Text(message)
-                Toggle(isOn: $flag, label: {
-                    Text("토글 디스플레이 모드")
-                })
-                .navigationTitle("Navigation Title")
-                    .navigationBarHidden(flag) //네비게이션 바를 가렸다 노출시켰다.
-                    .navigationBarTitleDisplayMode(flag ? .large : .inline)
-                    .toolbar {
-                        ToolbarItem(placement: .topBarLeading) {
-                            Button {
-                                message = "iCloud 아이콘 탭 됨"
-                            } label: {
-                                Image(systemName: "iCloud")
-                            }
-                        }
-                            ToolbarItem(placement: .topBarTrailing) {
-                                Button {
-                                    message = "완료버튼탭 됨"
-                                } label: {
-                                    Text("완료")
-                                }
-                            }
-                            
-                        }
-                    }
+        VStack{
+            Text("선택 = \(choice)")
             
-            .accentColor(.purple)
         }
     }
+}
 
+struct ContentView: View {
+    var body: some View {
+        NavigationStack {
+            NavigationLink(destination: FileView(choice: "헤드")) {
+                Text("헤드 선택")
+            }
+        }
+    }
+}
 
 #Preview {
     ContentView()
