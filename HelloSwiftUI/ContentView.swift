@@ -50,7 +50,10 @@ struct ContentView: View{
                         Text("Four")
                     }.tag(4)
             }
+            .tabViewStyle(.page)
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
+        .tint(.pink)
     }
 }
 #Preview {
