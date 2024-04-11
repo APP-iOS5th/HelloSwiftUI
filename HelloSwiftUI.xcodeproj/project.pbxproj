@@ -36,6 +36,7 @@
 		4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484B2BC7669900C9871B /* ExScrollView.swift */; };
 		4A8D484E2BC76A7E00C9871B /* OutlineGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */; };
 		4A8D48502BC776C800C9871B /* NavigationStackEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D484F2BC776C800C9871B /* NavigationStackEx.swift */; };
+		4A8D48532BC77CCC00C9871B /* NavigationLinkEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D48522BC77CCC00C9871B /* NavigationLinkEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		4A8D484B2BC7669900C9871B /* ExScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExScrollView.swift; sourceTree = "<group>"; };
 		4A8D484D2BC76A7E00C9871B /* OutlineGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineGroupView.swift; sourceTree = "<group>"; };
 		4A8D484F2BC776C800C9871B /* NavigationStackEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackEx.swift; sourceTree = "<group>"; };
+		4A8D48522BC77CCC00C9871B /* NavigationLinkEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		37CEFBC02BC3711000DB9F65 = {
 			isa = PBXGroup;
 			children = (
+				4A8D48522BC77CCC00C9871B /* NavigationLinkEx.swift */,
 				37CEFBCB2BC3711000DB9F65 /* HelloSwiftUI */,
 				37CEFBCA2BC3711000DB9F65 /* Products */,
 			);
@@ -236,6 +239,7 @@
 				4A8D48482BC52F0100C9871B /* FormWithSection.swift in Sources */,
 				4A8D48282BC3C9B100C9871B /* GeometryImage.swift in Sources */,
 				37CEFBCD2BC3711000DB9F65 /* HelloSwiftUIApp.swift in Sources */,
+				4A8D48532BC77CCC00C9871B /* NavigationLinkEx.swift in Sources */,
 				4A8D484C2BC7669900C9871B /* ExScrollView.swift in Sources */,
 				4A8D48342BC4E2AD00C9871B /* ToggleView.swift in Sources */,
 				4A8D48502BC776C800C9871B /* NavigationStackEx.swift in Sources */,
