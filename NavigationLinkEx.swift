@@ -19,7 +19,7 @@ struct FileView: View {
 
 struct NavigationLinkEx: View {
     var body: some View {
-        VStack {
+        NavigationStack {
             
             NavigationLink(destination: FileView(choice: "헤드")) {
                 Text("헤드 선택")
