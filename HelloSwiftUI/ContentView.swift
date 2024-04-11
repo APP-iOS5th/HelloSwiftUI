@@ -9,25 +9,23 @@ import SwiftUI
 
 struct ContentView: View{
     
-    @State var move = true
-    
+    @State var changeMe = true
     var body: some View{
-        VStack{
-            Text("A Text view")
-            //ofset을 position으로 바꿀수있음
-                .offset(x: move ? 100 : 0 , y: move ? 100 : 0)
-                .animation(.default, value: move)
-            Toggle(isOn: $move, label:{
-                Text("Toggle me")
-            })
+        Image(systemName:"tortoise.fill")
+            .font(.system(size:100))
+            .foregroundColor(.red)
+            .scaleEffect(changeMe ? 1.75 : 1)
+            .animation(.default, value: changeMe)
+            .onTapGesture {
+                changeMe.toggle()
+            }
+
         }
     }
-}
 
 #Preview {
     ContentView()
 }
-
 
 /*
  Swift 3.0 이전 프리뷰
