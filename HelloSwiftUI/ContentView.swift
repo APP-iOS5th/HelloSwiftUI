@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+class ShareString: ObservableObject {
+    @Published var message = ""
+}
 
 struct FileView: View {
     @Binding var choice: String
@@ -34,7 +37,7 @@ struct ContentView: View {
             NavigationLink(destination: FileView(choice: $message)) {
                 Text("Heads")
             }
-            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+            NavigationLink(destination: SeparateFile(passedData: $message)) {
                 Text("Tails")
             }
             .navigationTitle("Flip a coin")

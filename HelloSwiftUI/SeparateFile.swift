@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SeparateFile: View {
-    var passedData: String
+   @Binding var passedData: String
     var body: some View {
         HStack {
             Spacer()
@@ -25,5 +25,5 @@ struct SeparateFile: View {
 }
 
 #Preview {
-    SeparateFile(passedData: "")
+    SeparateFile(passedData: .constant("")) //.constant 가짜부모
 }
