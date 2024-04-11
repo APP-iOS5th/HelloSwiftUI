@@ -954,19 +954,45 @@
 //    ContentView()
 //}
 
+//import SwiftUI
+//
+//struct ContentView: View {
+//    @State var changeMe = true
+////    let scaleAmount: CGFloat = 100.0
+//    var body: some View {
+//        Image(systemName: "tortoise.fill")
+//            .font(.system(size: 100))
+//            .foregroundStyle(.red)
+//            .scaleEffect(changeMe ? 1.75 : 1)
+//            .animation(.default, value: changeMe)
+//            .onTapGesture {
+//                changeMe.toggle()
+//            }
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
 import SwiftUI
 
 struct ContentView: View {
-    @State var changeMe = true
+    @State var myDegrees: Double = 0.0
+    @State var flag = false
+    
     var body: some View {
-        Image(systemName: "tortoise.fill")
-            .font(.system(size: 100))
-            .foregroundStyle(.red)
-            .scaleEffect(changeMe ? 1.75 : 1)
-            .animation(.default, value: changeMe)
-            .onTapGesture {
-                changeMe.toggle()
+        VStack {
+            Text("Hello, world!")
+                .padding()
+                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
+                .animation(.default, value: flag)
+            Button("Animate now") {
+                flag.toggle()
             }
+            Slider(value: $myDegrees, in: -180...180, step: 1)
+                .padding()
+        }
     }
 }
 
