@@ -8,10 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var flag = true
+    @State var message = ""
+    
     var body: some View {
-        VStack{
-            
+        NavigationStack{
+            Text(message)
+            Toggle(isOn: $flag, label: {
+                Text("Toggle Display Mode")
+            })
+            .navigationTitle("Navigation Title")
+            .navigationBarHidden(flag)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        message = "iCloud Tapped"
+                    } label : {
+                        Image(systemName: "icloud.fill")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing){
+                    Button {
+                        message = "Done Tapped"
+                    } label : {
+                        Text("Done")
+                    }
+                }
+            }
         }
+        .accentColor(.black)
     }
 }
 
