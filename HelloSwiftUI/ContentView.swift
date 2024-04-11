@@ -702,39 +702,188 @@
 //}
 
 
+//import SwiftUI
+//
+//
+//struct FileView: View {
+//    var choice: String
+//    var body: some View {
+//        HStack {
+//            Spacer()
+//            VStack {
+//                Spacer()
+//                Text("You chose = \(choice)")
+//                Spacer()
+//            }
+//            Spacer()
+//        }.background(Color.yellow)
+//    }
+//}
+//            
+//            
+//struct ContentView: View {
+//    var body: some View {
+//        NavigationStack {
+//            Text("Choose Heads or Tails")
+//            NavigationLink(destination: FileView(choice: "Heads")) {
+//                Text("Heads")
+//            }
+//            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+//                Text("Tails")
+//            }
+//            .navigationTitle("Flip a coin")
+//        }
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
+
+//import SwiftUI
+//
+//class ShareString: ObservableObject {
+//    @Published var message = ""
+//}
+//
+//struct FileView: View {
+//    @EnvironmentObject var choice: ShareString
+//    var body: some View {
+//        HStack {
+//            Spacer()
+//            VStack {
+//                Spacer()
+//                TextField("Type here:", text: $choice.message)
+//                Spacer()
+//            }
+//            Spacer()
+//        }.background(Color.yellow)
+//    }
+//}
+//
+//struct ContentView: View {
+//    @StateObject var showMe = ShareString()
+//    
+//    var body: some View {
+//        NavigationStack {
+//            TextField("Type here:", text: $showMe.message)
+//            NavigationLink(destination: FileView()) {
+//                Text("Heads")
+//            }
+//            NavigationLink(destination: SeparateFile()) {
+//                Text("Tails")
+//            }
+//            .navigationTitle("Flip a Coin")
+//        }
+//        .environmentObject(showMe)
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
+//import SwiftUI
+//
+//struct ContentView: View {
+//    var body: some View {
+//        TabView {
+//            Text("One")
+//                .tabItem {
+//                    Image(systemName: "heart.fill")
+//                    Text("One")
+//                }
+//            Text("Two")
+//                .tabItem {
+//                Image(systemName: "hare.fill")
+//                Text("Two")
+//        }
+//            Text("Three")
+//                .tabItem {
+//                Image(systemName: "tortoise.fill")
+//                Text("Three")
+//        }
+//            Text("Four")
+//                .tabItem {
+//                Image(systemName: "folder.fill")
+//                Text("Four")
+//                }
+//                .tint(.babypink)
+//        }
+//    }
+//}
+//
+//#Preview {
+//    ContentView()
+//}
+
 import SwiftUI
 
-
-struct FileView: View {
-    var choice: String
-    var body: some View {
-        HStack {
-            Spacer()
-            VStack {
-                Spacer()
-                Text("You chose = \(choice)")
-                Spacer()
-            }
-            Spacer()
-        }.background(Color.yellow)
-    }
-}
-            
-            
 struct ContentView: View {
+    @State var selectedView = 1
+    
     var body: some View {
-        NavigationStack {
-            Text("Choose Heads or Tails")
-            NavigationLink(destination: FileView(choice: "Heads")) {
-                Text("Heads")
+        VStack {
+            HStack {
+                Button("1") {
+                    selectedView = 1
+                }
+                Button("2") {
+                    selectedView = 2
+                }
+                Button("3") {
+                    selectedView = 3
+                }
+                Button("4") {
+                    selectedView = 4
+                }
+                Button("5") {
+                    selectedView = 5
+                }
+                Button("6") {
+                    selectedView = 6
+                }
             }
-            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
-                Text("Tails")
+                TabView (selection: $selectedView) {
+                    Text("One")
+                        .tabItem {
+                            Image(systemName: "heart.fill")
+                            Text("One")
+                        }.tag(1)
+                    Text("Two")
+                        .tabItem {
+                            Image(systemName: "hare.fill")
+                            Text("Two")
+                        }.tag(2)
+                    Text("Three")
+                        .tabItem {
+                            Image(systemName: "tortoise.fill")
+                            Text("Three")
+                        }.tag(3)
+                    Text("Four")
+                        .tabItem {
+                            Image(systemName: "folder.fill")
+                            Text("Four")
+                        }.tag(4)
+                    Text("Five")
+                        .tabItem {
+                            Image(systemName: "internaldrive.fill")
+                            Text("Five")
+                        }.tag(5)
+                    Text("Six")
+                        .tabItem {
+                            Image(systemName: "cloud.drizzle.fill")
+                            Text("Six")
+                        }.tag(6)
+                }
+                .tabViewStyle(.page)
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             }
-            .navigationTitle("Flip a coin")
+            .tint(.pink)
         }
     }
-}
+
 
 #Preview {
     ContentView()
