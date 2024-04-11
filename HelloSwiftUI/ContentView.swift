@@ -1,9 +1,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var move = true
     var body: some View {
         VStack {
-            
+            Image(systemName: "tortoise.fill")
+                .font(.system(size: 100))
+                .foregroundStyle(.purple)
+                .position(x: move ? 100 : 0, y: move ? 100 : 0)
+                .animation(.default, value: move)
+                .frame(width: 200, height: 200)
+            Toggle(isOn: $move, label: {
+                Text("Toggle me")
+            })
         }
     }
 }
