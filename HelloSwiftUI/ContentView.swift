@@ -9,38 +9,63 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var selectedView = 1
     var body: some View {
-        TabView {
-            Text("One")
-                .tabItem {
-                    Image(systemName: "heart.fill")
-                    Text("One")
+        VStack {
+            HStack {
+                Button("1") {
+                    selectedView = 1
                 }
-            Text("Two")
-                .tabItem {
-                    Image(systemName: "hare.fill")
-                    Text("Two")
+                Button("2") {
+                    selectedView = 2
                 }
-            Text("Three")
-                .tabItem {
-                    Image(systemName: "folder.fill")
-                    Text("Three")
+                Button("3") {
+                    selectedView = 3
                 }
-            Text("Four")
-                .tabItem {
-                    Image(systemName: "tortoise.fill")
-                    Text("Four")
+                Button("4") {
+                    selectedView = 4
                 }
-            Text("Five")
-                .tabItem {
-                    Image(systemName: "internaldrive.fill")
-                    Text("Five")
+                Button("5") {
+                    selectedView = 5
                 }
-            Text("Six")
-                .tabItem {
-                    Image(systemName: "car.rear.fill")
-                    Text("Six")
+                Button("6") {
+                    selectedView = 6
                 }
+            }
+            TabView (selection: $selectedView) {
+                Text("One")
+                    .tabItem {
+                        Image(systemName: "heart.fill")
+                        Text("One")
+                    }.tag(1)
+                Text("Two")
+                    .tabItem {
+                        Image(systemName: "hare.fill")
+                        Text("Two")
+                    }.tag(2)
+                Text("Three")
+                    .tabItem {
+                        Image(systemName: "folder.fill")
+                        Text("Three")
+                    }.tag(3)
+                Text("Four")
+                    .tabItem {
+                        Image(systemName: "tortoise.fill")
+                        Text("Four")
+                    }.tag(4)
+                Text("Five")
+                    .tabItem {
+                        Image(systemName: "internaldrive.fill")
+                        Text("Five")
+                    }.tag(5)
+                Text("Six")
+                    .tabItem {
+                        Image(systemName: "car.rear.fill")
+                        Text("Six")
+                    }.tag(6)
+            }
+            .tabViewStyle(.page)
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
         .tint(.orange)
     }
