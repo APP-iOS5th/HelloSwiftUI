@@ -12,20 +12,12 @@ struct ContentView: View {
     @State var flag = true
     
     var body: some View {
-        DisclosureGroup("Expand it"){
-            Text("insert = \(message)")
-            TextField("Type here",text :$message)
-                .padding()
-            Text(flag ? "Toggle = true" : "Toggle = false")
-            Toggle(isOn: $flag) {
-                Text("Toggle")
+        ScrollView (Axis.Set.vertical, showsIndicators: true) {
+            ForEach(0..<50){
+                //가운데 들어가서 좀 안이쁘네(그래서 indicator 위에 추가함)
+                Text("Item #\($0)")
             }
-            // 삼항연산자 
-            Text("The slider value = \(sliderValue)")
-            Slider(value:   $sliderValue, in : 0...15)
-                .padding()
         }
-        .padding()
     }
 }
 #Preview {
