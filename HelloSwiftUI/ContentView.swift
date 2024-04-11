@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var changeMe = true
+    @State var myDegrees: Double = 0.0
+    @State var flag = false
     
     var body: some View {
         VStack {
             Image(systemName: "tortoise.fill")
                 .font(.system(size: 100))
-                .foregroundColor(.red)
-                .scaleEffect(changeMe ? 1.75 : 1)
-                .animation(.default, value: changeMe)
-                .onTapGesture {
-                    changeMe.toggle()
+                .foregroundStyle(.red)
+                .padding()
+                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
+//                .animation(.default, value: flag)
+            
+            Button("Animate now") {
+                withAnimation(.easeInOut(duration: 2.1)) {
+                    flag.toggle()
                 }
+            }
+            
+            Slider(value: $myDegrees, in: -180...180, step: 1)
+                .padding()
         }
     }
 }
