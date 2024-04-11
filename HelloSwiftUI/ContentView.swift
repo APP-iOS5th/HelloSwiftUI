@@ -7,30 +7,47 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Movie: Identifiable, Hashable {
+    let id = UUID()
+    let title: String
+    let description: String
+}
+
+class MovieListViewModel {
+    var movies: [Movie] = [
+        Movie(title: "영화 1", description: "영화 1 설명"),
+        Movie(title: "영화 2", description: "영화 2 설명"),
+        Movie(title: "영화 3", description: "영화 3 설명")
+    ]
+}
+
+struct MovieDetailView: View {
+    let movie: Movie
     
-    @State var message = ""
-    @State var flag = true
+    var body: some View {
+        VStack {
+            Text(movie.title)
+                .font(.title)
+            Text(movie.description)
+                .padding()
+        }
+    }
+}
+
+struct ContentView: View {
+    private var viewModel = MovieListViewModel()
+    
     
     var body: some View {
         NavigationStack {
-            Text(message)
-            Toggle(isOn: $flag, label: {
-                Text("토글 디스플레이 모드")
-            })
-            .navigationTitle("네비게이션 타이틀")
-            .navigationBarHidden(flag)
-            .navigationBarTitleDisplayMode(flag ? .large : .inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        message = "iCloud 아이콘 탭 됨"
-                    } label: {
-                        Image(systemName: "icloud")
-                    }
-                }
+            List(viewModel.movies) { movie in
+                NavigationLink(movie.title, value: movie)
             }
-            .accentColor(.pink)
+            .navigationTitle("영화 목록")
+            .navigationDestination(for: Movie.self) { movie in
+                //                MovieDetail
+                MovieDetailView(movie: movie)
+            }
         }
     }
 }
