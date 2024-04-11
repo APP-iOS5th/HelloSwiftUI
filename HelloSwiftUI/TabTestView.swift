@@ -69,6 +69,8 @@ struct TabTestView: View {
                         Text("Six")
                     }
             }
+            .tabViewStyle(.page)
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             
         }
         .tint(.green)
