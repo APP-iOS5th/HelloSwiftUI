@@ -12,7 +12,7 @@ struct FileView: View {
     
     var body: some View {
         VStack {
-            Text("선택")
+            Text("선택 = \(choice)")
         }
     }
 }
