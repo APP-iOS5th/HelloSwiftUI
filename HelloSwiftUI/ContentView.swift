@@ -12,9 +12,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             let hGridItems1 = [GridItem(.fixed(25))]
-            let hGridItems2 = [GridItem(.fixed(35)), GridItem(.fixed(35)), GridItem(.fixed(35))]
+            let hGridItems2 = [GridItem(.flexible(minimum: 25, maximum: 450)), GridItem(.fixed(35)), GridItem(.flexible(minimum: 25, maximum: 450))]
             let vGridItems1 = [GridItem(.fixed(25))]
-            let vGridItems2 = [GridItem(.fixed(25)), GridItem(.fixed(35)), GridItem(.fixed(35))]
+            let vGridItems2 = [GridItem(.flexible(minimum: 25, maximum: 450)), GridItem(.flexible(minimum: 25, maximum: 450)), GridItem(.flexible(minimum: 25, maximum: 450))]
            
             
             ScrollView(Axis.Set.horizontal, showsIndicators: true) {
