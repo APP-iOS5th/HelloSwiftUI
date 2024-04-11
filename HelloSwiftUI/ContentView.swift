@@ -7,40 +7,35 @@
 
 import SwiftUI
 
-class Species: Identifiable {
-    let id = UUID()
-    var name: String
-    var classification: [Species]?
-    
-    init(name: String, classification: [Species]? = nil) {
-        self.name = name
-        self.classification = classification
-    }
-}
 struct ContentView: View {
-    var animals: [Species] = [
-        Species(name: "포유류", classification: [
-            Species(name: "개", classification: [
-                Species(name: "Poodle"),
-                Species(name: "Collie"),
-                Species(name: "St. Bernard"),
-            ]),
-            Species(name: "고양이"),
-            Species(name: "코끼리"),
-            Species(name: "고래"),
-        ]),
-        Species(name: "조류", classification: [
-            Species(name: "Canary"),
-            Species(name: "Parakeet"),
-            Species(name: "Eagle"),
-        ]),
-    ]
+    @State var flag = true
+    @State var message = ""
     var body: some View {
-        List {
-            OutlineGroup(animals, id: \.id, children:  \.classification){
-                creature in Text(creature.name)
+        NavigationStack {
+            Text(message)
+            Toggle(isOn: $flag, label: {
+                Text("토글 디스플레이 모드")
+            })
+            .navigationTitle("네비게이션 타이틀")
+//            .navigationBarHidden(false)
+            .navigationBarTitleDisplayMode(flag ? .large : .inline)
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading){
+                    Button {
+                        message = "iCloud 아이콘 탭 됨"
+                    } label: {
+                        Image(systemName: "icloud")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing){
+                    Button{
+                        message = "완료 버튼 탭됨"
+                    } label: {
+                        Text("완료")
+                    }
+                }
             }
-        }
+        }.accentColor(.purple)
     }
     
 }
