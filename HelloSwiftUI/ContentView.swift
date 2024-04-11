@@ -19,9 +19,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-           
             
         }
+        .font(.largeTitle)
+        
+        
         .accentColor(Color(hex: "#3E3AFF"))
     }
 }
