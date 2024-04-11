@@ -39,7 +39,6 @@ struct MovieDetailView: View {
 struct ContentView: View {
     @StateObject private var viewModel = MovieListViewModel()
     
-    
     var body: some View {
         NavigationStack {
             List(viewModel.moviews) { movie in
@@ -50,7 +49,14 @@ struct ContentView: View {
                 MovieDetailView(movie: movie)
             }
 
+            Button (action: {
+                viewModel.moviews.append(Movie(title: "영화 제목\(viewModel.moviews.count + 1)", description: "영화 내용 \(viewModel.moviews.count + 1)"))
+            }, label: {
+                Text("영화 추가")
+            })
+              
         }
+        
         
     }
     
