@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var move = true
+    @State var changeMe = true
     
     var body: some View {
-        VStack {
-            Text("A Text view")
-                .offset(x: move ? 100 : 0, y: move ? 100 : 0)
-                .animation(.default, value: move) // 애니메이션 추가
-            Toggle(isOn: $move, label: {
-                Text("Toggle me")
-            })
-        }
+        Image(systemName: "tortoise.fill")
+            .font(.system(size: 100))
+            .foregroundStyle(.red)
+            .scaleEffect(changeMe ? 1.75 : 1)
+            .animation(.default, value: changeMe)
+            .onTapGesture {
+                changeMe.toggle()
+            }
+
     }
 }
 
