@@ -31,7 +31,18 @@ struct ContentView: View {
                     Image(systemName: "tortoise.fill")
                     Text("Four")
                 }
+            Text("Five")
+                .tabItem {
+                    Image(systemName: "internaldrive.fill")
+                    Text("Five")
+                }
+            Text("Six")
+                .tabItem {
+                    Image(systemName: "car.rear.fill")
+                    Text("Six")
+                }
         }
+        .tint(.orange)
     }
 }
 
