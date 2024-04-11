@@ -9,55 +9,23 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State var flag: Bool = false
-    @State var message: String = ""
+    @State var sliderValue = 0.0
+    @State var message = ""
+    @State var flag = true
     
     var body: some View {
-        VStack {
-            Form{
-                Section {
-                    Text("This is Section has no Header")
-                }
-                
-                Section("Just a Header") {
-                    Text("This is Section uses a simple Header")
-                }
-                
-                Section{
-                    Text("This Section uses a simple footer")
-                } footer: {
-                    Text("Just a Footer")
-                }
-                
-                Section {
-                    Text("This Section uses both header and footer")
-                } header: {
-                    Text("The header")
-                } footer: {
-                    Text("The footer")
-                }
+        DisclosureGroup("펼치기"){
+            Text("입력한 내용 = \(message)")
+            TextField("Type here", text: $message)
+            Text(flag ? "Toogle = true" : "Toggle = false")
+            Toggle(isOn: $flag) {
+                Text("Toggle")
             }
-            
-            Form {
-                Text("This is a Form")
-                Toggle(isOn: $flag) {
-                    Text("Click Me")
-                }
-                .disabled(flag)
-            }
-            
-            GroupBox(label: Text("Group Box")) {
-                Text("This  is a group box")
-                Toggle(isOn: $flag) {
-                    Text("Click Me")
-                }
-                TextField("Type here" , text: $message)
-                    .disabled(flag)
-            }
-            
-            
-            
+            Text("The slider value = \(sliderValue)")
+            Slider(value: $sliderValue, in: 0...15)
+                .padding()
         }
+        .padding()
     }
     
 }
