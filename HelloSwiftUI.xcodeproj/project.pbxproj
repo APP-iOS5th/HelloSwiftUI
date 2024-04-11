@@ -11,6 +11,7 @@
 		D8019EB32BC371130051EB7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8019EB22BC371130051EB7B /* ContentView.swift */; };
 		D8019EB52BC371140051EB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8019EB42BC371140051EB7B /* Assets.xcassets */; };
 		D8019EB82BC371140051EB7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8019EB72BC371140051EB7B /* Preview Assets.xcassets */; };
+		D8B77DAD2BC7864B00221BEF /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B77DAC2BC7864B00221BEF /* SeparateFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		D8019EB72BC371140051EB7B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8019EBD2BC371140051EB7B /* HelloSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8019EC72BC371140051EB7B /* HelloSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B77DAC2BC7864B00221BEF /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				D8019EB02BC371130051EB7B /* HelloSwiftUIApp.swift */,
 				D8019EB22BC371130051EB7B /* ContentView.swift */,
+				D8B77DAC2BC7864B00221BEF /* SeparateFile.swift */,
 				D8019EB42BC371140051EB7B /* Assets.xcassets */,
 				D8019EB62BC371140051EB7B /* Preview Content */,
 			);
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B77DAD2BC7864B00221BEF /* SeparateFile.swift in Sources */,
 				D8019EB32BC371130051EB7B /* ContentView.swift in Sources */,
 				D8019EB12BC371130051EB7B /* HelloSwiftUIApp.swift in Sources */,
 			);
