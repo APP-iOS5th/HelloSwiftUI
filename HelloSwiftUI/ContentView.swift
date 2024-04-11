@@ -7,41 +7,50 @@
 
 import SwiftUI
 
-class Species {
-    let id = UUID()
-    var name: String
-    var classification: [Species]?
+struct FileView: View {
+    var choice: String
     
-    init(name: String, classification: [Species]? = nil) {
-        self.name = name
-        self.classification = classification
+    var body: some View {
+        VStack {
+            Text("선택 = \(choice)")
+        }
     }
 }
 
 struct ContentView: View {
     
-    var animals: [Species] = [
-        Species(name: "포유류", classification: [
-            Species(name: "개", classification: [
-                Species(name: "Poodle"),
-                Species(name: "Collie"),
-                Species(name: "St. Bernard"),
-            ]),
-            Species(name: "고양이"),
-            Species(name: "코끼리"),
-            Species(name: "고래"),
-        ]),
-        Species(name: "조류", classification: [
-            Species(name: "Canary"),
-            Species(name: "Parakeet"),
-            Species(name: "Eagle"),
-        ]),
-    ]
+    @State private var flag = false
+    @State private var message = ""
     
     var body: some View {
-        List {
-            OutlineGroup(animals, id: \.id, children: \.classification) { creature in
-                Text(creature.name)
+        NavigationStack {
+            NavigationLink(destination: FileView(choice: "헤드")) {
+                Text("헤드 선택")
+            }
+            Text(message)
+            Toggle(isOn: $flag, label: {
+                Text("토글 디스플레이 모드")
+            })
+            .tint(.black)
+            .navigationTitle("네비게이션 타이틀")
+            .toolbar(flag ? .hidden : .visible)
+//            .navigationBarTitleDisplayMode(flag ? .large : .inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        message = "iCloud"
+                    } label: {
+                        Image(systemName: "icloud")
+                            .foregroundStyle(.black)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        message = "완료"
+                    } label: {
+                        Text("완료")
+                    }
+                }
             }
         }
     }
