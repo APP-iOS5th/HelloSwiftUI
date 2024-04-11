@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct SeparateFile: View {
-    var passedData: String
+    @Binding var passedData: String
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                Text("You passed \(passedData)")
+                TextField("Type here:", text: $passedData)
+                    .padding()
                 Spacer()
             }
             Spacer()
@@ -15,6 +16,7 @@ struct SeparateFile: View {
     }
 }
 
-//#Preview {
-//    SeparateFile(passedData: "test")
-//}
+#Preview {
+    // preview 를 위해 .constant("") 를 사용해서 가까 부모를 만들어 줌
+    SeparateFile(passedData: .constant(""))
+}
