@@ -7,16 +7,20 @@
 
 import SwiftUI
 
+class ShareViewModel: ObservableObject {
+    @Published var message = ""
+}
+
 struct FileView: View {
     
-   @Binding var choice: String
+    @EnvironmentObject var choiceVM: ShareViewModel
     
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                Text("Your choice = \(choice)")
+                Text("Your choice = \(choiceVM.message)")
                 Spacer()
             }
             Spacer()
@@ -28,20 +32,21 @@ struct FileView: View {
 @available(iOS 15.0, *)
 struct ContentView: View {
     
-    @State var message: String = ""
+    @StateObject var showVM = ShareViewModel()
     
     var body: some View {
         NavigationStack {
             Text("Choose Head or Holy")
-            TextField("Send a message", text: $message)
-            NavigationLink(destination: FileView(choice: $message)) {
+            TextField("Send a message", text: $showVM.message)
+            NavigationLink(destination: FileView()) {
                 Text("button")
             }
-            NavigationLink(destination: SeparateFile(passedData: "HOLY")) {
+            NavigationLink(destination: SeparateFile()) {
                 Text("Go to SeparateFile View.")
             }
             .navigationTitle("Flip a Coin")
         }
+        .environmentObject(showVM)
     }
 }
 //#Preview {

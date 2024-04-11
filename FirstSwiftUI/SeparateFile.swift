@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SeparateFile: View {
     
-    var passedData: String
+    @EnvironmentObject var dataVM: ShareViewModel
     
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                Text("You choice = \(passedData)")
+                Text("You choice = \(dataVM.message)")
                 Spacer()
             }
             .background(.yellow)
