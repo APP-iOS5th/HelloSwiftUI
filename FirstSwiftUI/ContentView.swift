@@ -16,17 +16,11 @@ struct ContentView: View {
     @State var flag = true
     
     var body: some View {
-        DisclosureGroup("펼치기") {
-            Text("입력한 내용 = \(message)")
-            TextField("입력하세요.", text: $message)
-            Text("Toggle : \(flag)")
-            Toggle(isOn: $flag) {
-                Text("Toggle.")
+        ScrollView(Axis.Set.vertical, showsIndicators: true) { // 스크롤 수직/수평 조절과 스크롤 표시여부
+            ForEach(0..<50) {
+                Text("Item #\($0)")
             }
-            Text("The slider value = \(sliderValue)")
-            Slider(value: $sliderValue, in: 0...15)
         }
-        .padding()
     }
 }
 
