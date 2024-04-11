@@ -14,12 +14,11 @@ struct SeparateFile: View {
             Spacer()
             VStack {
                 Spacer()
-                Text("This is another structure")
-                Text("but stored in a separate file")
+                Text("You chose = \(passedData)")
                 Spacer()
             }
             Spacer()
-        }
+        }.background(Color.yellow)
     }
 }
 
