@@ -11,7 +11,7 @@ import SwiftUI
 struct HelloSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            Text_View()
+            TabViewEx()
         }
     }
 }
