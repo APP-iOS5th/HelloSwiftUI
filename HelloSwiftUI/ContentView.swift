@@ -33,7 +33,7 @@ struct ContentView: View {
             }
             NavigationLink(destination: SeparateFile(passedData: "Tails")) {
                 Text("Tails")
-            }
+            }.navigationTitle("Flip a Coin")
         }
     }
 }
