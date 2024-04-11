@@ -7,44 +7,67 @@
 
 import SwiftUI
 
-class ShareString: ObservableObject {
-    @Published var message = ""
-}
-
-struct FileView: View {
-//    @Binding var choice: String // ContentView와 binding
-    @EnvironmentObject var choice: ShareString
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            VStack {
-                Spacer()
-                TextField("Type here: ", text: $choice.message)
-//                Text("You chose = \(choice)")
-                Spacer()
-            }
-            Spacer()
-        }.background(Color.yellow)
-    }
-}
-
 struct ContentView: View {
-//    @State var message = ""
-    @StateObject var showMe = ShareString()
+    @State var selectedView = 1
     
     var body: some View {
-        NavigationStack {
-            TextField("Type here: ", text: $showMe.message)
-            NavigationLink(destination: FileView()) {
-                Text("Heads")
+        VStack {
+            HStack {
+                Button("1") {
+                    selectedView = 1
+                }
+                Button("2") {
+                    selectedView = 2
+                }
+                Button("3") {
+                    selectedView = 3
+                }
+                Button("4") {
+                    selectedView = 4
+                }
+                Button("5") {
+                    selectedView = 5
+                }
+                Button("6") {
+                    selectedView = 6
+                }
             }
-            NavigationLink(destination: SeparateFile()) {
-                Text("Tails")
+            TabView(selection: $selectedView) {
+                Text("One")
+                    .tabItem {
+                        Image(systemName: "heart.fill")
+                        Text("one")
+                    }.tag(1)
+                Text("Two")
+                    .tabItem {
+                        Image(systemName: "hare.fill")
+                        Text("Two")
+                    }.tag(2)
+                Text("Three")
+                    .tabItem {
+                        Image(systemName: "tortoise.fill")
+                        Text("Three")
+                    }.tag(3)
+                Text("Four")
+                    .tabItem {
+                        Image(systemName: "folder.fill")
+                        Text("Four")
+                    }.tag(4)
+                Text("Five")
+                    .tabItem {
+                        Image(systemName: "internaldrive.fill")
+                        Text("Five")
+                    }.tag(5)
+                Text("Six")
+                    .tabItem {
+                        Image(systemName: "cloud.drizzle.fill")
+                        Text("Six")
+                    }.tag(6)
             }
-            .navigationTitle("Flip a Coin")
-        }
-        .environmentObject(showMe)
+            .tabViewStyle(.page)
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+            }
+        .tint(.pink)
     }
 }
 
