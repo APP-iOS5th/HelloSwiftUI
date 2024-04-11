@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		419FCB462BC78645009E8463 /* SeparateFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FCB452BC78645009E8463 /* SeparateFile.swift */; };
 		41C63D7A2BC37125008D434F /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C63D792BC37125008D434F /* HelloSwiftUIApp.swift */; };
 		41C63D7C2BC37125008D434F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C63D7B2BC37125008D434F /* ContentView.swift */; };
 		41C63D7E2BC37126008D434F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C63D7D2BC37126008D434F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		419FCB452BC78645009E8463 /* SeparateFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparateFile.swift; sourceTree = "<group>"; };
 		41C63D762BC37125008D434F /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C63D792BC37125008D434F /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
 		41C63D7B2BC37125008D434F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				41C63D7B2BC37125008D434F /* ContentView.swift */,
 				41C63D7D2BC37126008D434F /* Assets.xcassets */,
 				41C63D7F2BC37126008D434F /* Preview Content */,
+				419FCB452BC78645009E8463 /* SeparateFile.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419FCB462BC78645009E8463 /* SeparateFile.swift in Sources */,
 				41C63D7C2BC37125008D434F /* ContentView.swift in Sources */,
 				41C63D7A2BC37125008D434F /* HelloSwiftUIApp.swift in Sources */,
 			);

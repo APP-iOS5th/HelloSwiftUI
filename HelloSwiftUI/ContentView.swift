@@ -7,59 +7,29 @@
 
 import SwiftUI
 
-struct Movie: Identifiable, Hashable {
-    let id = UUID()
-    let title: String
-    let description: String
-    
-}
- 
-class MovieListViewModel: ObservableObject {
-    @Published var moviews: [Movie] = [
-        Movie(title: "영화 제목1", description: "영화 내용1"),
-        Movie(title: "영화 제목2", description: "영화 내용2"),
-        Movie(title: "영화 제목3", description: "영화 내용3")
-    ]
-}
-
-struct MovieDetailView: View {
-    let movie: Movie
-    
+struct FileView: View {
     var body: some View {
-        VStack{
-            Text(movie.title)
-                .font(.title)
-            Text(movie.description)
-                .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
-            
-        }
+        HStack {
+            Spacer()
+            VStack {
+                Spacer()
+                Text("This is a separate structure")
+                Text("that's stored in the same file")
+                Spacer()
+            }
+            Spacer()
+        }.background(Color.yellow)
     }
 }
 
 struct ContentView: View {
-    @StateObject private var viewModel = MovieListViewModel()
-    
     var body: some View {
         NavigationStack {
-            List(viewModel.moviews) { movie in
-                NavigationLink(movie.title, value: movie)
+            NavigationLink(destination: FileView()) {
+                Text("Send a message")
             }
-            .navigationTitle("영화 목록")
-            .navigationDestination(for: Movie.self) { movie in
-                MovieDetailView(movie: movie)
-            }
-
-            Button (action: {
-                viewModel.moviews.append(Movie(title: "영화 제목\(viewModel.moviews.count + 1)", description: "영화 내용 \(viewModel.moviews.count + 1)"))
-            }, label: {
-                Text("영화 추가")
-            })
-              
         }
-        
-        
     }
-    
 }
 
 #Preview {
