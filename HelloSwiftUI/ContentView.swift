@@ -14,7 +14,9 @@ struct ContentView: View {
         VStack {
             Text("Move to Text")
                 .offset(x: move ? 100 : 0 , y: move ? 100 : 0)
+                //.position(x: move ? 100 : 0 , y: move ? 100 : 0)
                 .animation(.default, value: move)
+                //.frame(width: 300, height: 300)
             Toggle(isOn: $move, label: {
                 Text("Toggle me")
             })
