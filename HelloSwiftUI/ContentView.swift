@@ -52,6 +52,7 @@ struct ContentView: View {
                     Text("Click Me")
                 }
                 TextField("Type here" , text: $message)
+                    .disabled(flag)
             }
             
             
