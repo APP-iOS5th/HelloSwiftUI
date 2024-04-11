@@ -9,13 +9,13 @@ import SwiftUI
 
 
 struct FileView: View {
+    @Binding var choice: String
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                Text("This is a separate structure")
-                Text("that's stored in the same file")
+                TextField("Type here:", text: $choice)
                 Spacer()
             }
             Spacer()
@@ -24,11 +24,17 @@ struct FileView: View {
 }
 
 struct ContentView: View {
+    @State var message = ""
     var body: some View {
         NavigationStack {
-            NavigationLink(destination: FileView()) {
-                Text("Send a message")
+            TextField("Type here:", text: $message)
+            NavigationLink(destination: FileView(choice: $message)) {
+                Text("Heads")
             }
+            NavigationLink(destination: SeparateFile(passedData: "Tails")) {
+                Text("Tails")
+            }
+            .navigationTitle("Flip a Coin")
         }
     }
 }
