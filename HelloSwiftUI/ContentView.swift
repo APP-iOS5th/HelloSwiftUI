@@ -13,7 +13,7 @@ class Species: Identifiable {
     let id = UUID()
     var name: String
     var classification: [Species]?
-    init(name: String, classification: [Species]? = nil) {
+    init(name: String, classification: [Species]? = nil) { //nil이 없으면 무조건 있어야함
         self.name = name
         self.classification = classification
     }
@@ -21,30 +21,38 @@ class Species: Identifiable {
 
 
 struct ContentView: View {
-    var Animals: [Species] = [
-        Species(name: "포유류", classification: [
-            Species(name: "개", classification: [
-                Species(name: "Poodle"),
-                Species(name: "Collie"),
-                Species(name: "St. Bernard"),
-            ]),
-            Species(name: "고양이"),
-            Species(name: "코끼리"),
-            Species(name: "고래"),
-        ]),
-        Species(name: "조류", classification: [
-            Species(name: "Canary"),
-            Species(name: "Parakeet"),
-            Species(name: "Eagle"),
-        ]),
-    ]
+    @State var flag = true
+    @State var message = ""
     var body: some View {
-        List {
-            OutlineGroup(Animals, id: \.id, children: \.classification) {creature in
-                Text(creature.name)}
+        NavigationStack {
+            Text(message)
+            Toggle(isOn: $flag, label: {
+                Text("Toggle display mode")
+            }) //달러를 왜 써야한다고? 왜 바로 핸들링 못한다고?
+            .navigationTitle("Navigation Title")
+            //.navigationBarTitleDisplayMode(flag ? .large : .inline)
+            .navigationBarHidden(flag)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        message = "iCloud 아이콘 탭 됨"
+                    } label: {
+                        Image(systemName: "icloud")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        message = "완료 버튼 탭 됨"
+                    } label: {
+                        Text("완료")
+                    }
+                }
+            }
         }
+        .accentColor(.purple)
     }
 }
+
 #Preview {
     ContentView()
 }
