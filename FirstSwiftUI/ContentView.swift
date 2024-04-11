@@ -19,9 +19,23 @@ struct ContentView: View {
             Text("Hello, world!")
                 .padding()
                 .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-                .animation(.default, value: flag)
+//                .animation(.default, value: flag)
+            Text("Hello, world!")
+                .padding()
+                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
+//                .animation(.easeIn, value: flag)
+            Text("Hello, world!")
+                .padding()
+                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
+//                .animation(.easeOut, value: flag)
+            Text("Hello, world!")
+                .padding()
+                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
+//                .animation(.easeInOut, value: flag)
             Button(action: {
-                flag.toggle()
+                withAnimation(.easeInOut(duration: 3)) {
+                    flag.toggle()
+                }
             }) {
                 Text("Animate now")
             }
