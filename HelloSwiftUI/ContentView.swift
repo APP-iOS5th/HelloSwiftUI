@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var flag = true
+    @State var naviFlag = true
     @State var message = ""
     
     var body: some View {
@@ -19,8 +20,9 @@ struct ContentView: View {
             Toggle(isOn: $flag, label: {
                 Text("토글 디스플레이 모드")
             })
+            .padding()
             .navigationTitle("네비게이션 타이틀")
-//            .navigationBarHidden(false)
+            .navigationBarHidden(naviFlag)
             .navigationBarTitleDisplayMode(flag ? .large : .inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -31,7 +33,21 @@ struct ContentView: View {
                     }
                 }
                 
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        message = "완료 버튼 탭됨"
+                    } label: {
+                       Text("완료")
+                    }
+                    .foregroundStyle(.green)
+                }
+                
             }
+            
+            Toggle(isOn: $naviFlag, label: {
+                Text("naviFlag")
+            })
+            .padding()
         }
         .accentColor(.purple)
     }
