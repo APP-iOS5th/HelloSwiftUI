@@ -17,4 +17,5 @@ struct SeparateFile: View {
 
 #Preview {
     SeparateFile()
+        .environmentObject(ShareString())
 }
