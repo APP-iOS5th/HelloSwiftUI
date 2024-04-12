@@ -22,7 +22,7 @@ struct ContentView: View {
                 .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
 //                .animation(.default, value: flag)
             Button("Animate now"){
-                withAnimation(.easeInOut(duration: 2)) {
+                withAnimation(.easeInOut(duration: 2).delay(1)) {
                     flag.toggle()
                 }
             }
