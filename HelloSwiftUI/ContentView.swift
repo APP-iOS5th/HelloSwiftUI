@@ -13,11 +13,14 @@ struct ContentView: View {
          //기본적으로 아이폰의 SafeArea 영역
          GeometryReader { geometry in
              VStack{
-                 Text("Width = \(geometry.size.width)")
-                 Text("Height = \(geometry.size.height)")
+                 Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
+                 Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
+                 Divider()
+                 Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
+                 Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
              }
          }
-         .background(Color.yellow)
+         .background(Color.green)
         // .ignoresSafeArea() SafeArea 영역 허용X
       }
  }
