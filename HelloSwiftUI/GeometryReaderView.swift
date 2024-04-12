@@ -11,9 +11,16 @@ struct GeometryReaderView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Text("Height = \(UIScreen.main.bounds)")
                 Text("Width = \(geometry.size.width)")
                 Text("Height = \(geometry.size.height)")
+                
+                Text("UIScreen = \(UIScreen.main.bounds)")
+
+                Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
+                Text("Local y origin = \(geometry.frame(in: .local).origin.y)")
+                Text("global X origin = \(geometry.frame(in: .global).origin.x)")
+                Text("global y origin = \(geometry.frame(in: .global).origin.y)")
+                //safeArea 공간 뺴고 알려줌
             }
         }
         .backgroundStyle(Color.yellow)
