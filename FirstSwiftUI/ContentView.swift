@@ -11,37 +11,14 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct ContentView: View {
     
-    @State var myDegrees: Double = 0.0
-    @State var flag = false
-    
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
-                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-//                .animation(.default, value: flag)
-            Text("Hello, world!")
-                .padding()
-                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-//                .animation(.easeIn, value: flag)
-            Text("Hello, world!")
-                .padding()
-                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-//                .animation(.easeOut, value: flag)
-            Text("Hello, world!")
-                .padding()
-                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-//                .animation(.easeInOut, value: flag)
-            Button(action: {
-                withAnimation(.easeInOut(duration: 3)) {
-                    flag.toggle()
-                }
-            }) {
-                Text("Animate now")
+        GeometryReader { geometry in
+            VStack {
+                Text("width = \(geometry.size.width)")
+                Text("height = \(geometry.size.height)")
             }
-            Slider(value: $myDegrees, in: -180...180, step: 1)
-                .padding()
         }
+        .background(.green)
     }
 }
 //#Preview {
