@@ -12,13 +12,31 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                Text("width = \(geometry.size.width)")
-                Text("height = \(geometry.size.height)")
+        VStack {
+            Text("상단 여백")
+            HStack {
+                Text("좌측 여백")
+                GeometryReader { geometry in
+                    VStack {
+                        Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
+                        Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
+                        Divider()
+                        Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
+                        Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
+                        Divider()
+                        Text("minX = \(geometry.frame(in: .local).minX)")
+                        Text("midX = \(geometry.frame(in: .local).midX)")
+                        Text("maxX = \(geometry.frame(in: .local).maxX)")
+                        Divider()
+                        Text("minY = \(geometry.frame(in: .local).minY)")
+                        Text("midY = \(geometry.frame(in: .local).midY)")
+                        Text("maxY = \(geometry.frame(in: .local).maxY)")
+                    }
+                }
+                .background(.green)
             }
         }
-        .background(.green)
+//        .ignoresSafeArea()
     }
 }
 //#Preview {
