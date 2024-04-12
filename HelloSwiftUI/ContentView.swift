@@ -13,14 +13,17 @@ struct ContentView: View {
         VStack{
             Text("This Text view push!")
             HStack{
-                Text("this Text push again!")
+                Text("this Tn!")
                 GeometryReader { geometry in
                     VStack {
-                        Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
-                        Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
+                        Text("minX = \(geometry.frame(in: .local).minX)")
+                        Text("midX = \(geometry.frame(in: .local).midX)")
+                        Text("maxX = \(geometry.frame(in: .local).maxX)")
                         Divider()
-                        Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
-                        Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
+                        Text("minY = \(geometry.frame(in: .local).minY)")
+                        Text("minY = \(geometry.frame(in: .local).midY)")
+                        Text("minY = \(geometry.frame(in: .local).maxY)")
+
                     }
                 }
                 .background(Color.yellow)
