@@ -9,40 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var myDegree: Double = 0.0
-    @State var flag = false
-    
     var body: some View {
-        VStack (spacing: 50) {
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 70))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 1.75 : 1)
-//                .animation(.default, value: flag)
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 70))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 1.75 : 1)
-//                .animation(.easeIn, value: flag)
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 70))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 1.75 : 1)
-//                .animation(.easeOut, value: flag)
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 70))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 1.75 : 1)
-//                .animation(.easeInOut, value: flag)
+        VStack {
             
-            Button("Animate now") {
-                withAnimation(.easeInOut(duration: 2.0)) {
-                    flag.toggle()
-                }
-            }
-            
-            Slider(value: $myDegree, in: -180...180, step: 3)
-                .padding()
         }
     }
 }
