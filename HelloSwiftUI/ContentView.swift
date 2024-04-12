@@ -17,13 +17,13 @@ struct ContentView: View {
                 GeometryReader{
                     geometry in
                     VStack{
-                        Text("Width = \(geometry.size.width)")
+                        Text("minX = \(geometry.frame(in: .local).minX)")
+                        Text("midX = \(geometry.frame(in: .local).midX)")
+                        Text("maxX = \(geometry.frame(in: .local).maxX)")
                         Divider()
-                        Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
-                        Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
-                        Divider()
-                        Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
-                        Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
+                        Text("minY = \(geometry.frame(in: .local).minY)")
+                        Text("midY = \(geometry.frame(in: .local).midY)")
+                        Text("maxY = \(geometry.frame(in: .local).maxY)")
                         
                     }
                 }
