@@ -8,30 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var myDegrees: Double = 0.0
-    @State var flag = false
 
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
-                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-                .animation(.default, value: flag)
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 100))
-                .foregroundStyle(.red)
-                .rotationEffect(Angle(degrees: flag ? myDegrees : 0))
-                .animation(.smooth, value: flag)
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 100))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 0.08 : 1.4)
-                .animation(.linear, value: flag)
-            Button("Animate now") {
-                flag.toggle()
+        VStack{
+            Text("This Text view push!")
+            HStack{
+                Text("this Text push again!")
+                GeometryReader { geometry in
+                    VStack {
+                        Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
+                        Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
+                        Divider()
+                        Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
+                        Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
+                    }
+                }
+                .background(Color.yellow)
+
+                
             }
-            Slider(value: $myDegrees, in: -180...180, step: 1)
-                .padding()
         }
     }
 }
