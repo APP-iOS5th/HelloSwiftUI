@@ -10,9 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 50) {
-            
+        GeometryReader { geometry in
+            VStack {
+                Text("Width = \(geometry.size.width)")
+                Text("Height = \(geometry.size.height)")
+            }
         }
+        .background(Color.yellow)
+        .ignoresSafeArea()
     }
 }
 
