@@ -10,9 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
      var body: some View {
-         VStack{
+         //기본적으로 아이폰의 SafeArea 영역
+         GeometryReader { geometry in
+             VStack{
+                 Text("Width = \(geometry.size.width)")
+                 Text("Height = \(geometry.size.height)")
+             }
          }
-     }
+         .background(Color.yellow)
+        // .ignoresSafeArea() SafeArea 영역 허용X
+      }
  }
          
 #Preview {
