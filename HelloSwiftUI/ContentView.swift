@@ -9,13 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        GeometryReader{ geometry in
-            VStack {
-                Text("Width =\(geometry.size.width)")
-                Text("Height =\(geometry.size.height)")
+        VStack{
+            Text("This Text view pushes the GeometryReader down")
+            HStack{
+                Text("Text push to the right") //내가 점유하고있는 크기의 값이 전달됨. 
+                
+                GeometryReader{ geometry in
+                    VStack {
+                        
+                        Text("Local X origin  =\(geometry.frame(in: .local).origin.x)")
+                        Text("Local X origin  =\(geometry.frame(in: .local).origin.y)")
+                        Divider()
+                        Text("Local X origin  =\(geometry.frame(in: .global).origin.x)")
+                        Text("Local X origin  =\(geometry.frame(in: .global).origin.x)")
+                        
+                    }
+                }
+                .background(Color.green)
+                .ignoresSafeArea()
             }
         }
-        .background(Color.green)
     }
     
 }
