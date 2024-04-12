@@ -15,7 +15,7 @@ struct ContentView: View {
              VStack{
                  Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
                  Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
-                 Divider()
+                 Divider() // 구분선
                  Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
                  Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
              }
