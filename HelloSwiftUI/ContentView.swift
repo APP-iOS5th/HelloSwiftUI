@@ -13,13 +13,15 @@ struct ContentView: View {
         GeometryReader{
             geometry in
             VStack{
-                Text("Width = \(geometry.size.width)")
-                    .foregroundStyle(.white)
-                Text("Height = \(geometry.size.height)")
-                    .foregroundStyle(.white)
+                Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
+                Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
+                Divider()
+                Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
+                Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
+                
             }
         }
-        .background(Color.red)
+        .background(Color.yellow)
 //        .ignoresSafeArea()
     }
 }
