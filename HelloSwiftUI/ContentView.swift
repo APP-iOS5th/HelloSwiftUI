@@ -10,13 +10,13 @@ struct ContentView: View {
                 Text("Pushes it to the right")
                 GeometryReader { geometry in
                     VStack {
-                        Text("Width = \(geometry.size.width)")
+                        Text("minX = \(geometry.frame(in: .local).minX)")
+                        Text("midX = \(geometry.frame(in: .local).midX)")
+                        Text("maxX = \(geometry.frame(in: .local).maxX)")
                         Divider()
-                        Text("Local x origin = \(geometry.frame(in: .local).origin.x)")
-                        Text("Local y origin = \(geometry.frame(in: .local).origin.y)")
-                        Divider()
-                        Text("Global x origin = \(geometry.frame(in: .global).origin.x)")
-                        Text("Global y origin = \(geometry.frame(in: .global).origin.y)")
+                        Text("minY = \(geometry.frame(in: .local).minY)")
+                        Text("midY = \(geometry.frame(in: .local).midY)")
+                        Text("maxY = \(geometry.frame(in: .local).maxY)")
                     }
                 }
                 .background(Color.yellow)
