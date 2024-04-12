@@ -12,11 +12,14 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geomety in
             VStack {
-                Text("Width = \(geomety.size.width)")
-                Text("Height = \(geomety.size.height)")
+                Text("Local X origin = \(geomety.frame(in: .local).origin.x)")
+                Text("Local Y origin = \(geomety.frame(in: .local).origin.y)")
+                Divider()
+                Text("Global X origin - \(geomety.frame(in: .global).origin.x)")
+                Text("Global Y origin - \(geomety.frame(in: .global).origin.y)")
             }
         }
-        .background(Color.green)
+        .background(Color.mint)
 //        .ignoresSafeArea()
     }
 }
