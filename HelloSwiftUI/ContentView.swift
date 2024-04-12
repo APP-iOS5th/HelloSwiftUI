@@ -16,17 +16,17 @@ struct ContentView: View {
                 Text("Pushes to the right")
                 GeometryReader { geometry in
                     VStack {
-                        Text("Width = \(geometry.size.width)")
+                        Text("MinX = \(geometry.frame(in: .local).minX)")
+                        Text("MidX = \(geometry.frame(in: .local).midX)")
+                        Text("MaxX = \(geometry.frame(in: .local).maxX)")
                         Divider()
-                        Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
-                        Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
-                        Divider()
-                        Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
-                        Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
+                        Text("MinY = \(geometry.frame(in: .local).minY)")
+                        Text("MidY = \(geometry.frame(in: .local).midY)")
+                        Text("MaxY = \(geometry.frame(in: .local).maxY)")
                     }
                 }
                 .background(.yellow)
-                //.ignoresSafeArea()
+                .ignoresSafeArea()
             }
         }
     }
