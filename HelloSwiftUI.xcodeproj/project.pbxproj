@@ -11,6 +11,7 @@
 		419FCB482BC7B632009E8463 /* TabTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FCB472BC7B632009E8463 /* TabTestView.swift */; };
 		419FCB4E2BC7C619009E8463 /* GridTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FCB4D2BC7C619009E8463 /* GridTestView.swift */; };
 		419FCB6B2BC7CB8C009E8463 /* AnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FCB6A2BC7CB8C009E8463 /* AnimationTestView.swift */; };
+		419FCB8D2BC8B2D6009E8463 /* GerometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FCB8C2BC8B2D6009E8463 /* GerometryReader.swift */; };
 		41C63D7A2BC37125008D434F /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C63D792BC37125008D434F /* HelloSwiftUIApp.swift */; };
 		41C63D7C2BC37125008D434F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C63D7B2BC37125008D434F /* ContentView.swift */; };
 		41C63D7E2BC37126008D434F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C63D7D2BC37126008D434F /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		419FCB472BC7B632009E8463 /* TabTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTestView.swift; sourceTree = "<group>"; };
 		419FCB4D2BC7C619009E8463 /* GridTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTestView.swift; sourceTree = "<group>"; };
 		419FCB6A2BC7CB8C009E8463 /* AnimationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestView.swift; sourceTree = "<group>"; };
+		419FCB8C2BC8B2D6009E8463 /* GerometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerometryReader.swift; sourceTree = "<group>"; };
 		41C63D762BC37125008D434F /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C63D792BC37125008D434F /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
 		41C63D7B2BC37125008D434F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				419FCB472BC7B632009E8463 /* TabTestView.swift */,
 				419FCB4D2BC7C619009E8463 /* GridTestView.swift */,
 				419FCB6A2BC7CB8C009E8463 /* AnimationTestView.swift */,
+				419FCB8C2BC8B2D6009E8463 /* GerometryReader.swift */,
 			);
 			path = HelloSwiftUI;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				419FCB6B2BC7CB8C009E8463 /* AnimationTestView.swift in Sources */,
 				419FCB4E2BC7C619009E8463 /* GridTestView.swift in Sources */,
 				41C63D7A2BC37125008D434F /* HelloSwiftUIApp.swift in Sources */,
+				419FCB8D2BC8B2D6009E8463 /* GerometryReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
