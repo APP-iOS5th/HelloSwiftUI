@@ -27,6 +27,13 @@ struct GeometryReaderView: View {
                         Text("global X origin = \(geometry.frame(in: .global).origin.x)")
                         Text("global y origin = \(geometry.frame(in: .global).origin.y)")
                         //safeArea 공간 뺴고 알려줌
+                        
+                        Text("minX = \(geometry.frame(in: .local).minX)")
+                        Text("minY = \(geometry.frame(in: .local).minY)")
+                        Text("midX = \(geometry.frame(in: .local).midX)")
+                        Text("midY = \(geometry.frame(in: .local).midY)")
+                        Text("maxX = \(geometry.frame(in: .local).maxX)")
+                        Text("maxY = \(geometry.frame(in: .local).maxY)")
                     }
                 }
                 .background(Color.yellow)
