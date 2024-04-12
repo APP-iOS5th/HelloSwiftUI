@@ -8,39 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var myDegrees: Double = -180.0
-    @State var flag = false
-    
     var body: some View {
-        VStack (spacing: 50) {
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 50))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 1.75 : 1)
-            //                        .animation(.default, value: flag)
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 50))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 1.75 : 1)
-            //                        .animation(.easeIn, value: flag)
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 50))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 1.75 : 1)
-            //                        .animation(.easeOut, value: flag)
-            Image(systemName: "tortoise.fill")
-                .font(.system(size: 50))
-                .foregroundStyle(.red)
-                .scaleEffect(flag ? 1.75 : 1)
-            //                        .animation(.easeInOut, value: flag)
-            
-            Button("Animate now") {
-                withAnimation(.easeInOut(duration: 2.1)) {
-                    flag.toggle()
+        VStack {
+            Text("This Text view pushes the GeometryReader down")
+            HStack {
+                Text("Pushes to the right")
+                GeometryReader { geometry in
+                    VStack {
+                        Text("Width = \(geometry.size.width)")
+                        Divider()
+                        Text("Local X origin = \(geometry.frame(in: .local).origin.x)")
+                        Text("Local Y origin = \(geometry.frame(in: .local).origin.y)")
+                        Divider()
+                        Text("Global X origin = \(geometry.frame(in: .global).origin.x)")
+                        Text("Global Y origin = \(geometry.frame(in: .global).origin.y)")
+                    }
                 }
+                .background(Color.cyan)
+                .ignoresSafeArea()
             }
-            Slider(value: $myDegrees, in: -180...180, step: 1)
-                .padding()
         }
     }
 }
