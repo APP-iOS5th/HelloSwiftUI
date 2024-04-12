@@ -7,11 +7,16 @@
 
 import SwiftUI
 
-struct ContentView: View {   
+struct ContentView: View {
     var body: some View {
-        VStack {
-
+        GeometryReader { geometry in
+            VStack {
+                Text("Width = \(geometry.size.width)")
+                Text("Height = \(geometry.size.height)")
+            }
         }
+        .background(Color.yellow)
+        .ignoresSafeArea()
     }
 }
 
